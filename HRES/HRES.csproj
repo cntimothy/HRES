@@ -1864,6 +1864,7 @@
     <Content Include="lib\FineUI.xml" />
     <Content Include="lib\Newtonsoft.Json.dll" />
     <Content Include="lib\Newtonsoft.Json.xml" />
+    <Content Include="Pages\AccountManagement\ChangePassword.aspx" />
     <Content Include="Pages\ErrorPage\Error.aspx" />
     <Content Include="Pages\EvaluatedManagement\MakeEvaluated.aspx" />
     <Content Include="Pages\EvaluateTableManagement\CheckEvaluateTable.aspx" />
@@ -1899,6 +1900,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AccountManagement\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AccountManagement\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ErrorPage\Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>

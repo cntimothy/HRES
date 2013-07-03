@@ -27,3 +27,5 @@
 	a)	人事处管理员密码重置——超级(ResetFirst)
 10. 错误页(ErrorPage)
 	a)  错误页——所有(Error)
+11. 账户管理（AccountManagement）
+	a） 更改密码（ChangePassword）
