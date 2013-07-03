@@ -15,7 +15,7 @@ namespace Controls
         /// <param name="dt">包含所需信息的表</param>
         /// <param name="exception"></param>
         /// <returns>dt不为空，返回true，否则返回false</returns>
-        public static bool GetAll(DataTable dt, ref string exception)
+        public static bool GetAll(ref DataTable dt, ref string exception)
         {
             return true;
         }
@@ -27,43 +27,43 @@ namespace Controls
         /// <param name="depart">部门</param>
         /// <param name="exception"></param>
         /// <returns>dt不为空，返回true，否则返回false</returns>
-        public static bool GetAllByDepart(DataTable dt, string depart, ref string exception)
+        public static bool GetAllByDepart(ref DataTable dt, string depart, ref string exception)
         {
             return true;
         }
 
         /// <summary>
-        /// 更新岗位责任书，置状态位和意见
+        /// 更新岗位责任书
+        /// </summary>
+        /// <param name="pb">岗位责任书</param>
+        /// <param name="status">岗位责任书状态</param>
+        /// <param name="exception"></param>
+        /// <returns>更新成功返回true，否则返回false</returns>
+        public static bool UpdatePostBook(PostBook pb, DocStatus status, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 更新审核意见
+        /// </summary>
+        /// <param name="comment">审核意见</param>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns>更新成功返回true，否则返回false</returns>
+        public static bool UpdateComment(string comment, string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 更新审核状态（通过或退回）
         /// </summary>
         /// <param name="ID">被考评人ID</param>
-        /// <param name="pb">岗位责任书</param>
+        /// <param name="status">状态</param>
         /// <param name="exception"></param>
-        /// <returns>更新成功返回true,否则返回false</returns>
-        public static bool UpdatePostBook(string ID, PostBook pb, ref string exception)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// 保存岗位责任书,置状态位为1
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="pb"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool SavePostBook(string ID, PostBook pb, ref string exception)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// 提交岗位责任书，置状态位和意见
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="pb"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool SubmitPostBook(string ID, PostBook pb, ref string exception)
+        /// <returns>更新成功返回true，否则返回false</returns>
+        public static bool UpdateStatus(string ID, DocStatus status, ref string exception)
         {
             return true;
         }

@@ -73,5 +73,26 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 按ID删除系级管理员
+        /// </summary>
+        /// <param name="ID">待删除的系级管理员</param>
+        /// <param name="exception"></param>
+        /// <returns>删除成功返回true，否则返回false</returns>
+        public static bool Delete(string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 删除所有系级管理员
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns>删除曾工返回true，否则返回false</returns>
+        public static bool DeleteAll(ref string exception)
+        {
+            return true;
+        }
     }
 }

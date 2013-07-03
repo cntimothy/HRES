@@ -23,9 +23,11 @@
 	c)	收件箱——所有(Outbox)
 8.	指标库管理(QuotaManagement)
 	a)	指标库维护——人事处(QuotaManagement)
-9.	人事处管理源管理(FirstManagement)
+9.	人事处帐号管理(FirstManagement)
 	a)	人事处管理员密码重置——超级(ResetFirst)
 10. 错误页(ErrorPage)
 	a)  错误页——所有(Error)
-11. 账户管理（AccountManagement）
+11. 账户管理————所有（AccountManagement）
 	a） 更改密码（ChangePassword）
+12. 初始化管理————人事处（InitialManagement）
+	a） 系统初始化(SystemInit)

@@ -1877,6 +1877,7 @@
     <Content Include="Pages\EvaluatorManagement\MakeEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\InitialManagement\SystemInit.aspx" />
     <Content Include="Pages\MessageManagement\Inbox.aspx" />
     <Content Include="Pages\MessageManagement\NewMessage.aspx" />
     <Content Include="Pages\MessageManagement\Outbox.aspx" />
@@ -1991,6 +1992,13 @@
     </Compile>
     <Compile Include="Pages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InitialManagement\SystemInit.aspx.cs">
+      <DependentUpon>SystemInit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\InitialManagement\SystemInit.aspx.designer.cs">
+      <DependentUpon>SystemInit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MessageManagement\Inbox.aspx.cs">
       <DependentUpon>Inbox.aspx</DependentUpon>
