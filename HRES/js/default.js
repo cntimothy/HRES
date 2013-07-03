@@ -16,29 +16,29 @@ function onReady() {
         return panel;
     }
 
-    // 点击全部展开按钮
-    btnExpandAll.on('click', function () {
-        if (IDS.menuType == "menu") {
-            mainMenu.expandAll();
-        } else {
-            var expandedPanel = getExpandedPanel();
-            if (expandedPanel) {
-                expandedPanel.items.itemAt(0).expandAll();
-            }
-        }
-    });
+//     点击全部展开按钮
+//    btnExpandAll.on('click', function () {
+//        if (IDS.menuType == "menu") {
+//            mainMenu.expandAll();
+//        } else {
+//            var expandedPanel = getExpandedPanel();
+//            if (expandedPanel) {
+//                expandedPanel.items.itemAt(0).expandAll();
+//            }
+//        }
+//    });
 
-    // 点击全部折叠按钮
-    btnCollapseAll.on('click', function () {
-        if (IDS.menuType == "menu") {
-            mainMenu.collapseAll();
-        } else {
-            var expandedPanel = getExpandedPanel();
-            if (expandedPanel) {
-                expandedPanel.items.itemAt(0).collapseAll();
-            }
-        }
-    });
+//     点击全部折叠按钮
+//    btnCollapseAll.on('click', function () {
+//        if (IDS.menuType == "menu") {
+//            mainMenu.collapseAll();
+//        } else {
+//            var expandedPanel = getExpandedPanel();
+//            if (expandedPanel) {
+//                expandedPanel.items.itemAt(0).collapseAll();
+//            }
+//        }
+//    });
 
     function createToolbar() {
 
@@ -49,18 +49,18 @@ function onReady() {
         }
 
         // 动态创建按钮
-        var sourcecodeButton = new Ext.Button({
-            text: "源代码",
-            type: "button",
-            cls: "x-btn-text-icon",
-            icon: "./icon/page_white_code.png",
-            listeners: {
-                click: function (button, e) {
-                    windowSourceCode.x_show('./common/source.aspx?files=' + getCurrentIframeNode(button).attributes['src'].value, '源代码');
-                    e.stopEvent();
-                }
-            }
-        });
+//        var sourcecodeButton = new Ext.Button({
+//            text: "源代码",
+//            type: "button",
+//            cls: "x-btn-text-icon",
+//            icon: "./icon/page_white_code.png",
+//            listeners: {
+//                click: function (button, e) {
+//                    windowSourceCode.x_show('./common/source.aspx?files=' + getCurrentIframeNode(button).attributes['src'].value, '源代码');
+//                    e.stopEvent();
+//                }
+//            }
+//        });
 
         var openNewWindowButton = new Ext.Button({
             text: '新标签页中打开',
@@ -75,22 +75,22 @@ function onReady() {
             }
         });
 
-        var refreshButton = new Ext.Button({
-            text: '刷新',
-            type: "button",
-            cls: "x-btn-text-icon",
-            icon: "./icon/reload.png",
-            listeners: {
-                click: function (button, e) {
-                    getCurrentIframeNode(button).contentWindow.location.reload(); //.replace(href);
-                    e.stopEvent();
-                }
-            }
-        });
+//        var refreshButton = new Ext.Button({
+//            text: '刷新',
+//            type: "button",
+//            cls: "x-btn-text-icon",
+//            icon: "./icon/reload.png",
+//            listeners: {
+//                click: function (button, e) {
+//                    getCurrentIframeNode(button).contentWindow.location.reload(); //.replace(href);
+//                    e.stopEvent();
+//                }
+//            }
+//        });
 
-        return new Ext.Toolbar({
-            items: ['->', sourcecodeButton, '-', refreshButton, '-', openNewWindowButton]
-        });
+//        return new Ext.Toolbar({
+//            items: ['->', sourcecodeButton, '-', refreshButton, '-', openNewWindowButton]
+//        });
     }
 
 
