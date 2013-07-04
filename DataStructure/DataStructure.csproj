@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessLevel.cs" />
     <Compile Include="DocStatus.cs" />
     <Compile Include="PostBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
