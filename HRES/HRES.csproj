@@ -1871,13 +1871,14 @@
     <Content Include="Pages\EvaluateTableManagement\MakeEvaluateTable.aspx" />
     <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\EvaluationResult.aspx" />
+    <Content Include="Pages\EvaluationManagement\MessagePlatform.aspx" />
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
     <Content Include="Pages\EvaluatorManagement\CheckEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\MakeEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
-    <Content Include="Pages\InitialManagement\SystemInit.aspx" />
+    <Content Include="Pages\SystemManagement\SystemInit.aspx" />
     <Content Include="Pages\MessageManagement\Inbox.aspx" />
     <Content Include="Pages\MessageManagement\NewMessage.aspx" />
     <Content Include="Pages\MessageManagement\Outbox.aspx" />
@@ -1951,6 +1952,13 @@
     <Compile Include="Pages\EvaluationManagement\EvaluationResult.aspx.designer.cs">
       <DependentUpon>EvaluationResult.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.cs">
+      <DependentUpon>MessagePlatform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.designer.cs">
+      <DependentUpon>MessagePlatform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EvaluationManagement\StartEvaluation.aspx.cs">
       <DependentUpon>StartEvaluation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1993,11 +2001,11 @@
     <Compile Include="Pages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\InitialManagement\SystemInit.aspx.cs">
+    <Compile Include="Pages\SystemManagement\SystemInit.aspx.cs">
       <DependentUpon>SystemInit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\InitialManagement\SystemInit.aspx.designer.cs">
+    <Compile Include="Pages\SystemManagement\SystemInit.aspx.designer.cs">
       <DependentUpon>SystemInit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\MessageManagement\Inbox.aspx.cs">

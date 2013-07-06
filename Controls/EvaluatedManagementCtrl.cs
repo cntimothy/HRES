@@ -9,7 +9,7 @@ namespace Controls
     public static class EvaluatedManagementCtrl
     {   
         /// <summary>
-        /// 返回所有被考评人信息（ID, date, Name, Sex, Department, Job, IdentifyNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
+        /// 返回所有被考评人信息（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
         /// </summary>
         ///  <param name="dt">包含被考评人的表</param>
         /// <param name="exception">异常信息</param>
@@ -20,7 +20,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门返回被考评人信息（ID, date, Name, Sex, Department, Job, IdentifyNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
+        /// 根据部门返回被考评人信息（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
         /// </summary>
         ///  <param name="dt">包含被考评人的表</param>
         /// <param name="depart">部门</param>
@@ -60,6 +60,16 @@ namespace Controls
         /// <param name="exception"></param>
         /// <returns>删除成功返回true，否则返回false</returns>
         public static bool Delete(string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 删除所有被考评人
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns>删除成功返回true，否则返回false</returns>
+        public static bool DeleteAll(ref string exception)
         {
             return true;
         }

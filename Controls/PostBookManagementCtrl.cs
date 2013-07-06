@@ -10,7 +10,7 @@ namespace Controls
     public static class PostBookManagementCtrl
     {
         /// <summary>
-        /// 返回所有被考评人信息，包括审核意见和状态（ID, Name, Sex, Department, Telephone, Email, Job, Fund, Character, Company, StartTime, StopTime, Comment, Status）
+        /// 返回所有被考评人信息，包括审核意见和状态（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Comment, Status）
         /// </summary>
         /// <param name="dt">包含所需信息的表</param>
         /// <param name="exception"></param>
@@ -21,7 +21,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门返回所有被考评人信息，包括审核意见和状态（ID, Name, Sex, Department, Telephone, Email, Job, Fund, Character, Company, StartTime, StopTime, Comment, Status）
+        /// 根据部门返回所有被考评人信息，包括审核意见和状态（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Comment, Status）
         /// </summary>
         /// <param name="dt">包含所需信息的表</param>
         /// <param name="depart">部门</param>

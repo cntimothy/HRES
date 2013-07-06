@@ -37,6 +37,8 @@
     </TreeNode>
     <TreeNode Text="考评" NavigateUrl="~/Pages/EvaluationManagement/Evaluate.aspx" >
     </TreeNode>
+    <TreeNode Text="短信平台" NavigateUrl="~/Pages/EvaluationManagement/MessagePlatform.aspx" >
+    </TreeNode>
   </TreeNode>
   <TreeNode Text="邮件系统" SingleClickExpand="true">
     <TreeNode Text="新邮件" NavigateUrl="~/Pages/MessageManagement/NewMessage.aspx" >
@@ -58,8 +60,8 @@
     <TreeNode Text="更改密码" NavigateUrl="~/Pages/AccountManagement/ChangePassword.aspx" >
     </TreeNode>
   </TreeNode>
-  <TreeNode Text="初始化管理" SingleClickExpand="true">
-    <TreeNode Text="系统初始化" NavigateUrl="~/Pages/InitialManagement/SystemInit.aspx" >
+  <TreeNode Text="系统管理" SingleClickExpand="true">
+    <TreeNode Text="系统初始化" NavigateUrl="~/Pages/SystemManagement/SystemInit.aspx" >
     </TreeNode>
   </TreeNode>
 </Tree>

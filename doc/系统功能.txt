@@ -17,6 +17,7 @@
 	b)	结束考评——系级(StopEvaluation)
 	c)	考评结果——人事处(EvaluationResult)
 	d)	考评——考评人(Evaluate)
+	f)  短信平台——人事处（MessagePlatform）
 7.	邮件管理(MessageManagement)
 	a)	新邮件——所有(NewMessage)
 	b)	发件箱——所有(Inbox)
@@ -29,5 +30,5 @@
 	a)  错误页——所有(Error)
 11. 账户管理————所有（AccountManagement）
 	a） 更改密码（ChangePassword）
-12. 初始化管理————人事处（InitialManagement）
+12. 系统管理————人事处（SystemManagement）
 	a） 系统初始化(SystemInit)
