@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using DataStructure;
 
 namespace Controls
 {
@@ -71,6 +72,86 @@ namespace Controls
         public static bool GetworkContntRequest(string ID, ref List<string[]> workContentRequest, ref string exception)
         {
             return true;
+        }
+
+        /// <summary>
+        /// 根据被考评人ID查询考评表，查询成功（存在考核表）返回true，否则返回false；
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="evaluateTable">考核表</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetEvaluateTable(string ID, ref EvaluateTable evaluateTable, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 更新考核表，更新成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="evaluateTable">考核表</param>
+        /// <param name="status">考核表状态</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool UpdateEvaluateTable(string ID, EvaluateTable evaluateTable, DocStatus status, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 更新审核意见，更新成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="Comment">审核意见</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool UpdateComment(string ID, string Comment, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 设置审核通过，设置成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool SetPass(string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 设置审核退回，设置成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool SetReturned(string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 根据被考评人ID删除考评表，删除成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool Delete(string ID, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 删除所有考评表，删除成功返回true，否则返回false
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool DeleteAll(ref string exception)
+        {
+            return false;
         }
     }
 }

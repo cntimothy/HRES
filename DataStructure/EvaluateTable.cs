@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataStructure
 {
-    class EvaluateTable
+    public class EvaluateTable
     {
         #region Private Field
         string postName;                                    //岗位名称（岗位责任书）

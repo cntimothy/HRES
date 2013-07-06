@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EvaluatedManagementCtrl.cs" />
-    <Compile Include="EvaluatedTableManagementCtrl.cs" />
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="PostBookManagementCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
