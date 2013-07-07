@@ -40,15 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountManagement.cs" />
     <Compile Include="EvaluatedManagementCtrl.cs" />
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />
     <Compile Include="EvaluatorManagementCtrl.cs" />
     <Compile Include="FirstManagement.cs" />
+    <Compile Include="LoginManagement.cs" />
     <Compile Include="PostBookManagementCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuotaManagementCtrl.cs" />
     <Compile Include="SecondManagementCtrl.cs" />
+    <Compile Include="SystemManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataStructure\DataStructure.csproj">
