@@ -44,6 +44,7 @@
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />
     <Compile Include="EvaluatorManagementCtrl.cs" />
+    <Compile Include="FirstManagement.cs" />
     <Compile Include="PostBookManagementCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuotaManagementCtrl.cs" />
