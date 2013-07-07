@@ -43,9 +43,11 @@
     <Compile Include="AccessLevel.cs" />
     <Compile Include="DocStatus.cs" />
     <Compile Include="EvaluateTable.cs" />
+    <Compile Include="Evaluator.cs" />
     <Compile Include="PostBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuotaLib.cs" />
+    <Compile Include="Relation.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

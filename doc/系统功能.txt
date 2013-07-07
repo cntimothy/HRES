@@ -12,6 +12,7 @@
 5.	考评人管理(EvaluatorManagement)
 	a)	制作考评人名单——系级(MakeEvaluator)
 	b)	审核考评人名单——人事处(CheckEvaluator)
+	c)  上传备选考评人名单——系级（UploadSelectableEvaluator）
 6.	考评管理(EvaluationManagement)
 	a)	开始考评——人事处(StartEvaluation)
 	b)	结束考评——系级(StopEvaluation)
@@ -32,3 +33,4 @@
 	a） 更改密码（ChangePassword）
 12. 系统管理————人事处（SystemManagement）
 	a） 系统初始化(SystemInit)
+13. 登录

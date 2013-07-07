@@ -1876,6 +1876,7 @@
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
     <Content Include="Pages\EvaluatorManagement\CheckEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\MakeEvaluator.aspx" />
+    <Content Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\SystemManagement\SystemInit.aspx" />
@@ -1986,6 +1987,13 @@
     </Compile>
     <Compile Include="Pages\EvaluatorManagement\MakeEvaluator.aspx.designer.cs">
       <DependentUpon>MakeEvaluator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx.cs">
+      <DependentUpon>UploadSelectableEvaluator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx.designer.cs">
+      <DependentUpon>UploadSelectableEvaluator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\FirstManagement\ResetFirst.aspx.cs">
       <DependentUpon>ResetFirst.aspx</DependentUpon>
