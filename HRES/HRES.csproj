@@ -1841,6 +1841,25 @@
     <Content Include="images\filetype\vs_xml.png" />
     <Content Include="images\icons.gif" />
     <Content Include="images\ico_24_grsz.gif" />
+    <Content Include="images\Login\bg.gif" />
+    <Content Include="images\Login\btnlogin.gif" />
+    <Content Include="images\Login\code.gif" />
+    <Content Include="images\Login\login_01.gif" />
+    <Content Include="images\Login\login_02.gif" />
+    <Content Include="images\Login\login_03.gif" />
+    <Content Include="images\Login\login_04.gif" />
+    <Content Include="images\Login\login_05.gif" />
+    <Content Include="images\Login\login_06.gif" />
+    <Content Include="images\Login\login_07.gif" />
+    <Content Include="images\Login\login_08.gif" />
+    <Content Include="images\Login\login_09.gif" />
+    <Content Include="images\Login\login_10.gif" />
+    <Content Include="images\Login\login_11.gif" />
+    <Content Include="images\Login\login_12.gif" />
+    <Content Include="images\Login\login_13.gif" />
+    <Content Include="images\Login\login_14.gif" />
+    <Content Include="images\Login\logo.gif" />
+    <Content Include="images\Login\txt.gif" />
     <Content Include="images\logo\favicon.gif" />
     <Content Include="images\logo\favicon.ico" />
     <Content Include="images\logo\favicon.png" />
@@ -1879,6 +1898,7 @@
     <Content Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\SystemManagement\SystemInit.aspx" />
     <Content Include="Pages\MessageManagement\Inbox.aspx" />
     <Content Include="Pages\MessageManagement\NewMessage.aspx" />
@@ -1888,6 +1908,21 @@
     <Content Include="Pages\QuotaManagement\QuotaManagement.aspx" />
     <Content Include="Pages\SecondManagement\MakeSecond.aspx" />
     <Content Include="Pages\SecondManagement\ResetSecond.aspx" />
+    <Content Include="Style\alogin.css" />
+    <Content Include="Style\CheckPost.css" />
+    <Content Include="Style\common.css" />
+    <Content Include="Style\EvaluatorTable.css" />
+    <Content Include="Style\ligerui-all.css" />
+    <Content Include="Style\ligerui-common.css" />
+    <Content Include="Style\ligerui-dialog.css" />
+    <Content Include="Style\ligerui-form.css" />
+    <Content Include="Style\ligerui-grid.css" />
+    <Content Include="Style\ligerui-layout.css" />
+    <Content Include="Style\ligerui-menu.css" />
+    <Content Include="Style\ligerui-tab.css" />
+    <Content Include="Style\ligerui-tree.css" />
+    <Content Include="Style\ManagerHome.css" />
+    <Content Include="Style\PostBook.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2008,6 +2043,13 @@
     </Compile>
     <Compile Include="Pages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\SystemManagement\SystemInit.aspx.cs">
       <DependentUpon>SystemInit.aspx</DependentUpon>

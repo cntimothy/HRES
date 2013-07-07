@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Controls
 {
-    public static class SystemManagement
+    public static class SystemManagementCtrl
     {
         /// <summary>
         /// 初始化系统，设置成功返回true，否则返回false

@@ -6,7 +6,7 @@ using System.Data;
 
 namespace Controls
 {
-    public static class FirstManagement
+    public static class FirstManagementCtrl
     {
         /// <summary>
         /// 查询人事处管理员ID，不为空返回true，否则返回false

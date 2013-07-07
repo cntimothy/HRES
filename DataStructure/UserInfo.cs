@@ -32,6 +32,12 @@ namespace DataStructure
             get { return accessLevel; }
             set { accessLevel = value; }
         }
+
+        public string Depart
+        {
+            get { return depart; }
+            set { depart = value; }
+        }
         #endregion
     }
 }

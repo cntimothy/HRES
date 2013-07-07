@@ -6,7 +6,7 @@ using DataStructure;
 
 namespace Controls
 {
-    public static class LoginManagement
+    public static class LoginManagementCtrl
     {
         /// <summary>
         /// 登录，登录成功返回true，否则返回false
@@ -19,16 +19,10 @@ namespace Controls
         /// <returns></returns>
         public static bool LoginIn(ref UserInfo userInfo, string ID, string passWord, LoginType loginType, ref string exception)
         {
-            return true;
-        }
-
-        /// <summary>
-        /// 注销。注销成功返回true，否则返回false
-        /// </summary>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool LoginOut(ref string exception)
-        {
+            userInfo.Id = "admin1";
+            userInfo.Name = "Kaven";
+            userInfo.Depart = "人事处";
+            userInfo.AccessLevel = AccessLevel.superManager;
             return true;
         }
     }
