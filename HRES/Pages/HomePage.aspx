@@ -20,8 +20,14 @@
                             <a href="./HomePage.aspx" style="color: #fff;">360考核系统</a>
                         </div>
                         <div class="version">
-                            <x:Label ID="UserName" runat="server" Label="Label" Text="欢迎使用" CssStyle="color: #fff;">
-                            </x:Label>
+                            <ul class="list">
+                                <li class="list"><x:Label ID="UserName" runat="server" Label="Label" Text="" CssStyle="color: #fff;">
+                                </x:Label></li>
+                                <li class="list">&nbsp|&nbsp</li>
+                                <li class="list"><x:LinkButton ID="LoginOut" runat="server" Label="Label" Text="注销" ConfirmTitle="提示"
+                                    ConfirmText="确认注销？" OnClick="LoginOut_Click">
+                                </x:LinkButton></li>
+                            </ul>
                         </div>
                     </x:ContentPanel>
                 </Items>
@@ -55,7 +61,8 @@
                                 <Items>
                                     <x:ContentPanel ID="ContentPanel2" ShowBorder="false" BodyPadding="10px" ShowHeader="false"
                                         AutoScroll="true" CssClass="intro" runat="server">
-                                        <p>欢迎使用</p>
+                                        <p>
+                                            欢迎使用</p>
                                     </x:ContentPanel>
                                 </Items>
                             </x:Tab>
@@ -65,7 +72,8 @@
             </x:Region>
         </Regions>
     </x:RegionPanel>
-    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="../common/menu.xml"></asp:XmlDataSource>
+    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="../common/menu.xml">
+    </asp:XmlDataSource>
     </form>
     <script src="../js/default.js" type="text/javascript"></script>
 </body>

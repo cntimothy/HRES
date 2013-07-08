@@ -122,14 +122,20 @@ namespace HRES.Pages
         {
             if (!IsPostBack)
             {
+                UserName.Text += (string)Session["UserName"];
             }
         }
-
         #endregion
 
         #region Event
-
-        
+        public void LoginOut_Click(object sender, EventArgs e)
+        {
+            Session["UserID"] = "";
+            Session["UserName"] = "";
+            Session["AccessLevel"] = "";
+            Session["Depart"] = "";
+            Response.Redirect("Login.aspx");
+        }
 
         private string GetSelectedMenuID(MenuButton menuButton)
         {
