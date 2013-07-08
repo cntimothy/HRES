@@ -1,0 +1,4 @@
+2013/7/8 Additional interface
+EvaluationManagementCtrl
+	public static bool GetEvaluationSummary(DataTable table, ref string exception)
+	public static bool GetEvaluationSummaryByDepart(DataTable table, string depart, ref string exception)
