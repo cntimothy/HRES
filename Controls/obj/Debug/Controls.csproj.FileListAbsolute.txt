@@ -1,0 +1,7 @@
+F:\projects\HRES\Controls\bin\Debug\Controls.dll
+F:\projects\HRES\Controls\bin\Debug\Controls.pdb
+F:\projects\HRES\Controls\bin\Debug\DataStructure.dll
+F:\projects\HRES\Controls\bin\Debug\DataStructure.pdb
+F:\projects\HRES\Controls\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\HRES\Controls\obj\Debug\Controls.dll
+F:\projects\HRES\Controls\obj\Debug\Controls.pdb

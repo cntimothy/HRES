@@ -1,0 +1,5 @@
+F:\projects\HRES\DataStructure\bin\Debug\DataStructure.dll
+F:\projects\HRES\DataStructure\bin\Debug\DataStructure.pdb
+F:\projects\HRES\DataStructure\obj\Debug\ResolveAssemblyReference.cache
+F:\projects\HRES\DataStructure\obj\Debug\DataStructure.dll
+F:\projects\HRES\DataStructure\obj\Debug\DataStructure.pdb
