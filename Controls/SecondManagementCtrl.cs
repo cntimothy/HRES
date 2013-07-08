@@ -9,18 +9,29 @@ namespace Controls
     public static class SecondManagementCtrl
     {
         /// <summary>
-        /// 返回系级管理员信息（ID, PassWord， Department）
+        /// 返回系级管理员信息（ID, PassWord， Name, Department）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="exception">异常信息</param>
         /// <return>若dt为空，返回false；否则返回true</return></returns>
         public static bool GetAll(ref DataTable dt, ref string exception)
         {
+            dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("PassWord");
+            dt.Columns.Add("Department");
+            object[] values1 = new object[]{"13050", "刘瑾", "医学院"};
+            object[] values2 = new object[] { "09004", "李芳", "外国语学院" };
+            object[] values3 = new object[] { "11666559", "单洁敏", "人事处" };
+            dt.Rows.Add(values1);
+            dt.Rows.Add(values2);
+            dt.Rows.Add(values3);
             return true;
         }
 
         /// <summary>
-        /// 根据部门返回系级管理员信息（ID, PassWord， Department）
+        /// 根据部门返回系级管理员信息（ID, PassWord， Name, Department）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="depart">部门</param>
@@ -28,6 +39,16 @@ namespace Controls
         /// <returns>若dt为空，返回false；否则返回true</returns>
         public static bool GetAllByDepart(ref DataTable dt, string depart, ref string exception)
         {
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Name");
+            dt.Columns.Add("PassWord");
+            dt.Columns.Add("Department");
+            object[] values1 = new object[] { "13050", "刘瑾", "人事处" };
+            object[] values2 = new object[] { "09004", "李芳", "人事处" };
+            object[] values3 = new object[] { "11666559", "单洁敏", "人事处" };
+            dt.Rows.Add(values1);
+            dt.Rows.Add(values2);
+            dt.Rows.Add(values3);
             return true;
         }
 
@@ -39,6 +60,9 @@ namespace Controls
         /// <returns>列表为空，返回false， 否则返回true</returns>
         public static bool GetDeparts(ref List<string> departs, ref string exception)
         {
+            departs.Add("医学院");
+            departs.Add("外国语学院");
+            departs.Add("人事处");
             return true;
         }
 
@@ -89,7 +113,7 @@ namespace Controls
         /// 删除所有系级管理员
         /// </summary>
         /// <param name="exception"></param>
-        /// <returns>删除曾工返回true，否则返回false</returns>
+        /// <returns>删除成功返回true，否则返回false</returns>
         public static bool DeleteAll(ref string exception)
         {
             return true;
