@@ -119,5 +119,27 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 查询考评情况汇总（ID， Name, Sex, Depart, Finished(已完成考评数)，Sum（总考评数）），table不为空返回true，否则返回false。
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetEvaluationSummary(DataTable table, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 根据部门查询考评情况汇总（ID， Name, Sex, Depart, Finished(已完成考评数)，Sum（总考评数）），table不为空返回true，否则返回false。
+        /// </summary>
+        /// <param name="table"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetEvaluationSummaryByDepart(DataTable table, ref string exception)
+        {
+            return true;
+        }
     }
 }
