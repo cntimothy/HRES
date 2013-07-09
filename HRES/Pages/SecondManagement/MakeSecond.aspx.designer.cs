@@ -40,24 +40,6 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// DepartDropDownList 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.DropDownList DepartDropDownList;
-        
-        /// <summary>
-        /// ToolbarText1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarText ToolbarText1;
-        
-        /// <summary>
         /// ExcelFile 控件。
         /// </summary>
         /// <remarks>
@@ -65,5 +47,41 @@ namespace HRES.Pages.SecondManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.FileUpload ExcelFile;
+        
+        /// <summary>
+        /// FilePath 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label FilePath;
+        
+        /// <summary>
+        /// Seperator1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator Seperator1;
+        
+        /// <summary>
+        /// Submit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Submit;
+        
+        /// <summary>
+        /// DepartDropDownList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList DepartDropDownList;
     }
 }

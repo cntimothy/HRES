@@ -25,8 +25,15 @@ namespace HRES.Pages.SecondManagement
             {
                 string fileName = ExcelFile.ShortFileName;
                 fileName = Server.MapPath("../../upload/" + fileName);
-                fileName = "";
+                ExcelFile.SaveAs(fileName);
+                FilePath.Text = fileName;
             }
+        }
+
+        public void Submit_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            SecondManagementCtrl.AddNewByExl(FilePath.Text, ref exception);
         }
         #endregion
 

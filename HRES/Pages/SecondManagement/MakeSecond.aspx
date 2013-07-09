@@ -26,7 +26,8 @@
         .mytoolbar .x-form-field-wrap
         {
             /* Only fileupload in toolbar */
-            height: 23px;
+            height:23px;
+            width:50px;
         }
         .mytoolbar .x-form-field
         {
@@ -42,15 +43,17 @@
     <Toolbars>
         <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server">
             <Items>
-                <x:DropDownList runat="server" ID="DepartDropDownList">
-                    </x:DropDownList>
-                <x:ToolbarText ID="ToolbarText1" runat=server Text="   "></x:ToolbarText>
-                <x:FileUpload runat="server" ID="ExcelFile" ButtonText="上传文件" ButtonOnly="true"
+                <x:FileUpload runat="server" ID="ExcelFile" ButtonText="选择Excel文件" ButtonOnly="true"
                         AutoPostBack="true" OnFileSelected="FileSelected">
                     </x:FileUpload>
+                <x:Label ID="FilePath" runat="server"></x:Label> 
+                <x:ToolbarSeparator ID="Seperator1" runat="server"></x:ToolbarSeparator>
+                <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="上传"></x:Button>
             </Items>
         </x:Toolbar>
-    </Toolbars>
+    </Toolbars>    
+                <x:DropDownList runat="server" ID="DepartDropDownList">
+                    </x:DropDownList>
     </form>
 </body>
 </html>
