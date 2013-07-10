@@ -61,6 +61,19 @@ namespace HRES.Pages.EvaluatedManagement
             }
         }
 
+        protected void DeleteAll_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            if (EvaluatedManagementCtrl.DeleteAll(ref exception))
+            {
+                Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("啥菜奴失败\n失败原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
+
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
             Grid1.PageIndex = e.NewPageIndex;

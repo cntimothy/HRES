@@ -103,6 +103,24 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.Button Submit;
         
         /// <summary>
+        /// ToolbarSeparator3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
+        
+        /// <summary>
+        /// DeleteAll 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button DeleteAll;
+        
+        /// <summary>
         /// Panel2 控件。
         /// </summary>
         /// <remarks>

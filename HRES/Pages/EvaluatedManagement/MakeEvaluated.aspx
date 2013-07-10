@@ -28,6 +28,10 @@
                     </x:ToolbarSeparator>
                     <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="开始上传" Enabled="false">
                     </x:Button>
+                    <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                    </x:ToolbarSeparator>
+                    <x:Button ID="DeleteAll" runat="server" OnClick="DeleteALl_Click" Text="删除所有" Enabled="true" ConfirmTitle="提示" ConfirmText = "确认删除所有被考评人？">
+                    </x:Button>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false" Layout="HBox"
