@@ -22,7 +22,8 @@
                 <Items>
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="700px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" AutoHeight="true" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
-                        EnableRowNumber="True" DataKeyNames="ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Comment, Status">
+                        EnableRowClickEvent="true" OnRowClick="Grid1_RowClick" EnableRowNumber="True"
+                        DataKeyNames="ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Status, Comment">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -57,8 +58,7 @@
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
                         </Columns>
                     </x:Grid>
-                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息"
-                        Width="300px">
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
                         <Items>
                             <x:Label runat="server" ID="LabID" Label="用户名" Text="">
                             </x:Label>
@@ -90,9 +90,9 @@
                             </x:Label>
                             <x:Label runat="server" ID="LabStopTime" Label="考评结束时间" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabStatus" Label="考评开始时间" Text="">
+                            <x:Label runat="server" ID="LabStatus" Label="状态" Text="">
                             </x:Label>
-                            <x:Label runat="server" ID="LabComment" Label="考评结束时间" Text="">
+                            <x:Label runat="server" ID="LabComment" Label="审核意见" Text="">
                             </x:Label>
                         </Items>
                     </x:SimpleForm>

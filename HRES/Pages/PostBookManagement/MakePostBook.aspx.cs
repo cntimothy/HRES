@@ -35,6 +35,11 @@ namespace HRES.Pages.PostBookManagement
             Grid1.PageIndex = e.NewPageIndex;
         }
 
+        protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
+        {
+            object[] keys = Grid1.DataKeys[e.RowIndex];
+            SetSimpleForm(keys);
+        }
 
         #endregion
 
@@ -47,9 +52,34 @@ namespace HRES.Pages.PostBookManagement
             DataTable table = new DataTable();
             if(PostBookManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
             {
-                Grid1.DataSource = table;
+                string sortField = "Status";
+                string sortDirection = "ASC";
+                DataView dv = table.DefaultView;
+                dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
+                Grid1.DataSource = dv;
                 Grid1.DataBind();
             }
+        }
+
+        private void SetSimpleForm(object[] keys)
+        {
+            LabID.Text = (string)keys[0];
+            LabDate.Text = (string)keys[1];
+            LabName.Text = (string)keys[2];
+            LabSex.Text = (string)keys[3];
+            LabDepart.Text = (string)keys[4];
+            LabJob.Text = (string)keys[5];
+            LabIDNo.Text = (string)keys[6];
+            LabBirthday.Text = (string)keys[7];
+            LabTelephone.Text = (string)keys[8];
+            LabEmail.Text = (string)keys[9];
+            LabFund.Text = (string)keys[10];
+            LabCharacter.Text = (string)keys[11];
+            LabCompany.Text = (string)keys[12];
+            LabStartTime.Text = (string)keys[13];
+            LabStopTime.Text = (string)keys[14];
+            LabStatus.Text = GetDocStatus(keys[15]);
+            LabComment.Text = (string)keys[16];
         }
         #endregion
     }
