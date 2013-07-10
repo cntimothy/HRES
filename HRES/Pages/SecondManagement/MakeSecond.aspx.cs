@@ -50,11 +50,13 @@ namespace HRES.Pages.SecondManagement
             string fileName = Server.MapPath("../../upload/" + FilePath.Text);
             if (EvaluatedManagementCtrl.AddNewByExl(fileName, ref exception))
             {
+                ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
                 BindSecondToGrid();
             }
             else
             {
+                ExcelFile.Reset();
                 Alert.ShowInTop("上传失败！\n失败原因：" + exception, MessageBoxIcon.Error);
             }
         }
