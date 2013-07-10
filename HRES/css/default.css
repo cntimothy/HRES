@@ -145,3 +145,8 @@
     /* fix for IE */
     float: left;
 }
+
+.mytoolbar
+{
+    width:100%;    
+}

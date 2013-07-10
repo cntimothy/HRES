@@ -181,7 +181,7 @@ namespace Controls
         public static bool GetDeparts(ref List<string> departs, ref string exception)
         {
             departs.Add("医学院");
-            departs.Add("外国语学院);
+            departs.Add("外国语学院");
             departs.Add("人事处");
             return true;
         }

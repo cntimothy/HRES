@@ -28,16 +28,27 @@ namespace HRES.Pages.SecondManagement
             if (ExcelFile.HasFile)
             {
                 string fileName = ExcelFile.ShortFileName;
-                FilePath.Text = "您选择的文件：" + fileName;
-                fileName = Server.MapPath("../../upload/" + fileName);
-                ExcelFile.SaveAs(fileName);
+                if (fileName.EndsWith(".xls"))
+                {
+                    FilePath.Text = fileName;
+                    fileName = Server.MapPath("../../upload/" + fileName);
+                    ExcelFile.SaveAs(fileName);
+                    Submit.Enabled = true;
+                }
+                else
+                {
+                    FilePath.Text = "不正确";
+                    Submit.Enabled = false;
+                    return;
+                }
             }
         }
 
         protected void Submit_Click(object sender, EventArgs e)
         {
             string exception = "";
-            if (SecondManagementCtrl.AddNewByExl(FilePath.Text, ref exception))
+            string fileName = Server.MapPath("../../upload/" + FilePath.Text);
+            if (EvaluatedManagementCtrl.AddNewByExl(fileName, ref exception))
             {
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
                 BindSecondToGrid();
