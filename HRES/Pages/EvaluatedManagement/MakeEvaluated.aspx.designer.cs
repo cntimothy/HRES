@@ -175,94 +175,94 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
-        /// labID 控件。
+        /// LabID 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labID;
+        protected global::FineUI.Label LabID;
         
         /// <summary>
-        /// labDate 控件。
+        /// LabDate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labDate;
+        protected global::FineUI.Label LabDate;
         
         /// <summary>
-        /// labName 控件。
+        /// LabName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labName;
+        protected global::FineUI.Label LabName;
         
         /// <summary>
-        /// labSex 控件。
+        /// LabSex 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labSex;
+        protected global::FineUI.Label LabSex;
         
         /// <summary>
-        /// labDepart 控件。
+        /// LabDepart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labDepart;
+        protected global::FineUI.Label LabDepart;
         
         /// <summary>
-        /// labJob 控件。
+        /// LabJob 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labJob;
+        protected global::FineUI.Label LabJob;
         
         /// <summary>
-        /// labIDNo 控件。
+        /// LabIDNo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labIDNo;
+        protected global::FineUI.Label LabIDNo;
         
         /// <summary>
-        /// labBirthday 控件。
+        /// LabBirthday 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labBirthday;
+        protected global::FineUI.Label LabBirthday;
         
         /// <summary>
-        /// labTelephone 控件。
+        /// LabTelephone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labTelephone;
+        protected global::FineUI.Label LabTelephone;
         
         /// <summary>
-        /// labEmail 控件。
+        /// LabEmail 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label labEmail;
+        protected global::FineUI.Label LabEmail;
         
         /// <summary>
         /// LabFund 控件。
@@ -308,14 +308,5 @@ namespace HRES.Pages.EvaluatedManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Label LabStopTime;
-        
-        /// <summary>
-        /// Label7 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label7;
     }
 }

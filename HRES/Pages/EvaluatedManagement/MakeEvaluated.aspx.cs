@@ -147,16 +147,16 @@ namespace HRES.Pages.EvaluatedManagement
 
         private void SetDetail(object[] keys)
         {
-            labID.Text = (string)keys[0];
-            labDate.Text = (string)keys[1];
-            labName.Text = (string)keys[2];
-            labSex.Text = (string)keys[3];
-            labDepart.Text = (string)keys[4];
-            labJob.Text = (string)keys[5];
-            labIDNo.Text = (string)keys[6];
-            labBirthday.Text = (string)keys[7];
-            labTelephone.Text = (string)keys[8];
-            labEmail.Text = (string)keys[9];
+            LabID.Text = (string)keys[0];
+            LabDate.Text = (string)keys[1];
+            LabName.Text = (string)keys[2];
+            LabSex.Text = (string)keys[3];
+            LabDepart.Text = (string)keys[4];
+            LabJob.Text = (string)keys[5];
+            LabIDNo.Text = (string)keys[6];
+            LabBirthday.Text = (string)keys[7];
+            LabTelephone.Text = (string)keys[8];
+            LabEmail.Text = (string)keys[9];
             LabFund.Text = (string)keys[10];
             LabCharacter.Text = (string)keys[11];
             LabCompany.Text = (string)keys[12];
