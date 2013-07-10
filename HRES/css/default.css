@@ -131,20 +131,6 @@
     z-index: 100000;
 }
 
-.photo
-{
-    height: 150px;
-    line-height: 150px;
-    text-align: right;
-}
-.photo img
-{
-    width: 200px;
-    vertical-align: middle;
-}
-
-
-
 .mytoolbar td
 {
     vertical-align: top;

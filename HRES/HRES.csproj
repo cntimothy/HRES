@@ -1907,7 +1907,6 @@
     <Content Include="Pages\PostBookManagement\CheckPostBook.aspx" />
     <Content Include="Pages\PostBookManagement\MakePostBook.aspx" />
     <Content Include="Pages\QuotaManagement\QuotaManagement.aspx" />
-    <Content Include="Pages\SecondManagement\ResetSecond.aspx" />
     <Content Include="Style\alogin.css" />
     <Content Include="Style\CheckPost.css" />
     <Content Include="Style\common.css" />
@@ -1932,6 +1931,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2106,13 +2108,6 @@
     </Compile>
     <Compile Include="Pages\QuotaManagement\QuotaManagement.aspx.designer.cs">
       <DependentUpon>QuotaManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SecondManagement\ResetSecond.aspx.cs">
-      <DependentUpon>ResetSecond.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\SecondManagement\ResetSecond.aspx.designer.cs">
-      <DependentUpon>ResetSecond.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

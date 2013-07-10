@@ -4,38 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style>
-        .photo
-        {
-            height: 150px;
-            line-height: 150px;
-            text-align: right;
-        }
-        .photo img
-        {
-            width: 200px;
-            vertical-align: middle;
-        }
-        
-        
-        
-        .mytoolbar td
-        {
-            vertical-align: top;
-        }
-        .mytoolbar .x-form-field-wrap
-        {
-            /* Only fileupload in toolbar */
-            height:23px;
-            width:50px;
-        }
-        .mytoolbar .x-form-field
-        {
-            /* fix for IE */
-            float: left;
-        }
-    </style>
-
+    <link href="../../css/default.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -43,17 +12,45 @@
     <Toolbars>
         <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server">
             <Items>
-                <x:FileUpload runat="server" ID="ExcelFile" ButtonText="选择Excel文件" ButtonOnly="true"
-                        AutoPostBack="true" OnFileSelected="FileSelected">
-                    </x:FileUpload>
-                <x:Label ID="FilePath" runat="server"></x:Label> 
-                <x:ToolbarSeparator ID="Seperator1" runat="server"></x:ToolbarSeparator>
-                <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="上传"></x:Button>
+                <x:FileUpload ID="ExcelFile" Label="Label" runat="server" ButtonText="选择Excel文件" ButtonOnly="true" AutoPostBack="true" OnFileSelected="FileSelected"></x:FileUpload>
+                <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server"></x:ToolbarSeparator>
+                <x:Label ID="FilePath" Text="" Label="Label" runat="server"></x:Label>
+                <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server"></x:ToolbarSeparator>
+                <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="开始上传"></x:Button>
             </Items>
         </x:Toolbar>
-    </Toolbars>    
-                <x:DropDownList runat="server" ID="DepartDropDownList">
+    </Toolbars> 
+    <div style="padding:5px">
+        <table>
+            <tr>
+                <td>
+                    <x:DropDownList runat="server" ID="DepartDropDownList" AutoPostBack="true" OnSelectedIndexChanged="DepartChange">
                     </x:DropDownList>
+                </td>
+                <td>
+                    &nbsp
+                </td>
+                <td>
+                    <x:Label ID="Label1" runat="server" Label="Label" Text="二级管理员名单:">
+                    </x:Label>
+                </td>
+            </tr>
+        </table>
+        <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
+        AllowPaging="true" runat="server" EnableCheckBoxSelect="false"  Width="600" DataKeyNames="ID, Name, Department"
+        OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
+        <Columns>
+            <x:BoundField Width="120px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+            <x:BoundField Width="120px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+            <x:BoundField Width="140px" DataField="Department" DataFormatString="{0}" HeaderText="部门" />
+            <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定删除？" ConfirmTarget="Top"
+                CommandName="Delete" Text="删除" />
+            <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定重置密码？" ConfirmTarget="Top"
+                CommandName="Reset" Text="重置密码" />
+        </Columns>
+    </x:Grid>
+
+    </div>
     </form>
 </body>
 </html>

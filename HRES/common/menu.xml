@@ -3,8 +3,6 @@
   <TreeNode Text="系级管理员管理" SingleClickExpand="true">
     <TreeNode Text="制作系级管理员名单" NavigateUrl="~/Pages/SecondManagement/MakeSecond.aspx">
     </TreeNode>
-    <TreeNode Text="系级管理员密码重置" NavigateUrl="~/Pages/SecondManagement/ResetSecond.aspx" >
-    </TreeNode>
   </TreeNode>
   <TreeNode Text="被考评人管理" SingleClickExpand="true">
     <TreeNode Text="制作被考评人名单" NavigateUrl="~/Pages/EvaluatedManagement/MakeEvaluated.aspx" >

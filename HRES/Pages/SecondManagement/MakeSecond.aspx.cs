@@ -5,10 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Controls;
+using DataStructure;
+using FineUI;
+using System.Data;
 
 namespace HRES.Pages.SecondManagement
 {
-    public partial class MakeSecond : System.Web.UI.Page
+    public partial class MakeSecond : PageBase
     {
         #region Public Method
         protected void Page_Load(object sender, EventArgs e)
@@ -16,25 +19,74 @@ namespace HRES.Pages.SecondManagement
             if (!IsPostBack)
             {
                 BindDepartListToDropDownList();
+                BindSecondToGrid();
             }
         }
 
-        public void FileSelected(object sender, EventArgs e)
+        protected void FileSelected(object sender, EventArgs e)
         {
             if (ExcelFile.HasFile)
             {
                 string fileName = ExcelFile.ShortFileName;
+                FilePath.Text = "您选择的文件：" + fileName;
                 fileName = Server.MapPath("../../upload/" + fileName);
                 ExcelFile.SaveAs(fileName);
-                FilePath.Text = fileName;
             }
         }
 
-        public void Submit_Click(object sender, EventArgs e)
+        protected void Submit_Click(object sender, EventArgs e)
         {
             string exception = "";
-            SecondManagementCtrl.AddNewByExl(FilePath.Text, ref exception);
+            if (SecondManagementCtrl.AddNewByExl(FilePath.Text, ref exception))
+            {
+                Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
+                BindSecondToGrid();
+            }
+            else
+            {
+                Alert.ShowInTop("上传失败！\n失败原因：" + exception, MessageBoxIcon.Error);
+            }
         }
+
+        protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
+        {
+            Grid1.PageIndex = e.NewPageIndex;
+        }
+
+        protected void DepartChange(object sender, EventArgs e)
+        {
+            BindSecondToGrid();
+        }
+
+        protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
+        {
+            string exception = "";
+            if (e.CommandName == "Delete")
+            {
+                object[] keys = Grid1.DataKeys[e.RowIndex];
+                if (SecondManagementCtrl.Delete((string)keys[0], ref exception))
+                {
+                    Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Alert.ShowInTop("删除失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+            if (e.CommandName == "Reset")
+            {
+                object[] keys = Grid1.DataKeys[e.RowIndex];
+                if (SecondManagementCtrl.ResetPassword((string)keys[0], ref exception))
+                {
+                    Alert.ShowInTop("重置成功！", MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Alert.ShowInTop("重置失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         #endregion
 
         #region Private Method
@@ -47,6 +99,29 @@ namespace HRES.Pages.SecondManagement
                 departs.Insert(0, "所有部门");
                 DepartDropDownList.DataSource = departs;
                 DepartDropDownList.DataBind();
+            }
+        }
+
+        private void BindSecondToGrid()
+        {
+            string exception = "";
+            DataTable table = new DataTable();
+            if (DepartDropDownList.SelectedValue == "所有部门")
+            {
+                if (SecondManagementCtrl.GetAll(ref table, ref exception))
+                {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
+            }
+            else
+            {
+                string depart = DepartDropDownList.SelectedValue;
+                if (SecondManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
+                {
+                    Grid1.DataSource = table;
+                    Grid1.DataBind();
+                }
             }
         }
         #endregion

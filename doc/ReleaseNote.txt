@@ -1,3 +1,10 @@
+2013/7/10 Modified interface
+SecondManagementCtrl
+	GetAll() 和GetAllByDepart() 返回的DataTable中删除了Password列
+
+
+
+
 2013/7/8 Additional interface
 EvaluationManagementCtrl
 	public static bool GetEvaluationSummary(DataTable table, ref string exception)

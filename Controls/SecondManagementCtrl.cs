@@ -9,7 +9,7 @@ namespace Controls
     public static class SecondManagementCtrl
     {
         /// <summary>
-        /// 返回系级管理员信息（ID, PassWord， Name, Department）
+        /// 返回系级管理员信息（ID， Name, Department）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="exception">异常信息</param>
@@ -19,7 +19,6 @@ namespace Controls
             dt = new DataTable();
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
-            dt.Columns.Add("PassWord");
             dt.Columns.Add("Department");
             object[] values1 = new object[]{"13050", "刘瑾", "医学院"};
             object[] values2 = new object[] { "09004", "李芳", "外国语学院" };
@@ -31,7 +30,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门返回系级管理员信息（ID, PassWord， Name, Department）
+        /// 根据部门返回系级管理员信息（ID, Name, Department）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="depart">部门</param>
@@ -41,7 +40,6 @@ namespace Controls
         {
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
-            dt.Columns.Add("PassWord");
             dt.Columns.Add("Department");
             object[] values1 = new object[] { "13050", "刘瑾", "人事处" };
             object[] values2 = new object[] { "09004", "李芳", "人事处" };

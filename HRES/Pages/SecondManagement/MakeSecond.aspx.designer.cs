@@ -49,6 +49,15 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.FileUpload ExcelFile;
         
         /// <summary>
+        /// ToolbarSeparator1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
+        
+        /// <summary>
         /// FilePath 控件。
         /// </summary>
         /// <remarks>
@@ -58,13 +67,13 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.Label FilePath;
         
         /// <summary>
-        /// Seperator1 控件。
+        /// ToolbarSeparator2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator Seperator1;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
         /// Submit 控件。
@@ -83,5 +92,23 @@ namespace HRES.Pages.SecondManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.DropDownList DepartDropDownList;
+        
+        /// <summary>
+        /// Label1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label1;
+        
+        /// <summary>
+        /// Grid1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Grid Grid1;
     }
 }
