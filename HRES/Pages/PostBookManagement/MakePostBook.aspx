@@ -20,9 +20,9 @@
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
                 Title="" CssStyle="width:100%" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
                 <Items>
-                    <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="700px" PageSize="20" ShowBorder="true"
+                    <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" AutoHeight="true" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
-                        EnableRowClickEvent="true" OnRowClick="Grid1_RowClick" EnableRowNumber="True"
+                        EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick" EnableRowNumber="True" AutoPostBack="true" 
                         DataKeyNames="ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Status, Comment">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
@@ -56,6 +56,8 @@
                                 </ItemTemplate>
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+                            <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakePostBook" Text="制作"
+                                ToolTip="制作岗位责任书" Title="制作" IFrameUrl="iframe_MakePostBook.aspx" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
@@ -100,6 +102,10 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window_MakePostBook" Title="弹出窗体" Popup="false" EnableIFrame="true" IFrameUrl="about:blank"
+        EnableMaximize="true" Target="Top" EnableResize="true" runat="server" OnClose="Window_MakePostBook_Close"
+        IsModal="true" Width="750px" EnableConfirmOnClose="true" Height="550px">
+    </x:Window>
     </form>
 </body>
 </html>

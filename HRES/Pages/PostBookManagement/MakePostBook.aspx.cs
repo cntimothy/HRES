@@ -8,6 +8,7 @@ using FineUI;
 using Controls;
 using DataStructure;
 using System.Data;
+using System.Net;
 
 namespace HRES.Pages.PostBookManagement
 {
@@ -38,7 +39,13 @@ namespace HRES.Pages.PostBookManagement
         protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
         {
             object[] keys = Grid1.DataKeys[e.RowIndex];
+            Session["EvaluatedID"] = keys[0];            
             SetSimpleForm(keys);
+        }
+
+        protected void Window_MakePostBook_Close(object sender, FineUI.WindowCloseEventArgs e)
+        {
+            BindEvaluatedToGrid();
         }
 
         #endregion
