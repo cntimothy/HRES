@@ -9,7 +9,7 @@ namespace Controls
     public static class EvaluatedManagementCtrl
     {   
         /// <summary>
-        /// 返回所有被考评人信息（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
+        /// 返回所有被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
         /// </summary>
         ///  <param name="dt">包含被考评人的表</param>
         /// <param name="exception">异常信息</param>
@@ -20,7 +20,7 @@ namespace Controls
             dt.Columns.Add("Date");
             dt.Columns.Add("Name");
             dt.Columns.Add("Sex");
-            dt.Columns.Add("Department");
+            dt.Columns.Add("Depart");
             dt.Columns.Add("Job");
             dt.Columns.Add("IDNo");
             dt.Columns.Add("Birthday");
@@ -85,7 +85,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门返回被考评人信息（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
+        /// 根据部门返回被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime）
         /// </summary>
         ///  <param name="dt">包含被考评人的表</param>
         /// <param name="depart">部门</param>
@@ -97,7 +97,7 @@ namespace Controls
             dt.Columns.Add("Date");
             dt.Columns.Add("Name");
             dt.Columns.Add("Sex");
-            dt.Columns.Add("Department");
+            dt.Columns.Add("Depart");
             dt.Columns.Add("Job");
             dt.Columns.Add("IDNo");
             dt.Columns.Add("Birthday");

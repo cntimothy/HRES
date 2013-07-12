@@ -48,7 +48,7 @@
                 <Items>
                     <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
                         AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="730px"
-                        DataKeyNames="ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime"
+                        DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowSelect="true" OnRowSelect="GridRowSelect"
                         EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
                         <Columns>
@@ -57,7 +57,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="100px" DataField="Department" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="100px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
                             <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
                             <x:BoundField Width="100px" DataField="IDNo" DataFormatString="{0}" HeaderText="身份证号"
                                 Hidden="true" />

@@ -10,9 +10,20 @@ namespace Controls
     public class EvaluationManagementCtrl
     {
         /// <summary>
-        /// 根据部门查询被考评人信息（ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
+        /// 查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
         /// </summary>
-        /// <param name="table">考评人信息</param>
+        /// <param name="table">被考评人信息</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetAll(ref DataTable table, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 根据部门查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
+        /// </summary>
+        /// <param name="table">被考评人信息</param>
         /// <param name="depart">部门</param>
         /// <param name="exception"></param>
         /// <returns></returns>
@@ -116,28 +127,6 @@ namespace Controls
         /// <param name="exception"></param>
         /// <returns></returns>
         public static bool SendMessage(List<string> IDs, ref string exception)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// 查询考评情况汇总（ID， Name, Sex, Depart, Finished(已完成考评数)，Sum（总考评数）），table不为空返回true，否则返回false。
-        /// </summary>
-        /// <param name="table"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool GetEvaluationSummary(DataTable table, ref string exception)
-        {
-            return true;
-        }
-
-        /// <summary>
-        /// 根据部门查询考评情况汇总（ID， Name, Sex, Depart, Finished(已完成考评数)，Sum（总考评数）），table不为空返回true，否则返回false。
-        /// </summary>
-        /// <param name="table"></param>
-        /// <param name="exception"></param>
-        /// <returns></returns>
-        public static bool GetEvaluationSummaryByDepart(DataTable table, ref string exception)
         {
             return true;
         }

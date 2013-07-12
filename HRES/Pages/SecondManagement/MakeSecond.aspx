@@ -43,12 +43,12 @@
             </tr>
         </table>
         <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
-        AllowPaging="true" runat="server" EnableCheckBoxSelect="false"  Width="600" DataKeyNames="ID, Name, Department"
+        AllowPaging="true" runat="server" EnableCheckBoxSelect="false"  Width="600" DataKeyNames="ID, Name, Depart"
         OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
         <Columns>
             <x:BoundField Width="120px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
             <x:BoundField Width="120px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-            <x:BoundField Width="140px" DataField="Department" DataFormatString="{0}" HeaderText="部门" />
+            <x:BoundField Width="140px" DataField="Depart" DataFormatString="{0}" HeaderText="部门" />
             <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定删除？" ConfirmTarget="Top"
                 CommandName="Delete" Text="删除" />
             <x:LinkButtonField HeaderText="&nbsp;" Width="100px" ConfirmText="确定重置密码？" ConfirmTarget="Top"

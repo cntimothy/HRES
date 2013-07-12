@@ -23,7 +23,7 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" AutoHeight="true" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Department, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Status, Comment">
+                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Status, Comment">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -31,7 +31,7 @@
                                 Hidden="true" />
                             <x:BoundField Width="50px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="40px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="80px" DataField="Department" DataFormatString="{0}" HeaderText="工作单位" />
+                            <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
                             <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
                             <x:BoundField Width="100px" DataField="IDNo" DataFormatString="{0}" HeaderText="身份证号"
                                 Hidden="true" />
