@@ -16,14 +16,7 @@ namespace HRES.Pages.PostBookManagement
         {
             if (!IsPostBack)
             {
-                if (Session["EvaluatedID"] == null)
-                {
-                    Alert.Show("null");
-                }
-                else
-                {
-                    Label1.Text = Session["EvaluatedID"].ToString();
-                }
+                Label1.Text = Request.QueryString["id"];
             }
 
         }

@@ -38,8 +38,7 @@ namespace HRES.Pages.PostBookManagement
 
         protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
         {
-            object[] keys = Grid1.DataKeys[e.RowIndex];
-            Session["EvaluatedID"] = keys[0];            
+            object[] keys = Grid1.DataKeys[e.RowIndex];         
             SetSimpleForm(keys);
         }
 
