@@ -1,3 +1,10 @@
+2013/7/13 Modified interface
+EvaluationManagementCtrl
+	增加了对不同年份考评的支持
+
+
+
+
 2013/7/10 Modified interface
 SecondManagementCtrl
 	GetAll() 和GetAllByDepart() 返回的DataTable中删除了Password列
