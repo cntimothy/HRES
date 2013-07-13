@@ -11,8 +11,8 @@ namespace DataStructure
     public enum Relation
     {
         leader,         //领导
-        coworker,       //同事
-        henchmen,       //下属
-        server          //服务对象
+        colleague,       //同事
+        subordinate,       //下属
+        services          //服务对象
     }
 }

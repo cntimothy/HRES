@@ -21,7 +21,7 @@ namespace DataStructure
         string personality;
         string phyCond;
         string workOutline;
-        List<string[]> workContntRequest;
+        List<string[]> workContentRequest;
         string power;
         string response;
         string directLeader;
@@ -166,10 +166,10 @@ namespace DataStructure
         /// <summary>
         /// 工作内容和要求
         /// </summary>
-        public List<string[]> WorkContntRequest
+        public List<string[]> WorkContentRequest
         {
-            get { return workContntRequest; }
-            set { workContntRequest = value; }
+            get { return workContentRequest; }
+            set { workContentRequest = value; }
         }
 
         /// <summary>

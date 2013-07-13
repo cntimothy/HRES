@@ -9,7 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-    <x:Label ID="Label1" runat="server" Label="Label" Text="te" ></x:Label>
-    </form>
+    <x:Panel ID="Panel1" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+        Title="Panel">
+        <Items>
+        </Items>
+    </x:Panel>
 </body>
 </html>

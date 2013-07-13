@@ -81,6 +81,18 @@ namespace Controls
         }
 
         /// <summary>
+        /// 根据被考评人ID查询岗位责任书，获取工作内容和要求。查询成功返回true，否则返回false
+        /// </summary>
+        /// <param name="ID">被考评人ID</param>
+        /// <param name="workContntRequest">工作内容和要求列表</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetworkContntRequest(string ID, ref List<string[]> workContentRequest, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
         /// 更新考核表，更新成功返回true，否则返回false
         /// </summary>
         /// <param name="ID">被考评人ID</param>

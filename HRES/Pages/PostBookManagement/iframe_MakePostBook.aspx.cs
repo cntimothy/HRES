@@ -16,7 +16,7 @@ namespace HRES.Pages.PostBookManagement
         {
             if (!IsPostBack)
             {
-                Label1.Text = Request.QueryString["id"];
+                
             }
 
         }
