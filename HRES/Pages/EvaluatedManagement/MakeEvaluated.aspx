@@ -50,7 +50,7 @@
                         AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="730px"
                         DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowSelect="true" OnRowSelect="GridRowSelect"
-                        EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
+                        EnableRowNumber="True" OnRowCommand="Grid1_RowCommand" >
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"

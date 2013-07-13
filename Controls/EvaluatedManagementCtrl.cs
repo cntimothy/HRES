@@ -183,7 +183,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 删除被考评人
+        /// 从本年的被考评人名单中删除所指定的被考评人
         /// </summary>
         /// <param name="ID">被考评人ID</param>
         /// <param name="exception"></param>
@@ -194,7 +194,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 删除所有被考评人
+        /// 从本年度的被考评人名单中删除所有被考评人
         /// </summary>
         /// <param name="exception"></param>
         /// <returns>删除成功返回true，否则返回false</returns>
