@@ -45,25 +45,23 @@
                         CssStyle="width:100%">
                         <Items>
                             <x:RadioButtonList ID="Radio_Employer" runat="server" ColumnNumber="1" Label="1.用人单位"
-                                Required="true" ColumnVertical="true">
-                                <x:RadioItem Text="上海市东凌国际人才有限公司" Value="0" Selected="true" />
-                                <x:RadioItem Text="上海黄渡同济人力资源有限公司" Value="1" />
+                                ColumnVertical="true">
+                                <x:RadioItem Text="上海市东凌国际人才有限公司" Value="上海市东凌国际人才有限公司" Selected="true" />
+                                <x:RadioItem Text="上海黄渡同济人力资源有限公司" Value="上海黄渡同济人力资源有限公司" />
                             </x:RadioButtonList>
-                            <x:TextBox ID="TextBox_LaborUnit" runat="server" Label="2.用工单位" Text="" Required="true"
-                                Width="300px">
+                            <x:TextBox ID="TextBox_LaborUnit" runat="server" Label="2.用工单位" Text="" Width="300px">
                             </x:TextBox>
-                            <x:TextBox ID="TextBox_LaborDepart" runat="server" Label="3.用工部门" Text="" Required="true"
-                                Width="300px">
+                            <x:TextBox ID="TextBox_LaborDepart" runat="server" Label="3.用工部门" Text="" Width="300px">
                             </x:TextBox>
-                            <x:TextBox ID="TextBox_PostName" runat="server" Label="4.岗位名称" Text="" Required="true"
-                                Width="300px">
+                            <x:TextBox ID="TextBox_PostName" runat="server" Label="4.岗位名称" Text="" Width="300px">
                             </x:TextBox>
                             <x:RadioButtonList ID="Radio_PostType" runat="server" ColumnVertical="false" Label="5.岗位类别"
-                                Required="true" Width="300px">
-                                <x:RadioItem Text="管理" Value="0" Selected="true" />
-                                <x:RadioItem Text="教辅" Value="1" />
-                                <x:RadioItem Text="思政" Value="2" />
-                                <x:RadioItem Text="教师" Value="3" />
+                                Width="300px">
+                                <x:RadioItem Text="管理" Value="管理" Selected="true" />
+                                <x:RadioItem Text="教辅" Value="教辅" />
+                                <x:RadioItem Text="思政" Value="思政" />
+                                <x:RadioItem Text="教师" Value="教师" />
+                                <x:RadioItem Text="工勤" Value="工勤" />
                             </x:RadioButtonList>
                         </Items>
                     </x:SimpleForm>
@@ -73,23 +71,23 @@
                             <x:SimpleForm ID="SimpleForm2" runat="server" BodyPadding="5px" Title="（一）任职条件" CssStyle="width:100%"
                                 ShowBorder="true">
                                 <Items>
-                                    <x:TextArea ID="TextBox_EduBg" runat="server" Label="1.学历背景" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_EduBg" runat="server" Label="1.学历背景" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextBox_Certificate" runat="server" Label="2.培训及资历" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_Certificate" runat="server" Label="2.培训及资历" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextBox_Experience" runat="server" Label="3.工作经验" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_Experience" runat="server" Label="3.工作经验" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextBox_Skill" runat="server" Label="4.基本技能和素质" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_Skill" runat="server" Label="4.基本技能和素质" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextBox_Personality" runat="server" Label="5.个性特征" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_Personality" runat="server" Label="5.个性特征" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
-                                    <x:TextArea ID="TextBox_PhyCond" runat="server" Label="6.体质条件" Text="" Required="true"
-                                        CssStyle="width:100%">
+                                    <x:TextArea ID="TextArea_PhyCond" runat="server" Label="6.体质条件" Text="" CssStyle="width:100%"
+                                        AutoGrowHeight="true">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -99,8 +97,8 @@
                                     <x:Panel ID="Panel5" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                                         CssStyle="width:100%" Title="1.岗位概述">
                                         <Items>
-                                            <x:TextArea ID="TextArea_WorkOutline" runat="server" Label="" Text="" Required="true"
-                                                CssStyle="width:97%">
+                                            <x:TextArea ID="TextArea_WorkOutline" runat="server" Label="" Text="" CssStyle="width:97%"
+                                                AutoGrowHeight="true">
                                             </x:TextArea>
                                         </Items>
                                     </x:Panel>
@@ -125,15 +123,16 @@
                                     <x:Panel ID="Panel8" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                                         CssStyle="width:100%" Title="1.权利">
                                         <Items>
-                                            <x:TextArea ID="TextArea_Power" runat="server" Label="" Text="" Required="true" CssStyle="width:97%">
+                                            <x:TextArea ID="TextArea_Power" runat="server" Label="" Text="" CssStyle="width:97%"
+                                                AutoGrowHeight="true">
                                             </x:TextArea>
                                         </Items>
                                     </x:Panel>
                                     <x:Panel ID="Panel9" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                                         CssStyle="width:100%" Title="2.责任">
                                         <Items>
-                                            <x:TextArea ID="TextArea_Response" runat="server" Label="" Text="" Required="true"
-                                                CssStyle="width:97%">
+                                            <x:TextArea ID="TextArea_Response" runat="server" Label="" Text="" CssStyle="width:97%"
+                                                AutoGrowHeight="true">
                                             </x:TextArea>
                                         </Items>
                                     </x:Panel>
@@ -147,7 +146,7 @@
                                     </x:TextBox>
                                     <x:TextBox ID="TextBox_Colleague" runat="server" Label="3.同事" Text="">
                                     </x:TextBox>
-                                    <x:TextBox ID="TextBox_Service" runat="server" Label="4.服务对象" Text="">
+                                    <x:TextBox ID="TextBox_Services" runat="server" Label="4.服务对象" Text="">
                                     </x:TextBox>
                                     <x:TextBox ID="TextBox_Relations" runat="server" Label="5.外部关系" Text="">
                                     </x:TextBox>
@@ -157,7 +156,7 @@
                                 Title="（五）工作环境">
                                 <Items>
                                     <x:TextArea ID="TextArea_WorkEnter" runat="server" Height="50px" Label="Label" Text=""
-                                        CssStyle="width:97%">
+                                        CssStyle="width:97%" AutoGrowHeight="true">
                                     </x:TextArea>
                                 </Items>
                             </x:Panel>

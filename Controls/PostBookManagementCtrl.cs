@@ -172,7 +172,7 @@ namespace Controls
         public static bool GetPostBook(ref PostBook pb, string evaluatedID, ref string exception)
         {
             pb.EvaluatedID = evaluatedID;
-            pb.Employer = "上海市东陵国际人才有限公司";
+            pb.Employer = "上海市东凌国际人才有限公司";
             pb.LaborUnit = "同济大学高等研究院";
             pb.LaborDepart = "高等研究院办公室";
             pb.PostName = "人事助理";

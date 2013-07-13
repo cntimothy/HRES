@@ -229,58 +229,58 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.SimpleForm SimpleForm2;
         
         /// <summary>
-        /// TextBox_EduBg 控件。
+        /// TextArea_EduBg 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_EduBg;
+        protected global::FineUI.TextArea TextArea_EduBg;
         
         /// <summary>
-        /// TextBox_Certificate 控件。
+        /// TextArea_Certificate 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_Certificate;
+        protected global::FineUI.TextArea TextArea_Certificate;
         
         /// <summary>
-        /// TextBox_Experience 控件。
+        /// TextArea_Experience 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_Experience;
+        protected global::FineUI.TextArea TextArea_Experience;
         
         /// <summary>
-        /// TextBox_Skill 控件。
+        /// TextArea_Skill 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_Skill;
+        protected global::FineUI.TextArea TextArea_Skill;
         
         /// <summary>
-        /// TextBox_Personality 控件。
+        /// TextArea_Personality 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_Personality;
+        protected global::FineUI.TextArea TextArea_Personality;
         
         /// <summary>
-        /// TextBox_PhyCond 控件。
+        /// TextArea_PhyCond 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextArea TextBox_PhyCond;
+        protected global::FineUI.TextArea TextArea_PhyCond;
         
         /// <summary>
         /// Panel4 控件。
@@ -427,13 +427,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.TextBox TextBox_Colleague;
         
         /// <summary>
-        /// TextBox_Service 控件。
+        /// TextBox_Services 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.TextBox TextBox_Service;
+        protected global::FineUI.TextBox TextBox_Services;
         
         /// <summary>
         /// TextBox_Relations 控件。

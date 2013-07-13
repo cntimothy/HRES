@@ -36,9 +36,105 @@ namespace HRES.Pages.PostBookManagement
             string name = Request.QueryString["name"];
             PostBook pb = new PostBook();
             if (PostBookManagementCtrl.GetPostBook(ref pb, evaluatedID, ref exception))
-            { 
-                
+            {
+
+                foreach (string[] content in pb.WorkContentRequest)
+                {
+                    if (content.Length != 4)
+                    {
+                        return;
+                    }
+                }
+                string evaluatedName = Request.QueryString["name"];
+                Panel1.Title = evaluatedName + "的" + Panel1.Title;
+
+                Radio_Employer.SelectedValue = pb.Employer;
+                TextBox_LaborUnit.Text = pb.LaborUnit;
+                TextBox_LaborDepart.Text = pb.LaborDepart;
+                TextBox_PostName.Text = pb.PostName;
+                Radio_PostType.SelectedValue = pb.PostType;
+                TextArea_EduBg.Text = pb.EduBg;
+                TextArea_Certificate.Text = pb.Certificate;
+                TextArea_Experience.Text = pb.Experience;
+                TextArea_Skill.Text = pb.Skill;
+                TextArea_Personality.Text = pb.Personality;
+                TextArea_PhyCond.Text = pb.PhyCond;
+                TextArea_WorkOutline.Text = pb.WorkOutline;
+                TextArea_Power.Text = pb.Power;
+                TextArea_Response.Text = pb.Response;
+                TextBox_DirectLeader.Text = pb.DirectLeader;
+                TextBox_Subordinate.Text = pb.Subordinate;
+                TextBox_Colleague.Text = pb.Colleague;
+                TextBox_Services.Text = pb.Services;
+                TextBox_Relations.Text = pb.Relations;
+                TextArea_WorkEnter.Text = pb.WorkEnter;
+                TextArea_PostAssess.Text = pb.PostAssess;
+                TextArea_Others.Text = pb.Others;
+
+                addWorkContentRequest(pb.WorkContentRequest);
             }
+        }
+
+        private void addWorkContentRequest(List<string[]> workContentRequest)
+        {
+            for (int i = 0; i < workContentRequest.Count; i++)
+            {
+                TextArea[] tas = genTextAreas(workContentRequest[i], i);
+                SimpleForm sf = new SimpleForm();
+                sf.ID = "SimpleForm_WorkContentRequest" + i;
+                sf.BodyPadding = "5px";
+                sf.CssStyle = "width:100%";
+                sf.ShowBorder = true;
+                sf.ShowHeader = false;
+                sf.Items.Add(tas[0]);
+                sf.Items.Add(tas[1]);
+                sf.Items.Add(tas[2]);
+                sf.Items.Add(tas[3]);
+                Panel6.Items.Add(sf);
+            }
+        }
+
+        private TextArea[] genTextAreas(string[] content, int i)
+        {
+            TextArea[] tas = new TextArea[4];
+
+            TextArea ta0 = new TextArea();
+            ta0.ID = "TextArea_WorkContentRequest_Title" + Convert.ToString(i);
+            ta0.Label = "标题";
+            ta0.Text = content[0];
+            ta0.CssStyle = "width:100%";
+            ta0.AutoGrowHeight = true;
+
+
+            TextArea ta1 = new TextArea();
+            ta1.ID = "TextArea_WorkContentRequest_Content" + Convert.ToString(i);
+            ta1.Label = "具体内容";
+            ta1.Text = content[1];
+            ta1.CssStyle = "width:100%";
+            ta1.AutoGrowHeight = true;
+
+
+            TextArea ta2 = new TextArea();
+            ta2.ID = "TextArea_WorkContentRequest_Request" + Convert.ToString(i);
+            ta2.Label = "具体要求";
+            ta2.Text = content[2];
+            ta2.CssStyle = "width:100%";
+            ta2.AutoGrowHeight = true;
+
+
+            TextArea ta3 = new TextArea();
+            ta3.ID = "TextArea_WorkContentRequest_Point" + Convert.ToString(i);
+            ta3.Label = "考核要点";
+            ta3.Text = content[3];
+            ta3.CssStyle = "width:100%";
+            ta3.AutoGrowHeight = true;
+
+            tas[0] = ta0;
+            tas[1] = ta1;
+            tas[2] = ta2;
+            tas[3] = ta3;
+
+            return tas;
         }
         #endregion
     }
