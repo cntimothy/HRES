@@ -337,13 +337,463 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_AddItem;
         
         /// <summary>
-        /// Button_DeleteItem 控件。
+        /// Button_RemoveItem 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button_DeleteItem;
+        protected global::FineUI.Button Button_RemoveItem;
+        
+        /// <summary>
+        /// SimpleForm_WCR1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR1;
+        
+        /// <summary>
+        /// TextArea_WCR1_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR1_Title;
+        
+        /// <summary>
+        /// TextArea_WCR1_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR1_Content;
+        
+        /// <summary>
+        /// TextArea_WCR1_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR1_Request;
+        
+        /// <summary>
+        /// TextArea_WCR1_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR1_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR2;
+        
+        /// <summary>
+        /// TextArea_WCR2_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR2_Title;
+        
+        /// <summary>
+        /// TextArea_WCR2_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR2_Content;
+        
+        /// <summary>
+        /// TextArea_WCR2_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR2_Request;
+        
+        /// <summary>
+        /// TextArea_WCR2_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR2_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR3;
+        
+        /// <summary>
+        /// TextArea_WCR3_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR3_Title;
+        
+        /// <summary>
+        /// TextArea_WCR3_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR3_Content;
+        
+        /// <summary>
+        /// TextArea_WCR3_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR3_Request;
+        
+        /// <summary>
+        /// TextArea_WCR3_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR3_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR4;
+        
+        /// <summary>
+        /// TextArea_WCR4_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR4_Title;
+        
+        /// <summary>
+        /// TextArea_WCR4_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR4_Content;
+        
+        /// <summary>
+        /// TextArea_WCR4_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR4_Request;
+        
+        /// <summary>
+        /// TextArea_WCR4_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR4_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR5;
+        
+        /// <summary>
+        /// TextArea_WCR5_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR5_Title;
+        
+        /// <summary>
+        /// TextArea_WCR5_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR5_Content;
+        
+        /// <summary>
+        /// TextArea_WCR5_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR5_Request;
+        
+        /// <summary>
+        /// TextArea_WCR5_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR5_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR6 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR6;
+        
+        /// <summary>
+        /// TextArea_WCR6_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR6_Title;
+        
+        /// <summary>
+        /// TextArea_WCR6_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR6_Content;
+        
+        /// <summary>
+        /// TextArea_WCR6_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR6_Request;
+        
+        /// <summary>
+        /// TextArea_WCR6_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR6_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR7 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR7;
+        
+        /// <summary>
+        /// TextArea_WCR7_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR7_Title;
+        
+        /// <summary>
+        /// TextArea_WCR7_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR7_Content;
+        
+        /// <summary>
+        /// TextArea_WCR7_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR7_Request;
+        
+        /// <summary>
+        /// TextArea_WCR7_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR7_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR8 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR8;
+        
+        /// <summary>
+        /// TextArea_WCR8_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR8_Title;
+        
+        /// <summary>
+        /// TextArea_WCR8_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR8_Content;
+        
+        /// <summary>
+        /// TextArea_WCR8_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR8_Request;
+        
+        /// <summary>
+        /// TextArea_WCR8_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR8_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR9 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR9;
+        
+        /// <summary>
+        /// TextArea_WCR9_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR9_Title;
+        
+        /// <summary>
+        /// TextArea_WCR9_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR9_Content;
+        
+        /// <summary>
+        /// TextArea_WCR9_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR9_Request;
+        
+        /// <summary>
+        /// TextArea_WCR9_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR9_Point;
+        
+        /// <summary>
+        /// SimpleForm_WCR10 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm_WCR10;
+        
+        /// <summary>
+        /// TextArea_WCR10_Title 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR10_Title;
+        
+        /// <summary>
+        /// TextArea_WCR10_Content 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR10_Content;
+        
+        /// <summary>
+        /// TextArea_WCR10_Request 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR10_Request;
+        
+        /// <summary>
+        /// TextArea_WCR10_Point 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_WCR10_Point;
         
         /// <summary>
         /// Panel7 控件。

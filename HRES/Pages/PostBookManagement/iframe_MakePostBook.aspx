@@ -107,12 +107,182 @@
                                         <Items>
                                             <x:Toolbar ID="Toolbar2" runat="server">
                                                 <Items>
-                                                    <x:Button ID="Button_AddItem" runat="server" Text="新增">
+                                                    <x:Button ID="Button_AddItem" runat="server" Text="新增" OnClick="Button_AddItem_Click">
                                                     </x:Button>
-                                                    <x:Button ID="Button_DeleteItem" runat="server" Text="删除">
+                                                    <x:Button ID="Button_RemoveItem" runat="server" Text="移除" OnClick="Button_RemoveItem_Click">
                                                     </x:Button>
                                                 </Items>
                                             </x:Toolbar>
+                                            <x:SimpleForm ID="SimpleForm_WCR1" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR1_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR1_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR1_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR1_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR2" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR2_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR2_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR2_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR2_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR3" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR3_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR3_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR3_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR3_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR4" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR4_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR4_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR4_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR4_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR5" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR5_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR5_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR5_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR5_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR6" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR6_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR6_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR6_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR6_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR7" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR7_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR7_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR7_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR7_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR8" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR8_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR8_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR8_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR8_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR9" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR9_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR9_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR9_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR9_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
+                                            <x:SimpleForm ID="SimpleForm_WCR10" runat="server" BodyPadding="5px" Title="SimpleForm"
+                                                Visible="false" ShowBorder="true" ShowHeader="false">
+                                                <Items>
+                                                    <x:TextArea ID="TextArea_WCR10_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR10_Content" runat="server" Height="50px" Label="具体内容"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR10_Request" runat="server" Height="50px" Label="具体要求"
+                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                    <x:TextArea ID="TextArea_WCR10_Point" runat="server" Height="50px" Label="考核要点" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
+                                                    </x:TextArea>
+                                                </Items>
+                                            </x:SimpleForm>
                                         </Items>
                                     </x:Panel>
                                 </Items>

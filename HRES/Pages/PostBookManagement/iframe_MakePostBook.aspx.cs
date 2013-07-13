@@ -23,6 +23,15 @@ namespace HRES.Pages.PostBookManagement
         }
 
         #region Event
+        protected void Button_AddItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected void Button_RemoveItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
         #endregion
 
         #region Private Method
@@ -79,18 +88,16 @@ namespace HRES.Pages.PostBookManagement
         {
             for (int i = 0; i < workContentRequest.Count; i++)
             {
-                TextArea[] tas = genTextAreas(workContentRequest[i], i);
-                SimpleForm sf = new SimpleForm();
-                sf.ID = "SimpleForm_WorkContentRequest" + i;
-                sf.BodyPadding = "5px";
-                sf.CssStyle = "width:100%";
-                sf.ShowBorder = true;
-                sf.ShowHeader = false;
-                sf.Items.Add(tas[0]);
-                sf.Items.Add(tas[1]);
-                sf.Items.Add(tas[2]);
-                sf.Items.Add(tas[3]);
-                Panel6.Items.Add(sf);
+                Panel6.Items[i].Visible = true;
+                SimpleForm sf = Panel6.Items[i+1] as SimpleForm;
+                TextArea title = sf.Items[0] as TextArea;
+                TextArea content = sf.Items[1] as TextArea;
+                TextArea request = sf.Items[2] as TextArea;
+                TextArea point = sf.Items[3] as TextArea;
+                title.Text = workContentRequest[i][0];
+                content.Text = workContentRequest[i][1];
+                request.Text = workContentRequest[i][2];
+                point.Text = workContentRequest[i][3];
             }
         }
 
