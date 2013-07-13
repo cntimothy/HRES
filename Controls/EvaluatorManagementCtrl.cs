@@ -58,10 +58,10 @@ namespace Controls
         /// <summary>
         /// 根据被考评人ID删除考评人名单，删除成功返回true，否则返回false
         /// </summary>
-        /// <param name="ID">被考评人ID</param>
+        /// <param name="IDs">被考评人ID列表</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool Delete(string ID, ref string exception)
+        public static bool Delete(List<string> IDs, ref string exception)
         {
             return true;
         }

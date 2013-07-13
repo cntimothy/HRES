@@ -70,7 +70,7 @@ namespace HRES.Pages.EvaluatedManagement
             }
             else
             {
-                Alert.ShowInTop("啥菜奴失败\n失败原因：" + exception, MessageBoxIcon.Error);
+                Alert.ShowInTop("删除失败\n失败原因：" + exception, MessageBoxIcon.Error);
             }
         }
 
@@ -90,7 +90,9 @@ namespace HRES.Pages.EvaluatedManagement
             if (e.CommandName == "Delete")
             {
                 object[] keys = Grid1.DataKeys[e.RowIndex];
-                if (SecondManagementCtrl.Delete((string)keys[0], ref exception))
+                List<string> IDs = new List<string>();
+                IDs.Add((string)keys[0]);
+                if (EvaluatedManagementCtrl.Delete(IDs, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
                 }

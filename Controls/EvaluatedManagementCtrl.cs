@@ -192,7 +192,7 @@ namespace Controls
         /// <param name="ID">被考评人ID</param>
         /// <param name="exception"></param>
         /// <returns>删除成功返回true，否则返回false</returns>
-        public static bool Delete(string ID, ref string exception)
+        public static bool Delete(List<string> IDs, ref string exception)
         {
             return true;
         }

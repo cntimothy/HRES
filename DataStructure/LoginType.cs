@@ -5,9 +5,12 @@ using System.Text;
 
 namespace DataStructure
 {
+    /// <summary>
+    /// 登录身份
+    /// </summary>
     public enum LoginType
     {
-        manager,
-        evaluator
+        manager,    //管理员
+        evaluator   //考评人
     }
 }
