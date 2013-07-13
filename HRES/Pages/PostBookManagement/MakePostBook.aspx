@@ -23,7 +23,7 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" AutoHeight="true" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Status, Comment">
+                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -36,9 +36,6 @@
                             <x:BoundField Width="100px" DataField="IDNo" DataFormatString="{0}" HeaderText="身份证号"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Birthday" DataFormatString="{0}" HeaderText="出生年月"
-                                Hidden="true" />
-                            <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="电话" />
-                            <x:BoundField Width="100px" DataField="Email" DataFormatString="{0}" HeaderText="邮件"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Fund" DataFormatString="{0}" HeaderText="经费来源"
                                 Hidden="true" />
@@ -78,10 +75,6 @@
                             <x:Label runat="server" ID="LabIDNo" Label="身份证号" Text="">
                             </x:Label>
                             <x:Label runat="server" ID="LabBirthday" Label="出生年月" Text="">
-                            </x:Label>
-                            <x:Label runat="server" ID="LabTelephone" Label="电话" Text="">
-                            </x:Label>
-                            <x:Label runat="server" ID="LabEmail" Label="邮件" Text="">
                             </x:Label>
                             <x:Label runat="server" ID="LabFund" Label="经费来源" Text="">
                             </x:Label>

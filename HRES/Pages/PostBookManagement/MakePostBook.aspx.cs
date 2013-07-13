@@ -77,15 +77,13 @@ namespace HRES.Pages.PostBookManagement
             LabJob.Text = (string)keys[5];
             LabIDNo.Text = (string)keys[6];
             LabBirthday.Text = (string)keys[7];
-            LabTelephone.Text = (string)keys[8];
-            LabEmail.Text = (string)keys[9];
-            LabFund.Text = (string)keys[10];
-            LabCharacter.Text = (string)keys[11];
-            LabCompany.Text = (string)keys[12];
-            LabStartTime.Text = (string)keys[13];
-            LabStopTime.Text = (string)keys[14];
-            LabStatus.Text = GetDocStatus(keys[15]);
-            LabComment.Text = (string)keys[16];
+            LabFund.Text = (string)keys[8];
+            LabCharacter.Text = (string)keys[9];
+            LabCompany.Text = (string)keys[10];
+            LabStartTime.Text = (string)keys[11];
+            LabStopTime.Text = (string)keys[12];
+            LabStatus.Text = GetDocStatus(keys[13]);
+            LabComment.Text = (string)keys[14];
         }
         #endregion
     }

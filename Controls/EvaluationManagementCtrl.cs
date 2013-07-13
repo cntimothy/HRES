@@ -10,7 +10,7 @@ namespace Controls
     public class EvaluationManagementCtrl
     {
         /// <summary>
-        /// 查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
+        /// 查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">被考评人信息</param>
         /// <param name="exception"></param>
@@ -21,7 +21,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
+        /// 根据部门查询被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Summary（考评完成/考评总数））。table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">被考评人信息</param>
         /// <param name="depart">部门</param>
@@ -122,7 +122,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 返回今年的被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
+        /// 返回今年的被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">被考评人信息</param>
         /// <param name="exception"></param>
@@ -133,7 +133,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 返回所有年份被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Telephone, Email, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
+        /// 返回所有年份被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>
