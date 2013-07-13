@@ -178,7 +178,7 @@ namespace Controls
             pb.EvaluatedID = evaluatedID;
             pb.Employer = "上海市东陵国际人才有限公司";
             pb.LaborUnit = "同济大学高等研究院";
-            pb.LaborDep = "高等研究院办公室";
+            pb.LaborDepart = "高等研究院办公室";
             pb.PostName = "人事助理";
             pb.PostType = "管理";
             pb.EduBg = "人力资源、行政管理或相关专业本科以上学历。";
@@ -207,7 +207,7 @@ namespace Controls
             pb.Subordinate = "无。";
             pb.Colleague = "人事处、相关职能部处、各专业高等研究院等。";
             pb.Services = "各专业高等研究院人事工作人员。";
-            pb.Releations = "派遣公司、劳动、保险、就业、职介、人才中心等与人事相关的社会公共关系。";
+            pb.Relations = "派遣公司、劳动、保险、就业、职介、人才中心等与人事相关的社会公共关系。";
             pb.WorkEnter = "办公室内，环境舒适，无职业病危害。";
             pb.PostAssess = "按同济大学派遣员工考核文件的规定执行。";
             pb.Others = "本岗位责任书自双方签字盖章且经人才中心审核盖章后生效，与劳动合同具有相同效力，双方均应遵照执行。\n自本岗位责任书生效之日起，双方之前就受聘人员岗位达成的约定、协议或岗位责任书与本岗位责任书不一致的，以本岗位责任书为准。\n本岗位责任书一式四份，人才中心持两份，个人及个人所在部门各持一份。";

@@ -11,7 +11,7 @@ namespace DataStructure
         string evaluatedID;
         string employer;
         string laborUnit;
-        string laborDep;
+        string laborDepart;
         string postName;
         string postType;
         string eduBg;
@@ -28,7 +28,7 @@ namespace DataStructure
         string subordinate;
         string colleague;
         string services;
-        string releations;
+        string relations;
         string workEnter;
         string postAssess;
         string others;
@@ -76,10 +76,10 @@ namespace DataStructure
         /// <summary>
         /// 用工部门
         /// </summary>
-        public string LaborDep
+        public string LaborDepart
         {
-            get { return laborDep; }
-            set { laborDep = value; }
+            get { return laborDepart; }
+            set { laborDepart = value; }
         }
 
         /// <summary>
@@ -229,10 +229,10 @@ namespace DataStructure
         /// <summary>
         /// 外部关系
         /// </summary>
-        public string Releations
+        public string Relations
         {
-            get { return releations; }
-            set { releations = value; }
+            get { return relations; }
+            set { relations = value; }
         }
 
         /// <summary>
