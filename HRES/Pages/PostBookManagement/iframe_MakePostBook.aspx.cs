@@ -88,7 +88,7 @@ namespace HRES.Pages.PostBookManagement
         {
             for (int i = 0; i < workContentRequest.Count; i++)
             {
-                Panel6.Items[i].Visible = true;
+                Panel6.Items[i + 1].Visible = true;
                 SimpleForm sf = Panel6.Items[i+1] as SimpleForm;
                 TextArea title = sf.Items[0] as TextArea;
                 TextArea content = sf.Items[1] as TextArea;
