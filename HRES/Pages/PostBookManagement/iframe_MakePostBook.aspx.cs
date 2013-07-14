@@ -17,14 +17,14 @@ namespace HRES.Pages.PostBookManagement
             if (!IsPostBack)
             {
                 loadPostBook();
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();                
             }
-
         }
 
         #region Event
         protected void Button_AddItem_Click(object sender, EventArgs e)
         {
+            
         }
 
         protected void Button_RemoveItem_Click(object sender, EventArgs e)
@@ -84,12 +84,16 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
+        /// <summary>
+        /// 想页面中增加工作内容与要求的simpleform
+        /// </summary>
+        /// <param name="workContentRequest"></param>
         private void addWorkContentRequest(List<string[]> workContentRequest)
         {
             for (int i = 0; i < workContentRequest.Count; i++)
             {
-                Panel6.Items[i + 1].Visible = true;
-                SimpleForm sf = Panel6.Items[i+1] as SimpleForm;
+                SimpleForm sf = Panel6.Items[i] as SimpleForm;
+                sf.Collapsed = false;
                 TextArea title = sf.Items[0] as TextArea;
                 TextArea content = sf.Items[1] as TextArea;
                 TextArea request = sf.Items[2] as TextArea;
@@ -100,49 +104,7 @@ namespace HRES.Pages.PostBookManagement
                 point.Text = workContentRequest[i][3];
             }
         }
-
-        private TextArea[] genTextAreas(string[] content, int i)
-        {
-            TextArea[] tas = new TextArea[4];
-
-            TextArea ta0 = new TextArea();
-            ta0.ID = "TextArea_WorkContentRequest_Title" + Convert.ToString(i);
-            ta0.Label = "标题";
-            ta0.Text = content[0];
-            ta0.CssStyle = "width:100%";
-            ta0.AutoGrowHeight = true;
-
-
-            TextArea ta1 = new TextArea();
-            ta1.ID = "TextArea_WorkContentRequest_Content" + Convert.ToString(i);
-            ta1.Label = "具体内容";
-            ta1.Text = content[1];
-            ta1.CssStyle = "width:100%";
-            ta1.AutoGrowHeight = true;
-
-
-            TextArea ta2 = new TextArea();
-            ta2.ID = "TextArea_WorkContentRequest_Request" + Convert.ToString(i);
-            ta2.Label = "具体要求";
-            ta2.Text = content[2];
-            ta2.CssStyle = "width:100%";
-            ta2.AutoGrowHeight = true;
-
-
-            TextArea ta3 = new TextArea();
-            ta3.ID = "TextArea_WorkContentRequest_Point" + Convert.ToString(i);
-            ta3.Label = "考核要点";
-            ta3.Text = content[3];
-            ta3.CssStyle = "width:100%";
-            ta3.AutoGrowHeight = true;
-
-            tas[0] = ta0;
-            tas[1] = ta1;
-            tas[2] = ta2;
-            tas[3] = ta3;
-
-            return tas;
-        }
+        
         #endregion
     }
 }
