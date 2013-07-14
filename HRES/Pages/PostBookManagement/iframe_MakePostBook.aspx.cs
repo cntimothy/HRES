@@ -17,19 +17,128 @@ namespace HRES.Pages.PostBookManagement
             if (!IsPostBack)
             {
                 loadPostBook();
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();                
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Return.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
+                Button_Return_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
             }
         }
 
         #region Event
-        protected void Button_AddItem_Click(object sender, EventArgs e)
+        protected void Button_Save_Click(object sender, EventArgs e)
         {
-            
+            DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
+            DocStatus status = DocStatus.unmake;
+            if (curStatus == DocStatus.unmake)
+            {
+                status = DocStatus.saved;
+            }
+            else if (curStatus == DocStatus.saved)
+            {
+                status = DocStatus.saved;
+            }
+            else if (curStatus == DocStatus.returned)
+            {
+                status = DocStatus.returned;
+            }
+            if (savePostBook(status))
+            {
+                Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("保存失败！", MessageBoxIcon.Error);
+            }
         }
 
-        protected void Button_RemoveItem_Click(object sender, EventArgs e)
+        protected void Button_Submit_Click(object sender, EventArgs e)
         {
-            
+            if (!checkNull())
+            {
+                Alert.ShowInTop("有未填项，请检查！", MessageBoxIcon.Error);
+                return;
+            }
+
+            DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
+            DocStatus status = DocStatus.unmake;
+            if (curStatus == DocStatus.unmake)
+            {
+                status = DocStatus.submitted;
+            }
+            else if (curStatus == DocStatus.saved)
+            {
+                status = DocStatus.submitted;
+            }
+            else if (curStatus == DocStatus.returned)
+            {
+                status = DocStatus.modified;
+            }
+            if (savePostBook(status))
+            {
+                Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("提交失败！", MessageBoxIcon.Error);
+            }
+        }
+
+        protected void Button_Clear_Click(object sender, EventArgs e)
+        { 
+            TextBox_LaborUnit.Text = "";
+            TextBox_LaborDepart.Text = "";
+            TextBox_PostName.Text = "";
+            TextArea_EduBg.Text = "";
+            TextArea_Certificate.Text = "";
+            TextArea_Experience.Text = "";
+            TextArea_Skill.Text = "";
+            TextArea_Personality.Text = "";
+            TextArea_PhyCond.Text = "";
+            TextArea_WorkOutline.Text = "";
+            TextArea_Power.Text = "";
+            TextArea_Response.Text = "";
+            TextBox_DirectLeader.Text = "";
+            TextBox_Subordinate.Text = "";
+            TextBox_Colleague.Text = "";
+            TextBox_Services.Text = "";
+            TextBox_Relations.Text = "";
+            TextArea_WorkEnter.Text = "";
+            TextArea_PostAssess.Text = "";
+            TextArea_Others.Text = "";
+            foreach (ControlBase item in Panel6.Items)
+            {
+                try
+                {
+                    SimpleForm sf = item as SimpleForm;
+                    TextArea ta0 = sf.Items[0] as TextArea;
+                    TextArea ta1 = sf.Items[1] as TextArea;
+                    TextArea ta2 = sf.Items[2] as TextArea;
+                    TextArea ta3 = sf.Items[3] as TextArea;
+                    ta0.Text = "";
+                    ta1.Text = "";
+                    ta2.Text = "";
+                    ta3.Text = "";
+                    sf.Collapsed = true;
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+            }
+        }
+
+        protected void Button_Pass_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            if (PostBookManagementCtrl.SetPass(evaluatedID, ref exception))
+            {
+                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
@@ -56,6 +165,7 @@ namespace HRES.Pages.PostBookManagement
                 }
                 string evaluatedName = Request.QueryString["name"];
                 Panel1.Title = evaluatedName + "的" + Panel1.Title;
+                Label_Comment.Text = pb.Comment;
 
                 Radio_Employer.SelectedValue = pb.Employer;
                 TextBox_LaborUnit.Text = pb.LaborUnit;
@@ -104,7 +214,133 @@ namespace HRES.Pages.PostBookManagement
                 point.Text = workContentRequest[i][3];
             }
         }
-        
+
+        /// <summary>
+        /// 保存岗位责任书并将其状态设置成指定状态
+        /// </summary>
+        /// <param name="status">指定的状态</param>
+        /// <returns></returns>
+        private bool savePostBook(DocStatus status)
+        {
+            string exception = "";
+
+            PostBook pb = new PostBook();
+            pb.EvaluatedID = Request.QueryString["id"];
+            pb.Employer = Radio_Employer.SelectedValue;
+            pb.LaborUnit = TextBox_LaborUnit.Text;
+            pb.LaborDepart = TextBox_LaborDepart.Text;
+            pb.PostName = TextBox_PostName.Text;
+            pb.PostType = Radio_PostType.SelectedValue;
+            pb.EduBg = TextArea_EduBg.Text;
+            pb.Certificate = TextArea_Certificate.Text;
+            pb.Experience = TextArea_Experience.Text;
+            pb.Skill = TextArea_Skill.Text;
+            pb.Personality = TextArea_Personality.Text;
+            pb.PhyCond = TextArea_PhyCond.Text;
+            pb.WorkOutline = TextArea_WorkOutline.Text;
+            pb.Power = TextArea_Power.Text;
+            pb.Response = TextArea_Response.Text;
+            pb.DirectLeader = TextBox_DirectLeader.Text;
+            pb.Subordinate = TextBox_Subordinate.Text;
+            pb.Colleague = TextBox_Colleague.Text;
+            pb.Services = TextBox_Services.Text;
+            pb.Relations = TextBox_Relations.Text;
+            pb.WorkEnter = TextArea_WorkEnter.Text;
+            pb.PostAssess = TextArea_PostAssess.Text;
+            pb.Others = TextArea_Others.Text;
+
+            pb.Comment = Label_Comment.Text;
+            pb.Status = status;
+
+            List<string[]> wcr = new List<string[]>();
+            foreach (ControlBase item in Panel6.Items)
+            {
+                try
+                {
+                    SimpleForm sf = item as SimpleForm;
+                    TextArea ta0 = sf.Items[0] as TextArea;
+                    if (ta0.Text != "")
+                    {
+                        TextArea ta1 = sf.Items[1] as TextArea;
+                        TextArea ta2 = sf.Items[2] as TextArea;
+                        TextArea ta3 = sf.Items[3] as TextArea;
+                        string[] content = new string[] { ta0.Text, ta1.Text, ta2.Text, ta3.Text };
+                        wcr.Add(content);
+                    }
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+            }
+            pb.WorkContentRequest = wcr;
+            if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool checkNull()
+        {
+            if (TextBox_LaborUnit.Text != "" &&
+                TextBox_LaborDepart.Text != "" &&
+                TextBox_PostName.Text != "" &&
+                TextArea_EduBg.Text != "" &&
+                TextArea_Certificate.Text != "" &&
+                TextArea_Experience.Text != "" &&
+                TextArea_Skill.Text != "" &&
+                TextArea_Personality.Text != "" &&
+                TextArea_PhyCond.Text != "" &&
+                TextArea_WorkOutline.Text != "" &&
+                TextArea_Power.Text != "" &&
+                TextArea_Response.Text != "" &&
+                TextBox_DirectLeader.Text != "" &&
+                TextBox_Subordinate.Text != "" &&
+                TextBox_Colleague.Text != "" &&
+                TextBox_Services.Text != "" &&
+                TextBox_Relations.Text != "" &&
+                TextArea_WorkEnter.Text != "" &&
+                TextArea_PostAssess.Text != "" &&
+                TextArea_Others.Text != "" && checkWCR())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool checkWCR()
+        {
+            foreach (ControlBase item in Panel6.Items)
+            {
+                try
+                {
+                    SimpleForm sf = item as SimpleForm;
+                    TextArea ta0 = sf.Items[0] as TextArea;
+                    if (ta0.Text != "")
+                    {
+                        TextArea ta1 = sf.Items[1] as TextArea;
+                        TextArea ta2 = sf.Items[2] as TextArea;
+                        TextArea ta3 = sf.Items[3] as TextArea;
+                        if (ta1.Text == "" || ta2.Text == "" || ta3.Text == "")
+                        {
+                            return false;
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+            }
+            return true;
+        }
         #endregion
     }
 }

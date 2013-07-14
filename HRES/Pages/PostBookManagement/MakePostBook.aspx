@@ -54,8 +54,8 @@
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakePostBook" Text="制作"
-                                ToolTip="制作岗位责任书" Title="制作" IFrameUrl="iframe_MakePostBook.aspx" DataIFrameUrlFields="ID,Name"
-                                DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}" />
+                                ToolTip="制作岗位责任书" Title="制作" IFrameUrl="iframe_MakePostBook.aspx" DataIFrameUrlFields="ID,Name,Status"
+                                DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">

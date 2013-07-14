@@ -22,6 +22,10 @@ namespace HRES
 
             if (!IsPostBack)
             {
+                if (Session["UserID"] == null)
+                {
+                    Response.Redirect("Loginin.aspx");
+                }
                 if (PageManager.Instance != null)
                 {
                     HttpCookie themeCookie = Request.Cookies["Theme"];

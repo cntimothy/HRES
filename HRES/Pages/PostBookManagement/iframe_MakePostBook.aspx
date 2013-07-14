@@ -21,24 +21,34 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save" runat="server" Text="保存">
+                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
+                                ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmText="确定提交？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Clear" runat="server" Text="清空">
+                            <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click"
+                                ConfirmText="确定清空？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Pass" runat="server" Text="通过">
+                            <x:Button ID="Button_Pass" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
+                                ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Return" runat="server" Text="退回">
+                            <x:Button ID="Button_Return" runat="server" Text="退回" >
                             </x:Button>
+                            <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                            </x:ToolbarFill>
+                            <x:Label ID="Label1" runat="server" Label="" Text="审核意见：">
+                            </x:Label>
+                            <x:Label ID="Label_Comment" runat="server" Label="审核意见" Text="">
+                            </x:Label>
                         </Items>
                     </x:Toolbar>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="一、岗位概述" ShowBorder="false"
@@ -92,7 +102,7 @@
                                 </Items>
                             </x:SimpleForm>
                             <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                                Title="（二）工作内容、工作要求" >
+                                Title="（二）工作内容、工作要求">
                                 <Items>
                                     <x:Panel ID="Panel5" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
                                         CssStyle="width:100%" Title="1.岗位概述">
@@ -103,10 +113,10 @@
                                         </Items>
                                     </x:Panel>
                                     <x:Panel ID="Panel6" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="true"
-                                        CssStyle="width:100%" Title="2.工作内容及工作要求" >
+                                        CssStyle="width:100%" Title="2.工作内容及工作要求">
                                         <Items>
-                                            <x:SimpleForm ID="SimpleForm_WCR1" runat="server" BodyPadding="5px" Title="1)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR1" runat="server" BodyPadding="5px" Title="1)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR1_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -122,8 +132,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR2" runat="server" BodyPadding="5px" Title="2)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR2" runat="server" BodyPadding="5px" Title="2)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR2_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -139,8 +149,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR3" runat="server" BodyPadding="5px" Title="3)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR3" runat="server" BodyPadding="5px" Title="3)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR3_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -156,8 +166,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR4" runat="server" BodyPadding="5px" Title="4)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR4" runat="server" BodyPadding="5px" Title="4)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR4_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -173,8 +183,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR5" runat="server" BodyPadding="5px" Title="5)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR5" runat="server" BodyPadding="5px" Title="5)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR5_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -190,8 +200,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR6" runat="server" BodyPadding="5px" Title="6)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR6" runat="server" BodyPadding="5px" Title="6)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR6_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -207,8 +217,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR7" runat="server" BodyPadding="5px" Title="7)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR7" runat="server" BodyPadding="5px" Title="7)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR7_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -224,8 +234,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR8" runat="server" BodyPadding="5px" Title="8)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR8" runat="server" BodyPadding="5px" Title="8)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR8_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -241,8 +251,8 @@
                                                     </x:TextArea>
                                                 </Items>
                                             </x:SimpleForm>
-                                            <x:SimpleForm ID="SimpleForm_WCR9" runat="server" BodyPadding="5px" Title="9)"
-                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
+                                            <x:SimpleForm ID="SimpleForm_WCR9" runat="server" BodyPadding="5px" Title="9)" ShowBorder="true"
+                                                ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
                                                     <x:TextArea ID="TextArea_WCR9_Title" runat="server" Height="50px" Label="标题" Text=""
                                                         AutoGrowHeight="true" CssStyle="width:97%">
@@ -259,10 +269,10 @@
                                                 </Items>
                                             </x:SimpleForm>
                                             <x:SimpleForm ID="SimpleForm_WCR10" runat="server" BodyPadding="5px" Title="10)"
-                                                ShowBorder="true" ShowHeader="true"  EnableCollapse="true" Collapsed="true">
+                                                ShowBorder="true" ShowHeader="true" EnableCollapse="true" Collapsed="true">
                                                 <Items>
-                                                    <x:TextArea ID="TextArea_WCR10_Title" runat="server" Height="50px" Label="标题"
-                                                        Text="" AutoGrowHeight="true" CssStyle="width:97%">
+                                                    <x:TextArea ID="TextArea_WCR10_Title" runat="server" Height="50px" Label="标题" Text=""
+                                                        AutoGrowHeight="true" CssStyle="width:97%">
                                                     </x:TextArea>
                                                     <x:TextArea ID="TextArea_WCR10_Content" runat="server" Height="50px" Label="具体内容"
                                                         Text="" AutoGrowHeight="true" CssStyle="width:97%">
@@ -342,34 +352,48 @@
                     </x:Panel>
                     <x:Toolbar ID="Toolbar3" runat="server" Position="top" CssStyle="width:100%">
                         <Items>
-                            <x:Button ID="Button1" runat="server" Text="关闭">
+                            <x:Button ID="Button_Close_Shadow" runat="server" Text="关闭">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button2" runat="server" Text="保存">
+                            <x:Button ID="Button2" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
+                                ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator7" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button3" runat="server" Text="提交">
+                            <x:Button ID="Button3" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                                ConfirmText="确定提交？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator8" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button4" runat="server" Text="清空">
+                            <x:Button ID="Button4" runat="server" Text="清空" OnClick="Button_Clear_Click"
+                                ConfirmText="确定清空？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator9" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button5" runat="server" Text="通过">
+                            <x:Button ID="Button5" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
+                                ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator10" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button6" runat="server" Text="退回">
+                            <x:Button ID="Button_Return_Shadow" runat="server" Text="退回">
                             </x:Button>
+                            <x:ToolbarFill ID="ToolbarFill2" runat="server">
+                            </x:ToolbarFill>
+                            <x:Label ID="Label2" runat="server" Label="" Text="审核意见：">
+                            </x:Label>
+                            <x:Label ID="Label3" runat="server" Label="审核意见" Text="">
+                            </x:Label>
                         </Items>
                     </x:Toolbar>
                 </Items>
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="130px" IsModal="true"
+        IFrameUrl="about:blank" EnableMaximize="false" EnableIFrame="true" Popup="false"
+        Title="审核意见" Width="400px">
+    </x:Window>
     </form>
 </body>
 </html>

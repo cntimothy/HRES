@@ -80,11 +80,12 @@ namespace Controls
         /// <summary>
         /// 更新指定被考评人的分数，更新成功返回true，否则返回false
         /// </summary>
-        /// <param name="ID">被考评人ID</param>
-        /// <param name="scores">包含分数的数组</param>
+        /// <param name="evaluatedID">被考评人ID</param>
+        /// <param name="evaluatorID">考评人ID</param>
+        /// <param name="scores"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool UpdateScore(string ID, string[] scores, ref string exception)
+        public static bool UpdateScore(string evaluatedID, string evaluatorID, string[] scores, ref string exception)
         {
             return true;
         }
@@ -94,7 +95,7 @@ namespace Controls
         /// </summary>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SendMessageToAll(ref string exception)
+        public static bool SendMessageToAll(string message, ref string exception)
         {
             return true;
         }
@@ -105,7 +106,7 @@ namespace Controls
         /// <param name="depart"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SendMessageByDepart(string depart, ref string exception)
+        public static bool SendMessageByDepart(string message, string depart, ref string exception)
         {
             return true;
         }
