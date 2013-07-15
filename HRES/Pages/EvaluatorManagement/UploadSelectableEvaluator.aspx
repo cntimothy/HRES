@@ -30,8 +30,8 @@
                     </x:Button>
                     <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                     </x:ToolbarSeparator>
-                    <x:Button ID="DeleteAll" runat="server" OnClick="DeleteAll_Click" Text="删除所有" Enabled="true"
-                        ConfirmTitle="提示" ConfirmText="确认删除所有考评人？">
+                    <x:Button ID="DeleteSelected" runat="server" OnClick="DeleteSelected_Click" Text="删除所选" Enabled="true"
+                        ConfirmTitle="提示" ConfirmText="确认删除所选考评人？">
                     </x:Button>
                 </Items>
             </x:Toolbar>
@@ -39,8 +39,8 @@
                 ShowHeader="false" CssStyle="width:100%">
                 <Items>
                     <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
-                        AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="680px"
-                        DataKeyNames="ID, Date, Name, Sex, Company, Telephone"
+                        AllowPaging="true" runat="server" Width="680px" DataKeyNames="ID, Date, Name, Sex, Company, Telephone"
+                        EnableMultiSelect="true" CheckBoxSelectOnly="true" EnableCheckBoxSelect="true"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
@@ -52,7 +52,6 @@
                                 CommandName="Delete" Text="删除" />
                         </Columns>
                     </x:Grid>
-                    
                 </Items>
             </x:Panel>
         </Items>

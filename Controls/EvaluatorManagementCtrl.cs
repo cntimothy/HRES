@@ -191,7 +191,7 @@ namespace Controls
         /// <param name="IDs">被考评人ID列表</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool Delete(List<string> IDs, ref string exception)
+        public static bool Delete(ref List<string> IDs, ref string exception)
         {
             return true;
         }

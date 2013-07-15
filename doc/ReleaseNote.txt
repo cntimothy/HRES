@@ -1,3 +1,11 @@
+2013/7/15
+EvaluatorManagementCtrl
+	修改了Delete和DeleteAll两个函数的注释
+	修改了UploadSelectable函数的参数（增加了一个depart表示上传人的部门）
+
+
+
+
 2013/7/13 Modified interface
 EvaluationManagementCtrl
 	增加了对不同年份考评的支持

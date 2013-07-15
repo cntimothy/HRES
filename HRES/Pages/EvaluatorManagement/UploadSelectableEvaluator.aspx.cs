@@ -61,16 +61,29 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
-        protected void DeleteAll_Click(object sender, EventArgs e)
+        protected void DeleteSelected_Click(object sender, EventArgs e)
         {
             string exception = "";
-            if (EvaluatorManagementCtrl.DeleteAll(ref exception))
+            int selectedCount = Grid1.SelectedRowIndexArray.Length;
+            if (selectedCount == 0)
             {
-                Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
+                Alert.Show("请选择要删除的项！", MessageBoxIcon.Warning);
+                return;
+            }
+            List<string> IDs = new List<string>();
+            for (int i = 0; i < selectedCount; i++)
+            {
+                int rowIndex = Grid1.SelectedRowIndexArray[i];
+                object[] dataKeys = Grid1.DataKeys[rowIndex];
+                IDs.Add((string)dataKeys[0]);
+            }
+            if (EvaluatorManagementCtrl.Delete(ref IDs, ref exception))
+            {
+                Alert.ShowInTop("删除成功", MessageBoxIcon.Information);
             }
             else
             {
-                Alert.ShowInTop("删除失败\n失败原因：" + exception, MessageBoxIcon.Error);
+                Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
 
@@ -87,7 +100,7 @@ namespace HRES.Pages.EvaluatorManagement
                 object[] keys = Grid1.DataKeys[e.RowIndex];
                 List<string> IDs = new List<string>();
                 IDs.Add((string)keys[0]);
-                if (EvaluatorManagementCtrl.Delete(IDs, ref exception))
+                if (EvaluatorManagementCtrl.Delete(ref IDs, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
                 }
