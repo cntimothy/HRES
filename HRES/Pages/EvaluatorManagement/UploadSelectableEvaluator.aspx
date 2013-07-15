@@ -38,10 +38,10 @@
             <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox" BoxConfigChildMargin="5"
                 ShowHeader="false" CssStyle="width:100%">
                 <Items>
-                    <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
+                    <x:Grid ID="Grid1" Title="名单" PageSize="2" ShowBorder="true" ShowHeader="true" AutoHeight="true"
                         AllowPaging="true" runat="server" Width="680px" DataKeyNames="ID, Date, Name, Sex, Company, Telephone"
                         EnableMultiSelect="true" CheckBoxSelectOnly="true" EnableCheckBoxSelect="true"
-                        OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
+                        OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand" ClearSelectedRowsAfterPaging="false">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -56,6 +56,7 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:HiddenField ID="hfSelectedIDS" runat="server"></x:HiddenField>
     </form>
 </body>
 </html>

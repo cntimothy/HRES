@@ -8,6 +8,8 @@ using FineUI;
 using Controls;
 using DataStructure;
 using System.Data;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace HRES.Pages.EvaluatorManagement
 {
@@ -63,21 +65,21 @@ namespace HRES.Pages.EvaluatorManagement
 
         protected void DeleteSelected_Click(object sender, EventArgs e)
         {
+            SyncSelectedRowIndexArrayToHiddenField();
             string exception = "";
-            int selectedCount = Grid1.SelectedRowIndexArray.Length;
-            if (selectedCount == 0)
+            string s = hfSelectedIDS.Text.Trim().TrimStart('[').TrimEnd(']');
+            if (s == "")
             {
-                Alert.Show("请选择要删除的项！", MessageBoxIcon.Warning);
+                Alert.ShowInTop("请至少选择一项！", MessageBoxIcon.Information);
                 return;
             }
             List<string> IDs = new List<string>();
-            for (int i = 0; i < selectedCount; i++)
+            string[] tempIDs = s.Split(',');
+            foreach (string item in tempIDs)
             {
-                int rowIndex = Grid1.SelectedRowIndexArray[i];
-                object[] dataKeys = Grid1.DataKeys[rowIndex];
-                IDs.Add((string)dataKeys[0]);
+                IDs.Add(item.Trim('"'));
             }
-            if (EvaluatorManagementCtrl.Delete(ref IDs, ref exception))
+            if (EvaluatorManagementCtrl.Delete(IDs, ref exception))
             {
                 Alert.ShowInTop("删除成功", MessageBoxIcon.Information);
             }
@@ -89,7 +91,9 @@ namespace HRES.Pages.EvaluatorManagement
 
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
+            SyncSelectedRowIndexArrayToHiddenField();
             Grid1.PageIndex = e.NewPageIndex;
+            UpdateSelectedRowIndexArray();
         }
 
         protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
@@ -100,7 +104,7 @@ namespace HRES.Pages.EvaluatorManagement
                 object[] keys = Grid1.DataKeys[e.RowIndex];
                 List<string> IDs = new List<string>();
                 IDs.Add((string)keys[0]);
-                if (EvaluatorManagementCtrl.Delete(ref IDs, ref exception))
+                if (EvaluatorManagementCtrl.Delete(IDs, ref exception))
                 {
                     Alert.ShowInTop("删除成功！", MessageBoxIcon.Information);
                 }
@@ -125,6 +129,75 @@ namespace HRES.Pages.EvaluatorManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
             }
+        }
+
+        private List<string> GetSelectedRowIndexArrayFromHiddenField()
+        {
+            JArray idsArray = new JArray();
+
+            string currentIDS = hfSelectedIDS.Text.Trim();
+            if (!String.IsNullOrEmpty(currentIDS))
+            {
+                idsArray = JArray.Parse(currentIDS);
+            }
+            else
+            {
+                idsArray = new JArray();
+            }
+
+            return new List<string>(idsArray.ToObject<string[]>());
+        }
+
+        private void SyncSelectedRowIndexArrayToHiddenField()
+        {
+            List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
+
+            List<int> selectedRows = new List<int>();
+            if (Grid1.SelectedRowIndexArray != null && Grid1.SelectedRowIndexArray.Length > 0)
+            {
+                selectedRows = new List<int>(Grid1.SelectedRowIndexArray);
+            }
+
+            int startPageIndex = Grid1.PageIndex * Grid1.PageSize;
+            for (int i = startPageIndex, count = Math.Min(startPageIndex + Grid1.PageSize, Grid1.RecordCount); i < count; i++)
+            {
+                string id = Grid1.DataKeys[i][0].ToString();
+                if (selectedRows.Contains(i - startPageIndex))
+                {
+                    if (!ids.Contains(id))
+                    {
+                        ids.Add(id);
+                    }
+                }
+                else
+                {
+                    if (ids.Contains(id))
+                    {
+                        ids.Remove(id);
+                    }
+                }
+
+            }
+
+            hfSelectedIDS.Text = new JArray(ids).ToString(Formatting.None);
+        }
+
+
+        private void UpdateSelectedRowIndexArray()
+        {
+            List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
+
+            List<int> nextSelectedRowIndexArray = new List<int>();
+            int nextStartPageIndex = Grid1.PageIndex * Grid1.PageSize;
+            for (int i = nextStartPageIndex, count = Math.Min(nextStartPageIndex + Grid1.PageSize, Grid1.RecordCount); i < count; i++)
+            {
+                string id = Grid1.DataKeys[i][0].ToString();
+                if (ids.Contains(id))
+                {
+                    nextSelectedRowIndexArray.Add(i - nextStartPageIndex);
+                }
+            }
+            Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
         }
         #endregion
     }
