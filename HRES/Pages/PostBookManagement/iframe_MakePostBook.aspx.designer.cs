@@ -67,13 +67,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_Close;
         
         /// <summary>
-        /// ToolbarSeparator5 控件。
+        /// ToolbarSeparator1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator5;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
         /// Button_Save 控件。
@@ -85,13 +85,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_Save;
         
         /// <summary>
-        /// ToolbarSeparator1 控件。
+        /// ToolbarSeparator2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
         /// Button_Submit 控件。
@@ -103,13 +103,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_Submit;
         
         /// <summary>
-        /// ToolbarSeparator2 控件。
+        /// ToolbarSeparator3 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
         
         /// <summary>
         /// Button_Clear 控件。
@@ -121,13 +121,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_Clear;
         
         /// <summary>
-        /// ToolbarSeparator3 控件。
+        /// ToolbarSeparator4 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator4;
         
         /// <summary>
         /// Button_Pass 控件。
@@ -139,13 +139,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.Button Button_Pass;
         
         /// <summary>
-        /// ToolbarSeparator4 控件。
+        /// ToolbarSeparator5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator4;
+        protected global::FineUI.ToolbarSeparator ToolbarSeparator5;
         
         /// <summary>
         /// Button_Return 控件。
@@ -976,13 +976,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator6;
         
         /// <summary>
-        /// Button2 控件。
+        /// Button_Save_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button2;
+        protected global::FineUI.Button Button_Save_Shadow;
         
         /// <summary>
         /// ToolbarSeparator7 控件。
@@ -994,13 +994,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator7;
         
         /// <summary>
-        /// Button3 控件。
+        /// Button_Submit_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button3;
+        protected global::FineUI.Button Button_Submit_Shadow;
         
         /// <summary>
         /// ToolbarSeparator8 控件。
@@ -1012,13 +1012,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator8;
         
         /// <summary>
-        /// Button4 控件。
+        /// Button_Clear_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button4;
+        protected global::FineUI.Button Button_Clear_Shadow;
         
         /// <summary>
         /// ToolbarSeparator9 控件。
@@ -1030,13 +1030,13 @@ namespace HRES.Pages.PostBookManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator9;
         
         /// <summary>
-        /// Button5 控件。
+        /// Button_Pass_Shadow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button5;
+        protected global::FineUI.Button Button_Pass_Shadow;
         
         /// <summary>
         /// ToolbarSeparator10 控件。

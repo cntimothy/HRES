@@ -19,27 +19,27 @@
                         <Items>
                             <x:Button ID="Button_Close" runat="server" Text="关闭">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
                                 ConfirmTitle="提示">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click"
                                 ConfirmText="确定提交？" ConfirmTitle="提示">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click"
                                 ConfirmText="确定清空？" ConfirmTitle="提示">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Pass" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
                                 ConfirmTitle="提示">
                             </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator4" runat="server">
+                            <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Return" runat="server" Text="退回" >
                             </x:Button>
@@ -356,22 +356,22 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator6" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button2" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
+                            <x:Button ID="Button_Save_Shadow" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmText="确定保存？"
                                 ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator7" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button3" runat="server" Text="提交" OnClick="Button_Submit_Click"
+                            <x:Button ID="Button_Submit_Shadow" runat="server" Text="提交" OnClick="Button_Submit_Click"
                                 ConfirmText="确定提交？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator8" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button4" runat="server" Text="清空" OnClick="Button_Clear_Click"
+                            <x:Button ID="Button_Clear_Shadow" runat="server" Text="清空" OnClick="Button_Clear_Click"
                                 ConfirmText="确定清空？" ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator9" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button5" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
+                            <x:Button ID="Button_Pass_Shadow" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmText="确定通过？"
                                 ConfirmTitle="提示">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator10" runat="server">

@@ -16,7 +16,7 @@ namespace HRES.Pages
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            string menuType = "accordion";
+            //string menuType = "accordion";
             
 
             // 注册客户端脚本，服务器端控件ID和客户端ID的映射关系

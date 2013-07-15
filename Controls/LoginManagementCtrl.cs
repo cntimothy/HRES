@@ -22,7 +22,7 @@ namespace Controls
             userInfo.Id = "admin1";
             userInfo.Name = "Kaven";
             userInfo.Depart = "人事处";
-            userInfo.AccessLevel = AccessLevel.superManager;
+            userInfo.AccessLevel = AccessLevel.secondManager;
             return true;
         }
     }

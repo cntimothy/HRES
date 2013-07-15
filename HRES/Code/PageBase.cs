@@ -177,6 +177,31 @@ namespace HRES
             return returnValue;
         }
 
+        protected string GetDocStatusForCheck(object status)
+        {
+            string returnValue = "";
+            switch (Convert.ToInt32(status))
+            {
+                case 0:
+                case 1:
+                    returnValue = "未制作";
+                    break;
+                case 2:
+                    returnValue = "已提交";
+                    break;
+                case 3:
+                    returnValue = "已退回";
+                    break;
+                case 4:
+                    returnValue = "已修改";
+                    break;
+                case 5:
+                    returnValue = "已通过";
+                    break;
+            }
+            return returnValue;
+        }
+
         protected DataTable GetClassDataTable()
         {
             DataTable table = new DataTable();

@@ -21,6 +21,7 @@ namespace HRES.Pages.PostBookManagement
                 Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Button_Return.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
                 Button_Return_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
+                setToolbarVisible();
             }
         }
 
@@ -84,7 +85,7 @@ namespace HRES.Pages.PostBookManagement
         }
 
         protected void Button_Clear_Click(object sender, EventArgs e)
-        { 
+        {
             TextBox_LaborUnit.Text = "";
             TextBox_LaborDepart.Text = "";
             TextBox_PostName.Text = "";
@@ -340,6 +341,50 @@ namespace HRES.Pages.PostBookManagement
                 }
             }
             return true;
+        }
+
+        private void setToolbarVisible()
+        {
+            AccessLevel accessLevel = AccessLevel.firstManager;
+            try
+            {
+                accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
+            }
+            catch (Exception)
+            {
+                Alert.ShowInTop("系统错误，请重新登录！", MessageBoxIcon.Error);
+                Session["UserID"] = "";
+                Session["UserName"] = "";
+                Session["AccessLevel"] = "";
+                Session["Depart"] = "";
+                Response.Redirect("../Login.aspx");
+            }
+            if (accessLevel == AccessLevel.firstManager)
+            {
+                Button_Save.Visible = false;
+                Button_Submit.Visible = false;
+                Button_Clear.Visible = false; 
+                Button_Save_Shadow.Visible = false;
+                Button_Submit_Shadow.Visible = false;
+                Button_Clear_Shadow.Visible = false;
+                ToolbarSeparator1.Visible = false;
+                ToolbarSeparator2.Visible = false;
+                ToolbarSeparator3.Visible = false;
+                ToolbarSeparator6.Visible = false;
+                ToolbarSeparator7.Visible = false;
+                ToolbarSeparator8.Visible = false;
+            }
+            else if (accessLevel == AccessLevel.secondManager)
+            {
+                Button_Return.Visible = false;
+                Button_Pass.Visible = false;
+                Button_Return_Shadow.Visible = false;
+                Button_Pass_Shadow.Visible = false;
+                ToolbarSeparator4.Visible = false;
+                ToolbarSeparator5.Visible = false;
+                ToolbarSeparator9.Visible = false;
+                ToolbarSeparator10.Visible = false;
+            }
         }
         #endregion
     }
