@@ -22,8 +22,12 @@ namespace HRES
 
             if (!IsPostBack)
             {
-                if (Session["UserID"] == null)
+                if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null)
                 {
+                    Session["UserID"] = null;
+                    Session["UserName"] = null;
+                    Session["AccessLevel"] = null;
+                    Session["Depart"] = null;
                     Response.Redirect("Loginin.aspx");
                 }
                 if (PageManager.Instance != null)

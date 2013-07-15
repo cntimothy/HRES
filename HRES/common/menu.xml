@@ -21,6 +21,8 @@
     </TreeNode>
   </TreeNode>
   <TreeNode Text="考评人管理" SingleClickExpand="true">
+    <TreeNode Text="上传备选考评人名单" NavigateUrl="~/Pages/EvaluatorManagement/UploadSelectableEvaluator.aspx" >
+    </TreeNode>
     <TreeNode Text="制作考评人名单" NavigateUrl="~/Pages/EvaluatorManagement/MakeEvaluator.aspx" >
     </TreeNode>
     <TreeNode Text="审核考评人名单" NavigateUrl="~/Pages/EvaluatorManagement/CheckEvaluator.aspx" >
