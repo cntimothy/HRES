@@ -207,12 +207,13 @@ namespace Controls
         }
 
         /// <summary>
-        /// 将path指定的Excel数据写入数据库，写入成功返回true，否则返回false
+        /// 将path指定的Excel数据写入数据库(考评人的部门由depart指定)，写入成功返回true，否则返回false
         /// </summary>
         /// <param name="path">Excel的路径</param>
+        /// <param name="depart">考评人部门，即上传文件的系级管理员的部门</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool UploadSelectable(string path, ref string exception)
+        public static bool UploadSelectable(string path, string depart, ref string exception)
         {
             return true;
         }
