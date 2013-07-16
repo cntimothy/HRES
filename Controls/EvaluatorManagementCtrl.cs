@@ -297,7 +297,19 @@ namespace Controls
         /// <param name="evaluatorList">考评人ID列表</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SetEvaluaror(string evaluated, List<string> evaluatorList, ref string exception)
+        public static bool SetEvaluator(string evaluated, List<string> evaluatorList, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指定被考评人的考评人名单审核意见，有审核意见返回true，否则返回false
+        /// </summary>
+        /// <param name="comment">审核意见</param>
+        /// <param name="evaluatedID">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetComment(ref string comment, string evaluatedID, ref string exception)
         {
             return true;
         }
