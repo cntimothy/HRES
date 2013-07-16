@@ -1,3 +1,11 @@
+2013/7/16
+EvaluatorManagementCtrl
+	增加了一个函数GetComment()，用户获取指定被考评人的考评人名单审核意见
+	改正了函数SetEvaluator()函数名中的拼写错误
+
+
+
+
 2013/7/15
 EvaluatorManagementCtrl
 	修改了Delete和DeleteAll两个函数的注释
