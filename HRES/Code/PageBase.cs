@@ -28,7 +28,7 @@ namespace HRES
                     Session["UserName"] = null;
                     Session["AccessLevel"] = null;
                     Session["Depart"] = null;
-                    Response.Redirect("Loginin.aspx");
+                    Response.Redirect("../Loginin.aspx");
                 }
                 if (PageManager.Instance != null)
                 {

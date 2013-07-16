@@ -1895,6 +1895,7 @@
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
     <Content Include="Pages\EvaluatorManagement\CheckEvaluator.aspx" />
+    <Content Include="Pages\EvaluatorManagement\iframe_MakeOrCheckEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\MakeEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
@@ -2026,6 +2027,13 @@
     </Compile>
     <Compile Include="Pages\EvaluatorManagement\CheckEvaluator.aspx.designer.cs">
       <DependentUpon>CheckEvaluator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\iframe_MakeOrCheckEvaluator.aspx.cs">
+      <DependentUpon>iframe_MakeOrCheckEvaluator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\iframe_MakeOrCheckEvaluator.aspx.designer.cs">
+      <DependentUpon>iframe_MakeOrCheckEvaluator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluatorManagement\MakeEvaluator.aspx.cs">
       <DependentUpon>MakeEvaluator.aspx</DependentUpon>
