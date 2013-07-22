@@ -41,7 +41,7 @@ namespace HRES.Pages.EvaluatorManagement
             SetSimpleForm(keys);
         }
 
-        protected void Window_MakePostBook_Close(object sender, FineUI.WindowCloseEventArgs e)
+        protected void Window_MakeEvaluator_Close(object sender, FineUI.WindowCloseEventArgs e)
         {
             BindEvaluatedToGrid();
         }

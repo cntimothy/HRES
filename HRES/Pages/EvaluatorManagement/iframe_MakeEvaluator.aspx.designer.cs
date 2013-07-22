@@ -10,7 +10,7 @@
 namespace HRES.Pages.EvaluatorManagement {
     
     
-    public partial class iframe_MakeOrCheckEvaluator {
+    public partial class iframe_MakeEvaluator {
         
         /// <summary>
         /// form1 控件。
@@ -58,13 +58,13 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// Button1 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button1;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -76,49 +76,13 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// Button2 控件。
+        /// Button_Submit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button Button2;
-        
-        /// <summary>
-        /// ToolbarSeparator2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
-        
-        /// <summary>
-        /// Button3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button Button3;
-        
-        /// <summary>
-        /// ToolbarSeparator3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.ToolbarSeparator ToolbarSeparator3;
-        
-        /// <summary>
-        /// Button4 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Button Button4;
+        protected global::FineUI.Button Button_Submit;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -146,6 +110,24 @@ namespace HRES.Pages.EvaluatorManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Label Label2;
+        
+        /// <summary>
+        /// SimpleForm1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm1;
+        
+        /// <summary>
+        /// Label_Submitted 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Submitted;
         
         /// <summary>
         /// Grid1 控件。

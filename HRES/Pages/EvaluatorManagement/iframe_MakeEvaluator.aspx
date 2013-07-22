@@ -1,5 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="iframe_MakeOrCheckEvaluator.aspx.cs"
-    Inherits="HRES.Pages.EvaluatorManagement.iframe_MakeOrCheckEvaluator" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="iframe_MakeEvaluator.aspx.cs"
+    Inherits="HRES.Pages.EvaluatorManagement.iframe_MakeEvaluator" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,31 +17,29 @@
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                         <Items>
-                            <x:Button ID="Button1" runat="server" Text="关闭">
+                            <x:Button ID="Button_Close" runat="server" Text="关闭">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button2" runat="server" Text="提交">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
-                            </x:ToolbarSeparator>
-                            <x:Button ID="Button3" runat="server" Text="通过">
-                            </x:Button>
-                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
-                            </x:ToolbarSeparator>
-                            <x:Button ID="Button4" runat="server" Text="退回">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见：">
                             </x:Label>
-                            <x:Label ID="Label2" runat="server" Label="Label" Text="Label">
+                            <x:Label ID="Label2" runat="server" Label="Label" Text="">
                             </x:Label>
                         </Items>
                     </x:Toolbar>
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm" ShowHeader="false" ShowBorder="false" AutoWidth="true" >
+                        <Items>
+                            <x:Label ID="Label_Submitted" runat="server" Label="已提交名单" Text="">
+                            </x:Label>
+                        </Items>
+                    </x:SimpleForm>
                     <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
                         PageSize="200" AutoHeight="true" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True"
-                        AutoPostBack="true" DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"
+                        AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"
                         EnableMultiSelect="true" ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true"
                         CheckBoxSelectOnly="true">
                         <Columns>

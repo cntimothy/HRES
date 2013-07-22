@@ -239,12 +239,36 @@ namespace Controls
             string[] values4 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
             string[] values5 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
             string[] values6 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values7 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
+            string[] values8 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
+            string[] values9 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values10 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values11 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values12 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values13 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
+            string[] values14 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
+            string[] values15 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values16 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values17 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values18 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
             table.Rows.Add(values1);
             table.Rows.Add(values2);
             table.Rows.Add(values3);
             table.Rows.Add(values4);
             table.Rows.Add(values5);
             table.Rows.Add(values6);
+            table.Rows.Add(values7);
+            table.Rows.Add(values8);
+            table.Rows.Add(values9);
+            table.Rows.Add(values10);
+            table.Rows.Add(values11);
+            table.Rows.Add(values12);
+            table.Rows.Add(values13);
+            table.Rows.Add(values14);
+            table.Rows.Add(values15);
+            table.Rows.Add(values16);
+            table.Rows.Add(values17);
+            table.Rows.Add(values18);
             return true;
         }
 

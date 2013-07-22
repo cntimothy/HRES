@@ -55,8 +55,8 @@
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakeEvaluator" Text="制作"
-                                ToolTip="制作考评人名单" Title="制作" IFrameUrl="iframe_MakeOrCheckEvaluator.aspx" DataIFrameUrlFields="ID,Name,Status"
-                                DataIFrameUrlFormatString="iframe_MakeOrCheckEvaluator.aspx?id={0}&name={1}&status={2}" />
+                                ToolTip="制作考评人名单" Title="制作" IFrameUrl="iframe_MakeEvaluator.aspx" DataIFrameUrlFields="ID,Name,Status"
+                                DataIFrameUrlFormatString="iframe_MakeEvaluator.aspx?id={0}&name={1}&status={2}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
@@ -99,8 +99,8 @@
     </x:Panel>
     <x:Window ID="Window_MakeEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
-        runat="server" OnClose="Window_MakePostBook_Close" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="550px" EnableClose="true" AutoHeight="true" >
+        runat="server" OnClose="Window_MakeEvaluator_Close" IsModal="true" CssStyle="width:80%"
+        EnableConfirmOnClose="true" Height="560px" EnableClose="true" AutoHeight="true"  >
     </x:Window>
     </form>
 </body>
