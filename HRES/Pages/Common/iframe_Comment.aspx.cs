@@ -16,17 +16,28 @@ namespace HRES.Pages.Common
             Button_Cancel.OnClientClick = ActiveWindow.GetConfirmHideReference();
         }
 
-        protected void Button_Return_Click(object sender, EventArgs e)
+        protected void Button_Reject_Click(object sender, EventArgs e)
         {
             string exception = "";
             if (TextArea_Comment.Text == "")
             {
                 Alert.Show("请输入审核意见！");
             }
-            if (PostBookManagementCtrl.SetReturned(Request.QueryString["id"], ref exception) &&
-                PostBookManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
+            if (Request.QueryString["parent"] == "checkpostbook")
             {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                if (PostBookManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
+                    PostBookManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
+                {
+                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                }
+            }
+            else if (Request.QueryString["parent"] == "checkevaluator")
+            {
+                if (EvaluatorManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
+                    EvaluatorManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
+                {
+                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                }
             }
         }
     }

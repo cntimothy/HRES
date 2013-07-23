@@ -252,7 +252,7 @@ namespace Controls
         /// <param name="ID">被考评人ID</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SetReturned(string ID, ref string exception)
+        public static bool SetRejected(string ID, ref string exception)
         {
             return true;
         }

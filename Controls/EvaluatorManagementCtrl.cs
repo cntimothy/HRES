@@ -180,7 +180,7 @@ namespace Controls
         /// <param name="ID">被考评人ID</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SetReturned(string ID, ref string exception)
+        public static bool SetRejected(string ID, ref string exception)
         {
             return true;
         }
@@ -233,24 +233,24 @@ namespace Controls
             table.Columns.Add("Company");
             table.Columns.Add("Telephone");
             table.Columns.Add("Relation");
-            string[] values1 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
-            string[] values2 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
-            string[] values3 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
-            string[] values4 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
-            string[] values5 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
-            string[] values6 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
-            string[] values7 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
-            string[] values8 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
-            string[] values9 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
-            string[] values10 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
-            string[] values11 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
-            string[] values12 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
-            string[] values13 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
-            string[] values14 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
-            string[] values15 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
-            string[] values16 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
-            string[] values17 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
-            string[] values18 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values1 = new string[] { "1", "高1", "男", "Intel", "12345", "领导" };
+            string[] values2 = new string[] { "2", "高2", "女", "AMD", "2345", "同事" };
+            string[] values3 = new string[] { "3", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values5 = new string[] { "5", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values6 = new string[] { "6", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values7 = new string[] { "7", "高1", "男", "Intel", "12345", "领导" };
+            string[] values8 = new string[] { "8", "高2", "女", "AMD", "2345", "同事" };
+            string[] values9 = new string[] { "9", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values10 = new string[] { "0", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values11 = new string[] { "11", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values12 = new string[] { "22", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values13 = new string[] { "33", "高1", "男", "Intel", "12345", "领导" };
+            string[] values14 = new string[] { "44", "高2", "女", "AMD", "2345", "同事" };
+            string[] values15 = new string[] { "55", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values16 = new string[] { "66", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values17 = new string[] { "77", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values18 = new string[] { "88", "高6", "男", "IBM", "25132513", "下属" };
             table.Rows.Add(values1);
             table.Rows.Add(values2);
             table.Rows.Add(values3);
@@ -299,18 +299,54 @@ namespace Controls
             table.Columns.Add("Company");
             table.Columns.Add("Telephone");
             table.Columns.Add("Relation");
-            string[] values1 = new string[] { "1234", "高1", "男", "Intel", "12345", "领导" };
-            string[] values2 = new string[] { "5678", "高2", "女", "AMD", "2345", "同事" };
-            string[] values3 = new string[] { "2345", "高3", "男", "EMC", "1413235", "同事" };
-            string[] values4 = new string[] { "6789", "高4", "男", "Lenovo", "543234", "下属" };
-            string[] values5 = new string[] { "1212", "高5", "男", "Apple", "515321432", "服务对象" };
-            string[] values6 = new string[] { "3213", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values1 = new string[] { "1", "高1", "男", "Intel", "12345", "领导" };
+            string[] values2 = new string[] { "2", "高2", "女", "AMD", "2345", "同事" };
+            string[] values3 = new string[] { "3", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values5 = new string[] { "5", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values6 = new string[] { "6", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values7 = new string[] { "11", "高1", "男", "Intel", "12345", "领导" };
+            string[] values8 = new string[] { "22", "高2", "女", "AMD", "2345", "同事" };
+            string[] values9 = new string[] { "33", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values10 = new string[] { "44", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values11 = new string[] { "55", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values12 = new string[] { "66", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values13 = new string[] { "111", "高1", "男", "Intel", "12345", "领导" };
+            string[] values14 = new string[] { "222", "高2", "女", "AMD", "2345", "同事" };
+            string[] values15 = new string[] { "333", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values16 = new string[] { "444", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values17 = new string[] { "555", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values18 = new string[] { "666", "高6", "男", "IBM", "25132513", "下属" };
+            string[] values19 = new string[] { "1111", "高1", "男", "Intel", "12345", "领导" };
+            string[] values20 = new string[] { "2222", "高2", "女", "AMD", "2345", "同事" };
+            string[] values21 = new string[] { "3333", "高3", "男", "EMC", "1413235", "同事" };
+            string[] values22 = new string[] { "4444", "高4", "男", "Lenovo", "543234", "下属" };
+            string[] values23 = new string[] { "5555", "高5", "男", "Apple", "515321432", "服务对象" };
+            string[] values24 = new string[] { "6666", "高6", "男", "IBM", "25132513", "下属" };
             table.Rows.Add(values1);
             table.Rows.Add(values2);
             table.Rows.Add(values3);
             table.Rows.Add(values4);
             table.Rows.Add(values5);
             table.Rows.Add(values6);
+            table.Rows.Add(values7);
+            table.Rows.Add(values8);
+            table.Rows.Add(values9);
+            table.Rows.Add(values10);
+            table.Rows.Add(values11);
+            table.Rows.Add(values12);
+            table.Rows.Add(values13);
+            table.Rows.Add(values14);
+            table.Rows.Add(values15);
+            table.Rows.Add(values16);
+            table.Rows.Add(values17);
+            table.Rows.Add(values18);
+            table.Rows.Add(values19);
+            table.Rows.Add(values20);
+            table.Rows.Add(values21);
+            table.Rows.Add(values22);
+            table.Rows.Add(values23);
+            table.Rows.Add(values24);
             return true;
         }
 

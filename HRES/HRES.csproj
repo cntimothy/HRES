@@ -1880,9 +1880,7 @@
     <Content Include="images\ui-anim_basic_16x16.gif" />
     <Content Include="js\default.js" />
     <Content Include="lib\FineUI.dll" />
-    <Content Include="lib\FineUI.xml" />
     <Content Include="lib\Newtonsoft.Json.dll" />
-    <Content Include="lib\Newtonsoft.Json.xml" />
     <Content Include="Pages\AccountManagement\ChangePassword.aspx" />
     <Content Include="Pages\Common\iframe_Comment.aspx" />
     <Content Include="Pages\ErrorPage\Error.aspx" />
@@ -1895,6 +1893,7 @@
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
     <Content Include="Pages\EvaluatorManagement\CheckEvaluator.aspx" />
+    <Content Include="Pages\EvaluatorManagement\iframe_CheckEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\iframe_MakeEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\MakeEvaluator.aspx" />
     <Content Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx" />
@@ -2027,6 +2026,13 @@
     </Compile>
     <Compile Include="Pages\EvaluatorManagement\CheckEvaluator.aspx.designer.cs">
       <DependentUpon>CheckEvaluator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\iframe_CheckEvaluator.aspx.cs">
+      <DependentUpon>iframe_CheckEvaluator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluatorManagement\iframe_CheckEvaluator.aspx.designer.cs">
+      <DependentUpon>iframe_CheckEvaluator.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluatorManagement\iframe_MakeEvaluator.aspx.cs">
       <DependentUpon>iframe_MakeEvaluator.aspx</DependentUpon>

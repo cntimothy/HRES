@@ -15,7 +15,7 @@
             <Items>
                 <x:Toolbar ID="Toolbar1" runat="server">
                     <Items>
-                        <x:Button ID="Button_Return" runat="server" Text="退回" OnClick="Button_Return_Click">
+                        <x:Button ID="Button_Reject" runat="server" Text="退回" OnClick="Button_Reject_Click">
                         </x:Button>
                         <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                         </x:ToolbarSeparator>

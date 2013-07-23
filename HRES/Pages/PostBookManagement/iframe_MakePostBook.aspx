@@ -41,7 +41,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator5" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Return" runat="server" Text="退回" >
+                            <x:Button ID="Button_Reject" runat="server" Text="退回" >
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
@@ -376,7 +376,7 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator10" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Return_Shadow" runat="server" Text="退回">
+                            <x:Button ID="Button_Reject_Shadow" runat="server" Text="退回">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill2" runat="server">
                             </x:ToolbarFill>

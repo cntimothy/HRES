@@ -19,8 +19,8 @@ namespace HRES.Pages.PostBookManagement
                 loadPostBook();
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
                 Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-                Button_Return.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
-                Button_Return_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
+                Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
+                Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
                 setToolbarVisible();
                 setEnabled();
             }
@@ -377,9 +377,9 @@ namespace HRES.Pages.PostBookManagement
             }
             else if (accessLevel == AccessLevel.secondManager)
             {
-                Button_Return.Visible = false;
+                Button_Reject.Visible = false;
                 Button_Pass.Visible = false;
-                Button_Return_Shadow.Visible = false;
+                Button_Reject_Shadow.Visible = false;
                 Button_Pass_Shadow.Visible = false;
                 ToolbarSeparator4.Visible = false;
                 ToolbarSeparator5.Visible = false;
