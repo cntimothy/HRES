@@ -87,6 +87,7 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
             }
+            BindEvaluatorToGrid();
         }
 
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)

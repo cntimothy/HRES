@@ -21,7 +21,11 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Sbumit_Click" ConfirmTitle="提示" ConfirmText="确定提交？">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Clear" runat="server" Text="清空" OnClick="Button_Clear_Click" ConfirmTitle="提示" ConfirmText="确定清空？">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
@@ -31,14 +35,15 @@
                             </x:Label>
                         </Items>
                     </x:Toolbar>
-                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm" ShowHeader="false" ShowBorder="false" AutoWidth="true" >
+                    <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="SimpleForm"
+                        ShowHeader="false" ShowBorder="false" AutoWidth="true">
                         <Items>
                             <x:Label ID="Label_Submitted" runat="server" Label="已提交名单" Text="">
                             </x:Label>
                         </Items>
                     </x:SimpleForm>
                     <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
-                        PageSize="200" AutoHeight="true" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True"
+                        PageSize="4" AutoHeight="true" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
                         AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone, Relation"
                         EnableMultiSelect="true" ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true"
                         CheckBoxSelectOnly="true">
@@ -48,13 +53,25 @@
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="工作单位" />
                             <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
-                            <x:BoundField Width="100px" DataField="Relation" DataFormatString="{0}" HeaderText="关系" />
+                            <x:TemplateField Width="200px" HeaderText="关系">
+                                <ItemTemplate>
+                                    <asp:RadioButtonList runat="server" RepeatLayout="Flow" CssClass="gender" RepeatDirection="Horizontal"
+                                        ID="Relation">
+                                        <asp:ListItem Text="领导" Value="领导"></asp:ListItem>
+                                        <asp:ListItem Text="同事" Value="同事"></asp:ListItem>
+                                        <asp:ListItem Text="下属" Value="下属"></asp:ListItem>
+                                        <asp:ListItem Text="服务对象" Value="服务对象" Selected="true"></asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </ItemTemplate>
+                            </x:TemplateField>
                         </Columns>
                     </x:Grid>
                 </Items>
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:HiddenField ID="hfSelectedIDS" runat="server">
+    </x:HiddenField>
     </form>
 </body>
 </html>
