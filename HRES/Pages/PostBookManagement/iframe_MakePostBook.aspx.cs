@@ -22,6 +22,7 @@ namespace HRES.Pages.PostBookManagement
                 Button_Return.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
                 Button_Return_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
                 setToolbarVisible();
+                setEnabled();
             }
         }
 
@@ -384,6 +385,58 @@ namespace HRES.Pages.PostBookManagement
                 ToolbarSeparator5.Visible = false;
                 ToolbarSeparator9.Visible = false;
                 ToolbarSeparator10.Visible = false;
+            }
+        }
+
+        private void setEnabled()
+        {
+            DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+            if (status == DocStatus.submitted || status == DocStatus.passed)
+            {
+                Button_Submit.Enabled = false;
+                Button_Clear.Enabled = false;
+                Button_Save.Enabled = false;
+                Button_Submit_Shadow.Enabled = false;
+                Button_Clear_Shadow.Enabled = false;
+                Button_Save_Shadow.Enabled = false;
+
+
+                TextBox_LaborUnit.Enabled = false;
+                TextBox_LaborDepart.Enabled = false;
+                TextBox_PostName.Enabled = false;
+                TextArea_EduBg.Enabled = false;
+                TextArea_Certificate.Enabled = false;
+                TextArea_Experience.Enabled = false;
+                TextArea_Skill.Enabled = false;
+                TextArea_Personality.Enabled = false;
+                TextArea_PhyCond.Enabled = false;
+                TextArea_WorkOutline.Enabled = false;
+                TextArea_Power.Enabled = false;
+                TextArea_Response.Enabled = false;
+                TextBox_DirectLeader.Enabled = false;
+                TextBox_Subordinate.Enabled = false;
+                TextBox_Colleague.Enabled = false;
+                TextBox_Services.Enabled = false;
+                TextBox_Relations.Enabled = false;
+                TextArea_WorkEnter.Enabled = false;
+                TextArea_PostAssess.Enabled = false;
+                TextArea_Others.Enabled = false;
+
+                Radio_Employer.Enabled = false;
+                Radio_PostType.Enabled = false;
+
+                foreach (ControlBase item in Panel6.Items)
+                {
+                    try
+                    {
+                        SimpleForm sf = item as SimpleForm;
+                        item.Enabled = false;
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
+                }
             }
         }
         #endregion

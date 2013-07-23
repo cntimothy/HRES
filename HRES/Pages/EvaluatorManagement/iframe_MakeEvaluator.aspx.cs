@@ -25,6 +25,12 @@ namespace HRES.Pages.EvaluatorManagement
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 bindEvaluatorToGrid();
                 SetSubmitted();
+                DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+                if (status == DocStatus.submitted || status == DocStatus.passed)
+                {
+                    Button_Submit.Enabled = false;
+                    Button_Clear.Enabled = false;
+                }
             }
         }
 
@@ -39,7 +45,7 @@ namespace HRES.Pages.EvaluatorManagement
 
         }
 
-        protected void Button_Sbumit_Click(object sender, EventArgs e)
+        protected void Button_Submit_Click(object sender, EventArgs e)
         {
             SyncSelectedRowIndexArrayToHiddenField();
             string exception = "";
