@@ -1,3 +1,10 @@
+2013/7/24
+EvaluateTableManagementCtrl
+	将isExist函数从PostBookManagementCtrl移到EvaluateTableManagementCtrl
+
+
+
+
 2013/7/16
 EvaluatorManagementCtrl
 	增加了一个函数GetComment()，用户获取指定被考评人的考评人名单审核意见
