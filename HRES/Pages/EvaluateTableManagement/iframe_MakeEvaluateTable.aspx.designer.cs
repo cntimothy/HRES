@@ -58,13 +58,13 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Toolbar Toolbar1;
         
         /// <summary>
-        /// 关闭 控件。
+        /// Button_Close 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button 关闭;
+        protected global::FineUI.Button Button_Close;
         
         /// <summary>
         /// ToolbarSeparator1 控件。
@@ -76,13 +76,13 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator1;
         
         /// <summary>
-        /// 保存 控件。
+        /// Button_Save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button 保存;
+        protected global::FineUI.Button Button_Save;
         
         /// <summary>
         /// ToolbarSeparator2 控件。
@@ -94,13 +94,13 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.ToolbarSeparator ToolbarSeparator2;
         
         /// <summary>
-        /// 提交 控件。
+        /// Button_Submit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Button 提交;
+        protected global::FineUI.Button Button_Submit;
         
         /// <summary>
         /// ToolbarFill1 控件。
@@ -121,13 +121,85 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Label Label1;
         
         /// <summary>
-        /// Label2 控件。
+        /// Label_Comment 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label2;
+        protected global::FineUI.Label Label_Comment;
+        
+        /// <summary>
+        /// Form2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Form Form2;
+        
+        /// <summary>
+        /// FormRow1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.FormRow FormRow1;
+        
+        /// <summary>
+        /// Label_EvaluatedName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_EvaluatedName;
+        
+        /// <summary>
+        /// Label_PostName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_PostName;
+        
+        /// <summary>
+        /// Label_LaborDep 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_LaborDep;
+        
+        /// <summary>
+        /// Label_LaborUnit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_LaborUnit;
+        
+        /// <summary>
+        /// FormRow2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.FormRow FormRow2;
+        
+        /// <summary>
+        /// Label_Period 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Label Label_Period;
         
         /// <summary>
         /// Panel3 控件。
@@ -1172,6 +1244,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.HiddenField HiddenField_Attitude_5;
+        
+        /// <summary>
+        /// SimpleForm31 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.SimpleForm SimpleForm31;
+        
+        /// <summary>
+        /// TextArea_Reject1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Reject1;
+        
+        /// <summary>
+        /// TextArea_Reject2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Reject2;
         
         /// <summary>
         /// Window_ShowQuota 控件。

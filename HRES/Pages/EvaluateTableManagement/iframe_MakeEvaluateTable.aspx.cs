@@ -91,6 +91,17 @@ namespace HRES.Pages.EvaluateTableManagement
                 + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
                 TriggerBox_Attitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_5.ClientID, TextArea_Attitude_5.ClientID, HiddenField_Attitude_5.ClientID)
                 + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+
+                DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+                if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)
+                {
+                    Button_Save.Enabled = false;
+                    Button_Submit.Enabled = false;
+                }
+
+                loadEvaluateTable();
             }
         }
         #endregion
@@ -100,9 +111,288 @@ namespace HRES.Pages.EvaluateTableManagement
         { 
             
         }
+
+        protected void Button_Save_Click(object sender, EventArgs e)
+        {
+            DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+            DocStatus status = curStatus;
+            if (curStatus == DocStatus.unmake)
+            {
+                status = DocStatus.saved;
+            }
+            else if (curStatus == DocStatus.saved)
+            {
+                status = DocStatus.saved;
+            }
+            else if (curStatus == DocStatus.returned)
+            {
+                status = DocStatus.returned;
+            }
+            EvaluateTable evaluateTable = getNewEvaluateTable();
+            string evaluatedID = Request.QueryString["id"];
+            string exception = "";
+            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, status, ref exception))
+            {
+                Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("保存失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
+
+        protected void Button_Submit_Click(object sender, EventArgs e)
+        {
+            DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+            DocStatus status = curStatus;
+            if (curStatus == DocStatus.unmake)
+            {
+                status = DocStatus.submitted;
+            }
+            else if (curStatus == DocStatus.saved)
+            {
+                status = DocStatus.submitted;
+            }
+            else if (curStatus == DocStatus.returned)
+            {
+                status = DocStatus.modified;
+            }
+            EvaluateTable evaluateTable = getNewEvaluateTable();
+            string evaluatedID = Request.QueryString["id"];
+            string exception = "";
+            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, status, ref exception))
+            {
+                Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
+            }
+            else
+            {
+                Alert.ShowInTop("保存失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Private Method
+        private void loadEvaluateTable()
+        {
+            string evaluatedID = Request.QueryString["id"];
+            EvaluateTable evaluateTable = new EvaluateTable();
+            string exception = "";
+            if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
+            {
+                Label_Comment.Text = evaluateTable.Comment;
+
+                Label_EvaluatedName.Text = evaluateTable.EvaluatedName;
+                Label_PostName.Text = evaluateTable.PostName;
+                Label_LaborDep.Text = evaluateTable.LaborDep;
+                Label_LaborUnit.Text = evaluateTable.LaborUnit;
+                Label_Period.Text = evaluateTable.StartTime + " ~ " + evaluateTable.StopTime;
+
+                for (int i = 0; i < evaluateTable.KeyResponse.Count; i++)
+                {
+                    SimpleForm sf = Panel3.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.KeyResponse[i].Title;
+                    ta.Text = evaluateTable.KeyResponse[i].Content[0];
+                }
+
+                for (int i = 0; i < evaluateTable.KeyQualify.Count; i++)
+                {
+                    SimpleForm sf = Panel4.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.KeyQualify[i].Title;
+                    ta.Text = "优：" + evaluateTable.KeyQualify[i].Content[0]
+                        + " 良：" + evaluateTable.KeyQualify[i].Content[1]
+                        + " 中：" + evaluateTable.KeyQualify[i].Content[2]
+                        + " 差：" + evaluateTable.KeyQualify[i].Content[3];
+
+                    FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                        hf.Text = evaluateTable.KeyQualify[i].Title
+                        + "&" + evaluateTable.KeyQualify[i].Content[0]
+                        + "^" + evaluateTable.KeyQualify[i].Content[1]
+                        + "^" + evaluateTable.KeyQualify[i].Content[2]
+                        + "^" + evaluateTable.KeyQualify[i].Content[3];
+                }
+
+                for (int i = 0; i < evaluateTable.KeyAttitude.Count; i++)
+                {
+                    SimpleForm sf = Panel5.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.KeyAttitude[i].Title;
+                    ta.Text = "优：" + evaluateTable.KeyAttitude[i].Content[0]
+                        + " 良：" + evaluateTable.KeyAttitude[i].Content[1]
+                        + " 中：" + evaluateTable.KeyAttitude[i].Content[2]
+                        + " 差：" + evaluateTable.KeyAttitude[i].Content[3];
+
+                    FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                    hf.Text = evaluateTable.KeyAttitude[i].Title
+                    + "&" + evaluateTable.KeyAttitude[i].Content[0]
+                    + "^" + evaluateTable.KeyAttitude[i].Content[1]
+                    + "^" + evaluateTable.KeyAttitude[i].Content[2]
+                    + "^" + evaluateTable.KeyAttitude[i].Content[3];
+                }
+
+                for (int i = 0; i < evaluateTable.Response.Count; i++)
+                {
+                    SimpleForm sf = Panel6.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.Response[i].Title;
+                    ta.Text = evaluateTable.Response[i].Content[0];
+                }
+
+                for (int i = 0; i < evaluateTable.Qualify.Count; i++)
+                {
+                    SimpleForm sf = Panel7.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.Qualify[i].Title;
+                    ta.Text = "优：" + evaluateTable.Qualify[i].Content[0]
+                        + " 良：" + evaluateTable.Qualify[i].Content[1]
+                        + " 中：" + evaluateTable.Qualify[i].Content[2]
+                        + " 差：" + evaluateTable.Qualify[i].Content[3];
+
+                    FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                    hf.Text = evaluateTable.Qualify[i].Title
+                    + "&" + evaluateTable.Qualify[i].Content[0]
+                    + "^" + evaluateTable.Qualify[i].Content[1]
+                    + "^" + evaluateTable.Qualify[i].Content[2]
+                    + "^" + evaluateTable.Qualify[i].Content[3];
+                }
+
+                for (int i = 0; i < evaluateTable.Attitude.Count; i++)
+                {
+                    SimpleForm sf = Panel8.Items[i] as SimpleForm;
+                    sf.Collapsed = false;
+                    TriggerBox tb = sf.Items[0] as TriggerBox;
+                    TextArea ta = sf.Items[1] as TextArea;
+                    tb.Text = evaluateTable.Attitude[i].Title;
+                    ta.Text = "优：" + evaluateTable.Attitude[i].Content[0]
+                        + " 良：" + evaluateTable.Attitude[i].Content[1]
+                        + " 中：" + evaluateTable.Attitude[i].Content[2]
+                        + " 差：" + evaluateTable.Attitude[i].Content[3];
+
+                    FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                    hf.Text = evaluateTable.Attitude[i].Title
+                    + "&" + evaluateTable.Attitude[i].Content[0]
+                    + "^" + evaluateTable.Attitude[i].Content[1]
+                    + "^" + evaluateTable.Attitude[i].Content[2]
+                    + "^" + evaluateTable.Attitude[i].Content[3];
+                }
+
+                if (evaluateTable.Reject.Count == 0)
+                {
+                    TextArea_Reject1.Text = "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；";
+                    TextArea_Reject2.Text = "";
+                }
+                else
+                {
+                    TextArea_Reject1.Text = evaluateTable.Reject[0].Content[0];
+                    TextArea_Reject2.Text = evaluateTable.Reject[1].Content[0];
+                }
+            }
+        }
+
+        private EvaluateTable getNewEvaluateTable()
+        {
+            EvaluateTable evaluateTable = new EvaluateTable();
+            evaluateTable.EvaluatedName = Label_EvaluatedName.Text.Trim();
+            evaluateTable.PostName = Label_PostName.Text.Trim();
+            evaluateTable.LaborDep = Label_LaborDep.Text.Trim();
+            evaluateTable.LaborUnit = Label_LaborUnit.Text.Trim();
+            evaluateTable.StartTime = Label_Period.Text.Split('~')[0].Trim();
+            evaluateTable.StopTime = Label_Period.Text.Split('~')[1].Trim();
+            foreach (ControlBase item in Panel3.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text == "")
+                {
+                    break;
+                }
+                TextArea ta = sf.Items[1] as TextArea;
+                evaluateTable.KeyResponse.Add(new Quota(tb.Text.Trim(), new string[] { ta.Text.Trim() }));
+            }
+
+            foreach (ControlBase item in Panel4.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text.Trim() == "")
+                {
+                    break;
+                }
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = hf.Text.Split('&')[1].Split('^');
+                evaluateTable.KeyQualify.Add(new Quota(title, content));
+            }
+
+            foreach (ControlBase item in Panel5.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text.Trim() == "")
+                {
+                    break;
+                }
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = hf.Text.Split('&')[1].Split('^');
+                evaluateTable.KeyAttitude.Add(new Quota(title, content));
+            }
+
+            foreach (ControlBase item in Panel6.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text == "")
+                {
+                    break;
+                }
+                TextArea ta = sf.Items[1] as TextArea;
+                evaluateTable.Response.Add(new Quota(tb.Text.Trim(), new string[] { ta.Text.Trim() }));
+            }
+
+            foreach (ControlBase item in Panel7.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text.Trim() == "")
+                {
+                    break;
+                }
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = hf.Text.Split('&')[1].Split('^');
+                evaluateTable.Qualify.Add(new Quota(title, content));
+            }
+
+            foreach (ControlBase item in Panel8.Items)
+            {
+                SimpleForm sf = item as SimpleForm;
+                TriggerBox tb = sf.Items[0] as TriggerBox;
+                if (tb.Text.Trim() == "")
+                {
+                    break;
+                }
+                FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
+                string title = hf.Text.Split('&')[0].Trim();
+                string[] content = hf.Text.Split('&')[1].Split('^');
+                evaluateTable.Attitude.Add(new Quota(title, content));
+            }
+            evaluateTable.Reject.Add(new Quota("严重违反规章制度", new string[] { TextArea_Reject1.Text.Trim() }));
+            evaluateTable.Reject.Add(new Quota("其他", new string[] { TextArea_Reject2.Text.Trim() }));
+
+            return evaluateTable;
+        }
         #endregion
     }
 }

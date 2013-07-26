@@ -1,4 +1,8 @@
-2013/7/24
+2013/7/26
+EvaluateTable
+	为数据结构加上了构造函数
+	在Quota中去掉了Score域
+	增加了Comment域和status域
 EvaluateTableManagementCtrl
 	将isExist函数从PostBookManagementCtrl移到EvaluateTableManagementCtrl
 

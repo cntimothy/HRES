@@ -10,7 +10,7 @@ namespace DataStructure
         #region Private Field
         string title;
         string[] content;
-        string score;
+        //string score;
         #endregion
 
         #region Public Field
@@ -26,11 +26,11 @@ namespace DataStructure
             set { content = value; }
         }
 
-        public string Score
-        {
-            get { return score; }
-            set { score = value; }
-        }
+        //public string Score
+        //{
+        //    get { return score; }
+        //    set { score = value; }
+        //}
         #endregion
 
         #region Constructor
@@ -40,14 +40,14 @@ namespace DataStructure
         /// <param name="title">标题</param>
         /// <param name="content">指标内容</param>
         /// <param name="score">分数</param>
-        public Quota(string title, string[] content, string score)
+        public Quota(string title, string[] content)
         {
             if (content.Length == 1)
             {
                 this.title = title;
                 this.content = new string[1];
                 this.content[0] = content[0];
-                this.score = score;
+                //this.score = score;
             }
             else if (content.Length == 4)
             {
@@ -57,7 +57,7 @@ namespace DataStructure
                 {
                     this.content[i] = content[i];
                 }
-                this.score = score;
+                //this.score = score;
             }
             else 
             {
@@ -84,12 +84,14 @@ namespace DataStructure
         List<Quota> response;
         List<Quota> qualify;
         List<Quota> attitude;
-        List<Quota> regect;
-        string keyWeight;
-        string responseWeight;
-        string qualifyWeitht;
-        string attitudeWeight;
-        string rejectWeight;        
+        List<Quota> reject;
+        string keyWeight = "0.5";
+        string responseWeight = "0.2";
+        string qualifyWeitht = "0.15";
+        string attitudeWeight = "0.15";
+        string rejectWeight = "1";
+        DocStatus status;
+        string comment;
         #endregion
 
         #region Public Field
@@ -204,10 +206,10 @@ namespace DataStructure
         /// <summary>
         /// 否决指标
         /// </summary>
-        public List<Quota> Regect
+        public List<Quota> Reject
         {
-            get { return regect; }
-            set { regect = value; }
+            get { return reject; }
+            set { reject = value; }
         }
 
         /// <summary>
@@ -253,6 +255,37 @@ namespace DataStructure
         {
             get { return rejectWeight; }
             set { rejectWeight = value; }
+        }
+
+        /// <summary>
+        /// 状态
+        /// </summary>
+        public DocStatus Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        /// <summary>
+        /// 审核意见
+        /// </summary>
+        public string Comment
+        {
+            get { return comment; }
+            set { comment = value; }
+        }
+        #endregion
+
+        #region Constructor
+        public EvaluateTable()
+        { 
+            keyResponse = new List<Quota>();
+            keyQualify = new List<Quota>();
+            keyAttitude = new List<Quota>();
+            response = new List<Quota>();
+            qualify = new List<Quota>();
+            attitude = new List<Quota>();
+            reject = new List<Quota>();
         }
         #endregion
 
