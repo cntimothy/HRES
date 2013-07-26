@@ -1887,6 +1887,8 @@
     <Content Include="Pages\EvaluatedManagement\MakeEvaluated.aspx" />
     <Content Include="Pages\EvaluateTableManagement\CheckEvaluateTable.aspx" />
     <Content Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx" />
+    <Content Include="Pages\EvaluateTableManagement\iframe_ShowQuota.aspx" />
+    <Content Include="Pages\EvaluateTableManagement\iframe_ShowWCR.aspx" />
     <Content Include="Pages\EvaluateTableManagement\MakeEvaluateTable.aspx" />
     <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\EvaluationResult.aspx" />
@@ -1985,6 +1987,20 @@
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx.designer.cs">
       <DependentUpon>iframe_MakeEvaluateTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_ShowQuota.aspx.cs">
+      <DependentUpon>iframe_ShowQuota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_ShowQuota.aspx.designer.cs">
+      <DependentUpon>iframe_ShowQuota.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_ShowWCR.aspx.cs">
+      <DependentUpon>iframe_ShowWCR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_ShowWCR.aspx.designer.cs">
+      <DependentUpon>iframe_ShowWCR.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\MakeEvaluateTable.aspx.cs">
       <DependentUpon>MakeEvaluateTable.aspx</DependentUpon>

@@ -148,6 +148,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm1;
         
         /// <summary>
+        /// TriggerBox_KeyResponse_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyResponse_1;
+        
+        /// <summary>
+        /// TextArea_KeyResponse_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyResponse_1;
+        
+        /// <summary>
         /// SimpleForm2 控件。
         /// </summary>
         /// <remarks>
@@ -155,6 +173,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm2;
+        
+        /// <summary>
+        /// TriggerBox_KeyResponse_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyResponse_2;
+        
+        /// <summary>
+        /// TextArea_KeyResponse_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyResponse_2;
         
         /// <summary>
         /// SimpleForm3 控件。
@@ -166,6 +202,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm3;
         
         /// <summary>
+        /// TriggerBox_KeyResponse_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyResponse_3;
+        
+        /// <summary>
+        /// TextArea_KeyResponse_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyResponse_3;
+        
+        /// <summary>
         /// SimpleForm4 控件。
         /// </summary>
         /// <remarks>
@@ -175,6 +229,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm4;
         
         /// <summary>
+        /// TriggerBox_KeyResponse_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyResponse_4;
+        
+        /// <summary>
+        /// TextArea_KeyResponse_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyResponse_4;
+        
+        /// <summary>
         /// SimpleForm5 控件。
         /// </summary>
         /// <remarks>
@@ -182,6 +254,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm5;
+        
+        /// <summary>
+        /// TriggerBox_KeyResponse_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyResponse_5;
+        
+        /// <summary>
+        /// TextArea_KeyResponse_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyResponse_5;
         
         /// <summary>
         /// Panel4 控件。
@@ -202,6 +292,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm6;
         
         /// <summary>
+        /// TriggerBox_KeyQualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyQualify_1;
+        
+        /// <summary>
+        /// TextArea_KeyQualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyQualify_1;
+        
+        /// <summary>
+        /// HiddenField_KeyQualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyQualify_1;
+        
+        /// <summary>
         /// SimpleForm7 控件。
         /// </summary>
         /// <remarks>
@@ -209,6 +326,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm7;
+        
+        /// <summary>
+        /// TriggerBox_KeyQualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyQualify_2;
+        
+        /// <summary>
+        /// TextArea_KeyQualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyQualify_2;
+        
+        /// <summary>
+        /// HiddenField_KeyQualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyQualify_2;
         
         /// <summary>
         /// SimpleForm8 控件。
@@ -220,6 +364,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm8;
         
         /// <summary>
+        /// TriggerBox_KeyQualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyQualify_3;
+        
+        /// <summary>
+        /// TextArea_KeyQualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyQualify_3;
+        
+        /// <summary>
+        /// HiddenField_KeyQualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyQualify_3;
+        
+        /// <summary>
         /// SimpleForm9 控件。
         /// </summary>
         /// <remarks>
@@ -229,6 +400,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm9;
         
         /// <summary>
+        /// TriggerBox_KeyQualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyQualify_4;
+        
+        /// <summary>
+        /// TextArea_KeyQualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyQualify_4;
+        
+        /// <summary>
+        /// HiddenField_KeyQualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyQualify_4;
+        
+        /// <summary>
         /// SimpleForm10 控件。
         /// </summary>
         /// <remarks>
@@ -236,6 +434,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm10;
+        
+        /// <summary>
+        /// TriggerBox_KeyQualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyQualify_5;
+        
+        /// <summary>
+        /// TextArea_KeyQualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyQualify_5;
+        
+        /// <summary>
+        /// HiddenField_KeyQualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyQualify_5;
         
         /// <summary>
         /// Panel5 控件。
@@ -256,6 +481,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm11;
         
         /// <summary>
+        /// TriggerBox_KeyAttitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyAttitude_1;
+        
+        /// <summary>
+        /// TextArea_KeyAttitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyAttitude_1;
+        
+        /// <summary>
+        /// HiddenField_KeyAttitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyAttitude_1;
+        
+        /// <summary>
         /// SimpleForm12 控件。
         /// </summary>
         /// <remarks>
@@ -263,6 +515,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm12;
+        
+        /// <summary>
+        /// TriggerBox_KeyAttitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyAttitude_2;
+        
+        /// <summary>
+        /// TextArea_KeyAttitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyAttitude_2;
+        
+        /// <summary>
+        /// HiddenField_KeyAttitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyAttitude_2;
         
         /// <summary>
         /// SimpleForm13 控件。
@@ -274,6 +553,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm13;
         
         /// <summary>
+        /// TriggerBox_KeyAttitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyAttitude_3;
+        
+        /// <summary>
+        /// TextArea_KeyAttitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyAttitude_3;
+        
+        /// <summary>
+        /// HiddenField_KeyAttitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyAttitude_3;
+        
+        /// <summary>
         /// SimpleForm14 控件。
         /// </summary>
         /// <remarks>
@@ -283,6 +589,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm14;
         
         /// <summary>
+        /// TriggerBox_KeyAttitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyAttitude_4;
+        
+        /// <summary>
+        /// TextArea_KeyAttitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyAttitude_4;
+        
+        /// <summary>
+        /// HiddenField_KeyAttitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyAttitude_4;
+        
+        /// <summary>
         /// SimpleForm15 控件。
         /// </summary>
         /// <remarks>
@@ -290,6 +623,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm15;
+        
+        /// <summary>
+        /// TriggerBox_KeyAttitude_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_KeyAttitude_5;
+        
+        /// <summary>
+        /// TextArea_KeyAttitude_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_KeyAttitude_5;
+        
+        /// <summary>
+        /// HiddenField_KeyAttitude_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_KeyAttitude_5;
         
         /// <summary>
         /// Panel6 控件。
@@ -310,6 +670,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm16;
         
         /// <summary>
+        /// TriggerBox_Response_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Response_1;
+        
+        /// <summary>
+        /// TextArea_Response_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Response_1;
+        
+        /// <summary>
         /// SimpleForm17 控件。
         /// </summary>
         /// <remarks>
@@ -317,6 +695,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm17;
+        
+        /// <summary>
+        /// TriggerBox_Response_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Response_2;
+        
+        /// <summary>
+        /// TextArea_Response_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Response_2;
         
         /// <summary>
         /// SimpleForm18 控件。
@@ -328,6 +724,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm18;
         
         /// <summary>
+        /// TriggerBox_Response_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Response_3;
+        
+        /// <summary>
+        /// TextArea_Response_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Response_3;
+        
+        /// <summary>
         /// SimpleForm19 控件。
         /// </summary>
         /// <remarks>
@@ -337,6 +751,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm19;
         
         /// <summary>
+        /// TriggerBox_Response_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Response_4;
+        
+        /// <summary>
+        /// TextArea_Response_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Response_4;
+        
+        /// <summary>
         /// SimpleForm20 控件。
         /// </summary>
         /// <remarks>
@@ -344,6 +776,24 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm20;
+        
+        /// <summary>
+        /// TriggerBox_Response_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Response_5;
+        
+        /// <summary>
+        /// TextArea_Response_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Response_5;
         
         /// <summary>
         /// Panel7 控件。
@@ -364,6 +814,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm21;
         
         /// <summary>
+        /// TriggerBox_Qualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Qualify_1;
+        
+        /// <summary>
+        /// TextArea_Qualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Qualify_1;
+        
+        /// <summary>
+        /// HiddenField_Qualify_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Qualify_1;
+        
+        /// <summary>
         /// SimpleForm22 控件。
         /// </summary>
         /// <remarks>
@@ -371,6 +848,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm22;
+        
+        /// <summary>
+        /// TriggerBox_Qualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Qualify_2;
+        
+        /// <summary>
+        /// TextArea_Qualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Qualify_2;
+        
+        /// <summary>
+        /// HiddenField_Qualify_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Qualify_2;
         
         /// <summary>
         /// SimpleForm23 控件。
@@ -382,6 +886,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm23;
         
         /// <summary>
+        /// TriggerBox_Qualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Qualify_3;
+        
+        /// <summary>
+        /// TextArea_Qualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Qualify_3;
+        
+        /// <summary>
+        /// HiddenField_Qualify_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Qualify_3;
+        
+        /// <summary>
         /// SimpleForm24 控件。
         /// </summary>
         /// <remarks>
@@ -391,6 +922,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm24;
         
         /// <summary>
+        /// TriggerBox_Qualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Qualify_4;
+        
+        /// <summary>
+        /// TextArea_Qualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Qualify_4;
+        
+        /// <summary>
+        /// HiddenField_Qualify_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Qualify_4;
+        
+        /// <summary>
         /// SimpleForm25 控件。
         /// </summary>
         /// <remarks>
@@ -398,6 +956,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm25;
+        
+        /// <summary>
+        /// TriggerBox_Qualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Qualify_5;
+        
+        /// <summary>
+        /// TextArea_Qualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Qualify_5;
+        
+        /// <summary>
+        /// HiddenField_Qualify_5 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Qualify_5;
         
         /// <summary>
         /// Panel8 控件。
@@ -418,6 +1003,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm26;
         
         /// <summary>
+        /// TriggerBox_Attitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Attitude_1;
+        
+        /// <summary>
+        /// TextArea_Attitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Attitude_1;
+        
+        /// <summary>
+        /// HiddenField_Attitude_1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Attitude_1;
+        
+        /// <summary>
         /// SimpleForm27 控件。
         /// </summary>
         /// <remarks>
@@ -425,6 +1037,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm27;
+        
+        /// <summary>
+        /// TriggerBox_Attitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Attitude_2;
+        
+        /// <summary>
+        /// TextArea_Attitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Attitude_2;
+        
+        /// <summary>
+        /// HiddenField_Attitude_2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Attitude_2;
         
         /// <summary>
         /// SimpleForm28 控件。
@@ -436,6 +1075,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm28;
         
         /// <summary>
+        /// TriggerBox_Attitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Attitude_3;
+        
+        /// <summary>
+        /// TextArea_Attitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Attitude_3;
+        
+        /// <summary>
+        /// HiddenField_Attitude_3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Attitude_3;
+        
+        /// <summary>
         /// SimpleForm29 控件。
         /// </summary>
         /// <remarks>
@@ -443,6 +1109,33 @@ namespace HRES.Pages.EvaluateTableManagement {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.SimpleForm SimpleForm29;
+        
+        /// <summary>
+        /// TriggerBox_Attitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TriggerBox TriggerBox_Attitude_4;
+        
+        /// <summary>
+        /// TextArea_Attitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.TextArea TextArea_Attitude_4;
+        
+        /// <summary>
+        /// HiddenField_Attitude_4 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.HiddenField HiddenField_Attitude_4;
         
         /// <summary>
         /// SimpleForm30 控件。
@@ -454,57 +1147,39 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.SimpleForm SimpleForm30;
         
         /// <summary>
-        /// Panel9 控件。
+        /// TriggerBox_Attitude_5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel9;
+        protected global::FineUI.TriggerBox TriggerBox_Attitude_5;
         
         /// <summary>
-        /// SimpleForm31 控件。
+        /// TextArea_Attitude_5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm31;
+        protected global::FineUI.TextArea TextArea_Attitude_5;
         
         /// <summary>
-        /// SimpleForm32 控件。
+        /// HiddenField_Attitude_5 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm32;
+        protected global::FineUI.HiddenField HiddenField_Attitude_5;
         
         /// <summary>
-        /// SimpleForm33 控件。
+        /// Window_ShowQuota 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm33;
-        
-        /// <summary>
-        /// SimpleForm34 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm34;
-        
-        /// <summary>
-        /// SimpleForm35 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.SimpleForm SimpleForm35;
+        protected global::FineUI.Window Window_ShowQuota;
     }
 }
