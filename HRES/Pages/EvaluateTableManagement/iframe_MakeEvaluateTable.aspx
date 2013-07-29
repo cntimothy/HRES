@@ -35,7 +35,8 @@
                             </x:Label>
                         </Items>
                     </x:Toolbar>
-                    <x:Form ID="Form2" runat="server" BodyPadding="5px" Title="Form" ShowBorder="false" ShowHeader="false">
+                    <x:Form ID="Form2" runat="server" BodyPadding="5px" Title="Form" ShowBorder="false"
+                        ShowHeader="false">
                         <Rows>
                             <x:FormRow ID="FormRow1" runat="server">
                                 <Items>
@@ -50,10 +51,10 @@
                                 </Items>
                             </x:FormRow>
                             <x:FormRow ID="FormRow2" runat="server">
-                            <Items>
-                                <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="Label">
-                                </x:Label>
-                            </Items>
+                                <Items>
+                                    <x:Label ID="Label_Period" runat="server" Label="考评时间段" Text="Label">
+                                    </x:Label>
+                                </Items>
                             </x:FormRow>
                         </Rows>
                     </x:Form>
@@ -66,7 +67,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyResponse_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyResponse_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -76,7 +78,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyResponse_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyResponse_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -86,7 +89,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyResponse_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyResponse_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -96,7 +100,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyResponse_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyResponse_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -106,7 +111,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyResponse_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyResponse_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyResponse_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -121,7 +127,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyQualify_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyQualify_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_1" runat="server">
                                     </x:HiddenField>
@@ -133,7 +140,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyQualify_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyQualify_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_2" runat="server">
                                     </x:HiddenField>
@@ -145,7 +153,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyQualify_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyQualify_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_3" runat="server">
                                     </x:HiddenField>
@@ -157,7 +166,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyQualify_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyQualify_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_4" runat="server">
                                     </x:HiddenField>
@@ -169,7 +179,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyQualify_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyQualify_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyQualify_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyQualify_5" runat="server">
                                     </x:HiddenField>
@@ -186,7 +197,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyAttitude_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyAttitude_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_1" runat="server">
                                     </x:HiddenField>
@@ -198,7 +210,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyAttitude_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyAttitude_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_2" runat="server">
                                     </x:HiddenField>
@@ -210,7 +223,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyAttitude_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyAttitude_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_3" runat="server">
                                     </x:HiddenField>
@@ -222,7 +236,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyAttitude_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyAttitude_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_4" runat="server">
                                     </x:HiddenField>
@@ -234,7 +249,8 @@
                                     <x:TriggerBox ID="TriggerBox_KeyAttitude_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_KeyAttitude_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_KeyAttitude_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_KeyAttitude_5" runat="server">
                                     </x:HiddenField>
@@ -251,7 +267,8 @@
                                     <x:TriggerBox ID="TriggerBox_Response_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Response_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Response_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -261,7 +278,8 @@
                                     <x:TriggerBox ID="TriggerBox_Response_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Response_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Response_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -271,7 +289,8 @@
                                     <x:TriggerBox ID="TriggerBox_Response_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Response_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Response_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -281,7 +300,8 @@
                                     <x:TriggerBox ID="TriggerBox_Response_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Response_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Response_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -291,7 +311,8 @@
                                     <x:TriggerBox ID="TriggerBox_Response_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Response_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Response_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                 </Items>
                             </x:SimpleForm>
@@ -306,7 +327,8 @@
                                     <x:TriggerBox ID="TriggerBox_Qualify_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Qualify_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Qualify_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_1" runat="server">
                                     </x:HiddenField>
@@ -318,7 +340,8 @@
                                     <x:TriggerBox ID="TriggerBox_Qualify_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Qualify_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Qualify_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_2" runat="server">
                                     </x:HiddenField>
@@ -330,7 +353,8 @@
                                     <x:TriggerBox ID="TriggerBox_Qualify_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Qualify_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Qualify_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_3" runat="server">
                                     </x:HiddenField>
@@ -342,7 +366,8 @@
                                     <x:TriggerBox ID="TriggerBox_Qualify_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Qualify_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Qualify_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_4" runat="server">
                                     </x:HiddenField>
@@ -354,7 +379,8 @@
                                     <x:TriggerBox ID="TriggerBox_Qualify_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Qualify_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Qualify_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Qualify_5" runat="server">
                                     </x:HiddenField>
@@ -371,7 +397,8 @@
                                     <x:TriggerBox ID="TriggerBox_Attitude_1" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Attitude_1" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Attitude_1" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_1" runat="server">
                                     </x:HiddenField>
@@ -383,7 +410,8 @@
                                     <x:TriggerBox ID="TriggerBox_Attitude_2" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Attitude_2" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Attitude_2" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_2" runat="server">
                                     </x:HiddenField>
@@ -395,7 +423,8 @@
                                     <x:TriggerBox ID="TriggerBox_Attitude_3" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Attitude_3" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Attitude_3" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_3" runat="server">
                                     </x:HiddenField>
@@ -407,7 +436,8 @@
                                     <x:TriggerBox ID="TriggerBox_Attitude_4" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Attitude_4" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Attitude_4" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_4" runat="server">
                                     </x:HiddenField>
@@ -419,7 +449,8 @@
                                     <x:TriggerBox ID="TriggerBox_Attitude_5" runat="server" Label="标题" TriggerIcon="Search"
                                         EnableEdit="true">
                                     </x:TriggerBox>
-                                    <x:TextArea ID="TextArea_Attitude_5" runat="server" Height="50px" Label="内容" Text="" Enabled = "false">
+                                    <x:TextArea ID="TextArea_Attitude_5" runat="server" Height="50px" Label="内容" Text=""
+                                        Enabled="false">
                                     </x:TextArea>
                                     <x:HiddenField ID="HiddenField_Attitude_5" runat="server">
                                     </x:HiddenField>
@@ -427,7 +458,8 @@
                             </x:SimpleForm>
                         </Items>
                     </x:Panel>
-                    <x:SimpleForm ID="SimpleForm31" runat="server" BodyPadding="5px" Title="否决指标" ShowBorder="true" ShowHeader="true">
+                    <x:SimpleForm ID="SimpleForm31" runat="server" BodyPadding="5px" Title="否决指标" ShowBorder="true"
+                        ShowHeader="true">
                         <Items>
                             <x:TextArea ID="TextArea_Reject1" runat="server" Height="50px" Label="严重违反规章制度" Text="">
                             </x:TextArea>
@@ -441,7 +473,8 @@
     </x:Panel>
     <x:Window ID="Window_ShowQuota" Title="选择指标" Popup="false" EnableIFrame="true" runat="server"
         IFrameUrl="about:blank" EnableMaximize="true" EnableResize="true" Target="Self"
-        OnClose="Window_ShowQuota_Close" IsModal="True" Width="650px" Height="450px" EnableConfirmOnClose="true">
+        OnClose="Window_ShowQuota_Close" IsModal="True" Width="650px" Height="450px"
+        EnableConfirmOnClose="true">
     </x:Window>
     </form>
 </body>

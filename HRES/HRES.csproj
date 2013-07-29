@@ -1886,6 +1886,7 @@
     <Content Include="Pages\ErrorPage\Error.aspx" />
     <Content Include="Pages\EvaluatedManagement\MakeEvaluated.aspx" />
     <Content Include="Pages\EvaluateTableManagement\CheckEvaluateTable.aspx" />
+    <Content Include="Pages\EvaluateTableManagement\iframe_CheckEvaluateTable.aspx" />
     <Content Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx" />
     <Content Include="Pages\EvaluateTableManagement\iframe_ShowQuota.aspx" />
     <Content Include="Pages\EvaluateTableManagement\iframe_ShowWCR.aspx" />
@@ -1980,6 +1981,13 @@
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\CheckEvaluateTable.aspx.designer.cs">
       <DependentUpon>CheckEvaluateTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_CheckEvaluateTable.aspx.cs">
+      <DependentUpon>iframe_CheckEvaluateTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluateTableManagement\iframe_CheckEvaluateTable.aspx.designer.cs">
+      <DependentUpon>iframe_CheckEvaluateTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx.cs">
       <DependentUpon>iframe_MakeEvaluateTable.aspx</DependentUpon>
