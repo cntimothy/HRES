@@ -30,6 +30,10 @@ namespace HRES.Pages.Common
                 {
                     Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
                 }
+                else
+                {
+                    Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
             }
             else if (Request.QueryString["parent"] == "checkevaluator")
             {
@@ -37,6 +41,22 @@ namespace HRES.Pages.Common
                     EvaluatorManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
                     Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+            else if(Request.QueryString["parent"] == "checkevaluatetable")
+            {
+                if (EvaluateTableManagementCtrl.SetRejected(Request.QueryString["id"], ref exception) &&
+                    EvaluateTableManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
+                {
+                    Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
         }

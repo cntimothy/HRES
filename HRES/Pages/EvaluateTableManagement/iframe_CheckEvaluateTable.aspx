@@ -21,11 +21,11 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Pass" runat="server" Text="通过">
+                            <x:Button ID="Button_Pass" runat="server" Text="通过" OnClick="Button_Pass_Click" ConfirmTitle="提示" ConfirmText="确定通过？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Reject" runat="server" Text="退回">
+                            <x:Button ID="Button_Reject" runat="server" Text="退回" >
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
@@ -57,14 +57,49 @@
                             </x:FormRow>
                         </Rows>
                     </x:Form>
-                    <x:Grid ID="Grid1" runat="server" Title="Grid">
-                        <Columns>
-                        </Columns>
-                    </x:Grid>
+                    <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="关键岗位职责指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>                    
+                    <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="关键胜任能力指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>
+                    <x:Panel ID="Panel5" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="关键工作态度指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>
+                    <x:Panel ID="Panel6" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="岗位职责指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>                    
+                    <x:Panel ID="Panel7" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="胜任能力指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>
+                    <x:Panel ID="Panel8" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="工作态度指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>
+                    <x:Panel ID="Panel9" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
+                        Title="否决指标">
+                        <Items>
+                        </Items>
+                    </x:Panel>
                 </Items>
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="130px" IsModal="true"
+        IFrameUrl="about:blank" EnableMaximize="false" EnableIFrame="true" Popup="false"
+        Title="审核意见" Width="400px">
+    </x:Window>
     </form>
 </body>
 </html>
