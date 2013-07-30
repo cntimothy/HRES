@@ -3,19 +3,76 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DataStructure;
+using System.Data;
 
 namespace Controls
 {
     public static class QuotaManagementCtrl
     {
         /// <summary>
-        /// 查询指标库。若指标库为空，返回false，否则返回true
+        /// 查询指标库（Level1(一级标题), Level2（二级标题）, Quota1（优）, Quota2（良）, Quota3（中）, Quota4（差））。若指标库为空，返回false，否则返回true
         /// </summary>
-        /// <param name="quotaLib">指标库</param>
-        /// <param name="exception"></param>
+        /// <param name="table"></param>
+        /// <param name="exceptino"></param>
         /// <returns></returns>
-        public static bool GetQuotaLib(ref QuotaLib quotaLib, ref string exception)
+        public static bool GetQuotaLib(ref DataTable table, ref string exceptino)
         {
+            table.Columns.Add("Level1");
+            table.Columns.Add("Level2");
+            table.Columns.Add("Quota1");
+            table.Columns.Add("Quota2");
+            table.Columns.Add("Quota3");
+            table.Columns.Add("Quota4");
+
+            DataRow row1 = table.NewRow();
+            row1["Level1"] = "工作态度指标";
+            row1["Level2"] = "进取心";
+            row1["Quota1"] = "有强烈的使命感和事业心，主动迎接工作挑战";
+            row1["Quota2"] = "具备较强的事业心，坚持学习吸收新知识";
+            row1["Quota3"] = "具有一定的事业心，能主动学习，注重自己能力提高";
+            row1["Quota4"] = "满足现状，局限于完成现有工作";
+            table.Rows.Add(row1);
+            DataRow row2 = table.NewRow();
+            row1["Level1"] = "工作态度指标";
+            row1["Level2"] = "主动性及执行力";
+            row1["Quota1"] = "能够认真主动地开展工作、执行领导的工作安排，积极解决问题，工作效果很好";
+            row1["Quota2"] = "能够执行领导的工作安排，并能在规定的时间内完成，效果较好";
+            row1["Quota3"] = "能够执行领导的工作安排，通常能在规定的时间内完成";
+            row1["Quota4"] = "经常不接受领导安排的工作或越级汇报；阳奉阴违、影响部门工作开展；工作需经常督促才能勉强完成";
+            table.Rows.Add(row2);
+
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
+            table.Rows.Add(row1);
+            table.Rows.Add(row2);
             return true;
         }
 
