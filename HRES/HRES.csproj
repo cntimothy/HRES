@@ -1905,6 +1905,7 @@
     <Content Include="Pages\HomePage.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\PostBookManagement\iframe_MakePostBook.aspx" />
+    <Content Include="Pages\QuotaManagement\iframe_NewQuota.aspx" />
     <Content Include="Pages\SecondManagement\MakeSecond.aspx" />
     <Content Include="Pages\SystemManagement\SystemInit.aspx" />
     <Content Include="Pages\MessageManagement\Inbox.aspx" />
@@ -2114,6 +2115,13 @@
     </Compile>
     <Compile Include="Pages\PostBookManagement\iframe_MakePostBook.aspx.designer.cs">
       <DependentUpon>iframe_MakePostBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuotaManagement\iframe_NewQuota.aspx.cs">
+      <DependentUpon>iframe_NewQuota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\QuotaManagement\iframe_NewQuota.aspx.designer.cs">
+      <DependentUpon>iframe_NewQuota.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\SecondManagement\MakeSecond.aspx.cs">
       <DependentUpon>MakeSecond.aspx</DependentUpon>

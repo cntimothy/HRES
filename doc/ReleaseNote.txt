@@ -1,4 +1,6 @@
-2013/7/26
+2013/7/30
+QuotaManagementCtrl
+	重写了接口GetQuotaLib()
 EvaluateTable
 	为数据结构加上了构造函数
 	在Quota中去掉了Score域
