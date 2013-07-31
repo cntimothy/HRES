@@ -8,9 +8,38 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    开始考评
-    </div>
+    <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
+    <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
+        Title="Panel" Layout="Fit">
+        <Items>
+            <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
+                Title="Panel" AutoScroll="true">
+                <Items>
+                    <x:Toolbar ID="Toolbar1" runat="server">
+                        <Items>
+                            <x:Button ID="Button1" runat="server" Text="刷新">
+                            </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button2" runat="server" Text="开始考评">
+                            </x:Button>
+                        </Items>
+                    </x:Toolbar>
+                    <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
+                        Title="Panel">
+                        <Items>
+                            <x:DropDownList ID="DropDownList1" runat="server" Label="Label">
+                            </x:DropDownList>
+                            <x:Grid ID="Grid1" runat="server" Title="Grid">
+                                <Columns>
+                                </Columns>
+                            </x:Grid>
+                        </Items>
+                    </x:Panel>
+                </Items>
+            </x:Panel>
+        </Items>
+    </x:Panel>
     </form>
 </body>
 </html>
