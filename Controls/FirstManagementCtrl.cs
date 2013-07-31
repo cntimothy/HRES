@@ -16,6 +16,12 @@ namespace Controls
         /// <returns></returns>
         public static bool GetAll(ref List<string> IDs, ref string exception)
         {
+            IDs.Add("111");
+            IDs.Add("222");
+            IDs.Add("333");
+            IDs.Add("444");
+            IDs.Add("555");
+            IDs.Add("666");
             return true;
         }
 
