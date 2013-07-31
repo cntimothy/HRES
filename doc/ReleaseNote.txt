@@ -1,4 +1,7 @@
-2013/7/30
+2013/7/31
+EvaluationManagementCtrl
+	增加了接口IsEvaluationStarted（）
+增加了CommonCtrl，将所有的GetDeparts（）函数移到这个接口中
 QuotaManagementCtrl
 	重写了接口GetQuotaLib()
 EvaluateTable
