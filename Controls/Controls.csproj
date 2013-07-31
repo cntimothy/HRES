@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountManagement.cs" />
+    <Compile Include="AccountManagementCtrl.cs" />
     <Compile Include="EvaluatedManagementCtrl.cs" />
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />

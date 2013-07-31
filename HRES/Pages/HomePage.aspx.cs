@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace HRES.Pages
 {
-    public partial class HomePage : System.Web.UI.Page
+    public partial class HomePage : PageBase
     {
         #region Page_Init
 

@@ -6,7 +6,7 @@ using DataStructure;
 
 namespace Controls
 {
-    class AccountManagement
+    public class AccountManagementCtrl
     {
         /// <summary>
         /// 修改密码。修改成功返回true，否则返回false
