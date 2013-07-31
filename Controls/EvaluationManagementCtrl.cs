@@ -311,5 +311,14 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 查询考评是否开始，已开始则返回true，否则返回false
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsEvaluationStarted()
+        {
+            return true;
+        }
     }
 }
