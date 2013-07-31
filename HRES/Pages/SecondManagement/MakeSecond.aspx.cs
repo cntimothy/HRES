@@ -107,7 +107,7 @@ namespace HRES.Pages.SecondManagement
         { 
             List<string> departs = new List<string>();
             string exception = "";
-            if (SecondManagementCtrl.GetDeparts(ref departs, ref exception))
+            if (CommonCtrl.GetDeparts(ref departs, ref exception))
             {
                 departs.Insert(0, "所有部门");
                 DepartDropDownList.DataSource = departs;
