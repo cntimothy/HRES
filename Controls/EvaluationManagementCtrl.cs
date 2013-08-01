@@ -190,6 +190,46 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluateTable(string ID, ref EvaluateTable evaluateTable, ref string exception)
         {
+            evaluateTable.EvaluatedName = "张三";
+            evaluateTable.PostName = "岗位名称";
+            evaluateTable.LaborDep = "用工部门";
+            evaluateTable.LaborUnit = "用工单位";
+            evaluateTable.StartTime = "考评开始时间";
+            evaluateTable.StopTime = "考评结束时间";
+            Quota quota1 = new Quota("发展团队1", new string[] { "在团队中是自然的核心人物，任何情况下都能够激励团队，带领团队达成目标", "易于与他人沟通，积极促进团队协作，并能引导团队达到组织目标", "能够根据要求努力促进团队的协作和沟通，使工作顺利开展", "能够与他人合作，努力协调，不会影响工作" });
+            Quota quota2 = new Quota("发展团队2", new string[] { "在团队中是自然的核心人物，任何情况下都能够激励团队，带领团队达成目标", "易于与他人沟通，积极促进团队协作，并能引导团队达到组织目标", "能够根据要求努力促进团队的协作和沟通，使工作顺利开展", "能够与他人合作，努力协调，不会影响工作" });
+            Quota quota3 = new Quota("发展团队3", new string[] { "在团队中是自然的核心人物，任何情况下都能够激励团队，带领团队达成目标", "易于与他人沟通，积极促进团队协作，并能引导团队达到组织目标", "能够根据要求努力促进团队的协作和沟通，使工作顺利开展", "能够与他人合作，努力协调，不会影响工作" });
+            Quota quota4 = new Quota("发展团队4", new string[] { "在团队中是自然的核心人物，任何情况下都能够激励团队，带领团队达成目标", "易于与他人沟通，积极促进团队协作，并能引导团队达到组织目标", "能够根据要求努力促进团队的协作和沟通，使工作顺利开展", "能够与他人合作，努力协调，不会影响工作" });
+            evaluateTable.KeyResponse.Add(quota1);
+            evaluateTable.KeyResponse.Add(quota2);
+            evaluateTable.KeyResponse.Add(quota3);
+            evaluateTable.KeyResponse.Add(quota4);
+            evaluateTable.KeyQualify.Add(quota1);
+            evaluateTable.KeyQualify.Add(quota2);
+            evaluateTable.KeyQualify.Add(quota3);
+            evaluateTable.KeyQualify.Add(quota4);
+            evaluateTable.KeyAttitude.Add(quota1);
+            evaluateTable.KeyAttitude.Add(quota2);
+            evaluateTable.KeyAttitude.Add(quota3);
+            evaluateTable.KeyAttitude.Add(quota4);
+            evaluateTable.Response.Add(quota1);
+            evaluateTable.Response.Add(quota2);
+            evaluateTable.Response.Add(quota3);
+            evaluateTable.Response.Add(quota4);
+            evaluateTable.Qualify.Add(quota1);
+            evaluateTable.Qualify.Add(quota2);
+            evaluateTable.Qualify.Add(quota3);
+            evaluateTable.Qualify.Add(quota4);
+            evaluateTable.Attitude.Add(quota1);
+            evaluateTable.Attitude.Add(quota2);
+            evaluateTable.Attitude.Add(quota3);
+            evaluateTable.Attitude.Add(quota4);
+            Quota reject1 = new Quota("严重违反规章制度", new string[] { "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；" });
+            Quota reject2 = new Quota("其他", new string[] { "" });
+            evaluateTable.Status = DocStatus.submitted;
+            evaluateTable.Comment = "很不好";
+            evaluateTable.Reject.Add(reject1);
+            evaluateTable.Reject.Add(reject2);
             return true;
         }
 
@@ -232,7 +272,7 @@ namespace Controls
             row3["Name"] = "高3";
             row3["Sex"] = "男";
             row3["Depart"] = "医学院";
-            row3["Relation"] = "0";
+            row3["Relation"] = "2";
             row3["Status"] = "1";
             table.Rows.Add(row3);
 

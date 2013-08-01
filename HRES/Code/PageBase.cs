@@ -970,6 +970,25 @@ namespace HRES
 
 
         #endregion
+
+        #region Common Method
+        /// <summary>
+        /// 检测是否为空字符串，不为空返回true，否则返回false
+        /// </summary>
+        /// <param name="items"></param>
+        /// <returns></returns>
+        protected bool CheckNull(string[] items)
+        {
+            foreach (string item in items)
+            {
+                if (item == "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        #endregion
     }
 
 }

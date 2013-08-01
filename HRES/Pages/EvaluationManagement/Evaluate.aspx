@@ -34,7 +34,7 @@
                                         HeaderText="工作单位" />
                                     <x:TemplateField Width="80px" HeaderText="关系">
                                         <ItemTemplate>
-                                            <asp:Label ID="Relation" runat="server" Text='<%# GetRelation(Eval("Status")) %>'></asp:Label>
+                                            <asp:Label ID="Relation" runat="server" Text='<%# GetRelation(Eval("Relation")) %>'></asp:Label>
                                         </ItemTemplate>
                                     </x:TemplateField>
                                     <x:TemplateField Width="80px" HeaderText="状态">
@@ -42,7 +42,9 @@
                                             <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatus(Eval("Status")) %>'></asp:Label>
                                         </ItemTemplate>
                                     </x:TemplateField>
-                                    <x:LinkButtonField HeaderText="操作" Width="100px" CommandName="Evaluate" Text="开始考评" />
+                                    <x:WindowField TextAlign="Center" Width="80px" WindowID="Window1" Text="开始考评"
+                                Title="考评" IFrameUrl="iframe_Evaluate.aspx" DataIFrameUrlFields="ID,Relation"
+                                DataIFrameUrlFormatString="iframe_Evaluate.aspx?id={0}&relation={1}" />
                                 </Columns>
                             </x:Grid>
                         </Items>
@@ -51,6 +53,9 @@
             </x:Panel>
         </Items>
     </x:Panel>
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="550px" CssStyle="width:95%" IsModal="true"
+        Popup="false" Title="考评" EnableConfirmOnClose="true" EnableIFrame="true" >
+    </x:Window>
     </form>
 </body>
 </html>

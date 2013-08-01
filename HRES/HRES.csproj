@@ -1893,6 +1893,7 @@
     <Content Include="Pages\EvaluateTableManagement\MakeEvaluateTable.aspx" />
     <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\EvaluationResult.aspx" />
+    <Content Include="Pages\EvaluationManagement\iframe_Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\MessagePlatform.aspx" />
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
@@ -2031,6 +2032,13 @@
     </Compile>
     <Compile Include="Pages\EvaluationManagement\EvaluationResult.aspx.designer.cs">
       <DependentUpon>EvaluationResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.cs">
+      <DependentUpon>iframe_Evaluate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.designer.cs">
+      <DependentUpon>iframe_Evaluate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.cs">
       <DependentUpon>MessagePlatform.aspx</DependentUpon>
