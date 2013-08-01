@@ -264,11 +264,6 @@ namespace Controls
             evaluateTable.Comment = "很不好";
             evaluateTable.Reject.Add(reject1);
             evaluateTable.Reject.Add(reject2);
-            evaluateTable.KeyWeight = "0.5";
-            evaluateTable.ResponseWeight = "0.2";
-            evaluateTable.QualifyWeitht = "0.15";
-            evaluateTable.AttitudeWeight = "0.15";
-            evaluateTable.RejectWeight = "1";
             return true;
         }
 

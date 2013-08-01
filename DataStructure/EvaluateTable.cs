@@ -85,11 +85,11 @@ namespace DataStructure
         List<Quota> qualify;
         List<Quota> attitude;
         List<Quota> reject;
-        string keyWeight = "0.5";
-        string responseWeight = "0.2";
-        string qualifyWeitht = "0.15";
-        string attitudeWeight = "0.15";
-        string rejectWeight = "1";
+        string keyWeight;
+        string responseWeight;
+        string qualifyWeitht;
+        string attitudeWeight;
+        string rejectWeight;
         DocStatus status;
         string comment;
         #endregion
@@ -286,6 +286,11 @@ namespace DataStructure
             qualify = new List<Quota>();
             attitude = new List<Quota>();
             reject = new List<Quota>();
+            keyWeight = "0.5";
+            responseWeight = "0.2";
+            qualifyWeitht = "0.15";
+            attitudeWeight = "0.15";
+            rejectWeight = "1";
         }
         #endregion
 
