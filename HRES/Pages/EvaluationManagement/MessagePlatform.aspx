@@ -36,7 +36,7 @@
                         </Items>
                     </x:SimpleForm>
                     <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
-                        PageSize="4" AutoHeight="true" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
+                        PageSize="15" AutoHeight="true" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
                         AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone" EnableMultiSelect="true"
                         ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true">
                         <Columns>

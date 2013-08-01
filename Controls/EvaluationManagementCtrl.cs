@@ -194,7 +194,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据考评人查询被考评人信息（ID, Name, Sex, Depart, Relation, Status），结果不为空返回true，否则返回false
+        /// 根据考评人查询被考评人信息（ID, Name, Sex, Depart, Relation, Status(按EvaluationStatus传值)），结果不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">被考评人信息</param>
         /// <param name="evaluator">考评人ID</param>
@@ -202,6 +202,48 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluatedByEvaluator(ref DataTable table, string evaluator, ref string exception)
         {
+            table.Columns.Add("ID");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Depart");
+            table.Columns.Add("Relation");
+            table.Columns.Add("Status");
+
+            DataRow row1 = table.NewRow();
+            row1["ID"] = "111";
+            row1["Name"] = "高1";
+            row1["Sex"] = "男";
+            row1["Depart"] = "医学院";
+            row1["Relation"] = "0";
+            row1["Status"] = "1";
+            table.Rows.Add(row1);
+
+            DataRow row2 = table.NewRow();
+            row2["ID"] = "222";
+            row2["Name"] = "高2";
+            row2["Sex"] = "男";
+            row2["Depart"] = "医学院";
+            row2["Relation"] = "0";
+            row2["Status"] = "1";
+            table.Rows.Add(row2);
+
+            DataRow row3 = table.NewRow();
+            row3["ID"] = "333";
+            row3["Name"] = "高3";
+            row3["Sex"] = "男";
+            row3["Depart"] = "医学院";
+            row3["Relation"] = "0";
+            row3["Status"] = "1";
+            table.Rows.Add(row3);
+
+            DataRow row4 = table.NewRow();
+            row4["ID"] = "444";
+            row4["Name"] = "高4";
+            row4["Sex"] = "男";
+            row4["Depart"] = "医学院";
+            row4["Relation"] = "0";
+            row4["Status"] = "2";
+            table.Rows.Add(row4);
             return true;
         }
 

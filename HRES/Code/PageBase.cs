@@ -155,6 +155,11 @@ namespace HRES
             }
         }
 
+        /// <summary>
+        /// 获取文档状态的字面值，在制作中调用
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         protected string GetDocStatus(object status)
         { 
             string returnValue = "";
@@ -182,6 +187,11 @@ namespace HRES
             return returnValue;
         }
 
+        /// <summary>
+        /// 获取文档状态的字面值，在审核中调用
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
         protected string GetDocStatusForCheck(object status)
         {
             string returnValue = "";
@@ -202,6 +212,58 @@ namespace HRES
                     break;
                 case 5:
                     returnValue = "已通过";
+                    break;
+            }
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 获取考评状态的字面值，在审核中调用
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        protected string GetEvaluationStatus(object status)
+        {
+            string returnValue = "";
+            switch (Convert.ToInt32(status))
+            {
+                case 0:
+                    returnValue = "未开始";
+                    break;
+                case 1:
+                    returnValue = "已开始";
+                    break;
+                case 2:
+                    returnValue = "已完成";
+                    break;
+                case 3:
+                    returnValue = "已结束";
+                    break;
+            }
+            return returnValue;
+        }
+
+        /// <summary>
+        /// 获取关系的字面值，在审核中调用
+        /// </summary>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        protected string GetRelation(object status)
+        {
+            string returnValue = "";
+            switch (Convert.ToInt32(status))
+            {
+                case 0:
+                    returnValue = "领导";
+                    break;
+                case 1:
+                    returnValue = "同事";
+                    break;
+                case 2:
+                    returnValue = "下属";
+                    break;
+                case 3:
+                    returnValue = "服务对象";
                     break;
             }
             return returnValue;
