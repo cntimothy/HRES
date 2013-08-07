@@ -529,12 +529,13 @@ namespace Controls
         /// </summary>
         /// <param name="table">单位考核汇总表</param>
         /// <param name="depart">部门</param>
+        /// <param name="year">年份</param>
         /// <param name="evaluationStartTime">考核开始时间</param>
         /// <param name="evaluationStopTime">考核结束事件</param>
         /// <param name="evaluationDate">考核日期</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetEvaluationResultByDepart(ref DataTable table, string depart, ref string evaluationStartTime, ref string evaluationStopTime, ref string evaluationDate, ref string exception)
+        public static bool GetEvaluationResultByDepartAndYear(ref DataTable table, string depart, string year, ref string evaluationStartTime, ref string evaluationStopTime, ref string evaluationDate, ref string exception)
         {
             table.Columns.Add("Name");
             table.Columns.Add("Score");
