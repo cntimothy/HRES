@@ -333,24 +333,148 @@ namespace Controls
         }
 
         /// <summary>
-        /// 返回今年的被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
+        /// 返回今年的被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, Status(按EvaluationStatus传值))table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table">被考评人信息</param>
         /// <param name="exception"></param>
         /// <returns></returns>
         public static bool GetEvaluatedThisYear(ref DataTable table, ref string exception)
         {
+            table.Columns.Add("ID");
+            table.Columns.Add("Date");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Depart");
+            table.Columns.Add("Job");
+            table.Columns.Add("IDNo");
+            table.Columns.Add("Birthday");
+            table.Columns.Add("Fund");
+            table.Columns.Add("Character");
+            table.Columns.Add("Company");
+            table.Columns.Add("Status");
+            string[] values1 = new string[] { "1", "2010-3-3", "高1", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values2 = new string[] { "2", "2010-3-3", "高2", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values3 = new string[] { "3", "2010-3-3", "高3", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values4 = new string[] { "4", "2010-3-3", "高4", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values5 = new string[] { "5", "2010-3-3", "高5", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "1" };
+            string[] values6 = new string[] { "6", "2010-3-3", "高6", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "1" };
+            string[] values7 = new string[] { "123456", "2010-3-3", "高7", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "2" };
+            string[] values8 = new string[] { "123456", "2010-3-3", "高8", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "2" };
+            string[] values9 = new string[] { "123456", "2010-3-3", "高9", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values10 = new string[] { "123456", "2010-3-3", "高10", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values11 = new string[] { "123456", "2010-3-3", "高11", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values12 = new string[] { "123456", "2010-3-3", "高12", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values13 = new string[] { "123456", "2010-3-3", "高13", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values14 = new string[] { "123456", "2010-3-3", "高14", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values15 = new string[] { "123456", "2010-3-3", "高15", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values16 = new string[] { "123456", "2010-3-3", "高16", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values17 = new string[] { "123456", "2010-3-3", "高17", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values18 = new string[] { "123456", "2010-3-3", "高18", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values19 = new string[] { "123456", "2010-3-3", "高19", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values20 = new string[] { "123456", "2010-3-3", "高20", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values21 = new string[] { "123456", "2010-3-3", "高21", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values22 = new string[] { "123456", "2010-3-3", "高22", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values23 = new string[] { "123456", "2010-3-3", "高23", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values24 = new string[] { "123456", "2010-3-3", "高24", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values25 = new string[] { "123456", "2010-3-3", "高25", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            table.Rows.Add(values1);
+            table.Rows.Add(values2);
+            table.Rows.Add(values3);
+            table.Rows.Add(values4);
+            table.Rows.Add(values5);
+            table.Rows.Add(values6);
+            table.Rows.Add(values7);
+            table.Rows.Add(values8);
+            table.Rows.Add(values9);
+            table.Rows.Add(values10);
+            table.Rows.Add(values11);
+            table.Rows.Add(values12);
+            table.Rows.Add(values13);
+            table.Rows.Add(values14);
+            table.Rows.Add(values15);
+            table.Rows.Add(values16);
+            table.Rows.Add(values17);
+            table.Rows.Add(values18);
+            table.Rows.Add(values19);
+            table.Rows.Add(values20);
+            table.Rows.Add(values21);
+            table.Rows.Add(values22);
+            table.Rows.Add(values23);
+            table.Rows.Add(values24);
+            table.Rows.Add(values25);
             return true;
         }
 
         /// <summary>
-        /// 返回所有年份被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime)table不为空返回true，否则返回false
+        /// 返回所有年份被考评人信息（ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, Status(按EvaluationStatus传值))table不为空返回true，否则返回false
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
         public static bool GetEvaluatedAll(ref DataTable table, ref string exception)
         {
+            table.Columns.Add("ID");
+            table.Columns.Add("Date");
+            table.Columns.Add("Name");
+            table.Columns.Add("Sex");
+            table.Columns.Add("Depart");
+            table.Columns.Add("Job");
+            table.Columns.Add("IDNo");
+            table.Columns.Add("Birthday");
+            table.Columns.Add("Fund");
+            table.Columns.Add("Character");
+            table.Columns.Add("Company");
+            table.Columns.Add("Status");
+            string[] values1 = new string[] { "1", "2010-3-3", "高1", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values2 = new string[] { "2", "2010-3-3", "高2", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values3 = new string[] { "3", "2010-3-3", "高3", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values4 = new string[] { "4", "2010-3-3", "高4", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "0" };
+            string[] values5 = new string[] { "5", "2010-3-3", "高5", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "1" };
+            string[] values6 = new string[] { "6", "2010-3-3", "高6", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "1" };
+            string[] values7 = new string[] { "123456", "2010-3-3", "高7", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "2" };
+            string[] values8 = new string[] { "123456", "2010-3-3", "高8", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "2" };
+            string[] values9 = new string[] { "123456", "2010-3-3", "高9", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values10 = new string[] { "123456", "2010-3-3", "高10", "男", "医学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values11 = new string[] { "123456", "2010-3-3", "高11", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values12 = new string[] { "123456", "2010-3-3", "高12", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values13 = new string[] { "123456", "2010-3-3", "高13", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values14 = new string[] { "123456", "2010-3-3", "高14", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values15 = new string[] { "123456", "2010-3-3", "高15", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values16 = new string[] { "123456", "2010-3-3", "高16", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values17 = new string[] { "123456", "2010-3-3", "高17", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values18 = new string[] { "123456", "2010-3-3", "高18", "男", "外国语学院", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values19 = new string[] { "123456", "2010-3-3", "高19", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values20 = new string[] { "123456", "2010-3-3", "高20", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values21 = new string[] { "123456", "2010-3-3", "高21", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values22 = new string[] { "123456", "2010-3-3", "高22", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values23 = new string[] { "123456", "2010-3-3", "高23", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values24 = new string[] { "123456", "2010-3-3", "高24", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            string[] values25 = new string[] { "123456", "2010-3-3", "高25", "男", "人事处", "饲养员", "1234556789012", "1989-1-2", "学校", "劳务", "东林", "3" };
+            table.Rows.Add(values1);
+            table.Rows.Add(values2);
+            table.Rows.Add(values3);
+            table.Rows.Add(values4);
+            table.Rows.Add(values5);
+            table.Rows.Add(values6);
+            table.Rows.Add(values7);
+            table.Rows.Add(values8);
+            table.Rows.Add(values9);
+            table.Rows.Add(values10);
+            table.Rows.Add(values11);
+            table.Rows.Add(values12);
+            table.Rows.Add(values13);
+            table.Rows.Add(values14);
+            table.Rows.Add(values15);
+            table.Rows.Add(values16);
+            table.Rows.Add(values17);
+            table.Rows.Add(values18);
+            table.Rows.Add(values19);
+            table.Rows.Add(values20);
+            table.Rows.Add(values21);
+            table.Rows.Add(values22);
+            table.Rows.Add(values23);
+            table.Rows.Add(values24);
+            table.Rows.Add(values25);
             return true;
         }
 
@@ -363,6 +487,13 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluationResultYears(ref List<string> years, string evaluatedID, ref string exception)
         {
+            years.Add("2012");
+            years.Add("2013");
+            years.Add("2014");
+            years.Add("2015");
+            years.Add("2016");
+            years.Add("2017");
+            years.Add("2018");
             return true;
         }
 
@@ -376,6 +507,20 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluationResultByEvaluatedAndYear(ref EvaluationResult result, string evaluatedID, string year, ref string exception)
         {
+            result.Is360 = true;
+            result.PostName = "岗位名称";
+            result.LaborDep = "工作部门";
+            result.LaborUnit = "工作单位";
+            result.StartTime = "开始时间";
+            result.StopTime = "结束时间";
+            result.KeyScore = new string[] { "34", "87", "67", "48", "87" };
+            result.ResponseScore = new string[] { "66", "77", "66", "77", "44" };
+            result.QualifyScore = new string[] { "32", "36", "65", "45", "66" };
+            result.AttitudeScore = new string[] { "44", "55", "34", "52", "16"};
+            result.RejectScore = new string[] { "66", "77", "55", "57", "76" };
+            result.ResultScore = new string[] { "45", "76", "86", "43", "34"};
+            result.EvaluatorNum = new int[] { 12, 32, 41, 12, 12};
+            result.EvaluationLevel = DepartEvaluationLevel.qualified;
             return true;
         }
 
@@ -391,6 +536,39 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluationResultByDepart(ref DataTable table, string depart, ref string evaluationStartTime, ref string evaluationStopTime, ref string evaluationDate, ref string exception)
         {
+            table.Columns.Add("Name");
+            table.Columns.Add("Score");
+            table.Columns.Add("Result");
+            table.Columns.Add("EvaluatorNum");
+            table.Columns.Add("Comment");
+
+            DataRow row1 = table.NewRow();
+            row1["Name"] = "高1";
+            row1["Score"] = "45";
+            row1["Result"] = "优";
+            row1["EvaluatorNum"] = "13";
+            row1["Comment"] = "";
+            table.Rows.Add(row1);
+
+            DataRow row2 = table.NewRow();
+            row2["Name"] = "高2";
+            row2["Score"] = "45";
+            row2["Result"] = "优";
+            row2["EvaluatorNum"] = "13";
+            row2["Comment"] = "";
+            table.Rows.Add(row2);
+
+            DataRow row3 = table.NewRow();
+            row3["Name"] = "高3";
+            row3["Score"] = "45";
+            row3["Result"] = "优";
+            row3["EvaluatorNum"] = "13";
+            row3["Comment"] = "";
+            table.Rows.Add(row3);
+
+            evaluationStartTime = "开始时间";
+            evaluationStopTime = "结束时间";
+            evaluationDate = "考评日期";
             return true;
         }
 

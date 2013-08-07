@@ -2,6 +2,7 @@
 EvaluattionResult
 	增加了几个域
 EvaluationManagementCtrl
+	修改了GetEvaluatedAll()函数和GetEvaluatedThisYear()函数中DataTable的列
 	增加了接口IsEvaluationStarted（）
 	增加了两个接口GetEvaluators()和GetEvaluatorsByDepart()
 增加了CommonCtrl，将所有的GetDeparts（）函数移到这个接口中
