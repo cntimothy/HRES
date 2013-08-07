@@ -8,6 +8,12 @@ namespace DataStructure
     public class EvaluationResult
     {
         #region Private Field
+        private bool is360;
+        private string postName;
+        private string laborDep;
+        private string laborUnit;
+        private string startTime;
+        private string stopTime;
         private string[] keyScore;
         private string[] responseScore;
         private string[] qualifyScore;
@@ -19,6 +25,58 @@ namespace DataStructure
         #endregion
 
         #region Public Field
+        /// <summary>
+        /// 是360考核还是270考核
+        /// </summary>
+        public bool Is360
+        {
+            get { return is360; }
+            set { is360 = value; }
+        }
+
+        /// <summary>
+        /// 岗位名称
+        /// </summary>
+        public string PostName
+        {
+            get { return postName; }
+            set { postName = value; }
+        }
+        /// <summary>
+        /// 用工部门
+        /// </summary>
+        public string LaborDep
+        {
+            get { return laborDep; }
+            set { laborDep = value; }
+        }
+
+        /// <summary>
+        /// 用工单位
+        /// </summary>
+        public string LaborUnit
+        {
+            get { return laborUnit; }
+            set { laborUnit = value; }
+        }
+
+        /// <summary>
+        /// 考核开始时间
+        /// </summary>
+        public string StartTime
+        {
+            get { return startTime; }
+            set { startTime = value; }
+        }
+
+        /// <summary>
+        /// 考核结束时间
+        /// </summary>
+        public string StopTime
+        {
+            get { return stopTime; }
+            set { stopTime = value; }
+        }
         /// <summary>
         /// 关键绩效指标
         /// </summary>
