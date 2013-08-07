@@ -46,7 +46,7 @@ namespace HRES.Pages.EvaluationManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
                 Label_Period.Text = startTime + " ~ " + stopTime;
-                Grid1.Title = depart + "（单位)派遣员工考核汇总表"; 
+                Grid1.Title = depart + "派遣员工考核汇总表"; 
             }
         }
         #endregion

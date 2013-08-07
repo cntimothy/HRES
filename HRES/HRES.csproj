@@ -1895,6 +1895,7 @@
     <Content Include="Pages\EvaluationManagement\EvaluationResultForDepart.aspx" />
     <Content Include="Pages\EvaluationManagement\EvaluationResultForIndividual.aspx" />
     <Content Include="Pages\EvaluationManagement\iframe_Evaluate.aspx" />
+    <Content Include="Pages\EvaluationManagement\iframe_ShowEvaluationResultForIndividual.aspx" />
     <Content Include="Pages\EvaluationManagement\MessagePlatform.aspx" />
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
     <Content Include="Pages\EvaluationManagement\StopEvaluation.aspx" />
@@ -2047,6 +2048,13 @@
     </Compile>
     <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.designer.cs">
       <DependentUpon>iframe_Evaluate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_ShowEvaluationResultForIndividual.aspx.cs">
+      <DependentUpon>iframe_ShowEvaluationResultForIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\iframe_ShowEvaluationResultForIndividual.aspx.designer.cs">
+      <DependentUpon>iframe_ShowEvaluationResultForIndividual.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluationManagement\MessagePlatform.aspx.cs">
       <DependentUpon>MessagePlatform.aspx</DependentUpon>

@@ -507,7 +507,7 @@ namespace Controls
         /// <returns></returns>
         public static bool GetEvaluationResultByEvaluatedAndYear(ref EvaluationResult result, string evaluatedID, string year, ref string exception)
         {
-            result.Is360 = true;
+            result.Is360 = false;
             result.PostName = "岗位名称";
             result.LaborDep = "工作部门";
             result.LaborUnit = "工作单位";
