@@ -10,7 +10,7 @@
 namespace HRES.Pages.EvaluationManagement {
     
     
-    public partial class EvaluationResult {
+    public partial class EvaluationResultForIndividual {
         
         /// <summary>
         /// form1 控件。

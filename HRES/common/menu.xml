@@ -33,7 +33,9 @@
     </TreeNode>
     <TreeNode Text="结束考评" NavigateUrl="~/Pages/EvaluationManagement/StopEvaluation.aspx" >
     </TreeNode>
-    <TreeNode Text="考评结果" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResult.aspx" >
+    <TreeNode Text="查询结果（按被考评人）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForIndividual.aspx" >
+    </TreeNode>
+    <TreeNode Text="查询结果（按部门）" NavigateUrl="~/Pages/EvaluationManagement/EvaluationResultForDepart.aspx" >
     </TreeNode>
     <TreeNode Text="考评" NavigateUrl="~/Pages/EvaluationManagement/Evaluate.aspx" >
     </TreeNode>

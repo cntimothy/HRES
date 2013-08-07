@@ -1892,7 +1892,8 @@
     <Content Include="Pages\EvaluateTableManagement\iframe_ShowWCR.aspx" />
     <Content Include="Pages\EvaluateTableManagement\MakeEvaluateTable.aspx" />
     <Content Include="Pages\EvaluationManagement\Evaluate.aspx" />
-    <Content Include="Pages\EvaluationManagement\EvaluationResult.aspx" />
+    <Content Include="Pages\EvaluationManagement\EvaluationResultForDepart.aspx" />
+    <Content Include="Pages\EvaluationManagement\EvaluationResultForIndividual.aspx" />
     <Content Include="Pages\EvaluationManagement\iframe_Evaluate.aspx" />
     <Content Include="Pages\EvaluationManagement\MessagePlatform.aspx" />
     <Content Include="Pages\EvaluationManagement\StartEvaluation.aspx" />
@@ -2026,12 +2027,19 @@
     <Compile Include="Pages\EvaluationManagement\Evaluate.aspx.designer.cs">
       <DependentUpon>Evaluate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EvaluationManagement\EvaluationResult.aspx.cs">
-      <DependentUpon>EvaluationResult.aspx</DependentUpon>
+    <Compile Include="Pages\EvaluationManagement\EvaluationResultForDepart.aspx.cs">
+      <DependentUpon>EvaluationResultForDepart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\EvaluationManagement\EvaluationResult.aspx.designer.cs">
-      <DependentUpon>EvaluationResult.aspx</DependentUpon>
+    <Compile Include="Pages\EvaluationManagement\EvaluationResultForDepart.aspx.designer.cs">
+      <DependentUpon>EvaluationResultForDepart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\EvaluationResultForIndividual.aspx.cs">
+      <DependentUpon>EvaluationResultForIndividual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EvaluationManagement\EvaluationResultForIndividual.aspx.designer.cs">
+      <DependentUpon>EvaluationResultForIndividual.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\EvaluationManagement\iframe_Evaluate.aspx.cs">
       <DependentUpon>iframe_Evaluate.aspx</DependentUpon>

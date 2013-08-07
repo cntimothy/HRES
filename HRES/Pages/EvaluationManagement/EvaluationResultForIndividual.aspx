@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EvaluationResult.aspx.cs" Inherits="HRES.Pages.EvaluationManagement.EvaluationResult" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EvaluationResultForIndividual.aspx.cs" Inherits="HRES.Pages.EvaluationManagement.EvaluationResultForIndividual" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    考评结果
+    个人
     </div>
     </form>
 </body>
