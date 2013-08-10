@@ -39,9 +39,9 @@ namespace HRES.Pages.PostBookManagement
             {
                 status = DocStatus.saved;
             }
-            else if (curStatus == DocStatus.returned)
+            else if (curStatus == DocStatus.rejected)
             {
-                status = DocStatus.returned;
+                status = DocStatus.rejected;
             }
             if (savePostBook(status))
             {
@@ -71,7 +71,7 @@ namespace HRES.Pages.PostBookManagement
             {
                 status = DocStatus.submitted;
             }
-            else if (curStatus == DocStatus.returned)
+            else if (curStatus == DocStatus.rejected)
             {
                 status = DocStatus.modified;
             }
@@ -346,25 +346,12 @@ namespace HRES.Pages.PostBookManagement
 
         private void setToolbarVisible()
         {
-            AccessLevel accessLevel = AccessLevel.firstManager;
-            try
-            {
-                accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
-            }
-            catch (Exception)
-            {
-                Alert.ShowInTop("系统错误，请重新登录！", MessageBoxIcon.Error);
-                Session["UserID"] = "";
-                Session["UserName"] = "";
-                Session["AccessLevel"] = "";
-                Session["Depart"] = "";
-                Response.Redirect("../Login.aspx");
-            }
+            AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
             if (accessLevel == AccessLevel.firstManager)
             {
                 Button_Save.Visible = false;
                 Button_Submit.Visible = false;
-                Button_Clear.Visible = false; 
+                Button_Clear.Visible = false;
                 Button_Save_Shadow.Visible = false;
                 Button_Submit_Shadow.Visible = false;
                 Button_Clear_Shadow.Visible = false;

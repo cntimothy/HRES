@@ -13,7 +13,7 @@ namespace DataStructure
         unmake,         //未制作
         saved,          //已保存
         submitted,      //已提交
-        returned,       //已退回
+        rejected,       //已退回
         modified,       //已修改
         passed          //通过
     }

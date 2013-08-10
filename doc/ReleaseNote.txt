@@ -1,4 +1,6 @@
-2013/8/7
+2013/8/10
+DocStatus
+	将returned改为rejected
 EvaluattionResult
 	增加了几个域
 EvaluationManagementCtrl

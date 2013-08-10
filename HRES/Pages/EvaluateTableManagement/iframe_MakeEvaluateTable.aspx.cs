@@ -124,9 +124,9 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 status = DocStatus.saved;
             }
-            else if (curStatus == DocStatus.returned)
+            else if (curStatus == DocStatus.rejected)
             {
-                status = DocStatus.returned;
+                status = DocStatus.rejected;
             }
             EvaluateTable evaluateTable = getNewEvaluateTable();
             string evaluatedID = Request.QueryString["id"];
@@ -153,7 +153,7 @@ namespace HRES.Pages.EvaluateTableManagement
             {
                 status = DocStatus.submitted;
             }
-            else if (curStatus == DocStatus.returned)
+            else if (curStatus == DocStatus.rejected)
             {
                 status = DocStatus.modified;
             }
