@@ -268,12 +268,12 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据被考评人ID查询其岗位责任书是否已制定，已指定返回true，否则返回false
+        /// 根据existDic中的id字段查询其岗位责任书是否已制定， 已制定返回true，否则返回false
         /// </summary>
-        /// <param name="ID">被考评人ID</param>
+        /// <param name="existDic">id和是否存在岗位责任书的字典</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool IsExist(string ID, ref string exception)
+        public static bool IsExist(Dictionary<string, bool> existDic, ref string exception)
         {
             return true;
         }

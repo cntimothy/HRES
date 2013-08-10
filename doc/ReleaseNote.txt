@@ -1,4 +1,6 @@
 2013/8/10
+EvaluateTableManagementCtrl
+	修改了IsExist()函数的参数
 DocStatus
 	将returned改为rejected
 EvaluattionResult
