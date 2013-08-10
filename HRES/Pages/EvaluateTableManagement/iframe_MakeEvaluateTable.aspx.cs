@@ -115,23 +115,11 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
-            DocStatus status = curStatus;
-            if (curStatus == DocStatus.unmake)
-            {
-                status = DocStatus.saved;
-            }
-            else if (curStatus == DocStatus.saved)
-            {
-                status = DocStatus.saved;
-            }
-            else if (curStatus == DocStatus.rejected)
-            {
-                status = DocStatus.rejected;
-            }
+            DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.save);
             EvaluateTable evaluateTable = getNewEvaluateTable();
             string evaluatedID = Request.QueryString["id"];
             string exception = "";
-            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, status, ref exception))
+            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
             {
                 Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
             }
@@ -144,23 +132,11 @@ namespace HRES.Pages.EvaluateTableManagement
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
             DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
-            DocStatus status = curStatus;
-            if (curStatus == DocStatus.unmake)
-            {
-                status = DocStatus.submitted;
-            }
-            else if (curStatus == DocStatus.saved)
-            {
-                status = DocStatus.submitted;
-            }
-            else if (curStatus == DocStatus.rejected)
-            {
-                status = DocStatus.modified;
-            }
+            DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.submit);
             EvaluateTable evaluateTable = getNewEvaluateTable();
             string evaluatedID = Request.QueryString["id"];
             string exception = "";
-            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, status, ref exception))
+            if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
             {
                 Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
             }

@@ -30,20 +30,8 @@ namespace HRES.Pages.PostBookManagement
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
-            DocStatus status = DocStatus.unmake;
-            if (curStatus == DocStatus.unmake)
-            {
-                status = DocStatus.saved;
-            }
-            else if (curStatus == DocStatus.saved)
-            {
-                status = DocStatus.saved;
-            }
-            else if (curStatus == DocStatus.rejected)
-            {
-                status = DocStatus.rejected;
-            }
-            if (savePostBook(status))
+            DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.save);
+            if (savePostBook(nextStatus))
             {
                 Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
             }
@@ -62,20 +50,8 @@ namespace HRES.Pages.PostBookManagement
             }
 
             DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
-            DocStatus status = DocStatus.unmake;
-            if (curStatus == DocStatus.unmake)
-            {
-                status = DocStatus.submitted;
-            }
-            else if (curStatus == DocStatus.saved)
-            {
-                status = DocStatus.submitted;
-            }
-            else if (curStatus == DocStatus.rejected)
-            {
-                status = DocStatus.modified;
-            }
-            if (savePostBook(status))
+            DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.submit);
+            if (savePostBook(nextStatus))
             {
                 Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
             }
@@ -355,6 +331,7 @@ namespace HRES.Pages.PostBookManagement
                 Button_Save_Shadow.Visible = false;
                 Button_Submit_Shadow.Visible = false;
                 Button_Clear_Shadow.Visible = false;
+
                 ToolbarSeparator1.Visible = false;
                 ToolbarSeparator2.Visible = false;
                 ToolbarSeparator3.Visible = false;
@@ -368,6 +345,7 @@ namespace HRES.Pages.PostBookManagement
                 Button_Pass.Visible = false;
                 Button_Reject_Shadow.Visible = false;
                 Button_Pass_Shadow.Visible = false;
+
                 ToolbarSeparator4.Visible = false;
                 ToolbarSeparator5.Visible = false;
                 ToolbarSeparator9.Visible = false;
@@ -377,55 +355,77 @@ namespace HRES.Pages.PostBookManagement
 
         private void setEnabled()
         {
-            DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
-            if (status == DocStatus.submitted || status == DocStatus.passed)
+            DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+            if (curStatus == DocStatus.unmake || curStatus == DocStatus.saved || curStatus == DocStatus.passed)
             {
-                Button_Submit.Enabled = false;
-                Button_Clear.Enabled = false;
+                Button_Pass.Enabled = false;
+                Button_Pass_Shadow.Enabled = false;
+            }
+            if (curStatus == DocStatus.unmake || curStatus == DocStatus.saved || curStatus == DocStatus.rejected)
+            {
+                Button_Reject.Enabled = false;
+                Button_Reject_Shadow.Enabled = false;
+            }
+            if (curStatus == DocStatus.submitted || curStatus == DocStatus.modified || curStatus == DocStatus.passed)
+            {
                 Button_Save.Enabled = false;
-                Button_Submit_Shadow.Enabled = false;
-                Button_Clear_Shadow.Enabled = false;
                 Button_Save_Shadow.Enabled = false;
-
-
-                TextBox_LaborUnit.Enabled = false;
-                TextBox_LaborDepart.Enabled = false;
-                TextBox_PostName.Enabled = false;
-                TextArea_EduBg.Enabled = false;
-                TextArea_Certificate.Enabled = false;
-                TextArea_Experience.Enabled = false;
-                TextArea_Skill.Enabled = false;
-                TextArea_Personality.Enabled = false;
-                TextArea_PhyCond.Enabled = false;
-                TextArea_WorkOutline.Enabled = false;
-                TextArea_Power.Enabled = false;
-                TextArea_Response.Enabled = false;
-                TextBox_DirectLeader.Enabled = false;
-                TextBox_Subordinate.Enabled = false;
-                TextBox_Colleague.Enabled = false;
-                TextBox_Services.Enabled = false;
-                TextBox_Relations.Enabled = false;
-                TextArea_WorkEnter.Enabled = false;
-                TextArea_PostAssess.Enabled = false;
-                TextArea_Others.Enabled = false;
-
-                Radio_Employer.Enabled = false;
-                Radio_PostType.Enabled = false;
-
-                foreach (ControlBase item in Panel6.Items)
-                {
-                    try
-                    {
-                        SimpleForm sf = item as SimpleForm;
-                        item.Enabled = false;
-                    }
-                    catch (Exception)
-                    {
-                        continue;
-                    }
-                }
+                Button_Submit.Enabled = false;
+                Button_Submit_Shadow.Enabled = false;
             }
         }
+
+        //private void setEnabled()
+        //{
+        //    DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
+        //    if (status == DocStatus.submitted || status == DocStatus.passed)
+        //    {
+        //        Button_Submit.Enabled = false;
+        //        Button_Clear.Enabled = false;
+        //        Button_Save.Enabled = false;
+        //        Button_Submit_Shadow.Enabled = false;
+        //        Button_Clear_Shadow.Enabled = false;
+        //        Button_Save_Shadow.Enabled = false;
+
+
+        //        TextBox_LaborUnit.Enabled = false;
+        //        TextBox_LaborDepart.Enabled = false;
+        //        TextBox_PostName.Enabled = false;
+        //        TextArea_EduBg.Enabled = false;
+        //        TextArea_Certificate.Enabled = false;
+        //        TextArea_Experience.Enabled = false;
+        //        TextArea_Skill.Enabled = false;
+        //        TextArea_Personality.Enabled = false;
+        //        TextArea_PhyCond.Enabled = false;
+        //        TextArea_WorkOutline.Enabled = false;
+        //        TextArea_Power.Enabled = false;
+        //        TextArea_Response.Enabled = false;
+        //        TextBox_DirectLeader.Enabled = false;
+        //        TextBox_Subordinate.Enabled = false;
+        //        TextBox_Colleague.Enabled = false;
+        //        TextBox_Services.Enabled = false;
+        //        TextBox_Relations.Enabled = false;
+        //        TextArea_WorkEnter.Enabled = false;
+        //        TextArea_PostAssess.Enabled = false;
+        //        TextArea_Others.Enabled = false;
+
+        //        Radio_Employer.Enabled = false;
+        //        Radio_PostType.Enabled = false;
+
+        //        foreach (ControlBase item in Panel6.Items)
+        //        {
+        //            try
+        //            {
+        //                SimpleForm sf = item as SimpleForm;
+        //                item.Enabled = false;
+        //            }
+        //            catch (Exception)
+        //            {
+        //                continue;
+        //            }
+        //        }
+        //    }
+        //}
         #endregion
     }
 }
