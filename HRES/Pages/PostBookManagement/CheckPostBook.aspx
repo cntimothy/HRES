@@ -32,7 +32,8 @@
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" AutoHeight="true" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment">
+                        EnableRowNumber="True" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
+                        OnPreRowDataBound="Grid1_PreRowDataBound">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -62,8 +63,8 @@
                                 </ItemTemplate>
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
-                            <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakePostBook" Text="审核"
-                                ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx" DataIFrameUrlFields="ID,Name,Status"
+                            <x:WindowField ColumnID="WindowField_Check" ID = "test" TextAlign="Center" Width="80px" WindowID="Window_MakePostBook"
+                                Text="审核" ToolTip="审核岗位责任书" Title="审核" IFrameUrl="iframe_MakePostBook.aspx" DataIFrameUrlFields="ID,Name,Status"
                                 DataIFrameUrlFormatString="iframe_MakePostBook.aspx?id={0}&name={1}&status={2}" />
                         </Columns>
                     </x:Grid>
