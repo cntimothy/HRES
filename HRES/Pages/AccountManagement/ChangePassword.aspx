@@ -25,7 +25,7 @@
                         Required="true" TextMode="Password" CompareControl="TextBox2" CompareOperator="Equal"
                         CompareMessage="请输入相同密码">
                     </x:TextBox>
-                    <x:Button ID="Button_ChangePassword" runat="server" Text="修改密码" OnClick="Button_ChangePassword_Click" ValidateForms="SimpleForm1">
+                    <x:Button ID="Button_ChangePassword" runat="server" Text="修改密码" OnClick="Button_ChangePassword_Click" ValidateForms="SimpleForm1" ConfirmTitle="提示！" ConfirmText="确定修改密码？">
                     </x:Button>
                 </Items>
             </x:SimpleForm>

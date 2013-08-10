@@ -275,7 +275,7 @@ namespace Controls
         /// <returns></returns>
         public static bool IsExist(string ID, ref string exception)
         {
-            return true;
+            return false;
         }
 
         /// <summary>
