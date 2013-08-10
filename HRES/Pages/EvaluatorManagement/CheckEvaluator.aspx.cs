@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using Controls;
 using FineUI;
 using System.Data;
-
+using DataStructure;
 
 namespace HRES.Pages.EvaluatorManagement
 {
@@ -52,6 +52,21 @@ namespace HRES.Pages.EvaluatorManagement
             bindEvaluatedToGrid();
         }
 
+        protected void Grid1_PreRowDataBound(object sender, FineUI.GridPreRowEventArgs e)
+        {
+            WindowField windowField_Check = Grid1.FindColumn("WindowField_Check") as WindowField;
+            DataRowView row = e.DataItem as DataRowView;
+            string strStatus = row["Status"].ToString();
+            DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), strStatus);
+            if (status == DocStatus.unmake || status == DocStatus.saved)
+            {
+                windowField_Check.Enabled = false;
+            }
+            else
+            {
+                windowField_Check.Enabled = true;
+            }
+        }
         #endregion
 
         #region Private Method
