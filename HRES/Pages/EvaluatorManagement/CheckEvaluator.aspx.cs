@@ -18,7 +18,8 @@ namespace HRES.Pages.EvaluatorManagement
         {
             if (!IsPostBack)
             {
-                BindEvaluatedToGrid();
+                bindDepartsToDropDownList();
+                bindEvaluatedToGrid();
             }
 
         }
@@ -27,7 +28,7 @@ namespace HRES.Pages.EvaluatorManagement
         #region Event
         protected void Refresh_Click(object sender, EventArgs e)
         {
-            BindEvaluatedToGrid();
+            bindEvaluatedToGrid();
         }
 
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
@@ -38,35 +39,79 @@ namespace HRES.Pages.EvaluatorManagement
         protected void Grid1_RowClick(object sender, FineUI.GridRowClickEventArgs e)
         {
             object[] keys = Grid1.DataKeys[e.RowIndex];
-            SetSimpleForm(keys);
+            setSimpleForm(keys);
         }
 
         protected void Window_CheckEvaluator_Close(object sender, FineUI.WindowCloseEventArgs e)
         {
-            BindEvaluatedToGrid();
+            bindEvaluatedToGrid();
+        }
+
+        protected void DropDownList_Depart_SelectedChanged(object sender, EventArgs e)
+        {
+            bindEvaluatedToGrid();
         }
 
         #endregion
 
         #region Private Method
-
-        private void BindEvaluatedToGrid()
+        private void bindDepartsToDropDownList()
         {
             string exception = "";
-            string depart = (string)Session["Depart"];
-            DataTable table = new DataTable();
-            if (EvaluatorManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
+            List<string> departs = new List<string>();
+            if (CommonCtrl.GetDeparts(ref departs, ref exception))
             {
-                string sortField = "Status";
-                string sortDirection = "ASC";
-                DataView dv = table.DefaultView;
-                dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
-                Grid1.DataSource = dv;
-                Grid1.DataBind();
+                foreach (string depart in departs)
+                {
+                    DropDownList_Depart.Items.Add(depart, depart);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("获取部门信息失败！/n原因：" + exception, MessageBoxIcon.Error);
             }
         }
 
-        private void SetSimpleForm(object[] keys)
+        private void bindEvaluatedToGrid()
+        {
+            string exception = "";
+            DataTable table = new DataTable();
+            if (DropDownList_Depart.SelectedValue == "0")
+            {
+                if (EvaluatorManagementCtrl.GetAll(ref table, ref exception))
+                {
+                    string sortField = "Status";
+                    string sortDirection = "ASC";
+                    DataView dv = table.DefaultView;
+                    dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
+                    Grid1.DataSource = dv;
+                    Grid1.DataBind();
+                }
+                else
+                {
+                    Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                string depart = DropDownList_Depart.SelectedValue;
+                if (EvaluatorManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
+                {
+                    string sortField = "Status";
+                    string sortDirection = "ASC";
+                    DataView dv = table.DefaultView;
+                    dv.Sort = String.Format("{0} {1}", sortField, sortDirection);
+                    Grid1.DataSource = dv;
+                    Grid1.DataBind();
+                }
+                else
+                {
+                    Alert.ShowInTop("获取被考评人信息失败！/n原因：" + exception, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void setSimpleForm(object[] keys)
         {
             LabID.Text = (string)keys[0];
             LabDate.Text = (string)keys[1];

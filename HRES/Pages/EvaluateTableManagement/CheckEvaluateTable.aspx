@@ -14,6 +14,14 @@
         <Items>
             <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:100%">
                 <Items>
+                    <x:Label ID="Label1" runat="server" Label="Label" Text="请选择部门：">
+                    </x:Label>
+                    <x:DropDownList ID="DropDownList_Depart" runat="server" Label="Label" AutoPostBack="true"
+                        OnSelectedIndexChanged="DropDownList_Depart_SelectedChanged">
+                        <x:ListItem Selected="true" EnableSelect="true" Text="所有部门" Value="0" />
+                    </x:DropDownList>
+                    <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
+                    </x:ToolbarSeparator>
                     <x:Button ID="Refresh" runat="server" Text="刷新" OnClick="Refresh_Click">
                     </x:Button>
                 </Items>
