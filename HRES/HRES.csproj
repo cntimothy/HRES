@@ -1995,7 +1995,6 @@
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx.cs">
       <DependentUpon>iframe_MakeEvaluateTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\EvaluateTableManagement\iframe_MakeEvaluateTable.aspx.designer.cs">
       <DependentUpon>iframe_MakeEvaluateTable.aspx</DependentUpon>

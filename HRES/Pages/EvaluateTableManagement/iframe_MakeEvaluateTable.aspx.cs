@@ -17,6 +17,12 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             if (!IsPostBack)
             {
+                if (!checkPostBook())
+                {
+                    Alert.ShowInTop("被考评人岗位责任书尚未通过审核！\n窗口即将关闭", MessageBoxIcon.Error);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
+                }
+
                 //TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
                     //+ Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
 
@@ -368,6 +374,24 @@ namespace HRES.Pages.EvaluateTableManagement
             evaluateTable.Reject.Add(new Quota("其他", new string[] { TextArea_Reject2.Text.Trim() }));
 
             return evaluateTable;
+        }
+
+        /// <summary>
+        /// 查询被考评人的岗位责任书是否已通过，已通过返回true，否则返回false
+        /// </summary>
+        /// <returns></returns>
+        private bool checkPostBook()
+        {
+            string evaluatedID = Request.QueryString["id"];
+            string exception = "";
+            if (EvaluateTableManagementCtrl.IsExist(ID, ref exception))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion
     }

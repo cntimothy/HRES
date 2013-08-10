@@ -268,7 +268,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据被考评人id查询其岗位责任书是否已制定，已制定返回true，否则返回false
+        /// 根据被考评人id查询其岗位责任书是否已通过，已制定返回true，否则返回false
         /// </summary>
         /// <param name="ID">被考评人id</param>
         /// <param name="exception"></param>
