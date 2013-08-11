@@ -31,6 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +54,7 @@
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />
     <Compile Include="EvaluatorManagementCtrl.cs" />
+    <Compile Include="ExportManagementCtrl.cs" />
     <Compile Include="FirstManagementCtrl.cs" />
     <Compile Include="LoginManagementCtrl.cs" />
     <Compile Include="PostBookManagementCtrl.cs" />
@@ -60,7 +69,11 @@
       <Name>DataStructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="lib\Ionic.Zip.dll" />
+    <Content Include="lib\NPOI.dll" />
+    <Content Include="lib\NPOI.XML" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

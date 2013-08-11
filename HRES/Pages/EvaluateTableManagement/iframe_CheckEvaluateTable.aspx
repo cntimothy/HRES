@@ -27,6 +27,10 @@
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Reject" runat="server" Text="退回" >
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click">
+                            </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见：">

@@ -44,6 +44,24 @@ namespace HRES.Pages.EvaluateTableManagement
                 Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Information);
             }
         }
+
+        protected void Button_Export_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            EvaluateTable evaluateTable = new EvaluateTable();
+            if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
+            {
+                if (ExportManagementCtrl.ExportEvaluateTable(evaluateTable, ref exception))
+                {
+                    Alert.ShowInTop("导出成功！", MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Private
