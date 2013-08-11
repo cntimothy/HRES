@@ -236,6 +236,8 @@ namespace HRES.Pages.EvaluateTableManagement
                 sf__reject.Items.Add(ta1);
                 sf__reject.Items.Add(ta2);
                 Panel9.Items.Add(sf__reject);
+
+                Label_Comment.Text = evaluateTable.Comment;
             }
             else
             {
