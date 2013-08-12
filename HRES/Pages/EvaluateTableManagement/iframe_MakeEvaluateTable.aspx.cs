@@ -269,16 +269,19 @@ namespace HRES.Pages.EvaluateTableManagement
                     + "^" + evaluateTable.Attitude[i].Content[3];
                 }
 
-                if (evaluateTable.Reject.Count == 0)
-                {
-                    TextArea_Reject1.Text = "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；";
-                    TextArea_Reject2.Text = "";
-                }
-                else
-                {
-                    TextArea_Reject1.Text = evaluateTable.Reject[0].Content[0];
-                    TextArea_Reject2.Text = evaluateTable.Reject[1].Content[0];
-                }
+                TextArea_Reject1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
+                TextArea_Reject2.Text = evaluateTable.Reject[0].Content[0];
+
+                //if (evaluateTable.Reject.Count == 0)
+                //{
+                //    TextArea_Reject1.Text = "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；";
+                //    TextArea_Reject2.Text = "";
+                //}
+                //else
+                //{
+                //    TextArea_Reject1.Text = evaluateTable.Reject[0].Content[0];
+                //    TextArea_Reject2.Text = evaluateTable.Reject[1].Content[0];
+                //}
             }
         }
 
@@ -370,7 +373,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 string[] content = hf.Text.Split('&')[1].Split('^');
                 evaluateTable.Attitude.Add(new Quota(title, content));
             }
-            evaluateTable.Reject.Add(new Quota("严重违反规章制度", new string[] { TextArea_Reject1.Text.Trim() }));
+            
             evaluateTable.Reject.Add(new Quota("其他", new string[] { TextArea_Reject2.Text.Trim() }));
 
             return evaluateTable;

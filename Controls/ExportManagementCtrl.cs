@@ -553,22 +553,23 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + 2 * (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + index), 4, normalCenterStyle);
             }
 
+            //否决指标
             IRow rowReject1 = sheet.GetRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2);
-            int rejectLength1 = evaluateTable.Reject[0].Content[0].Length;
-            if (rejectLength1 / 41 == 0)
-                rowReject1.HeightInPoints = 16;
-            else
-                rowReject1.HeightInPoints = 12 * (rejectLength1 / 41 + 1);
+            //int rejectLength1 = evaluateTable.Reject[0].Content[0].Length;
+            //if (rejectLength1 / 41 == 0)
+            //    rowReject1.HeightInPoints = 16;
+            //else
+            rowReject1.HeightInPoints = 12 * 7;
 
             ICell cellReject1Ti1tle = rowReject1.CreateCell(2);
-            cellReject1Ti1tle.SetCellValue(evaluateTable.Reject[0].Title);
+            cellReject1Ti1tle.SetCellValue("否决指标");
             cellReject1Ti1tle.CellStyle = normalCenterStyle;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2, 2, 3);
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
             ICell cellReject1Content = rowReject1.CreateCell(4);
-            cellReject1Content.SetCellValue(evaluateTable.Reject[0].Content[0]);
+            cellReject1Content.SetCellValue("累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；");
             cellReject1Content.CellStyle = normalStyle;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2, 4, 6);
             sheet.AddMergedRegion(region);
@@ -582,21 +583,21 @@ namespace Controls
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
             IRow rowReject2 = sheet.GetRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 1);
-            int rejectLength2 = evaluateTable.Reject[1].Content[0].Length;
+            int rejectLength2 = evaluateTable.Reject[0].Content[0].Length;
             if (rejectLength2 / 41 == 0)
                 rowReject2.HeightInPoints = 16;
             else
-                rowReject2.HeightInPoints = 12 * (rejectLength1 / 41 + 1);
+                rowReject2.HeightInPoints = 12 * (rejectLength2 / 41 + 1);
 
             ICell cellReject2Ti1tle = rowReject2.CreateCell(2);
-            cellReject2Ti1tle.SetCellValue(evaluateTable.Reject[1].Title);
+            cellReject2Ti1tle.SetCellValue(evaluateTable.Reject[0].Title);
             cellReject2Ti1tle.CellStyle = normalCenterStyle;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 1, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 1, 2, 3);
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
             ICell cellReject2Content = rowReject2.CreateCell(4);
-            cellReject2Content.SetCellValue(evaluateTable.Reject[1].Content[0]);
+            cellReject2Content.SetCellValue(evaluateTable.Reject[0].Content[0]);
             cellReject2Content.CellStyle = normalStyle;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 1, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 1, 4, 6);
             sheet.AddMergedRegion(region);
@@ -698,7 +699,7 @@ namespace Controls
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
             //表注脚
-            IRow rowFoot1 = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count)*2 + 3);
+            IRow rowFoot1 = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 3);
             ICell cellFoot1 = rowFoot1.CreateCell(0);
             cellFoot1.SetCellValue("注：被考核者在否决指标中有其中一项情况的，则该指标计为-10分。否决指标为合格的计为0分。");
             cellFoot1.CellStyle = normalStyle;
@@ -753,7 +754,7 @@ namespace Controls
 
             if (writeToFile(hssfworkbook, evaluateTable.EvaluatedName, ref filename))
             {
-                return true;                
+                return true;
             }
             else
             {
@@ -766,7 +767,7 @@ namespace Controls
         private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string filename)
         {
             filename = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
-            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" +  filename;
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + filename;
             FileStream file = new FileStream(path, FileMode.Create);
             try
             {

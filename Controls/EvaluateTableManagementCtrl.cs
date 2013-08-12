@@ -258,12 +258,10 @@ namespace Controls
             evaluateTable.Attitude.Add(quota2);
             evaluateTable.Attitude.Add(quota3);
             evaluateTable.Attitude.Add(quota4);
-            Quota reject1 = new Quota("严重违反规章制度", new string[] { "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；" });
-            Quota reject2 = new Quota("其他", new string[] { "" });
+            Quota reject1 = new Quota("其他", new string[] { "" });
             evaluateTable.Status = DocStatus.submitted;
             evaluateTable.Comment = "很不好";
             evaluateTable.Reject.Add(reject1);
-            evaluateTable.Reject.Add(reject2);
             return true;
         }
 

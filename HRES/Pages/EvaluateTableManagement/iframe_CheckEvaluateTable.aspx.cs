@@ -60,7 +60,6 @@ namespace HRES.Pages.EvaluateTableManagement
                     Response.ClearContent();
                     Response.ContentType = "application/excel";
                     Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
-                    //指定编码 防止中文文件名乱码 
                     //Response.HeaderEncoding = System.Text.Encoding.GetEncoding("gb2312");
                     string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
@@ -240,10 +239,10 @@ namespace HRES.Pages.EvaluateTableManagement
                 sf__reject.BodyPadding = "5px";
                 TextArea ta1 = new TextArea();
                 ta1.Label = "严重违反规章制度";
-                ta1.Text = evaluateTable.Reject[0].Content[0];
+                ta1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
                 TextArea ta2 = new TextArea();
                 ta2.Label = "其他";
-                ta2.Text = evaluateTable.Reject[1].Content[0];
+                ta2.Text = evaluateTable.Reject[0].Content[0];
                 sf__reject.Items.Add(ta1);
                 sf__reject.Items.Add(ta2);
                 Panel9.Items.Add(sf__reject);
