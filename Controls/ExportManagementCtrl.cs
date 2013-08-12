@@ -765,9 +765,8 @@ namespace Controls
         #region Private Method
         private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string filename)
         {
-            //filename = @"downloadfiles\" + DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
-            filename = @"downloadfiles\" + "考核表.xls";
-            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + filename;
+            filename = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" +  filename;
             FileStream file = new FileStream(path, FileMode.Create);
             try
             {

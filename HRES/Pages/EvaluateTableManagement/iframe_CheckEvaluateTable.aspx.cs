@@ -29,10 +29,6 @@ namespace HRES.Pages.EvaluateTableManagement
             base.OnInit(e);
             loadEvaluateTable();
         }
-        public override void VerifyRenderingInServerForm(Control control)
-        { 
-        
-        }
 
         #endregion
 
@@ -63,11 +59,13 @@ namespace HRES.Pages.EvaluateTableManagement
                 {
                     Response.ClearContent();
                     Response.ContentType = "application/excel";
-                    Response.AddHeader("content-disposition", "attachment;filename=考核表.xls");
+                    Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
                     //指定编码 防止中文文件名乱码 
-                    Response.HeaderEncoding = System.Text.Encoding.GetEncoding("gb2312");
-                    string path = Server.MapPath("..\\..\\" + filename);
+                    //Response.HeaderEncoding = System.Text.Encoding.GetEncoding("gb2312");
+                    string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
+                    //string path = Server.MapPath("..\\..\\" + filename);
+                    //PageContext.Redirect(path);
                 }
             }
             else
