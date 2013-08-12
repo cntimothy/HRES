@@ -35,7 +35,7 @@ namespace HRES.Pages.EvaluateTableManagement
             string level1 = DropDownList1.SelectedValue;
             string level2 = DropDownList2.SelectedValue;
             string exception = "";
-            string[] quota = new string[4];
+            List<string> quota = new List<string>();
             if (EvaluateTableManagementCtrl.GetQuota(ref quota, level1, level2, ref exception))
             {
                 TextArea1.Text = quota[0];
