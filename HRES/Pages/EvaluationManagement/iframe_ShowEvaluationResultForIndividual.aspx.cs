@@ -33,14 +33,13 @@ namespace HRES.Pages.EvaluationManagement
         private void bindYearToDropDownList()
         {
             string exception = "";
-            List<string> years = new List<string>();
+            Dictionary<string, string> idYearDic = new Dictionary<string, string>();
             string evaluatedID = Request.QueryString["id"];
-            if (EvaluationManagementCtrl.GetEvaluationResultYears(ref years, evaluatedID, ref exception))
+            if (EvaluationManagementCtrl.GetEvaluationResultYears(ref idYearDic, evaluatedID, ref exception))
             {
-                foreach (string item in years)
+                foreach (string id in idYearDic.Keys)
                 {
-                    DropDownList_Year.DataSource = years;
-                    DropDownList_Year.DataBind();
+                    DropDownList_Year.Items.Add(idYearDic[id], id);
                 }
             }
             else

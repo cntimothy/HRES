@@ -481,19 +481,18 @@ namespace Controls
         /// <summary>
         /// 查询被考评人有考评结果的年份的列表，查询成功返回true，否则返回false
         /// </summary>
-        /// <param name="years">年份列表</param>
+        /// <param name="idYearDic">年份列表</param>
         /// <param name="evaluatedID">被考评人ID</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetEvaluationResultYears(ref List<string> years, string evaluatedID, ref string exception)
+        public static bool GetEvaluationResultYears(ref Dictionary<string, string> idYearDic, string evaluatedID, ref string exception)
         {
-            years.Add("2012");
-            years.Add("2013");
-            years.Add("2014");
-            years.Add("2015");
-            years.Add("2016");
-            years.Add("2017");
-            years.Add("2018");
+            idYearDic.Add("01", "2012");
+            idYearDic.Add("02", "2013");
+            idYearDic.Add("03", "2014");
+            idYearDic.Add("04", "2015");
+            idYearDic.Add("05", "2016");
+            idYearDic.Add("06", "2017");
             return true;
         }
 
@@ -502,10 +501,10 @@ namespace Controls
         /// </summary>
         /// <param name="result">考评结果</param>
         /// <param name="evaluatedID">被考评人ID</param>
-        /// <param name="year">年份</param>
+        /// <param name="yearid">年份</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetEvaluationResultByEvaluatedAndYear(ref EvaluationResult result, string evaluatedID, string year, ref string exception)
+        public static bool GetEvaluationResultByEvaluatedAndYear(ref EvaluationResult result, string evaluatedID, string yearid, ref string exception)
         {
             result.Is360 = false;
             result.PostName = "岗位名称";
