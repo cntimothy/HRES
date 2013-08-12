@@ -51,8 +51,12 @@
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="工作单位" />
-                            <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
-                            <x:BoundField Width="80px" DataField="Relation" DataFormatString="{0}" HeaderText="关系" />
+                            <x:BoundField Width="150px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
+                            <x:TemplateField Width="150px" HeaderText="关系">
+                                <ItemTemplate>
+                                    <asp:Label ID="Relation" runat="server" Text='<%# GetRelation(Eval("Relation")) %>'></asp:Label>
+                                </ItemTemplate>
+                            </x:TemplateField>
                         </Columns>
                     </x:Grid>
                 </Items>

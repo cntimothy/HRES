@@ -56,7 +56,7 @@
                             <x:TemplateField Width="200px" HeaderText="关系">
                                 <ItemTemplate>
                                     <asp:RadioButtonList runat="server" RepeatLayout="Flow" CssClass="gender" RepeatDirection="Horizontal"
-                                        ID="Relation">
+                                        ID="RadioButtonList_Relation">
                                         <asp:ListItem Text="领导" Value="领导"></asp:ListItem>
                                         <asp:ListItem Text="同事" Value="同事"></asp:ListItem>
                                         <asp:ListItem Text="下属" Value="下属"></asp:ListItem>

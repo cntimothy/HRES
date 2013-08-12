@@ -56,7 +56,26 @@ namespace HRES.Pages.EvaluatorManagement
                 return;
             }
             Dictionary<string, string> dic = (new JavaScriptSerializer()).Deserialize<Dictionary<string, string>>(hfSelectedIDS.Text.Trim());
-            if(EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, dic, ref exception))
+            Dictionary<string, string> idRelationDic = new Dictionary<string, string>();
+            foreach (string key in dic.Keys)
+            {
+                switch (dic[key])
+                { 
+                    case "领导":
+                        idRelationDic.Add(key, Convert.ToString((int)Relation.leader));
+                        break;
+                    case "同事":
+                        idRelationDic.Add(key, Convert.ToString((int)Relation.colleague));
+                        break;
+                    case "下属":
+                        idRelationDic.Add(key, Convert.ToString((int)Relation.subordinate));
+                        break;
+                    case "服务对象":
+                        idRelationDic.Add(key, Convert.ToString((int)Relation.services));
+                        break;
+                }
+            }
+            if (EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, idRelationDic, ref exception))
             {
                 Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
             }
@@ -101,23 +120,6 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
-        //private List<string> GetSelectedRowIndexArrayFromHiddenField()
-        //{
-        //    JArray idsArray = new JArray();
-
-        //    string currentIDS = hfSelectedIDS.Text.Trim();
-        //    if (!String.IsNullOrEmpty(currentIDS))
-        //    {
-        //        idsArray = JArray.Parse(currentIDS);
-        //    }
-        //    else
-        //    {
-        //        idsArray = new JArray();
-        //    }
-
-        //    return new List<string>(idsArray.ToObject<string[]>());
-        //}
-
         private Dictionary<string, string> GetSelectedRowIndexArrayFromHiddenField()
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -138,43 +140,6 @@ namespace HRES.Pages.EvaluatorManagement
             return dic;
         }
 
-        //private void SyncSelectedRowIndexArrayToHiddenField()
-        //{
-        //    List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
-
-        //    List<int> selectedRows = new List<int>();
-        //    if (Grid1.SelectedRowIndexArray != null && Grid1.SelectedRowIndexArray.Length > 0)
-        //    {
-        //        selectedRows = new List<int>(Grid1.SelectedRowIndexArray);
-        //    }
-
-        //    int startPageIndex = Grid1.PageIndex * Grid1.PageSize;
-        //    for (int i = startPageIndex, count = Math.Min(startPageIndex + Grid1.PageSize, Grid1.RecordCount); i < count; i++)
-        //    {
-        //        string id = Grid1.DataKeys[i][0].ToString();
-        //        GridRow row = Grid1.Rows[i];
-        //        AspNet.RadioButtonList relationCtrl = (AspNet.RadioButtonList)row.FindControl("Relation");
-        //        string relation = relationCtrl.SelectedValue;
-        //        if (selectedRows.Contains(i - startPageIndex))
-        //        {
-        //            if (!ids.Contains(id))
-        //            {
-        //                ids.Add(id + ":" +relation);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (ids.Contains(id))
-        //            {
-        //                ids.Remove(id + ":" + relation);
-        //            }
-        //        }
-
-        //    }
-
-        //    hfSelectedIDS.Text = new JArray(ids).ToString(Formatting.None);
-        //}
-
         private void SyncSelectedRowIndexArrayToHiddenField()
         {
             Dictionary<string, string> dic = GetSelectedRowIndexArrayFromHiddenField();
@@ -188,7 +153,7 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 string id = Grid1.DataKeys[i][0].ToString();
                 GridRow row = Grid1.Rows[i];
-                AspNet.RadioButtonList relationCtrl = (AspNet.RadioButtonList)row.FindControl("Relation");
+                AspNet.RadioButtonList relationCtrl = (AspNet.RadioButtonList)row.FindControl("RadioButtonList_Relation");
                 string relation = relationCtrl.SelectedValue;
                 if (selectedRows.Contains(i - startPageIndex))
                 {
@@ -209,24 +174,6 @@ namespace HRES.Pages.EvaluatorManagement
 
             hfSelectedIDS.Text = (new JavaScriptSerializer()).Serialize(dic);
         }
-
-
-        //private void UpdateSelectedRowIndexArray()
-        //{
-        //    List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
-
-        //    List<int> nextSelectedRowIndexArray = new List<int>();
-        //    int nextStartPageIndex = Grid1.PageIndex * Grid1.PageSize;
-        //    for (int i = nextStartPageIndex, count = Math.Min(nextStartPageIndex + Grid1.PageSize, Grid1.RecordCount); i < count; i++)
-        //    {
-        //        string id = Grid1.DataKeys[i][0].ToString();
-        //        if (ids.Contains(id))
-        //        {
-        //            nextSelectedRowIndexArray.Add(i - nextStartPageIndex);
-        //        }
-        //    }
-        //    Grid1.SelectedRowIndexArray = nextSelectedRowIndexArray.ToArray();
-        //}
 
         private void UpdateSelectedRowIndexArray()
         {
