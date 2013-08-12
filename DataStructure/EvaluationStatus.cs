@@ -13,6 +13,6 @@ namespace DataStructure
         unstart,        //未开始
         started,        //已开始
         finished,       //已完成
-        stoppend,       //已结束
+        stopped,       //已结束
     }
 }

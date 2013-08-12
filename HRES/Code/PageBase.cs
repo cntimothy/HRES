@@ -867,24 +867,24 @@ namespace HRES
         protected string GetDocStatus(object status)
         {
             string returnValue = "";
-            switch (Convert.ToInt32(status))
+            switch ((DocStatus)Enum.Parse(typeof(DocStatus), (string)status))
             {
-                case 0:
+                case DocStatus.unmake:
                     returnValue = "未制作";
                     break;
-                case 1:
+                case DocStatus.saved:
                     returnValue = "已保存";
                     break;
-                case 2:
+                case DocStatus.submitted:
                     returnValue = "已提交";
                     break;
-                case 3:
+                case DocStatus.rejected:
                     returnValue = "已退回";
                     break;
-                case 4:
+                case DocStatus.modified:
                     returnValue = "已修改";
                     break;
-                case 5:
+                case DocStatus.passed:
                     returnValue = "已通过";
                     break;
             }
@@ -899,22 +899,22 @@ namespace HRES
         protected string GetDocStatusForCheck(object status)
         {
             string returnValue = "";
-            switch (Convert.ToInt32(status))
+            switch ((DocStatus)Enum.Parse(typeof(DocStatus), (string)status))
             {
-                case 0:
-                case 1:
+                case DocStatus.unmake:
+                case DocStatus.saved:
                     returnValue = "未制作";
                     break;
-                case 2:
+                case DocStatus.submitted:
                     returnValue = "已提交";
                     break;
-                case 3:
+                case DocStatus.rejected:
                     returnValue = "已退回";
                     break;
-                case 4:
+                case DocStatus.modified:
                     returnValue = "已修改";
                     break;
-                case 5:
+                case DocStatus.passed:
                     returnValue = "已通过";
                     break;
             }
@@ -929,18 +929,18 @@ namespace HRES
         protected string GetEvaluationStatus(object status)
         {
             string returnValue = "";
-            switch (Convert.ToInt32(status))
+            switch ((EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), (string)status))
             {
-                case 0:
+                case EvaluationStatus.unstart:
                     returnValue = "未开始";
                     break;
-                case 1:
+                case EvaluationStatus.started:
                     returnValue = "已开始";
                     break;
-                case 2:
+                case EvaluationStatus.finished:
                     returnValue = "已完成";
                     break;
-                case 3:
+                case EvaluationStatus.stopped:
                     returnValue = "已结束";
                     break;
             }
@@ -950,23 +950,23 @@ namespace HRES
         /// <summary>
         /// 获取关系的字面值，在审核中调用
         /// </summary>
-        /// <param name="status"></param>
+        /// <param name="relation"></param>
         /// <returns></returns>
-        protected string GetRelation(object status)
+        protected string GetRelation(object relation)
         {
             string returnValue = "";
-            switch (Convert.ToInt32(status))
+            switch ((Relation)Enum.Parse(typeof(Relation), (string)relation))
             {
-                case 0:
+                case Relation.leader:
                     returnValue = "领导";
                     break;
-                case 1:
+                case Relation.colleague:
                     returnValue = "同事";
                     break;
-                case 2:
+                case Relation.subordinate:
                     returnValue = "下属";
                     break;
-                case 3:
+                case Relation.services:
                     returnValue = "服务对象";
                     break;
             }
