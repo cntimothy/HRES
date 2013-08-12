@@ -30,7 +30,7 @@ namespace HRES
                     Session["UserName"] = "";
                     Session["AccessLevel"] = "";
                     Session["Depart"] = "";
-                    PageContext.Redirect("Login.aspx", "_top");
+                    PageContext.Redirect("../Login.aspx", "_top");
                 }
                 if (PageManager.Instance != null)
                 {

@@ -134,7 +134,7 @@ namespace HRES.Pages
             Session["UserName"] = "";
             Session["AccessLevel"] = "";
             Session["Depart"] = "";
-            Response.Redirect("Login.aspx");
+            Response.Redirect("../Login.aspx");
         }
 
         private string GetSelectedMenuID(MenuButton menuButton)

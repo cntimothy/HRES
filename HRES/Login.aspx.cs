@@ -29,7 +29,7 @@ namespace HRES
                 Session["UserName"] = userInfo.Name;
                 Session["AccessLevel"] = userInfo.AccessLevel;
                 Session["Depart"] = userInfo.Depart;
-                Response.Redirect("HomePage.aspx");
+                Response.Redirect("Pages/HomePage.aspx");
             }
             else
             {

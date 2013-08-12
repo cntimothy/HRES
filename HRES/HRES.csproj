@@ -1906,7 +1906,7 @@
     <Content Include="Pages\EvaluatorManagement\UploadSelectableEvaluator.aspx" />
     <Content Include="Pages\FirstManagement\ResetFirst.aspx" />
     <Content Include="Pages\HomePage.aspx" />
-    <Content Include="Pages\Login.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Pages\PostBookManagement\iframe_MakePostBook.aspx" />
     <Content Include="Pages\QuotaManagement\iframe_NewQuota.aspx" />
     <Content Include="Pages\SecondManagement\MakeSecond.aspx" />
@@ -2126,11 +2126,11 @@
     <Compile Include="Pages\HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PostBookManagement\iframe_MakePostBook.aspx.cs">
