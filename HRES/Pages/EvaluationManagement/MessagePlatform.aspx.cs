@@ -50,7 +50,13 @@ namespace HRES.Pages.EvaluationManagement
             }
 
             string exception = "";
-            if (EvaluationManagementCtrl.SendMessage(ids, ref exception))
+            string message = TextArea_Message.Text;
+            if (message == "" || message.Length > 70)
+            {
+                Alert.ShowInTop("短信内容不能为空且不能长于70！");
+                return;
+            }
+            if (EvaluationManagementCtrl.SendMessage(ids, message, ref exception))
             {
                 Alert.ShowInTop("发送成功！", MessageBoxIcon.Information);
             }

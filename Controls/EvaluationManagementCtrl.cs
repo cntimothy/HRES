@@ -327,7 +327,7 @@ namespace Controls
         /// <param name="IDs"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SendMessage(List<string> IDs, ref string exception)
+        public static bool SendMessage(List<string> IDs, string message, ref string exception)
         {
             return true;
         }

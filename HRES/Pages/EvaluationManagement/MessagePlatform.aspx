@@ -49,8 +49,8 @@
                     </x:Grid>
                     <x:Label ID="Label2" runat="server" Label="Label" Text="请输入信息内容">
                     </x:Label>
-                    <x:TextArea ID="TextArea1" runat="server" Height="50px" Label="Label" Text="" ShowRedStar="true"
-                        Required="true" CssStyle="width:90%">
+                    <x:TextArea ID="TextArea_Message" runat="server" Height="50px" Label="Label" Text=""
+                        ShowRedStar="true" Required="true" CssStyle="width:90%">
                     </x:TextArea>
                 </Items>
             </x:Panel>
