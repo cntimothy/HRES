@@ -22,3 +22,6 @@ E:\projects\HRES\Controls\obj\Debug\Controls.pdb
 E:\projects\HRES\Controls\bin\Debug\Ionic.Zip.dll
 E:\projects\HRES\Controls\bin\Debug\NPOI.dll
 E:\projects\HRES\Controls\bin\Debug\NPOI.xml
+F:\projects\HRES\Controls\bin\Debug\Ionic.Zip.dll
+F:\projects\HRES\Controls\bin\Debug\NPOI.dll
+F:\projects\HRES\Controls\bin\Debug\NPOI.xml

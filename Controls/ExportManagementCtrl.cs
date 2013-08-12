@@ -16,11 +16,12 @@ namespace Controls
     {
         /// <summary>
         /// 导出指定的考评表到Excel，导出成功返回true，否则返回false
-        /// </summary>
+        /// </summary> 
+        /// <param name="filename"></param>
         /// <param name="evaluateTable"></param>
         /// <param name="?"></param>
         /// <returns></returns>
-        public static bool ExportEvaluateTable(EvaluateTable evaluateTable, ref string exception)
+        public static bool ExportEvaluateTable(ref string filename, EvaluateTable evaluateTable, ref string exception)
         {
             HSSFWorkbook hssfworkbook = new HSSFWorkbook();
             ISheet sheet = hssfworkbook.CreateSheet("考核表");
@@ -365,6 +366,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + index * 2, 4, normalCenterStyle);
             }
 
+            //关键岗位胜任能力指标
             for (int index = 0; index < evaluateTable.KeyQualify.Count; index++)
             {
                 IRow row;
@@ -380,6 +382,7 @@ namespace Controls
                 ICell cell1 = row.CreateCell(3);
                 cell1.SetCellValue(evaluateTable.KeyQualify[index].Title);
                 cell1.CellStyle = normalCenterStyle;
+                region = new CellRangeAddress(6 + 2 * (evaluateTable.KeyResponse.Count + index), 6 + 2 * (evaluateTable.KeyResponse.Count + index) + 1, 3, 3);
                 sheet.AddMergedRegion(region);
                 ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
@@ -403,6 +406,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + 2 * (evaluateTable.KeyResponse.Count + index), 4, normalCenterStyle);
             }
 
+            //关键工作态度指标
             for (int index = 0; index < evaluateTable.KeyAttitude.Count; index++)
             {
                 IRow row;
@@ -747,17 +751,37 @@ namespace Controls
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 4, 11);
             sheet.AddMergedRegion(region);
 
-            writeToFile(hssfworkbook);
-
-            return true;
+            if (writeToFile(hssfworkbook, evaluateTable.EvaluatedName, ref filename))
+            {
+                return true;                
+            }
+            else
+            {
+                exception = "创建文件失败！";
+                return false;
+            }
         }
 
         #region Private Method
-        private static void writeToFile(HSSFWorkbook hssfworkbook)
+        private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string filename)
         {
-            FileStream file = new FileStream(@"d:\test.xls", FileMode.Create);
-            hssfworkbook.Write(file);
-            file.Close();
+            //filename = @"downloadfiles\" + DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
+            filename = @"downloadfiles\" + "考核表.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + filename;
+            FileStream file = new FileStream(path, FileMode.Create);
+            try
+            {
+                hssfworkbook.Write(file);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                file.Close();
+            }
+            return true;
         }
 
         /// <summary>

@@ -8,6 +8,7 @@ using FineUI;
 using Controls;
 using DataStructure;
 using System.Data;
+using System.IO;
 
 namespace HRES.Pages.EvaluateTableManagement
 {
@@ -28,6 +29,11 @@ namespace HRES.Pages.EvaluateTableManagement
             base.OnInit(e);
             loadEvaluateTable();
         }
+        public override void VerifyRenderingInServerForm(Control control)
+        { 
+        
+        }
+
         #endregion
 
         #region Event
@@ -52,9 +58,16 @@ namespace HRES.Pages.EvaluateTableManagement
             EvaluateTable evaluateTable = new EvaluateTable();
             if (EvaluateTableManagementCtrl.GetEvaluateTable(evaluatedID, ref evaluateTable, ref exception))
             {
-                if (ExportManagementCtrl.ExportEvaluateTable(evaluateTable, ref exception))
+                string filename = "";
+                if (ExportManagementCtrl.ExportEvaluateTable(ref filename, evaluateTable, ref exception))
                 {
-                    Alert.ShowInTop("导出成功！", MessageBoxIcon.Information);
+                    Response.ClearContent();
+                    Response.ContentType = "application/excel";
+                    Response.AddHeader("content-disposition", "attachment;filename=考核表.xls");
+                    //指定编码 防止中文文件名乱码 
+                    Response.HeaderEncoding = System.Text.Encoding.GetEncoding("gb2312");
+                    string path = Server.MapPath("..\\..\\" + filename);
+                    Response.TransmitFile(path);
                 }
             }
             else

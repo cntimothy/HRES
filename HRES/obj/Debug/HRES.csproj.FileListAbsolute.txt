@@ -40,3 +40,6 @@ E:\projects\HRES\HRES\obj\Debug\HRES.pdb
 E:\projects\HRES\HRES\bin\NPOI.dll
 E:\projects\HRES\HRES\bin\Ionic.Zip.dll
 E:\projects\HRES\HRES\bin\NPOI.xml
+F:\projects\HRES\HRES\bin\NPOI.dll
+F:\projects\HRES\HRES\bin\Ionic.Zip.dll
+F:\projects\HRES\HRES\bin\NPOI.xml
