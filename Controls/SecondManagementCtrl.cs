@@ -9,7 +9,7 @@ namespace Controls
     public static class SecondManagementCtrl
     {
         /// <summary>
-        /// 返回系级管理员信息（ID， Name, Depart）
+        /// 返回系级管理员信息（ID, Depart）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="exception">异常信息</param>
@@ -20,9 +20,9 @@ namespace Controls
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
             dt.Columns.Add("Depart");
-            object[] values1 = new object[]{"13050", "刘瑾", "医学院"};
-            object[] values2 = new object[] { "09004", "李芳", "外国语学院" };
-            object[] values3 = new object[] { "11666559", "单洁敏", "人事处" };
+            object[] values1 = new object[]{"13050", "医学院"};
+            object[] values2 = new object[] { "09004", "外国语学院" };
+            object[] values3 = new object[] { "11666559", "人事处" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
@@ -41,9 +41,9 @@ namespace Controls
             dt.Columns.Add("ID");
             dt.Columns.Add("Name");
             dt.Columns.Add("Depart");
-            object[] values1 = new object[] { "13050", "刘瑾", "人事处" };
-            object[] values2 = new object[] { "09004", "李芳", "人事处" };
-            object[] values3 = new object[] { "11666559", "单洁敏", "人事处" };
+            object[] values1 = new object[] { "13050", "人事处" };
+            object[] values2 = new object[] { "09004", "人事处" };
+            object[] values3 = new object[] { "11666559", "人事处" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
