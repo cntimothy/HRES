@@ -60,11 +60,8 @@ namespace HRES.Pages.EvaluateTableManagement
                     Response.ClearContent();
                     Response.ContentType = "application/excel";
                     Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
-                    //Response.HeaderEncoding = System.Text.Encoding.GetEncoding("gb2312");
                     string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
                     Response.TransmitFile(path);
-                    //string path = Server.MapPath("..\\..\\" + filename);
-                    //PageContext.Redirect(path);
                 }
             }
             else

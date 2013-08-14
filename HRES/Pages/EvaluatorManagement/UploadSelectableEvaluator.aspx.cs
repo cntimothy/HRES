@@ -116,6 +116,15 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
+        protected void Button_DownloadTemplate_Click(object sender, EventArgs e)
+        {
+            Response.ClearContent();
+            Response.ContentType = "application/x-zip-compressed";
+            Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode("考评人信息模板.zip"));
+            string path = Server.MapPath(@"..\..\downloadfiles\template\考评人信息模板.zip");
+            Response.TransmitFile(path);
+        }
+
         #endregion
 
         #region Private Method

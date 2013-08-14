@@ -32,6 +32,10 @@
                     </x:ToolbarSeparator>
                     <x:Button ID="DeleteAll" runat="server" OnClick="DeleteAll_Click" Text="删除所有" Enabled="true" ConfirmTitle="提示" ConfirmText = "确认删除所有被考评人？">
                     </x:Button>
+                    <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                    </x:ToolbarFill>
+                    <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click" EnableAjax="false">
+                    </x:Button>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false" Layout="HBox"

@@ -33,6 +33,10 @@
                     <x:Button ID="DeleteSelected" runat="server" OnClick="DeleteSelected_Click" Text="删除所选" Enabled="true"
                         ConfirmTitle="提示" ConfirmText="确认删除所选考评人？">
                     </x:Button>
+                    <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                    </x:ToolbarFill>
+                    <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click" EnableAjax="false">
+                    </x:Button>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox" BoxConfigChildMargin="5"

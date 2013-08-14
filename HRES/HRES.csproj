@@ -2220,7 +2220,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="downloadfiles\" />
+    <Folder Include="downloadfiles\template\" />
     <Folder Include="upload\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
