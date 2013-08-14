@@ -43,7 +43,7 @@ namespace Controls
             sheet.SetColumnWidth(10, 7 * 256);
             sheet.SetColumnWidth(11, 11 * 256);
 
-
+            //设置格式
             ICellStyle titleStyle = hssfworkbook.CreateCellStyle();
             titleStyle.Alignment = HorizontalAlignment.CENTER;
             titleStyle.VerticalAlignment = VerticalAlignment.CENTER;
@@ -76,10 +76,6 @@ namespace Controls
             normalBoldLeftFont.Boldweight = (short)FontBoldWeight.BOLD;
             normalBoldLeftStyle.SetFont(normalBoldLeftFont);
             normalBoldLeftStyle.WrapText = true;
-            normalBoldLeftStyle.BorderTop = BorderStyle.THIN;
-            normalBoldLeftStyle.BorderBottom = BorderStyle.THIN;
-            normalBoldLeftStyle.BorderLeft = BorderStyle.THIN;
-            normalBoldLeftStyle.BorderRight = BorderStyle.THIN;
 
             ICellStyle normalBoldRightStyle = hssfworkbook.CreateCellStyle();
             normalBoldRightStyle.Alignment = HorizontalAlignment.RIGHT;
@@ -90,10 +86,6 @@ namespace Controls
             normalBoldRightFont.Boldweight = (short)FontBoldWeight.BOLD;
             normalBoldRightStyle.SetFont(normalBoldRightFont);
             normalBoldRightStyle.WrapText = true;
-            normalBoldRightStyle.BorderTop = BorderStyle.THIN;
-            normalBoldRightStyle.BorderBottom = BorderStyle.THIN;
-            normalBoldRightStyle.BorderLeft = BorderStyle.THIN;
-            normalBoldRightStyle.BorderRight = BorderStyle.THIN;
 
             ICellStyle normalStyle = hssfworkbook.CreateCellStyle();
             normalStyle.Alignment = HorizontalAlignment.LEFT;
@@ -107,6 +99,15 @@ namespace Controls
             normalStyle.BorderBottom = BorderStyle.THIN;
             normalStyle.BorderLeft = BorderStyle.THIN;
             normalStyle.BorderRight = BorderStyle.THIN;
+
+            ICellStyle normalStyleNoBorder = hssfworkbook.CreateCellStyle();
+            normalStyleNoBorder.Alignment = HorizontalAlignment.LEFT;
+            normalStyleNoBorder.VerticalAlignment = VerticalAlignment.TOP;
+            IFont normalFontnormalStyleNoBorder = hssfworkbook.CreateFont();
+            normalFontnormalStyleNoBorder.FontName = "宋体";
+            normalFontnormalStyleNoBorder.FontHeightInPoints = 9;
+            normalStyleNoBorder.SetFont(normalFont);
+            normalStyleNoBorder.WrapText = true;
 
             ICellStyle normalCenterStyle = hssfworkbook.CreateCellStyle();
             normalCenterStyle.Alignment = HorizontalAlignment.CENTER;
@@ -127,10 +128,6 @@ namespace Controls
             ICell cell00 = row0.CreateCell(0);
             cell00.SetCellValue("同济大学派遣员工考核表");
             cell00.CellStyle = titleStyle;
-            cell00.CellStyle.BorderTop = BorderStyle.NONE;
-            cell00.CellStyle.BorderBottom = BorderStyle.NONE;
-            cell00.CellStyle.BorderLeft = BorderStyle.NONE;
-            cell00.CellStyle.BorderRight = BorderStyle.NONE;
             region = new CellRangeAddress(0, 0, 0, 11);
             sheet.AddMergedRegion(region);
 
@@ -140,10 +137,6 @@ namespace Controls
             ICell cell10 = row1.CreateCell(0);
             cell10.SetCellValue("被考核人姓名：" + evaluateTable.EvaluatedName + "  岗位名称：" + evaluateTable.PostName + "  用工部门：" + evaluateTable.LaborDep + "  用工单位：同济大学" + evaluateTable.LaborUnit);
             cell10.CellStyle = normalBoldLeftStyle;
-            cell10.CellStyle.BorderTop = BorderStyle.NONE;
-            cell10.CellStyle.BorderBottom = BorderStyle.NONE;
-            cell10.CellStyle.BorderLeft = BorderStyle.NONE;
-            cell10.CellStyle.BorderRight = BorderStyle.NONE;
             region = new CellRangeAddress(1, 1, 0, 11);
 
             sheet.AddMergedRegion(region);
@@ -154,10 +147,6 @@ namespace Controls
             ICell cell20 = row2.CreateCell(0);
             cell20.SetCellValue("考核时间段：" + evaluateTable.StartTime + " ~ " + evaluateTable.StopTime + "  考核日期：      考评者类型：□领导；□同事；□下属；□服务对象");
             cell20.CellStyle = normalBoldLeftStyle;
-            cell20.CellStyle.BorderTop = BorderStyle.NONE;
-            cell20.CellStyle.BorderBottom = BorderStyle.NONE;
-            cell20.CellStyle.BorderLeft = BorderStyle.NONE;
-            cell20.CellStyle.BorderRight = BorderStyle.NONE;
             region = new CellRangeAddress(2, 2, 0, 11);
             sheet.AddMergedRegion(region);
 
@@ -167,10 +156,6 @@ namespace Controls
             ICell cell30 = row3.CreateCell(0);
             cell30.SetCellValue("经本人与所在用工单位协商一致，同意将以下考核指标作为对本人的年度考核依据。");
             cell30.CellStyle = normalBoldLeftStyle;
-            cell30.CellStyle.BorderTop = BorderStyle.NONE;
-            cell30.CellStyle.BorderBottom = BorderStyle.NONE;
-            cell30.CellStyle.BorderLeft = BorderStyle.NONE;
-            cell30.CellStyle.BorderRight = BorderStyle.NONE;
             region = new CellRangeAddress(3, 3, 0, 11);
             sheet.AddMergedRegion(region);
 
@@ -180,10 +165,6 @@ namespace Controls
             ICell cell40 = row4.CreateCell(0);
             cell40.SetCellValue("确认人签字：          日期：          ");
             cell40.CellStyle = normalBoldRightStyle;
-            cell40.CellStyle.BorderTop = BorderStyle.NONE;
-            cell40.CellStyle.BorderBottom = BorderStyle.NONE;
-            cell40.CellStyle.BorderLeft = BorderStyle.NONE;
-            cell40.CellStyle.BorderRight = BorderStyle.NONE;
             region = new CellRangeAddress(4, 4, 0, 11);
             sheet.AddMergedRegion(region);
 
@@ -220,7 +201,7 @@ namespace Controls
             cell55.SetCellValue("小计");
             cell55.CellStyle = normalBoldCenterStyle;
 
-            //关键绩效指标
+            //关键绩效指标标题列
             IRow rowKey = sheet.CreateRow(6);
             int keyCount = evaluateTable.KeyResponse.Count + evaluateTable.KeyQualify.Count + evaluateTable.KeyAttitude.Count;
 
@@ -238,7 +219,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //岗位职责指标
+            //岗位职责指标标题列
             IRow rowResponse = sheet.CreateRow(6 + keyCount * 2);
 
             ICell cellResponse1 = rowResponse.CreateCell(0);
@@ -255,7 +236,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //岗位胜任能力指标
+            //岗位胜任能力指标标题列
             IRow rowQualify = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count) * 2);
 
             ICell cellQualify1 = rowQualify.CreateCell(0);
@@ -272,7 +253,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //工作态度指标
+            //工作态度指标标题列
             IRow rowAttitude = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count) * 2);
 
             ICell cellAttitude1 = rowAttitude.CreateCell(0);
@@ -289,7 +270,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //否决指标
+            //否决指标标题列
             IRow rowReject = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2);
 
             ICell cellReject1 = rowReject.CreateCell(0);
@@ -306,7 +287,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //关键岗位职责指标
+            //关键岗位职责指标标题列
             IRow rowKeyResponse = sheet.GetRow(6);
 
             ICell cellKeyResponse = rowKeyResponse.CreateCell(2);
@@ -316,7 +297,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //关键岗位胜任能力指标
+            //关键岗位胜任能力指标标题列
             IRow rowKeyQualify = sheet.GetRow(6 + evaluateTable.KeyResponse.Count * 2);
 
             ICell cellKeyQualify = rowKeyQualify.CreateCell(2);
@@ -326,7 +307,7 @@ namespace Controls
             sheet.AddMergedRegion(region);
             ((HSSFSheet)sheet).SetEnclosedBorderOfRegion(region, BorderStyle.THIN, NPOI.HSSF.Util.HSSFColor.BLACK.index);
 
-            //关键工作态度指标
+            //关键工作态度指标标题列
             IRow rowKeyAttitude = sheet.GetRow(6 + (evaluateTable.KeyResponse.Count + evaluateTable.KeyQualify.Count) * 2);
 
             ICell cellKeyAttitude = rowKeyAttitude.CreateCell(2);
@@ -446,6 +427,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + 2 * (evaluateTable.KeyResponse.Count + evaluateTable.KeyQualify.Count + index), 4, normalCenterStyle);
             }
 
+            //岗位责任指标
             for (int index = 0; index < evaluateTable.Response.Count; index++)
             {
                 IRow row;
@@ -475,6 +457,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + (keyCount + index) * 2, 4, normalCenterStyle);
             }
 
+            //岗位胜任能力指标
             for (int index = 0; index < evaluateTable.Qualify.Count; index++)
             {
                 IRow row;
@@ -514,6 +497,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + 2 * (keyCount + evaluateTable.Response.Count + index), 4, normalCenterStyle);
             }
 
+            //工作态度指标
             for (int index = 0; index < evaluateTable.Attitude.Count; index++)
             {
                 IRow row;
@@ -553,7 +537,7 @@ namespace Controls
                 genScoreGradeRow(sheet, 7 + 2 * (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + index), 4, normalCenterStyle);
             }
 
-            //否决指标
+            ////否决指标
             IRow rowReject1 = sheet.GetRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2);
             //int rejectLength1 = evaluateTable.Reject[0].Content[0].Length;
             //if (rejectLength1 / 41 == 0)
@@ -702,53 +686,33 @@ namespace Controls
             IRow rowFoot1 = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 3);
             ICell cellFoot1 = rowFoot1.CreateCell(0);
             cellFoot1.SetCellValue("注：被考核者在否决指标中有其中一项情况的，则该指标计为-10分。否决指标为合格的计为0分。");
-            cellFoot1.CellStyle = normalStyle;
-            cellFoot1.CellStyle.BorderTop = BorderStyle.NONE;
-            cellFoot1.CellStyle.BorderBottom = BorderStyle.NONE;
-            cellFoot1.CellStyle.BorderLeft = BorderStyle.NONE;
-            cellFoot1.CellStyle.BorderRight = BorderStyle.NONE;
+            cellFoot1.CellStyle = normalStyleNoBorder;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 3, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 3, 0, 11);
             sheet.AddMergedRegion(region);
 
             IRow rowFoot2 = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 4);
             ICell cellFoot2 = rowFoot2.CreateCell(0);
             cellFoot2.SetCellValue("计分人签名：");
-            cellFoot2.CellStyle = normalStyle;
-            cellFoot2.CellStyle.BorderTop = BorderStyle.NONE;
-            cellFoot2.CellStyle.BorderBottom = BorderStyle.NONE;
-            cellFoot2.CellStyle.BorderLeft = BorderStyle.NONE;
-            cellFoot2.CellStyle.BorderRight = BorderStyle.NONE;
+            cellFoot2.CellStyle = normalStyleNoBorder;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 4, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 4, 0, 3);
             sheet.AddMergedRegion(region);
 
             ICell cellFoot3 = rowFoot2.CreateCell(4);
             cellFoot3.SetCellValue("审核人签名：");
-            cellFoot3.CellStyle = normalStyle;
-            cellFoot3.CellStyle.BorderTop = BorderStyle.NONE;
-            cellFoot3.CellStyle.BorderBottom = BorderStyle.NONE;
-            cellFoot3.CellStyle.BorderLeft = BorderStyle.NONE;
-            cellFoot3.CellStyle.BorderRight = BorderStyle.NONE;
+            cellFoot3.CellStyle = normalStyleNoBorder;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 4, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 4, 4, 11);
             sheet.AddMergedRegion(region);
 
             IRow rowFoot3 = sheet.CreateRow(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5);
             ICell cellFoot4 = rowFoot3.CreateCell(0);
             cellFoot4.SetCellValue("日期：    年  月  日");
-            cellFoot4.CellStyle = normalStyle;
-            cellFoot4.CellStyle.BorderTop = BorderStyle.NONE;
-            cellFoot4.CellStyle.BorderBottom = BorderStyle.NONE;
-            cellFoot4.CellStyle.BorderLeft = BorderStyle.NONE;
-            cellFoot4.CellStyle.BorderRight = BorderStyle.NONE;
+            cellFoot4.CellStyle = normalStyleNoBorder;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 0, 3);
             sheet.AddMergedRegion(region);
 
             ICell cellFoot5 = rowFoot3.CreateCell(4);
             cellFoot5.SetCellValue("日期：    年  月  日");
-            cellFoot5.CellStyle = normalStyle;
-            cellFoot5.CellStyle.BorderTop = BorderStyle.NONE;
-            cellFoot5.CellStyle.BorderBottom = BorderStyle.NONE;
-            cellFoot5.CellStyle.BorderLeft = BorderStyle.NONE;
-            cellFoot5.CellStyle.BorderRight = BorderStyle.NONE;
+            cellFoot5.CellStyle = normalStyleNoBorder;
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 4, 11);
             sheet.AddMergedRegion(region);
 

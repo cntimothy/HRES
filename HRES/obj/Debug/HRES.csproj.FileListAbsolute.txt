@@ -43,3 +43,6 @@ E:\projects\HRES\HRES\bin\NPOI.xml
 F:\projects\HRES\HRES\bin\NPOI.dll
 F:\projects\HRES\HRES\bin\Ionic.Zip.dll
 F:\projects\HRES\HRES\bin\NPOI.xml
+D:\cntimothy\privatestuff\HRES\HRES\bin\NPOI.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\Ionic.Zip.dll
+D:\cntimothy\privatestuff\HRES\HRES\bin\NPOI.xml

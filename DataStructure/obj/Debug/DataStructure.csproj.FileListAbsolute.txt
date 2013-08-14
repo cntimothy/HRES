@@ -8,3 +8,8 @@ E:\projects\HRES\DataStructure\bin\Debug\DataStructure.pdb
 E:\projects\HRES\DataStructure\obj\Debug\ResolveAssemblyReference.cache
 E:\projects\HRES\DataStructure\obj\Debug\DataStructure.dll
 E:\projects\HRES\DataStructure\obj\Debug\DataStructure.pdb
+D:\cntimothy\privatestuff\HRES\DataStructure\bin\Debug\DataStructure.dll
+D:\cntimothy\privatestuff\HRES\DataStructure\bin\Debug\DataStructure.pdb
+D:\cntimothy\privatestuff\HRES\DataStructure\obj\Debug\ResolveAssemblyReference.cache
+D:\cntimothy\privatestuff\HRES\DataStructure\obj\Debug\DataStructure.dll
+D:\cntimothy\privatestuff\HRES\DataStructure\obj\Debug\DataStructure.pdb
