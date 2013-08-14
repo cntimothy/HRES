@@ -72,7 +72,13 @@
             </x:Region>
         </Regions>
     </x:RegionPanel>
-    <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="../common/menu.xml">
+    <asp:XmlDataSource ID="XmlDataSource_FirstManager" runat="server" DataFile="../common/menuForFirstManager.xml">
+    </asp:XmlDataSource>
+    <asp:XmlDataSource ID="XmlDataSource_SecondManager" runat="server" DataFile="../common/menuForSecondManager.xml">
+    </asp:XmlDataSource>
+    <asp:XmlDataSource ID="XmlDataSource_Evaluator" runat="server" DataFile="../common/menuForEvaluator.xml">
+    </asp:XmlDataSource>
+    <asp:XmlDataSource ID="XmlDataSource_Super" runat="server" DataFile="../common/menuForSuper.xml">
     </asp:XmlDataSource>
     </form>
     <script src="../js/default.js" type="text/javascript"></script>

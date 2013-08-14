@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Newtonsoft.Json.Linq;
 using FineUI;
 using System.Xml;
+using DataStructure;
 
 namespace HRES.Pages
 {
@@ -44,8 +45,27 @@ namespace HRES.Pages
             accordionMenu.ShowHeader = false;
             Region2.Items.Add(accordionMenu);
 
-
-            XmlDocument xmlDoc = XmlDataSource1.GetXmlDocument();
+            AccessLevel accessLevel = (AccessLevel)Session["AccessLevel"];
+            XmlDocument xmlDoc;
+            switch (accessLevel)
+            { 
+                case AccessLevel.superManager:
+                    xmlDoc = XmlDataSource_Super.GetXmlDocument();
+                    break;
+                case AccessLevel.firstManager:
+                    xmlDoc = XmlDataSource_FirstManager.GetXmlDocument();
+                    break;
+                case AccessLevel.secondManager:
+                    xmlDoc = XmlDataSource_SecondManager.GetXmlDocument();
+                    break;
+                case AccessLevel.evaluator:
+                    xmlDoc = XmlDataSource_Evaluator.GetXmlDocument();
+                    break;
+                default:
+                    return null;
+            }
+                
+            
             XmlNodeList xmlNodes = xmlDoc.SelectNodes("/Tree/TreeNode");
             foreach (XmlNode xmlNode in xmlNodes)
             {
@@ -81,26 +101,26 @@ namespace HRES.Pages
             return accordionMenu;
         }
 
-        private Tree InitTreeMenu()
-        {
-            Tree treeMenu = new Tree();
-            treeMenu.ID = "treeMenu";
-            treeMenu.EnableArrows = true;
-            treeMenu.ShowBorder = false;
-            treeMenu.ShowHeader = false;
-            treeMenu.EnableIcons = false;
-            treeMenu.AutoScroll = true;
-            Region2.Items.Add(treeMenu);
+        //private Tree InitTreeMenu()
+        //{
+        //    Tree treeMenu = new Tree();
+        //    treeMenu.ID = "treeMenu";
+        //    treeMenu.EnableArrows = true;
+        //    treeMenu.ShowBorder = false;
+        //    treeMenu.ShowHeader = false;
+        //    treeMenu.EnableIcons = false;
+        //    treeMenu.AutoScroll = true;
+        //    Region2.Items.Add(treeMenu);
 
-            // 绑定 XML 数据源到树控件
-            treeMenu.DataSource = XmlDataSource1;
-            treeMenu.DataBind();
+        //    // 绑定 XML 数据源到树控件
+        //    treeMenu.DataSource = XmlDataSource1;
+        //    treeMenu.DataBind();
 
-            // 重新设置每个节点的图标
-            ResolveTreeNode(treeMenu.Nodes);
+        //    // 重新设置每个节点的图标
+        //    ResolveTreeNode(treeMenu.Nodes);
 
-            return treeMenu;
-        }
+        //    return treeMenu;
+        //}
 
 
         private JObject GetClientIDS(params ControlBase[] ctrls)

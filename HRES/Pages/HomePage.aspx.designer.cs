@@ -157,12 +157,39 @@ namespace HRES.Pages {
         protected global::FineUI.ContentPanel ContentPanel2;
         
         /// <summary>
-        /// XmlDataSource1 control.
+        /// XmlDataSource_FirstManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource1;
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_FirstManager;
+        
+        /// <summary>
+        /// XmlDataSource_SecondManager control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_SecondManager;
+        
+        /// <summary>
+        /// XmlDataSource_Evaluator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Evaluator;
+        
+        /// <summary>
+        /// XmlDataSource_Super control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.XmlDataSource XmlDataSource_Super;
     }
 }
