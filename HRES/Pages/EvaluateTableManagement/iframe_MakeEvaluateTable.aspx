@@ -59,7 +59,7 @@
                         </Rows>
                     </x:Form>
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="关键岗位职责指标" EnableCollapse="true">
+                        Title="关键岗位职责指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">
@@ -119,7 +119,7 @@
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="关键岗位胜任能力指标" EnableCollapse="true">
+                        Title="关键岗位胜任能力指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm6" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">
@@ -189,7 +189,7 @@
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel5" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="关键工作态度指标" EnableCollapse="true">
+                        Title="关键工作态度指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm11" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">
@@ -259,7 +259,7 @@
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel6" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="岗位职责指标" EnableCollapse="true">
+                        Title="岗位职责指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm16" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">
@@ -319,7 +319,7 @@
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel7" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="岗位胜任能力指标" EnableCollapse="true">
+                        Title="岗位胜任能力指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm21" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">
@@ -389,7 +389,7 @@
                         </Items>
                     </x:Panel>
                     <x:Panel ID="Panel8" runat="server" BodyPadding="5px" ShowBorder="true" ShowHeader="true"
-                        Title="工作态度指标" EnableCollapse="true">
+                        Title="工作态度指标（至少2项！！）要删除项目，删除标题即可" EnableCollapse="true">
                         <Items>
                             <x:SimpleForm ID="SimpleForm26" runat="server" BodyPadding="5px" Title="1)" Collapsed="false"
                                 EnableCollapse="true">

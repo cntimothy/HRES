@@ -24,7 +24,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 }
 
                 //TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID, HiddenField_KeyResponse_1.ClientID)
-                    //+ Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
+                //+ Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
 
                 //关键岗位职责指标
                 TriggerBox_KeyResponse_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_1.ClientID, TextArea_KeyResponse_1.ClientID)
@@ -37,7 +37,7 @@ namespace HRES.Pages.EvaluateTableManagement
                     + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
                 TriggerBox_KeyResponse_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_KeyResponse_5.ClientID, TextArea_KeyResponse_5.ClientID)
                     + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
-                
+
                 //岗位职责指标
                 TriggerBox_Response_1.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Response_1.ClientID, TextArea_Response_1.ClientID)
                    + Window_ShowQuota.GetShowReference("iframe_ShowWCR.aspx?id=" + Request.QueryString["id"]);
@@ -115,8 +115,8 @@ namespace HRES.Pages.EvaluateTableManagement
 
         #region Event
         protected void Window_ShowQuota_Close(object sender, WindowCloseEventArgs e)
-        { 
-            
+        {
+
         }
 
         protected void Button_Save_Click(object sender, EventArgs e)
@@ -141,6 +141,17 @@ namespace HRES.Pages.EvaluateTableManagement
             DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
             DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.submit);
             EvaluateTable evaluateTable = getNewEvaluateTable();
+            if (!checkEvaluateTableNull(evaluateTable))
+            {
+                Alert.ShowInTop("有未填写项！", MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!checkItemEnough(evaluateTable))
+            {
+                Alert.ShowInTop("考核表中每项指标至少填写两项！", MessageBoxIcon.Error);
+                return;
+            }
             string evaluatedID = Request.QueryString["id"];
             string exception = "";
             if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
@@ -276,7 +287,7 @@ namespace HRES.Pages.EvaluateTableManagement
             else    //如果该被考评人的岗位责任书尚未制定，则被考评人姓名和考核时间段从父网页获取
             {
                 Label_EvaluatedName.Text = Request.QueryString["name"];
-                Label_Period.Text = Request.QueryString["starttime"] + " ~ " + Request.QueryString["stoptime"]; 
+                Label_Period.Text = Request.QueryString["starttime"] + " ~ " + Request.QueryString["stoptime"];
             }
         }
 
@@ -368,7 +379,7 @@ namespace HRES.Pages.EvaluateTableManagement
                 string[] content = hf.Text.Split('&')[1].Split('^');
                 evaluateTable.Attitude.Add(new Quota(title, content));
             }
-            
+
             evaluateTable.Reject.Add(new Quota("其他", new string[] { TextArea_Reject2.Text.Trim() }));
 
             return evaluateTable;
@@ -389,6 +400,37 @@ namespace HRES.Pages.EvaluateTableManagement
             else
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// 检查考核表是否有未填项，如果有则返回false，否则返回true
+        /// </summary>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        private bool checkEvaluateTableNull(EvaluateTable et)
+        {
+            if (et.EvaluatedName == "" || et.PostName == "" || et.LaborDep == "" || et.LaborUnit == "" || et.StartTime == "" || et.StopTime == "")
+                return false;
+            else
+                return true;
+        }
+
+        /// <summary>
+        /// 检查考核表中各项指标的数量是否足够，不够返回false，否则返回true
+        /// </summary>
+        /// <param name="et"></param>
+        /// <returns></returns>
+        private bool checkItemEnough(EvaluateTable et)
+        {
+            if (et.KeyResponse.Count < 2 || et.KeyQualify.Count < 2 || et.KeyAttitude.Count < 2
+                || et.Response.Count < 2 || et.Qualify.Count < 2 || et.Attitude.Count < 2)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
         #endregion
