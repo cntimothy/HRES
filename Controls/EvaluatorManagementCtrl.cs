@@ -279,7 +279,7 @@ namespace Controls
         /// <param name="evaluatorRelationDic">考评人的ID和关系字典</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool SubmitEvaluator(string evaluated, Dictionary<string, string> evaluatorRelationDic, ref string exception)
+        public static bool SubmitEvaluator(string evaluated, Dictionary<string, string> evaluatorRelationDic, bool is360, ref string exception)
         {
             return true;
         }

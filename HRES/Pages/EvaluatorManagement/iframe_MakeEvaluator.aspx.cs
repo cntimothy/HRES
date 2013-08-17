@@ -75,7 +75,16 @@ namespace HRES.Pages.EvaluatorManagement
                         break;
                 }
             }
-            if (EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, idRelationDic, ref exception))
+            bool is360;
+            if (idRelationDic.Values.Contains(Convert.ToString((int)Relation.subordinate)))
+            {
+                is360 = true;
+            }
+            else
+            {
+                is360 = false;
+            }
+            if (EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, idRelationDic, is360, ref exception))
             {
                 Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
             }
