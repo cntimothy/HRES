@@ -94,6 +94,24 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.Button Submit;
         
         /// <summary>
+        /// ToolbarFill1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.ToolbarFill ToolbarFill1;
+        
+        /// <summary>
+        /// Button_DownloadTemplate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Button Button_DownloadTemplate;
+        
+        /// <summary>
         /// DepartDropDownList 控件。
         /// </summary>
         /// <remarks>

@@ -24,6 +24,10 @@
                     </x:ToolbarSeparator>
                     <x:Button ID="Submit" runat="server" OnClick="Submit_Click" Text="开始上传" Enabled="false">
                     </x:Button>
+                    <x:ToolbarFill ID="ToolbarFill1" runat="server">
+                    </x:ToolbarFill>
+                    <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click" EnableAjax="false">
+                    </x:Button>
             </Items>
         </x:Toolbar>
     <div style="padding:5px">

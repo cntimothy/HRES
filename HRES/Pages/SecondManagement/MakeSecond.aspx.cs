@@ -99,9 +99,16 @@ namespace HRES.Pages.SecondManagement
                 }
             }
             bindSecondToGrid();
-            bindSecondToGrid();
         }
 
+        protected void Button_DownloadTemplate_Click(object sender, EventArgs e)
+        {
+            Response.ClearContent();
+            Response.ContentType = "application/x-zip-compressed";
+            Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode("系级管理员信息模版.zip"));
+            string path = Server.MapPath(@"..\..\downloadfiles\template\系级管理员信息模版.zip");
+            Response.TransmitFile(path);
+        }
         #endregion
 
         #region Private Method
