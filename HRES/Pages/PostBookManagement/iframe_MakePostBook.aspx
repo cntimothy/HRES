@@ -113,7 +113,7 @@
                                         </Items>
                                     </x:Panel>
                                     <x:Panel ID="Panel6" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="true"
-                                        CssStyle="width:100%" Title="2.工作内容及工作要求">
+                                        CssStyle="width:100%" Title="2.工作内容及工作要求(至少6项！！)">
                                         <Items>
                                             <x:SimpleForm ID="SimpleForm_WCR1" runat="server" BodyPadding="5px" Title="1)" ShowBorder="true"
                                                 ShowHeader="true" EnableCollapse="true" Collapsed="true">

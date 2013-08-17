@@ -32,35 +32,58 @@ namespace HRES.Pages.PostBookManagement
         #region Event
         protected void Button_Save_Click(object sender, EventArgs e)
         {
+            string exception = "";
+            PostBook pb = getPostBook();
+
             DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
             DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.save);
-            if (savePostBook(nextStatus))
+            pb.Status = nextStatus;     //填写下一个状态域
+
+            if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
                 Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
             }
             else
             {
-                Alert.ShowInTop("保存失败！", MessageBoxIcon.Error);
+                Alert.ShowInTop("保存失败！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
 
         protected void Button_Submit_Click(object sender, EventArgs e)
         {
-            if (!checkNull())
+            string exception = "";
+            if (!checkNull())   //检查项是否有空
             {
                 Alert.ShowInTop("有未填项，请检查！", MessageBoxIcon.Error);
                 return;
             }
 
+            PostBook pb = getPostBook();
+            if (pb.WorkContentRequest.Count < 6)    //工作内容与要求至少需要6项
+            {
+                Alert.ShowInTop("请填写至少6项工作内容与要求！");
+                return;
+            }
+            foreach (string[] item in pb.WorkContentRequest)        //检查是否存在工作内容与要求中填写了标题却没填其他项
+            {
+                if (!CheckNull(item))
+                {
+                    Alert.ShowInTop("工作内容与要求中尚有未填写项！");
+                    return;
+                }
+            }
+
             DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
             DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.submit);
-            if (savePostBook(nextStatus))
+            pb.Status = nextStatus;         //填写下一个状态域
+
+            if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
                 Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
             }
             else
             {
-                Alert.ShowInTop("提交失败！", MessageBoxIcon.Error);
+                Alert.ShowInTop("提交失败！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
 
@@ -201,10 +224,8 @@ namespace HRES.Pages.PostBookManagement
         /// </summary>
         /// <param name="status">指定的状态</param>
         /// <returns></returns>
-        private bool savePostBook(DocStatus status)
+        private PostBook getPostBook()
         {
-            string exception = "";
-
             PostBook pb = new PostBook();
             pb.EvaluatedID = Request.QueryString["id"];
             pb.Employer = Radio_Employer.SelectedValue;
@@ -231,7 +252,6 @@ namespace HRES.Pages.PostBookManagement
             pb.Others = TextArea_Others.Text;
 
             pb.Comment = Label_Comment.Text;
-            pb.Status = status;
 
             List<string[]> wcr = new List<string[]>();
             foreach (ControlBase item in Panel6.Items)
@@ -240,7 +260,7 @@ namespace HRES.Pages.PostBookManagement
                 {
                     SimpleForm sf = item as SimpleForm;
                     TextArea ta0 = sf.Items[0] as TextArea;
-                    if (ta0.Text != "")
+                    if (ta0.Text != "")             //填写了标题即认为填写了这一项
                     {
                         TextArea ta1 = sf.Items[1] as TextArea;
                         TextArea ta2 = sf.Items[2] as TextArea;
@@ -255,14 +275,8 @@ namespace HRES.Pages.PostBookManagement
                 }
             }
             pb.WorkContentRequest = wcr;
-            if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            return pb;
         }
 
         private bool checkNull()
@@ -286,7 +300,7 @@ namespace HRES.Pages.PostBookManagement
                 TextBox_Relations.Text != "" &&
                 TextArea_WorkEnter.Text != "" &&
                 TextArea_PostAssess.Text != "" &&
-                TextArea_Others.Text != "" && checkWCR())
+                TextArea_Others.Text != "")
             {
                 return true;
             }
@@ -294,33 +308,6 @@ namespace HRES.Pages.PostBookManagement
             {
                 return false;
             }
-        }
-
-        private bool checkWCR()
-        {
-            foreach (ControlBase item in Panel6.Items)
-            {
-                try
-                {
-                    SimpleForm sf = item as SimpleForm;
-                    TextArea ta0 = sf.Items[0] as TextArea;
-                    if (ta0.Text != "")
-                    {
-                        TextArea ta1 = sf.Items[1] as TextArea;
-                        TextArea ta2 = sf.Items[2] as TextArea;
-                        TextArea ta3 = sf.Items[3] as TextArea;
-                        if (ta1.Text == "" || ta2.Text == "" || ta3.Text == "")
-                        {
-                            return false;
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    continue;
-                }
-            }
-            return true;
         }
 
         private void setToolbarVisible()

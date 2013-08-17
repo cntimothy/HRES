@@ -37,7 +37,7 @@
                                 </asp:DropDownList>
                             </span></li>
                             <li><span>
-                                <asp:Label ID="ErrorMessage" runat="server" Text="" Visible="false"></asp:Label>
+                                <asp:Label ID="ErrorMessage" runat="server" Visible="False" ForeColor="Red"></asp:Label>
                             </span></li>
                         </ul>
                     </li>
