@@ -22,6 +22,12 @@ namespace HRES.Pages.Common
             if (TextArea_Comment.Text == "")
             {
                 Alert.Show("请输入审核意见！");
+                return;
+            }
+            if (TextArea_Comment.Text.Length > 50)
+            {
+                Alert.Show("最多输入50字");
+                return;
             }
             if (Request.QueryString["parent"] == "checkpostbook")
             {

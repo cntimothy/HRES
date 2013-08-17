@@ -31,7 +31,7 @@
                             <x:Panel ID="Panel4" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
                                 Title="Panel" Layout="HBox" BoxConfigChildMargin="0 5 5 5" BoxConfigPosition="Center">
                                 <Items>
-                                    <x:DropDownList ID="DropDownList1" runat="server" Label="Label" CssStyle="width:80%"
+                                    <x:DropDownList ID="DropDownList1" runat="server" Label="Label" Width="400px"
                                         OnSelectedIndexChanged="DropDownList1_SelectedChange" AutoPostBack="true">
                                         <x:ListItem Text="请选择" Value="请选择" EnableSelect="false" Selected="true" />
                                     </x:DropDownList>

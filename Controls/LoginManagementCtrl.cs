@@ -22,9 +22,9 @@ namespace Controls
             userInfo.Id = "admin1";
             userInfo.Name = "Kaven";
             userInfo.Depart = "人事处";
-            userInfo.AccessLevel = AccessLevel.firstManager;
+            userInfo.AccessLevel = AccessLevel.secondManager;
             exception = "不存在该用户";
-            return false;
+            return true;
         }
     }
 }

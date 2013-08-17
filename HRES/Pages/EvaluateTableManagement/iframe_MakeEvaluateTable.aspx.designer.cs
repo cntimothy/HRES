@@ -157,31 +157,31 @@ namespace HRES.Pages.EvaluateTableManagement {
         protected global::FineUI.Label Label_EvaluatedName;
         
         /// <summary>
-        /// Label_PostName 控件。
+        /// TextBox_PostName 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_PostName;
+        protected global::FineUI.TextBox TextBox_PostName;
         
         /// <summary>
-        /// Label_LaborDep 控件。
+        /// TextBox_LaborDep 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_LaborDep;
+        protected global::FineUI.TextBox TextBox_LaborDep;
         
         /// <summary>
-        /// Label_LaborUnit 控件。
+        /// TextBox_LaborUnit 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label_LaborUnit;
+        protected global::FineUI.TextBox TextBox_LaborUnit;
         
         /// <summary>
         /// FormRow2 控件。

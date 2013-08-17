@@ -55,8 +55,8 @@
                             </x:TemplateField>
                             <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
                             <x:WindowField TextAlign="Center" Width="80px" WindowID="Window_MakeEvaluateTable" Text="制作"
-                                ToolTip="制作考核表" Title="制作" IFrameUrl="iframe_MakeEvaluateTable.aspx" DataIFrameUrlFields="ID,Name,Status"
-                                DataIFrameUrlFormatString="iframe_MakeEvaluateTable.aspx?id={0}&name={1}&status={2}" />
+                                ToolTip="制作考核表" Title="制作" IFrameUrl="iframe_MakeEvaluateTable.aspx" DataIFrameUrlFields="ID,Name,Status,StartTime,StopTime"
+                                DataIFrameUrlFormatString="iframe_MakeEvaluateTable.aspx?id={0}&name={1}&status={2}&starttime={3}&stoptime={4}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">

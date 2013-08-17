@@ -165,9 +165,9 @@ namespace HRES.Pages.EvaluateTableManagement
                 Label_Comment.Text = evaluateTable.Comment;
 
                 Label_EvaluatedName.Text = evaluateTable.EvaluatedName;
-                Label_PostName.Text = evaluateTable.PostName;
-                Label_LaborDep.Text = evaluateTable.LaborDep;
-                Label_LaborUnit.Text = evaluateTable.LaborUnit;
+                TextBox_PostName.Text = evaluateTable.PostName;
+                TextBox_LaborDep.Text = evaluateTable.LaborDep;
+                TextBox_LaborUnit.Text = evaluateTable.LaborUnit;
                 Label_Period.Text = evaluateTable.StartTime + " ~ " + evaluateTable.StopTime;
 
                 for (int i = 0; i < evaluateTable.KeyResponse.Count; i++)
@@ -193,11 +193,11 @@ namespace HRES.Pages.EvaluateTableManagement
                         + " 差：" + evaluateTable.KeyQualify[i].Content[3];
 
                     FineUI.HiddenField hf = sf.Items[2] as FineUI.HiddenField;
-                        hf.Text = evaluateTable.KeyQualify[i].Title
-                        + "&" + evaluateTable.KeyQualify[i].Content[0]
-                        + "^" + evaluateTable.KeyQualify[i].Content[1]
-                        + "^" + evaluateTable.KeyQualify[i].Content[2]
-                        + "^" + evaluateTable.KeyQualify[i].Content[3];
+                    hf.Text = evaluateTable.KeyQualify[i].Title
+                    + "&" + evaluateTable.KeyQualify[i].Content[0]
+                    + "^" + evaluateTable.KeyQualify[i].Content[1]
+                    + "^" + evaluateTable.KeyQualify[i].Content[2]
+                    + "^" + evaluateTable.KeyQualify[i].Content[3];
                 }
 
                 for (int i = 0; i < evaluateTable.KeyAttitude.Count; i++)
@@ -272,17 +272,11 @@ namespace HRES.Pages.EvaluateTableManagement
 
                 TextArea_Reject1.Text = "累计旷工3天以上的；\n严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；\n同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；\n违背职业道德，行贿、受贿价值超过3000元以上的；\n被依法追究刑事责任的；";
                 TextArea_Reject2.Text = evaluateTable.Reject[0].Content[0];
-
-                //if (evaluateTable.Reject.Count == 0)
-                //{
-                //    TextArea_Reject1.Text = "累计旷工3天以上的；严重失职，营私舞弊，给本单位造成3000元以上经济损失或者其它严重后果的；同时与其他用人单位建立劳动关系，对完成本单位工作任务造成严重影响，或者经本单位提出，拒不改正的；违背职业道德，行贿、受贿价值超过3000元以上的；被依法追究刑事责任的；";
-                //    TextArea_Reject2.Text = "";
-                //}
-                //else
-                //{
-                //    TextArea_Reject1.Text = evaluateTable.Reject[0].Content[0];
-                //    TextArea_Reject2.Text = evaluateTable.Reject[1].Content[0];
-                //}
+            }
+            else    //如果该被考评人的岗位责任书尚未制定，则被考评人姓名和考核时间段从父网页获取
+            {
+                Label_EvaluatedName.Text = Request.QueryString["name"];
+                Label_Period.Text = Request.QueryString["starttime"] + " ~ " + Request.QueryString["stoptime"]; 
             }
         }
 
@@ -290,9 +284,9 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             EvaluateTable evaluateTable = new EvaluateTable();
             evaluateTable.EvaluatedName = Label_EvaluatedName.Text.Trim();
-            evaluateTable.PostName = Label_PostName.Text.Trim();
-            evaluateTable.LaborDep = Label_LaborDep.Text.Trim();
-            evaluateTable.LaborUnit = Label_LaborUnit.Text.Trim();
+            evaluateTable.PostName = TextBox_PostName.Text.Trim();
+            evaluateTable.LaborDep = TextBox_LaborDep.Text.Trim();
+            evaluateTable.LaborUnit = TextBox_LaborUnit.Text.Trim();
             evaluateTable.StartTime = Label_Period.Text.Split('~')[0].Trim();
             evaluateTable.StopTime = Label_Period.Text.Split('~')[1].Trim();
             foreach (ControlBase item in Panel3.Items)

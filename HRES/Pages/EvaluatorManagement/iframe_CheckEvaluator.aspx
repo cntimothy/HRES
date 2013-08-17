@@ -65,7 +65,7 @@
     </x:Panel>
     <x:HiddenField ID="hfSelectedIDS" runat="server">
     </x:HiddenField>
-    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="130px" IsModal="true"
+    <x:Window ID="Window1" runat="server" BodyPadding="5px" Height="150px" IsModal="true"
         IFrameUrl="about:blank" EnableMaximize="false" EnableIFrame="true" Popup="false"
         Title="审核意见" Width="400px">
     </x:Window>
