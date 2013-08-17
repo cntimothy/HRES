@@ -24,6 +24,11 @@ namespace HRES.Pages.QuotaManagement
         protected void Button_Save_Click(object sender, EventArgs e)
         {
             string exception = "";
+            if (!CheckNull(new string[] { TextBox_Level1.Text, TextBox_Level2.Text, TextArea_Quota1.Text, TextArea_Quota2.Text, TextArea_Quota3.Text, TextArea_Quota4.Text }))
+            {
+                Alert.ShowInTop("项目不可为空！");
+                return;
+            }
             string level1 = TextBox_Level1.Text.Trim();
             string level2 = TextBox_Level2.Text.Trim();
             string[] quotas = new string[] { TextArea_Quota1.Text.Trim(), TextArea_Quota2.Text.Trim(), TextArea_Quota3.Text.Trim(), TextArea_Quota4.Text.Trim() };
