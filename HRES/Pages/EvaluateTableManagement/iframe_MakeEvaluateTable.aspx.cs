@@ -387,7 +387,7 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             string evaluatedID = Request.QueryString["id"];
             string exception = "";
-            if (EvaluateTableManagementCtrl.IsExist(ID, ref exception))
+            if (EvaluateTableManagementCtrl.IsExist(evaluatedID, ref exception))
             {
                 return true;
             }
