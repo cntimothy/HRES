@@ -22,6 +22,11 @@ namespace HRES.Pages.AccountManagement
             string exception = "";
             string oldPassword = TextBox1.Text.Trim();
             string newPassword = TextBox2.Text.Trim();
+            if (oldPassword.Length != 6 || newPassword.Length != 6)
+            {
+                Alert.ShowInTop("密码必须六位！");
+                return;
+            }
             if(checkNull(oldPassword, newPassword))
             {
                 string id = Session["UserID"].ToString();

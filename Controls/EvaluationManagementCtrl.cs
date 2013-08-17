@@ -504,8 +504,9 @@ namespace Controls
         /// <param name="yearid">年份</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetEvaluationResultByEvaluatedAndYear(ref EvaluationResult result, string evaluatedID, string yearid, ref string exception)
+        public static bool GetEvaluationResultByEvaluatedAndYear(out EvaluationResult result, string evaluatedID, string yearid, ref string exception)
         {
+            result = new EvaluationResult(true);
             result.Is360 = false;
             result.PostName = "岗位名称";
             result.LaborDep = "工作部门";

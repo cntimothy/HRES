@@ -51,9 +51,9 @@ namespace HRES.Pages.EvaluationManagement
         private void bindEvaluationResultToGrid()
         {
             string exception = "";
-            EvaluationResult evaluationResult = new EvaluationResult();
+            EvaluationResult evaluationResult;
             string evaluatedID = Request.QueryString["id"];
-            if (EvaluationManagementCtrl.GetEvaluationResultByEvaluatedAndYear(ref evaluationResult, evaluatedID, DropDownList_Year.SelectedValue, ref exception))
+            if (EvaluationManagementCtrl.GetEvaluationResultByEvaluatedAndYear(out evaluationResult, evaluatedID, DropDownList_Year.SelectedValue, ref exception))
             {
                 Label_EvaluatedName.Text = Request.QueryString["name"];
                 Label_PostName.Text = evaluationResult.PostName;
