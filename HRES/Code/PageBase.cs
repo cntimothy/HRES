@@ -24,12 +24,12 @@ namespace HRES
 
             if (!IsPostBack)
             {
-                if (Session["UserID"].ToString() == "" || Session["UserName"].ToString() == "" || Session["AccessLevel"].ToString() == "" || Session["Depart"].ToString() == "")
+                if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null
                 {
-                    Session["UserID"] = "";
-                    Session["UserName"] = "";
-                    Session["AccessLevel"] = "";
-                    Session["Depart"] = "";
+                    Session["UserID"] = null;
+                    Session["UserName"] = null;
+                    Session["AccessLevel"] = null;
+                    Session["Depart"] = null;
                     PageContext.Redirect("../Login.aspx", "_top");
                 }
                 if (PageManager.Instance != null)

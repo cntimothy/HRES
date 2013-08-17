@@ -33,11 +33,6 @@ namespace HRES.Pages.AccountManagement
                 if (AccountManagementCtrl.ChangePassword(id, LoginType.manager, newPassword, oldPassword, ref exception))
                 {
                     Alert.ShowInTop("修改成功！请重新登录", MessageBoxIcon.Information);
-                    Session["UserID"] = "";
-                    Session["UserName"] = "";
-                    Session["AccessLevel"] = "";
-                    Session["Depart"] = "";
-                    PageContext.Redirect("../../Login.aspx", "_top");
                 }
                 else
                 {

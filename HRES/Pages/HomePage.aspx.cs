@@ -150,10 +150,10 @@ namespace HRES.Pages
         #region Event
         public void LoginOut_Click(object sender, EventArgs e)
         {
-            Session["UserID"] = "";
-            Session["UserName"] = "";
-            Session["AccessLevel"] = "";
-            Session["Depart"] = "";
+            Session["UserID"] = null;
+            Session["UserName"] = null;
+            Session["AccessLevel"] = null;
+            Session["Depart"] = null;
             Response.Redirect("../Login.aspx");
         }
 
