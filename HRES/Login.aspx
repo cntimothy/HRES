@@ -36,6 +36,9 @@
                                     <asp:ListItem Value="1" Selected="True">考评者</asp:ListItem>
                                 </asp:DropDownList>
                             </span></li>
+                            <li><span>
+                                <asp:Label ID="ErrorMessage" runat="server" Text="" Visible="false"></asp:Label>
+                            </span></li>
                         </ul>
                     </li>
                     <li class="topE"></li>

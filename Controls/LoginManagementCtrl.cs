@@ -23,7 +23,8 @@ namespace Controls
             userInfo.Name = "Kaven";
             userInfo.Depart = "人事处";
             userInfo.AccessLevel = AccessLevel.firstManager;
-            return true;
+            exception = "不存在该用户";
+            return false;
         }
     }
 }

@@ -20,10 +20,16 @@ namespace HRES
         {
             string exception = "";
             UserInfo userInfo = new UserInfo();
-            string ID = UserName.Text; ;
+            string id = UserName.Text; ;
             string passWord = Password.Text;
+            if (id == "" || passWord == "")
+            {
+                ErrorMessage.Text = "用户名密码不能为空！";
+                ErrorMessage.Visible = true;
+                return;
+            }
             LoginType loginType = (LoginType)Convert.ToInt32(LoginType.SelectedValue);
-            if (LoginManagementCtrl.LoginIn(ref userInfo, ID, passWord, loginType, ref exception))
+            if (LoginManagementCtrl.LoginIn(ref userInfo, id, passWord, loginType, ref exception))
             {
                 Session["UserID"] = userInfo.Id;
                 Session["UserName"] = userInfo.Name;
@@ -33,7 +39,8 @@ namespace HRES
             }
             else
             {
-                //登录错误
+                ErrorMessage.Text = exception + "\n请输入正确的用户名密码并选择正确的身份！";
+                ErrorMessage.Visible = true;
             }
         }
     }
