@@ -44,6 +44,7 @@ namespace HRES.Pages.QuotaManagement
                 {
                     Alert.ShowInTop("删除失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
+                bindQuotaLibToGrid();
             }
         }
 

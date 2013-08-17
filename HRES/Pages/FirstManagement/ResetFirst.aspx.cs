@@ -40,6 +40,7 @@ namespace HRES.Pages.FirstManagement
                 {
                     Alert.ShowInTop("重置失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
+                bindFirstToGrid();
             }
         }
 

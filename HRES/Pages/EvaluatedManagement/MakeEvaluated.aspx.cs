@@ -12,7 +12,7 @@ using System.Data;
 namespace HRES.Pages.EvaluatedManagement
 {
     public partial class MakeEvaluated : System.Web.UI.Page
-    {        
+    {
         #region Protected Method
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace HRES.Pages.EvaluatedManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                BindEvaluatedToGrid();
+                PageContext.Refresh();
             }
             else
             {
@@ -100,6 +100,7 @@ namespace HRES.Pages.EvaluatedManagement
                 {
                     Alert.ShowInTop("删除失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
+                BindEvaluatedToGrid();
             }
         }
 

@@ -54,7 +54,7 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                BindEvaluatorToGrid();
+                PageContext.Refresh();
             }
             else
             {

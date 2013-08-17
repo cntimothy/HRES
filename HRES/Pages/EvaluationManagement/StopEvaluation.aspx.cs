@@ -37,19 +37,6 @@ namespace HRES.Pages.EvaluationManagement
             bindEvaluatedToGrid();
         }
 
-        protected void Button_Start_Click(object sender, EventArgs e)
-        {
-            string exception = "";
-            if (EvaluationManagementCtrl.StartEvaluation(ref exception))
-            {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
-            }
-            else
-            {
-                Alert.ShowInTop("设置失败！\n原因：" + exception, MessageBoxIcon.Error);
-            }
-        }
-
         protected void DropDownList1_SelectedChanged(object sender, EventArgs e)
         {
             bindEvaluatedToGrid();

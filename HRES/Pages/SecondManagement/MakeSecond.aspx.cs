@@ -18,8 +18,8 @@ namespace HRES.Pages.SecondManagement
         {
             if (!IsPostBack)
             {
-                BindDepartListToDropDownList();
-                BindSecondToGrid();
+                bindDepartListToDropDownList();
+                bindSecondToGrid();
             }
         }
 
@@ -52,7 +52,7 @@ namespace HRES.Pages.SecondManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                BindSecondToGrid();
+                PageContext.Refresh();
             }
             else
             {
@@ -68,7 +68,7 @@ namespace HRES.Pages.SecondManagement
 
         protected void DepartChange(object sender, EventArgs e)
         {
-            BindSecondToGrid();
+            bindSecondToGrid();
         }
 
         protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
@@ -98,12 +98,14 @@ namespace HRES.Pages.SecondManagement
                     Alert.ShowInTop("重置失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
             }
+            bindSecondToGrid();
+            bindSecondToGrid();
         }
 
         #endregion
 
         #region Private Method
-        private void BindDepartListToDropDownList()
+        private void bindDepartListToDropDownList()
         { 
             List<string> departs = new List<string>();
             string exception = "";
@@ -115,7 +117,7 @@ namespace HRES.Pages.SecondManagement
             }
         }
 
-        private void BindSecondToGrid()
+        private void bindSecondToGrid()
         {
             string exception = "";
             DataTable table = new DataTable();

@@ -43,7 +43,7 @@
             </tr>
         </table>
         <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
-        AllowPaging="true" runat="server" EnableCheckBoxSelect="false"  Width="400" DataKeyNames="ID, Name, Depart"
+        AllowPaging="true" runat="server" EnableCheckBoxSelect="false"  Width="550" DataKeyNames="ID, Name, Depart"
         OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
         <Columns>
             <x:BoundField Width="120px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
