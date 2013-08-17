@@ -7,6 +7,33 @@ namespace DataStructure
 {
     public class EvaluationResult
     {
+        #region Constructor
+        public EvaluationResult(bool is360)
+        {
+            this.is360 = is360;
+            if (is360 == true)
+            {
+                this.keyScore = new string[5];
+                this.responseScore = new string[5];
+                this.qualifyScore = new string[5];
+                this.attitudeScore = new string[5];
+                this.rejectScore = new string[5];
+                this.resultScore = new string[5];
+                this.evaluatorNum = new int[5];
+            }
+            else
+            {
+                this.keyScore = new string[4];
+                this.responseScore = new string[4];
+                this.qualifyScore = new string[4];
+                this.attitudeScore = new string[4];
+                this.rejectScore = new string[4];
+                this.resultScore = new string[4];
+                this.evaluatorNum = new int[4];
+            }
+        }
+        #endregion
+
         #region Private Field
         private bool is360;
         private string postName;
