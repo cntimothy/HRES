@@ -19,7 +19,8 @@ namespace HRES.Pages.EvaluatorManagement
         {
             if (!IsPostBack)
             {
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 bindEvaluatorToGrid();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluator", "审核意见");

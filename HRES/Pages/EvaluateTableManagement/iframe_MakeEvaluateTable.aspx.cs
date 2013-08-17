@@ -98,7 +98,8 @@ namespace HRES.Pages.EvaluateTableManagement
                 TriggerBox_Attitude_5.OnClientTriggerClick = Window_ShowQuota.GetSaveStateReference(TriggerBox_Attitude_5.ClientID, TextArea_Attitude_5.ClientID, HiddenField_Attitude_5.ClientID)
                 + Window_ShowQuota.GetShowReference("iframe_ShowQuota.aspx");
 
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
 
                 DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 if (curStatus == DocStatus.submitted || curStatus == DocStatus.passed)

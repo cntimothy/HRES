@@ -17,8 +17,11 @@ namespace HRES.Pages.PostBookManagement
             if (!IsPostBack)
             {
                 loadPostBook();
-                Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+                //Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
+
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
+                Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
                 Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
                 setToolbarVisible();

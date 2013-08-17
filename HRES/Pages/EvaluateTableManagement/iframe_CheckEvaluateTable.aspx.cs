@@ -19,7 +19,8 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             if (!IsPostBack)
             {
-                Button_Close.OnClientClick = ActiveWindow.GetHideReference();
+                //Button_Close.OnClientClick = ActiveWindow.GetHideReference();
+                Button_Close.OnClientClick = ActiveWindow.GetHideRefreshReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkevaluatetable", "审核意见");
             }
         }

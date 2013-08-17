@@ -15,7 +15,8 @@ namespace HRES.Pages.QuotaManagement
         {
             if (!IsPostBack)
             {
-                Button_Close.OnClientClick = ActiveWindow.GetHideReference();
+                //Button_Close.OnClientClick = ActiveWindow.GetHideReference();
+                Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
             }
         }
 
