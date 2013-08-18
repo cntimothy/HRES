@@ -9,6 +9,10 @@ using NPOI.POIFS.FileSystem;
 using NPOI.SS.Util;
 using NPOI.SS.UserModel;
 using System.IO;
+using MSWord = Microsoft.Office.Interop.Word;
+using System.Reflection;
+using Microsoft.Office.Interop.Word;
+using System.Data;
 
 namespace Controls
 {
@@ -17,11 +21,11 @@ namespace Controls
         /// <summary>
         /// 导出指定的考评表到Excel，导出成功返回true，否则返回false
         /// </summary> 
-        /// <param name="filename"></param>
-        /// <param name="evaluateTable"></param>
+        /// <param name="fileName">生成文件的文件名</param>
+        /// <param name="evaluateTable">考核表</param>
         /// <param name="?"></param>
         /// <returns></returns>
-        public static bool ExportEvaluateTable(ref string filename, EvaluateTable evaluateTable, ref string exception)
+        public static bool ExportEvaluateTable(ref string fileName, EvaluateTable evaluateTable, ref string exception)
         {
             HSSFWorkbook hssfworkbook = new HSSFWorkbook();
             ISheet sheet = hssfworkbook.CreateSheet("考核表");
@@ -716,7 +720,7 @@ namespace Controls
             region = new CellRangeAddress(6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 6 + (keyCount + evaluateTable.Response.Count + evaluateTable.Qualify.Count + evaluateTable.Attitude.Count) * 2 + 5, 4, 11);
             sheet.AddMergedRegion(region);
 
-            if (writeToFile(hssfworkbook, evaluateTable.EvaluatedName, ref filename))
+            if (writeToFile(hssfworkbook, evaluateTable.EvaluatedName, ref fileName))
             {
                 return true;
             }
@@ -727,11 +731,183 @@ namespace Controls
             }
         }
 
-        #region Private Method
-        private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string filename)
+        /// <summary>
+        /// 导出指定的岗位责任书到word，导出成功返回true，否则返回false
+        /// </summary>
+        /// <param name="fileName">生成文件的文件名</param>
+        /// <param name="postBook">岗位责任书</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ExportPostBook(ref string fileName, string evaluatedName, PostBook postBook, ref string exception)
         {
-            filename = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
-            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + filename;
+            fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的岗位责任书.doc";
+            object path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
+            string strContent = "";
+            object nothing = Missing.Value;
+            MSWord.Application wordApp = new MSWord.Application();
+            MSWord.Document wordDoc = wordApp.Documents.Add(ref nothing, ref nothing, ref nothing, ref nothing);
+            wordApp.Selection.ParagraphFormat.LineSpacing = 16;
+
+            writeParagraph(ref wordDoc, "岗位责任书", "宋体", 1, 18, MSWord.WdParagraphAlignment.wdAlignParagraphCenter);
+            writeParagraph(ref wordDoc, "一、岗位概述", "黑体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = "\t1、用人单位：\t" + postBook.Employer + "\n"
+                            + "\t2、用工单位：\t同济大学" + postBook.LaborDepart + "\n"
+                            + "\t3、用工部门：" + "\t" + postBook.LaborUnit + "\n"
+                            + "\t4、岗位名称：" + "\t" + postBook.PostName;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            switch (postBook.PostType)
+            {
+                case "管理":
+                    strContent = "\t5、岗位类别：\t■管理 □教辅 □思政 □教师 □工勤";
+                    break;
+                case "教辅":
+                    strContent = "\t5、岗位类别：\t□管理 ■教辅 □思政 □教师 □工勤";
+                    break;
+                case "思政":
+                    strContent = "\t5、岗位类别：\t□管理 □教辅 ■思政 □教师 □工勤";
+                    break;
+                case "教师":
+                    strContent = "\t5、岗位类别：\t□管理 □教辅 □思政 ■教师 □工勤";
+                    break;
+                case "工勤":
+                    strContent = "\t5、岗位类别：□管理 □教辅 □思政 □教师 ■工勤";
+                    break;
+            }
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "二、岗位职责", "黑体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "（一）任职条件", "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "1、学历背景：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.EduBg;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "2、培训及资历：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Certificate;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "3、工作经验：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Experience;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "4、基本技能和素质：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Skill;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "5、特性特征：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Personality;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "6、体质条件：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.PhyCond;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "（二）工作内容、工作要求", "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "1、岗位概述：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.WorkOutline;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "2、工作内容及工作要求：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            for(int i = 1; i < postBook.WorkContentRequest.Count; i++)
+            {
+                strContent = "\t" + i + ")" + postBook.WorkContentRequest[i - 1][0];
+                writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+                strContent = "\t具体内容：" + postBook.WorkContentRequest[i - 1][0];
+                writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+                strContent = "\t具体要求：" + postBook.WorkContentRequest[i - 1][0];
+                writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+                strContent = "\t考核要点：" + postBook.WorkContentRequest[i - 1][0];
+                writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            }
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "（三）权责范围", "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "1、权利：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Power;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "2、责任：";
+            writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            strContent = postBook.Response;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "（四）工作关系", "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "1、直接领导：" + postBook.DirectLeader;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "2、下属：" + postBook.Subordinate;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "3、同事：" + postBook.Colleague;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "4、服务对象：" + postBook.Services;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "5、外部关系：" + postBook.Relations;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "（五）工作环境", "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = postBook.WorkEnter;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "三、岗位考核", "黑体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = postBook.PostAssess;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "四、其他规定", "黑体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = postBook.Others;
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            writeParagraph(ref wordDoc, "", "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            writeParagraph(ref wordDoc, "", "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+            writeParagraph(ref wordDoc, "", "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            strContent = "部门负责人签章：\t\t\t\t个人签字：\n" +
+                         "\t\t\t\t\t\t\t\t身份证号码：\n" +
+                         "\t\t\t\t\t\t\t\t联系电话（固定电话）：\n" +
+                         "\t\t\t\t\t\t\t\t联系电话（移动电话）：\n" +
+                         "\t\t\t\t\t\t\t\t联系地址：\n" +
+                         "\t\t\t\t\t\t\t\t邮编：\n" +
+                         "日期：    年    月    日\t\t日期：    年    月    日";
+
+            writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
+
+            object format = MSWord.WdSaveFormat.wdFormatDocument97;
+            wordDoc.SaveAs(ref path, ref format, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing);
+            wordDoc.Close(ref nothing, ref nothing, ref nothing);
+            wordApp.Quit(ref nothing, ref nothing, ref nothing);
+
+            return true;
+        }
+        #region Private Method
+        /// <summary>
+        /// 将workbook写到文件中，成功返回true，否则返回false
+        /// </summary>
+        /// <param name="hssfworkbook"></param>
+        /// <param name="evaluatedName"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string fileName)
+        {
+            fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
             FileStream file = new FileStream(path, FileMode.Create);
             try
             {
@@ -773,6 +949,11 @@ namespace Controls
             cell4.CellStyle = cellStyle;
         }
 
+        /// <summary>
+        /// 获取数组成员的最大长度
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         private static int getLongestContent(string[] content)
         {
             int returnValue = 0;
@@ -784,6 +965,25 @@ namespace Controls
                 }
             }
             return returnValue;
+        }
+
+        /// <summary>
+        /// 根据格式向指定的文档中写段落
+        /// </summary>
+        /// <param name="wordDoc">指定的文档</param>
+        /// <param name="strContent">内容</param>
+        /// <param name="font">字体</param>
+        /// <param name="bold">加黑</param>
+        /// <param name="size">字号</param>
+        /// <param name="align">对齐方式</param>
+        private static void writeParagraph(ref MSWord.Document wordDoc, string strContent, string font, int bold, int size, MSWord.WdParagraphAlignment align)
+        {
+            wordDoc.Paragraphs.Add();
+            wordDoc.Paragraphs.Last.Range.Font.Name = font;
+            wordDoc.Paragraphs.Last.Range.Font.Bold = bold;
+            wordDoc.Paragraphs.Last.Range.Font.Size = size;
+            wordDoc.Paragraphs.Last.Alignment = align;
+            wordDoc.Paragraphs.Last.Range.Text = strContent;
         }
         #endregion
     }

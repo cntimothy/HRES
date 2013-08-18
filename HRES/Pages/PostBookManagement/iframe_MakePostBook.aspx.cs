@@ -145,6 +145,29 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
+        protected void Button_Export_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            string evaluatedName = Request.QueryString["name"];
+            PostBook postBook = new PostBook();
+            if (PostBookManagementCtrl.GetPostBook(ref postBook, evaluatedID, ref exception))
+            {
+                string filename = "";
+                if (ExportManagementCtrl.ExportPostBook(ref filename, evaluatedName, postBook, ref exception))
+                {
+                    Response.ClearContent();
+                    Response.ContentType = "application/excel";
+                    Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
+                    string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
+                    Response.TransmitFile(path);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Private Method
