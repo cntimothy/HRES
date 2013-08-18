@@ -26,6 +26,10 @@
                             </x:ToolbarSeparator>
                             <x:Button ID="Button_Search" runat="server" Text="查询">
                             </x:Button>
+                            <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
+                            </x:ToolbarSeparator>
+                            <x:Button ID="Button_Export" runat="server" Text="导出" OnClick="Button_Export_Click" EnableAjax="false">
+                            </x:Button>
                         </Items>
                     </x:Toolbar>
                     <x:Form ID="Form2" runat="server" BodyPadding="5px" Title="Form" ShowBorder="false"

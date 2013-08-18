@@ -741,7 +741,7 @@ namespace Controls
         public static bool ExportPostBook(ref string fileName, string evaluatedName, PostBook postBook, ref string exception)
         {
             fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的岗位责任书.doc";
-            object path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
+            object path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + fileName;
             string strContent = "";
             object nothing = Missing.Value;
             MSWord.Application wordApp = new MSWord.Application();
@@ -818,7 +818,7 @@ namespace Controls
 
             strContent = "2、工作内容及工作要求：";
             writeParagraph(ref wordDoc, strContent, "宋体", 1, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
-            for(int i = 1; i < postBook.WorkContentRequest.Count; i++)
+            for (int i = 1; i < postBook.WorkContentRequest.Count; i++)
             {
                 strContent = "\t" + i + ")" + postBook.WorkContentRequest[i - 1][0];
                 writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
@@ -889,11 +889,136 @@ namespace Controls
 
             writeParagraph(ref wordDoc, strContent, "宋体", 0, 11, MSWord.WdParagraphAlignment.wdAlignParagraphLeft);
 
-            object format = MSWord.WdSaveFormat.wdFormatDocument97;
-            wordDoc.SaveAs(ref path, ref format, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing);
-            wordDoc.Close(ref nothing, ref nothing, ref nothing);
-            wordApp.Quit(ref nothing, ref nothing, ref nothing);
+            try
+            {
+                object format = MSWord.WdSaveFormat.wdFormatDocument97;
+                wordDoc.SaveAs(ref path, ref format, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing);
+                wordDoc.Close(ref nothing, ref nothing, ref nothing);
+                wordApp.Quit(ref nothing, ref nothing, ref nothing);
+                return true;
+            }
+            catch (Exception)
+            {
+                exception = "写文件失败！";
+                return false;
+            }
+        }
 
+        /// <summary>
+        /// 导出指定的个人考核结果
+        /// </summary>
+        /// <param name="fileName">导出结果的文件名</param>
+        /// <param name="evaluatedName">被考评人姓名</param>
+        /// <param name="evaluationResult">考核结果</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ExportEvaluationResultForIndividual(ref string fileName, string evaluatedName, EvaluationResult evaluationResult, ref string exception)
+        {
+            string sourceFilePath = "";
+            int itemCount = 0;
+            if (evaluationResult.Is360)
+            {
+                sourceFilePath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\template\360度考核模板.xls";
+                itemCount = 5;
+            }
+            else
+            {
+                sourceFilePath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\template\270度考核模板.xls";
+                itemCount = 4;
+            }
+            FileStream file = new FileStream(sourceFilePath, FileMode.Open, FileAccess.Read);
+
+            HSSFWorkbook hssfworkbook = new HSSFWorkbook(file);
+
+            //create a entry of DocumentSummaryInformation
+            DocumentSummaryInformation dsi = PropertySetFactory.CreateDocumentSummaryInformation();
+            dsi.Company = "NPOI Team";
+            hssfworkbook.DocumentSummaryInformation = dsi;
+
+            //create a entry of SummaryInformation
+            SummaryInformation si = PropertySetFactory.CreateSummaryInformation();
+            si.Subject = "NPOI SDK Example";
+            hssfworkbook.SummaryInformation = si;
+
+            ISheet sheet1 = hssfworkbook.GetSheet("Sheet1");
+            sheet1.GetRow(1).GetCell(0).SetCellValue("被考核人姓名：" + evaluatedName);
+            sheet1.GetRow(1).GetCell(1).SetCellValue("岗位名称：" + evaluationResult.PostName);
+            sheet1.GetRow(1).GetCell(2).SetCellValue("用工部门：" + evaluationResult.LaborDep);
+            sheet1.GetRow(1).GetCell(3).SetCellValue("用工单位：同济大学" + evaluationResult.LaborUnit);
+            sheet1.GetRow(2).GetCell(0).SetCellValue("考核时间段：" + evaluationResult.StartTime + " ~ " + evaluationResult.StopTime);
+            sheet1.GetRow(2).GetCell(3).SetCellValue("考核日期：");
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(4).GetCell(i + 1).SetCellValue(evaluationResult.KeyScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(5).GetCell(i + 1).SetCellValue(evaluationResult.ResponseScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(6).GetCell(i + 1).SetCellValue(evaluationResult.QualifyScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(7).GetCell(i + 1).SetCellValue(evaluationResult.AttitudeScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(8).GetCell(i + 1).SetCellValue(evaluationResult.RejectScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(9).GetCell(i + 1).SetCellValue(evaluationResult.ResultScore[i]);
+            }
+
+            for (int i = 0; i < itemCount; i++)
+            {
+                sheet1.GetRow(10).GetCell(i + 1).SetCellValue(evaluationResult.EvaluatorNum[i]);
+            }
+
+            string evaluationLevel = "";
+            switch (evaluationResult.EvaluationLevel)
+            {
+                case DepartEvaluationLevel.good:
+                    evaluationLevel = "√优秀（9~10 ）      □良好（7~8）       □合格 （4~6）       □不合格（0~3）";
+                    break;
+                case DepartEvaluationLevel.qualified:
+                    evaluationLevel = "□优秀（9~10 ）      √良好（7~8）       □合格 （4~6）       □不合格（0~3）";
+                    break;
+                case DepartEvaluationLevel.notbad:
+                    evaluationLevel = "□优秀（9~10 ）      □良好（7~8）       √合格 （4~6）       □不合格（0~3）";
+                    break;
+                case DepartEvaluationLevel.unqualified:
+                    evaluationLevel = "□优秀（9~10 ）      □良好（7~8）       □合格 （4~6）       √不合格（0~3）";
+                    break;
+                default:
+                    break;
+            }
+
+            sheet1.GetRow(11).GetCell(1).SetCellValue(evaluationLevel);
+
+            fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核结果.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
+            FileStream fileWrite = new FileStream(path, FileMode.Create);
+            try
+            {
+                hssfworkbook.Write(fileWrite);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                fileWrite.Close();
+            }
             return true;
         }
         #region Private Method

@@ -27,6 +27,30 @@ namespace HRES.Pages.EvaluationManagement
         {
             bindEvaluationResultToGrid();
         }
+
+        protected void Button_Export_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            string evaluatedID = Request.QueryString["id"];
+            string evaluatedName = Request.QueryString["name"];
+            EvaluationResult evaluationResult;
+            if (EvaluationManagementCtrl.GetEvaluationResultByEvaluatedAndYear(out evaluationResult, evaluatedID, DropDownList_Year.SelectedValue, ref exception))
+            {
+                string filename = "";
+                if (ExportManagementCtrl.ExportEvaluationResultForIndividual(ref filename, evaluatedName, evaluationResult, ref exception))
+                {
+                    Response.ClearContent();
+                    Response.ContentType = "application/excel";
+                    Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
+                    string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
+                    Response.TransmitFile(path);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region Private Method
