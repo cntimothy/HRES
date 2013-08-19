@@ -46,7 +46,36 @@ namespace HRES.Pages.EvaluationManagement
                 Grid1.DataSource = table;
                 Grid1.DataBind();
                 Label_Period.Text = startTime + " ~ " + stopTime;
-                Grid1.Title = depart + "派遣员工考核汇总表"; 
+                Grid1.Title = depart + "派遣员工考核汇总表";
+                Button_Export.Enabled = true;
+            }
+        }
+
+        protected void Button_Export_Click(object sender, EventArgs e)
+        {
+            string exception = "";
+            //string evaluatedID = Request.QueryString["id"];
+            //string evaluatedName = Request.QueryString["name"];
+            //EvaluationResult evaluationResult;
+            string depart = DropDownList_Depart.SelectedValue;
+            string year = DropDownList_Year.SelectedValue;
+            DataTable table = new DataTable();
+            string startTime = "", stopTime = "", evaluationDate = "";
+            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndYear(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
+            {
+                string filename = "";
+                if (ExportManagementCtrl.ExportEvaluationResultForDepart(ref filename, depart, table, startTime, stopTime, evaluationDate, ref exception))
+                {
+                    Response.ClearContent();
+                    Response.ContentType = "application/excel";
+                    Response.AddHeader("content-disposition", "attachment;filename=" + Server.UrlEncode(filename));
+                    string path = Server.MapPath("..\\..\\downloadfiles\\" + filename);
+                    Response.TransmitFile(path);
+                }
+            }
+            else
+            {
+                Alert.ShowInTop("导出失败！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion

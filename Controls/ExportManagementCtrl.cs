@@ -1021,6 +1021,216 @@ namespace Controls
             }
             return true;
         }
+
+        /// <summary>
+        /// 导出指定部门的考核结果汇总表
+        /// </summary>
+        /// <param name="fileName">导出结果的文件名</param>
+        /// <param name="depart">部门</param>
+        /// <param name="table">包含结果的表</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ExportEvaluationResultForDepart(ref string fileName, string depart, System.Data.DataTable table, string startTime, string stopTime, string evaluationDate, ref string exception)
+        {
+            HSSFWorkbook hssfworkbook = new HSSFWorkbook();
+            ISheet sheet = hssfworkbook.CreateSheet("单位考核汇总表");
+
+            CellRangeAddress region;
+
+
+            //设置宽度
+            sheet.SetColumnWidth(0, 6 * 256);
+            sheet.SetColumnWidth(1, 16 * 256);
+            sheet.SetColumnWidth(2, 20 * 256);
+            sheet.SetColumnWidth(3, 19 * 256);
+            sheet.SetColumnWidth(4, 22 * 256);
+            sheet.SetColumnWidth(5, 23 * 256);
+
+            //设置格式
+            ICellStyle titleStyle = hssfworkbook.CreateCellStyle();
+            titleStyle.Alignment = HorizontalAlignment.CENTER;
+            titleStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont titleFont = hssfworkbook.CreateFont();
+            titleFont.FontName = "宋体";
+            titleFont.FontHeightInPoints = 16;
+            titleFont.Boldweight = (short)FontBoldWeight.BOLD;
+            titleStyle.SetFont(titleFont);
+
+            ICellStyle normalBoldLeftStyle = hssfworkbook.CreateCellStyle();
+            normalBoldLeftStyle.Alignment = HorizontalAlignment.LEFT;
+            normalBoldLeftStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont normalBoldLeftFont = hssfworkbook.CreateFont();
+            normalBoldLeftFont.FontName = "宋体";
+            normalBoldLeftFont.FontHeightInPoints = 11;
+            normalBoldLeftFont.Boldweight = (short)FontBoldWeight.BOLD;
+            normalBoldLeftStyle.SetFont(normalBoldLeftFont);
+            normalBoldLeftStyle.WrapText = false;
+
+            ICellStyle normalBoldCenterStyle = hssfworkbook.CreateCellStyle();
+            normalBoldCenterStyle.Alignment = HorizontalAlignment.CENTER;
+            normalBoldCenterStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont normalBoldCenterFont = hssfworkbook.CreateFont();
+            normalBoldCenterFont.FontName = "宋体";
+            normalBoldCenterFont.FontHeightInPoints = 11;
+            normalBoldCenterFont.Boldweight = (short)FontBoldWeight.BOLD;
+            normalBoldCenterStyle.SetFont(normalBoldCenterFont);
+            normalBoldCenterStyle.WrapText = false;
+            normalBoldCenterStyle.BorderTop = BorderStyle.THIN;
+            normalBoldCenterStyle.BorderBottom = BorderStyle.THIN;
+            normalBoldCenterStyle.BorderLeft = BorderStyle.THIN;
+            normalBoldCenterStyle.BorderRight = BorderStyle.THIN;
+
+            ICellStyle normalCenterStyle = hssfworkbook.CreateCellStyle();
+            normalCenterStyle.Alignment = HorizontalAlignment.CENTER;
+            normalCenterStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont normalCenterFont = hssfworkbook.CreateFont();
+            normalCenterFont.FontName = "宋体";
+            normalCenterFont.FontHeightInPoints = 11;
+            normalCenterStyle.SetFont(normalCenterFont);
+            normalCenterStyle.WrapText = false;
+            normalCenterStyle.BorderTop = BorderStyle.THIN;
+            normalCenterStyle.BorderBottom = BorderStyle.THIN;
+            normalCenterStyle.BorderLeft = BorderStyle.THIN;
+            normalCenterStyle.BorderRight = BorderStyle.THIN;
+
+            ICellStyle normalLeftStyle = hssfworkbook.CreateCellStyle();
+            normalLeftStyle.Alignment = HorizontalAlignment.LEFT;
+            normalLeftStyle.VerticalAlignment = VerticalAlignment.CENTER;
+            IFont normalLeftFont = hssfworkbook.CreateFont();
+            normalLeftFont.FontName = "宋体";
+            normalLeftFont.FontHeightInPoints = 11;
+            normalLeftStyle.SetFont(normalLeftFont);
+            normalLeftStyle.WrapText = false;
+
+            //标题行
+            IRow row0 = sheet.CreateRow(0);
+            row0.HeightInPoints = 28;
+            ICell cell00 = row0.CreateCell(0);
+            cell00.SetCellValue("同济大学" + depart + "（单位）派遣人员考核汇总表");
+            cell00.CellStyle = titleStyle;
+            region = new CellRangeAddress(0, 0, 0, 5);
+            sheet.AddMergedRegion(region);
+
+            //表头第一行:考核时间段
+            IRow row1 = sheet.CreateRow(1);
+            row1.HeightInPoints = 29;
+            ICell cell10 = row1.CreateCell(0);
+            cell10.SetCellValue("考核时间段：" + startTime + "至" + stopTime);
+            cell10.CellStyle = normalBoldLeftStyle;
+            region = new CellRangeAddress(1, 1, 0, 3);
+            sheet.AddMergedRegion(region);
+
+            //表头第一行:考核日期
+            row1.HeightInPoints = 29;
+            ICell cell11 = row1.CreateCell(4);
+            cell11.SetCellValue("考核日期：" + evaluationDate);
+            cell11.CellStyle = normalBoldLeftStyle;
+            region = new CellRangeAddress(1, 1, 4, 5);
+            sheet.AddMergedRegion(region);
+
+            //表标题行
+            IRow row2 = sheet.CreateRow(2);
+            row2.HeightInPoints = 29;
+            ICell cell20 = row2.CreateCell(0);
+            cell20.SetCellValue("序号");
+            cell20.CellStyle = normalBoldCenterStyle;
+            ICell cell21 = row2.CreateCell(1);
+            cell21.SetCellValue("姓名");
+            cell21.CellStyle = normalBoldCenterStyle;
+            ICell cell22 = row2.CreateCell(2);
+            cell22.SetCellValue("考核得分");
+            cell22.CellStyle = normalBoldCenterStyle;
+            ICell cell23 = row2.CreateCell(3);
+            cell23.SetCellValue("考核结果");
+            cell23.CellStyle = normalBoldCenterStyle;
+            ICell cell24 = row2.CreateCell(4);
+            cell24.SetCellValue("考核人数");
+            cell24.CellStyle = normalBoldCenterStyle;
+            ICell cell25 = row2.CreateCell(5);
+            cell25.SetCellValue("备注");
+            cell25.CellStyle = normalBoldCenterStyle;
+
+            IRow rowScore;
+            ICell cell0, cell1, cell2, cell3, cell4, cell5;
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                rowScore = sheet.CreateRow(i + 3);
+                rowScore.HeightInPoints = 29;
+                cell0 = rowScore.CreateCell(0);
+                cell0.SetCellValue(i + 1);
+                cell0.CellStyle = normalCenterStyle;
+
+                cell1 = rowScore.CreateCell(1);
+                cell1.SetCellValue(table.Rows[i]["Name"].ToString());
+                cell1.CellStyle = normalCenterStyle;
+
+                cell2 = rowScore.CreateCell(2);
+                cell2.SetCellValue(table.Rows[i]["Score"].ToString());
+                cell2.CellStyle = normalCenterStyle;
+
+                cell3 = rowScore.CreateCell(3);
+                cell3.SetCellValue(table.Rows[i]["Result"].ToString());
+                cell3.CellStyle = normalCenterStyle;
+
+                cell4 = rowScore.CreateCell(4);
+                cell4.SetCellValue(table.Rows[i]["EvaluatorNum"].ToString());
+                cell4.CellStyle = normalCenterStyle;
+
+                cell5 = rowScore.CreateCell(5);
+                cell5.SetCellValue(table.Rows[i]["Comment"].ToString());
+                cell5.CellStyle = normalCenterStyle;
+            }
+
+            //表脚第一行
+            IRow rowFoot1 = sheet.CreateRow(3 + table.Rows.Count);
+            rowFoot1.HeightInPoints = 29;
+
+            ICell cellFoot10 = rowFoot1.CreateCell(0);
+            cellFoot10.SetCellValue("制表人签名：");
+            cellFoot10.CellStyle = normalLeftStyle;
+            region = new CellRangeAddress(3 + table.Rows.Count, 3 + table.Rows.Count, 0, 2);
+            sheet.AddMergedRegion(region);
+            
+            ICell cellFoot11 = rowFoot1.CreateCell(3);
+            cellFoot11.SetCellValue("用工单位领导签名（盖章）：");
+            cellFoot11.CellStyle = normalLeftStyle;
+            region = new CellRangeAddress(3 + table.Rows.Count, 3 + table.Rows.Count, 3, 5);
+            sheet.AddMergedRegion(region);
+
+            //表脚第二行
+            IRow rowFoot2 = sheet.CreateRow(4 + table.Rows.Count);
+            rowFoot2.HeightInPoints = 29;
+
+            ICell cellFoot20 = rowFoot2.CreateCell(0);
+            cellFoot20.SetCellValue("日期：");
+            cellFoot20.CellStyle = normalLeftStyle;
+            region = new CellRangeAddress(4 + table.Rows.Count, 4 + table.Rows.Count, 0, 2);
+            sheet.AddMergedRegion(region);
+
+            ICell cellFoot21 = rowFoot2.CreateCell(3);
+            cellFoot21.SetCellValue("日期：");
+            cellFoot21.CellStyle = normalLeftStyle;
+            region = new CellRangeAddress(4 + table.Rows.Count, 4 + table.Rows.Count, 3, 5);
+            sheet.AddMergedRegion(region);
+
+            //写文件
+            fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + depart + @"考核汇总表.xls";
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
+            FileStream file = new FileStream(path, FileMode.Create);
+            try
+            {
+                hssfworkbook.Write(file);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                file.Close();
+            }
+            return true;
+        }
         #region Private Method
         /// <summary>
         /// 将workbook写到文件中，成功返回true，否则返回false
