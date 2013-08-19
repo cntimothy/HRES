@@ -50,7 +50,7 @@
             <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox"  BoxConfigChildMargin="0 5 5 5"
                 ShowHeader="false" CssStyle="width:100%">
                 <Items>
-                    <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" AutoHeight="true"
+                    <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" Height="500px"
                         AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="730px"
                         DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowSelect="true" OnRowSelect="GridRowSelect"

@@ -18,8 +18,8 @@ namespace HRES.Pages.EvaluatedManagement
         {
             if (!IsPostBack)
             {
-                BindDepartListToDropDownList();
-                BindEvaluatedToGrid();
+                bindDepartListToDropDownList();
+                bindEvaluatedToGrid();
             }
         }
 
@@ -52,7 +52,7 @@ namespace HRES.Pages.EvaluatedManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                PageContext.Refresh();
+                bindEvaluatedToGrid();
             }
             else
             {
@@ -81,7 +81,7 @@ namespace HRES.Pages.EvaluatedManagement
 
         protected void DepartChange(object sender, EventArgs e)
         {
-            BindEvaluatedToGrid();
+            bindEvaluatedToGrid();
         }
 
         protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
@@ -100,7 +100,7 @@ namespace HRES.Pages.EvaluatedManagement
                 {
                     Alert.ShowInTop("删除失败！\n原因：" + exception, MessageBoxIcon.Error);
                 }
-                BindEvaluatedToGrid();
+                bindEvaluatedToGrid();
             }
         }
 
@@ -122,7 +122,7 @@ namespace HRES.Pages.EvaluatedManagement
         #endregion
 
         #region Private Method
-        private void BindDepartListToDropDownList()
+        private void bindDepartListToDropDownList()
         {
             List<string> departs = new List<string>();
             string exception = "";
@@ -134,7 +134,7 @@ namespace HRES.Pages.EvaluatedManagement
             }
         }
 
-        private void BindEvaluatedToGrid()
+        private void bindEvaluatedToGrid()
         {
             string exception = "";
             DataTable table = new DataTable();

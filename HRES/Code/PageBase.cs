@@ -20,7 +20,6 @@ namespace HRES
 
         protected override void OnInit(EventArgs e)
         {
-            base.OnInit(e);
 
             if (!IsPostBack)
             {
@@ -31,6 +30,7 @@ namespace HRES
                     Session["AccessLevel"] = null;
                     Session["Depart"] = null;
                     PageContext.Redirect("../Login.aspx", "_top");
+                    return;
                 }
                 if (PageManager.Instance != null)
                 {
@@ -58,6 +58,7 @@ namespace HRES
                 }
             }
 
+            base.OnInit(e);
         }
 
         private bool IsSystemTheme(string themeName)

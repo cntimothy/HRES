@@ -20,7 +20,7 @@ namespace HRES.Pages.EvaluatorManagement
         {
             if (!IsPostBack)
             {
-                BindEvaluatorToGrid();
+                bindEvaluatorToGrid();
             }
         }
 
@@ -54,7 +54,7 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                PageContext.Refresh();
+                bindEvaluatorToGrid();
             }
             else
             {
@@ -65,7 +65,7 @@ namespace HRES.Pages.EvaluatorManagement
 
         protected void DeleteSelected_Click(object sender, EventArgs e)
         {
-            SyncSelectedRowIndexArrayToHiddenField();
+            syncSelectedRowIndexArrayToHiddenField();
             string exception = "";
             string s = hfSelectedIDS.Text.Trim().TrimStart('[').TrimEnd(']');
             if (s == "")
@@ -87,14 +87,14 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 Alert.ShowInTop("删除失败\n原因：" + exception, MessageBoxIcon.Error);
             }
-            BindEvaluatorToGrid();
+            bindEvaluatorToGrid();
         }
 
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
-            SyncSelectedRowIndexArrayToHiddenField();
+            syncSelectedRowIndexArrayToHiddenField();
             Grid1.PageIndex = e.NewPageIndex;
-            UpdateSelectedRowIndexArray();
+            updateSelectedRowIndexArray();
         }
 
         protected void Grid1_RowCommand(object sender, FineUI.GridCommandEventArgs e)
@@ -129,7 +129,7 @@ namespace HRES.Pages.EvaluatorManagement
 
         #region Private Method
 
-        private void BindEvaluatorToGrid()
+        private void bindEvaluatorToGrid()
         {
             string exception = "";
             string depart = Session["Depart"].ToString();
@@ -141,7 +141,7 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
-        private List<string> GetSelectedRowIndexArrayFromHiddenField()
+        private List<string> getSelectedRowIndexArrayFromHiddenField()
         {
             JArray idsArray = new JArray();
 
@@ -158,9 +158,9 @@ namespace HRES.Pages.EvaluatorManagement
             return new List<string>(idsArray.ToObject<string[]>());
         }
 
-        private void SyncSelectedRowIndexArrayToHiddenField()
+        private void syncSelectedRowIndexArrayToHiddenField()
         {
-            List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
+            List<string> ids = getSelectedRowIndexArrayFromHiddenField();
 
             List<int> selectedRows = new List<int>();
             if (Grid1.SelectedRowIndexArray != null && Grid1.SelectedRowIndexArray.Length > 0)
@@ -193,9 +193,9 @@ namespace HRES.Pages.EvaluatorManagement
         }
 
 
-        private void UpdateSelectedRowIndexArray()
+        private void updateSelectedRowIndexArray()
         {
-            List<string> ids = GetSelectedRowIndexArrayFromHiddenField();
+            List<string> ids = getSelectedRowIndexArrayFromHiddenField();
 
             List<int> nextSelectedRowIndexArray = new List<int>();
             int nextStartPageIndex = Grid1.PageIndex * Grid1.PageSize;

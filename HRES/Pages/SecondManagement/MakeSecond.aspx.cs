@@ -52,7 +52,7 @@ namespace HRES.Pages.SecondManagement
             {
                 ExcelFile.Reset();
                 Alert.ShowInTop("上传成功！", MessageBoxIcon.Information);
-                PageContext.Refresh();
+                bindSecondToGrid();
             }
             else
             {

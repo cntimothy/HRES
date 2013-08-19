@@ -229,12 +229,12 @@ namespace HRES.Pages.EvaluatorManagement {
         protected global::FineUI.Label LabComment;
         
         /// <summary>
-        /// Window1 控件。
+        /// Window_MakeEvaluator 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Window Window1;
+        protected global::FineUI.Window Window_MakeEvaluator;
     }
 }
