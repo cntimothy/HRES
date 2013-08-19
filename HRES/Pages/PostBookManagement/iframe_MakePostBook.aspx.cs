@@ -356,13 +356,17 @@ namespace HRES.Pages.PostBookManagement
             {
                 Button_Reject.Visible = false;
                 Button_Pass.Visible = false;
+                Button_Export.Visible = false;
                 Button_Reject_Shadow.Visible = false;
                 Button_Pass_Shadow.Visible = false;
+                Button_Export_Shadow.Visible = false;
 
                 ToolbarSeparator4.Visible = false;
                 ToolbarSeparator5.Visible = false;
                 ToolbarSeparator9.Visible = false;
                 ToolbarSeparator10.Visible = false;
+                ToolbarSeparator11.Visible = false;
+                ToolbarSeparator12.Visible = false;
             }
         }
 
