@@ -38,10 +38,10 @@ namespace HRES.Pages.EvaluationManagement
 
             string exception = "";
             string depart = DropDownList_Depart.SelectedValue;
-            string year = DropDownList_Year.SelectedValue;
+            int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
             DataTable table = new DataTable();
             string startTime = "", stopTime = "", evaluationDate = "";
-            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndYear(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
+            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndEvaluation(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
             {
                 Grid1.DataSource = table;
                 Grid1.DataBind();
@@ -58,10 +58,10 @@ namespace HRES.Pages.EvaluationManagement
             //string evaluatedName = Request.QueryString["name"];
             //EvaluationResult evaluationResult;
             string depart = DropDownList_Depart.SelectedValue;
-            string year = DropDownList_Year.SelectedValue;
+            int year = Convert.ToInt32(DropDownList_Year.SelectedValue);
             DataTable table = new DataTable();
             string startTime = "", stopTime = "", evaluationDate = "";
-            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndYear(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
+            if (EvaluationManagementCtrl.GetEvaluationResultByDepartAndEvaluation(ref table, depart, year, ref startTime, ref stopTime, ref evaluationDate, ref exception))
             {
                 string filename = "";
                 if (ExportManagementCtrl.ExportEvaluationResultForDepart(ref filename, depart, table, startTime, stopTime, evaluationDate, ref exception))

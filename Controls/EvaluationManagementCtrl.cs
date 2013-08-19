@@ -535,7 +535,7 @@ namespace Controls
         /// <param name="evaluationDate">考核日期</param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetEvaluationResultByDepartAndYear(ref DataTable table, string depart, string year, ref string evaluationStartTime, ref string evaluationStopTime, ref string evaluationDate, ref string exception)
+        public static bool GetEvaluationResultByDepartAndEvaluation(ref DataTable table, string depart, int year, ref string evaluationStartTime, ref string evaluationStopTime, ref string evaluationDate, ref string exception)
         {
             table.Columns.Add("Name");
             table.Columns.Add("Score");
