@@ -17,21 +17,17 @@ namespace HRES
     public class PageBase : System.Web.UI.Page
     {
         #region OnInit
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            checkSession();
+        }
 
         protected override void OnInit(EventArgs e)
         {
-
+            base.OnInit(e);
+            
             if (!IsPostBack)
             {
-                if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null)
-                {
-                    Session["UserID"] = null;
-                    Session["UserName"] = null;
-                    Session["AccessLevel"] = null;
-                    Session["Depart"] = null;
-                    PageContext.Redirect("../Login.aspx", "_top");
-                    return;
-                }
                 if (PageManager.Instance != null)
                 {
                     HttpCookie themeCookie = Request.Cookies["Theme"];
@@ -57,8 +53,6 @@ namespace HRES
                     }
                 }
             }
-
-            base.OnInit(e);
         }
 
         private bool IsSystemTheme(string themeName)
@@ -860,6 +854,18 @@ namespace HRES
         #endregion
 
         #region Common Method
+        protected void checkSession()
+        {
+            if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null)
+            {
+                Session["UserID"] = null;
+                Session["UserName"] = null;
+                Session["AccessLevel"] = null;
+                Session["Depart"] = null;
+                Response.Redirect("../Login.aspx");
+            }
+        }
+
         /// <summary>
         /// 获取文档状态的字面值，在制作中调用
         /// </summary>
@@ -1019,7 +1025,7 @@ namespace HRES
                 }
             }
             else if (currentStatus == DocStatus.saved)
-            { 
+            {
                 switch (operation)
                 {
                     case DocOperation.save:
@@ -1037,7 +1043,7 @@ namespace HRES
                 }
             }
             else if (currentStatus == DocStatus.submitted)
-            { 
+            {
                 switch (operation)
                 {
                     case DocOperation.save:
@@ -1055,7 +1061,7 @@ namespace HRES
                 }
             }
             else if (currentStatus == DocStatus.rejected)
-            { 
+            {
                 switch (operation)
                 {
                     case DocOperation.save:
@@ -1092,7 +1098,7 @@ namespace HRES
                 }
             }
             else
-            { 
+            {
                 switch (operation)
                 {
                     case DocOperation.save:

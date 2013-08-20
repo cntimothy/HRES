@@ -10,7 +10,7 @@ using DataStructure;
 
 namespace HRES.Pages.AccountManagement
 {
-    public partial class ChangePassword : System.Web.UI.Page
+    public partial class ChangePassword : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
