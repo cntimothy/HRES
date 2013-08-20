@@ -15,9 +15,17 @@ namespace HRES.Pages
     {
         #region Page_Init
 
-        protected new void Page_Init(object sender, EventArgs e)
+        protected void Page_Init(object sender, EventArgs e)
         {
-            base.Page_Init(sender, e);
+            if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null)
+            {
+                Session["UserID"] = null;
+                Session["UserName"] = null;
+                Session["AccessLevel"] = null;
+                Session["Depart"] = null;
+                //PageContext.Redirect(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "Login.aspx", "_top");
+                Response.Redirect("../Login.aspx");
+            }
             // 注册客户端脚本，服务器端控件ID和客户端ID的映射关系
             JObject ids = GetClientIDS(mainTabStrip);
 

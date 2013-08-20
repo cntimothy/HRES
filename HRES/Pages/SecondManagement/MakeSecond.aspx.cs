@@ -16,6 +16,7 @@ namespace HRES.Pages.SecondManagement
         #region Public Method
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindDepartListToDropDownList();

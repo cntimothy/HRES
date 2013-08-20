@@ -11,10 +11,11 @@ using DataStructure;
 
 namespace HRES.Pages.EvaluationManagement
 {
-    public partial class EvaluationResultForIndividual : System.Web.UI.Page
+    public partial class EvaluationResultForIndividual : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindEvaluatedToGrid();

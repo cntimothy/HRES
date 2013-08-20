@@ -14,6 +14,7 @@ namespace HRES.Pages.PostBookManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 loadPostBook();

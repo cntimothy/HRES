@@ -17,6 +17,7 @@ namespace HRES.Pages.PostBookManagement
         #region Page Init
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 BindEvaluatedToGrid();

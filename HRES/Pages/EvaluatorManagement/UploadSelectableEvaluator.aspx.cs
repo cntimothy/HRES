@@ -18,6 +18,7 @@ namespace HRES.Pages.EvaluatorManagement
         #region Protected Method
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindEvaluatorToGrid();

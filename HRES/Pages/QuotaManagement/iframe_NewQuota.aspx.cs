@@ -13,6 +13,7 @@ namespace HRES.Pages.QuotaManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 //Button_Close.OnClientClick = ActiveWindow.GetHideReference();

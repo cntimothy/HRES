@@ -10,10 +10,11 @@ using System.Data;
 
 namespace HRES.Pages.QuotaManagement
 {
-    public partial class QuotaManagement : System.Web.UI.Page
+    public partial class QuotaManagement : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindQuotaLibToGrid();

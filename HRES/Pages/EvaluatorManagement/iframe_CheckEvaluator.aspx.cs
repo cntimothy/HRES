@@ -17,6 +17,7 @@ namespace HRES.Pages.EvaluatorManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();

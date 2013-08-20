@@ -14,7 +14,7 @@ namespace HRES.Pages.AccountManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            checkSession();
         }
 
         protected void Button_ChangePassword_Click(object sender, EventArgs e)

@@ -11,11 +11,12 @@ using System.Data;
 
 namespace HRES.Pages.EvaluatedManagement
 {
-    public partial class MakeEvaluated : System.Web.UI.Page
+    public partial class MakeEvaluated : PageBase
     {
         #region Protected Method
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindDepartListToDropDownList();

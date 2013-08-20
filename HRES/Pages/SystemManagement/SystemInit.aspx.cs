@@ -9,11 +9,11 @@ using FineUI;
 
 namespace HRES.Pages.InitialManagement
 {
-    public partial class SystemInit : System.Web.UI.Page
+    public partial class SystemInit : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            checkSession();
         }
 
         protected void Button_Init_Click(object sender, EventArgs e)

@@ -13,7 +13,11 @@ namespace HRES.Pages.Common
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Button_Cancel.OnClientClick = ActiveWindow.GetConfirmHideReference();
+            checkSession();
+            if (!IsPostBack)
+            {
+                Button_Cancel.OnClientClick = ActiveWindow.GetConfirmHideReference();
+            }
         }
 
         protected void Button_Reject_Click(object sender, EventArgs e)

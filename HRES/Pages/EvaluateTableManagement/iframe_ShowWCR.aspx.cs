@@ -17,6 +17,7 @@ namespace HRES.Pages.EvaluateTableManagement
         {
             if (!IsPostBack)
             {
+                checkSession();
                 Button_Close.OnClientClick = ActiveWindow.GetHideReference();
                 bindWorkContentToDropDownList();
             }

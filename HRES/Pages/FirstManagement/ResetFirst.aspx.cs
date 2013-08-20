@@ -10,12 +10,13 @@ using System.Data;
 
 namespace HRES.Pages.FirstManagement
 {
-    public partial class ResetFirst : System.Web.UI.Page
+    public partial class ResetFirst : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                checkSession();
                 bindFirstToGrid();
             }
         }

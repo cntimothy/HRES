@@ -1915,9 +1915,6 @@
     <Content Include="Pages\QuotaManagement\iframe_NewQuota.aspx" />
     <Content Include="Pages\SecondManagement\MakeSecond.aspx" />
     <Content Include="Pages\SystemManagement\SystemInit.aspx" />
-    <Content Include="Pages\MessageManagement\Inbox.aspx" />
-    <Content Include="Pages\MessageManagement\NewMessage.aspx" />
-    <Content Include="Pages\MessageManagement\Outbox.aspx" />
     <Content Include="Pages\PostBookManagement\CheckPostBook.aspx" />
     <Content Include="Pages\PostBookManagement\MakePostBook.aspx" />
     <Content Include="Pages\QuotaManagement\QuotaManagement.aspx" />
@@ -2164,27 +2161,6 @@
     </Compile>
     <Compile Include="Pages\SystemManagement\SystemInit.aspx.designer.cs">
       <DependentUpon>SystemInit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\Inbox.aspx.cs">
-      <DependentUpon>Inbox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\Inbox.aspx.designer.cs">
-      <DependentUpon>Inbox.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\NewMessage.aspx.cs">
-      <DependentUpon>NewMessage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\NewMessage.aspx.designer.cs">
-      <DependentUpon>NewMessage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\Outbox.aspx.cs">
-      <DependentUpon>Outbox.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\MessageManagement\Outbox.aspx.designer.cs">
-      <DependentUpon>Outbox.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\PostBookManagement\CheckPostBook.aspx.cs">
       <DependentUpon>CheckPostBook.aspx</DependentUpon>

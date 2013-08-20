@@ -17,10 +17,6 @@ namespace HRES
     public class PageBase : System.Web.UI.Page
     {
         #region OnInit
-        protected void Page_Init(object sender, EventArgs e)
-        {
-            checkSession();
-        }
 
         protected override void OnInit(EventArgs e)
         {
@@ -858,11 +854,12 @@ namespace HRES
         {
             if (Session["UserID"] == null || Session["UserName"] == null || Session["AccessLevel"] == null || Session["Depart"] == null)
             {
+                Alert.ShowInTop("网页已过期，请重新登录！", MessageBoxIcon.Information);
                 Session["UserID"] = null;
                 Session["UserName"] = null;
                 Session["AccessLevel"] = null;
                 Session["Depart"] = null;
-                Response.Redirect("../Login.aspx");
+                PageContext.Redirect(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "Login.aspx", "_top");
             }
         }
 

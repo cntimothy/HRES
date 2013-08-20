@@ -10,10 +10,11 @@ using Controls;
 
 namespace HRES.Pages.EvaluationManagement
 {
-    public partial class StopEvaluation : System.Web.UI.Page
+    public partial class StopEvaluation : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            checkSession();
             if (!IsPostBack)
             {
                 bindEvaluatedToGrid();
