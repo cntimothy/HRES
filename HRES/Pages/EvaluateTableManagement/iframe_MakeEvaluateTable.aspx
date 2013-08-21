@@ -21,11 +21,11 @@
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator1" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click">
+                            <x:Button ID="Button_Save" runat="server" Text="保存" OnClick="Button_Save_Click" ConfirmTitle="提示" ConfirmText="确定保存？">
                             </x:Button>
                             <x:ToolbarSeparator ID="ToolbarSeparator2" runat="server">
                             </x:ToolbarSeparator>
-                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click">
+                            <x:Button ID="Button_Submit" runat="server" Text="提交" OnClick="Button_Submit_Click" ConfirmTitle="提示" ConfirmText="确定提交？">
                             </x:Button>
                             <x:ToolbarFill ID="ToolbarFill1" runat="server">
                             </x:ToolbarFill>

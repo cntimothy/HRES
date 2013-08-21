@@ -262,7 +262,7 @@ namespace Controls
             evaluateTable.Status = DocStatus.submitted;
             evaluateTable.Comment = "很不好";
             evaluateTable.Reject.Add(reject1);
-            return false;
+            return true;
         }
 
         /// <summary>

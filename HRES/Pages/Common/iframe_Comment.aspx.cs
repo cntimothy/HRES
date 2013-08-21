@@ -39,6 +39,7 @@ namespace HRES.Pages.Common
                     PostBookManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
                     Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else
                 {
@@ -51,6 +52,7 @@ namespace HRES.Pages.Common
                     EvaluatorManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
                     Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else
                 {
@@ -63,6 +65,7 @@ namespace HRES.Pages.Common
                     EvaluateTableManagementCtrl.UpdateComment(TextArea_Comment.Text, Request.QueryString["id"], ref exception))
                 {
                     Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                    PageContext.RegisterStartupScript(ActiveWindow.GetHideReference());
                 }
                 else
                 {

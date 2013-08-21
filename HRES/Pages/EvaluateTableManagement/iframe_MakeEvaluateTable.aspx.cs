@@ -157,11 +157,12 @@ namespace HRES.Pages.EvaluateTableManagement
             string exception = "";
             if (EvaluateTableManagementCtrl.UpdateEvaluateTable(evaluatedID, evaluateTable, nextStatus, ref exception))
             {
-                Alert.ShowInTop("保存成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
             }
             else
             {
-                Alert.ShowInTop("保存失败！\n原因：" + exception, MessageBoxIcon.Error);
+                Alert.ShowInTop("提交失败！\n原因：" + exception, MessageBoxIcon.Error);
             }
         }
         #endregion

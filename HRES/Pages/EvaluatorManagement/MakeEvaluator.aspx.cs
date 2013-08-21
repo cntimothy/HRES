@@ -21,7 +21,6 @@ namespace HRES.Pages.EvaluatorManagement
             {
                 BindEvaluatedToGrid();
             }
-
         }
         #endregion
 

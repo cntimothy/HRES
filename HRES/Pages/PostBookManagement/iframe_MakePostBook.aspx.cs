@@ -17,16 +17,15 @@ namespace HRES.Pages.PostBookManagement
             checkSession();
             if (!IsPostBack)
             {
-                loadPostBook();
-                //Button_Close.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-                //Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHidePostBackReference();
-
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Button_Close_Shadow.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Button_Reject.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"] + "&parent=checkpostbook", "审核意见");
                 Button_Reject_Shadow.OnClientClick = Window1.GetShowReference("../Common/iframe_Comment.aspx?id=" + Request.QueryString["id"], "审核意见");
-                setToolbarVisible();
-                setEnabled();
+
+                loadPostBook();     //载入岗位责任书
+
+                setToolbarVisible();    //根据用户身份，设置工具栏中按钮的可见性
+                setEnabled();           //根据岗位责任书的状态设置按钮的可用性
             }
         }
 
@@ -80,7 +79,8 @@ namespace HRES.Pages.PostBookManagement
 
             if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
-                Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
             }
             else
             {
@@ -334,6 +334,9 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
+        /// <summary>
+        /// 根据用户身份设置工具栏中按钮的可见性
+        /// </summary>
         private void setToolbarVisible()
         {
             AccessLevel accessLevel = (AccessLevel)Enum.Parse(typeof(AccessLevel), Session["AccessLevel"].ToString());
@@ -371,6 +374,9 @@ namespace HRES.Pages.PostBookManagement
             }
         }
 
+        /// <summary>
+        /// 根据岗位责任书的当前状态设置按钮的可用性
+        /// </summary>
         private void setEnabled()
         {
             DocStatus curStatus = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);

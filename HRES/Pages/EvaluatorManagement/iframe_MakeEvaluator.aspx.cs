@@ -26,7 +26,8 @@ namespace HRES.Pages.EvaluatorManagement
                 Button_Close.OnClientClick = ActiveWindow.GetConfirmHideRefreshReference();
                 Panel1.Title = Request.QueryString["name"] + "的考评人名单";
                 bindEvaluatorToGrid();
-                SetSubmitted();
+                SetSubmitted();         //将已提交的名单显示在页面上
+                Label_Comment.Text = Request.QueryString["Comment"];
                 DocStatus status = (DocStatus)Enum.Parse(typeof(DocStatus), Request.QueryString["status"]);
                 if (status == DocStatus.submitted || status == DocStatus.passed)
                 {
@@ -88,7 +89,8 @@ namespace HRES.Pages.EvaluatorManagement
             }
             if (EvaluatorManagementCtrl.SubmitEvaluator(evaluatedID, idRelationDic, is360, ref exception))
             {
-                Alert.ShowInTop("提交成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
             }
             else
             {
@@ -117,6 +119,9 @@ namespace HRES.Pages.EvaluatorManagement
             }
         }
 
+        /// <summary>
+        /// 将已提交的名单显示在页面上
+        /// </summary>
         private void SetSubmitted()
         {
             string evaluated = Request.QueryString["id"];

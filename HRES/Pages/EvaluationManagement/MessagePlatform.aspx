@@ -13,7 +13,7 @@
         Title="考评人名单" Layout="Fit">
         <Items>
             <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-                Title="Panel2" AutoScroll="true" Layout="VBox" BoxConfigChildMargin="0 0 5 0">
+                Title="Panel2" AutoScroll="true">
                 <Items>
                     <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                         <Items>
@@ -35,23 +35,35 @@
                             </x:DropDownList>
                         </Items>
                     </x:SimpleForm>
-                    <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
-                        PageSize="15" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
-                        AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone" EnableMultiSelect="true"
-                        ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true">
-                        <Columns>
-                            <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
-                            <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                            <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
-                            <x:BoundField Width="100px" DataField="Company" DataFormatString="{0}" HeaderText="工作单位" />
-                            <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
-                        </Columns>
-                    </x:Grid>
-                    <x:Label ID="Label2" runat="server" Label="Label" Text="请输入信息内容">
-                    </x:Label>
-                    <x:TextArea ID="TextArea_Message" runat="server" Height="50px" Label="Label" Text=""
-                        ShowRedStar="true" Required="true" CssStyle="width:90%">
-                    </x:TextArea>
+                    <x:Panel ID="Panel3" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
+                        Title="Panel3" Layout="HBox" BoxConfigPadding="5 5 5 0">
+                        <Items>
+                            <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
+                                PageSize="20" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
+                                AutoPostBack="false" DataKeyNames="ID, Name, Sex, Company, Telephone" EnableMultiSelect="true"
+                                ClearSelectedRowsAfterPaging="false" EnableCheckBoxSelect="true" CheckBoxSelectOnly="true"
+                                Width="680px">
+                                <Columns>
+                                    <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
+                                    <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                                    <x:BoundField Width="100px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
+                                    <x:BoundField Width="100px" ExpandUnusedSpace="true" DataField="Company" DataFormatString="{0}"
+                                        HeaderText="工作单位" />
+                                    <x:BoundField Width="100px" DataField="Telephone" DataFormatString="{0}" HeaderText="联系电话" />
+                                </Columns>
+                            </x:Grid>
+                            <x:Panel ID="Panel4" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
+                                Title="Panel3" >
+                                <Items>
+                                    <x:Label ID="Label2" runat="server" Label="Label" Text="请输入信息内容">
+                                    </x:Label>
+                                    <x:TextArea ID="TextArea_Message" runat="server" Height="100px" Label="Label" Text=""
+                                        ShowRedStar="true" Required="true" Width="350px" EmptyText="最多70字">
+                                    </x:TextArea>
+                                </Items>
+                            </x:Panel>
+                        </Items>
+                    </x:Panel>
                 </Items>
             </x:Panel>
         </Items>

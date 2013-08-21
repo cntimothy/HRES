@@ -31,7 +31,7 @@
                             </x:ToolbarFill>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="审核意见：">
                             </x:Label>
-                            <x:Label ID="Label2" runat="server" Label="Label" Text="">
+                            <x:Label ID="Label_Comment" runat="server" Label="Label" Text="">
                             </x:Label>
                         </Items>
                     </x:Toolbar>
