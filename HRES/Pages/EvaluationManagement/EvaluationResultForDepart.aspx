@@ -10,12 +10,12 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel" Layout="Fit">
+        Title="Panel" Layout="Fit" AutoScroll="true">
         <Items>
             <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
                 Title="Panel" AutoScroll="true">
                 <Items>
-                    <x:Toolbar ID="Toolbar1" runat="server">
+                    <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                         <Items>
                             <x:DropDownList ID="DropDownList_Depart" runat="server" Label="部门">
                                 <x:ListItem EnableSelect="false" Text="请选择部门" Value="-1" />
@@ -46,7 +46,7 @@
                             </x:FormRow>
                         </Rows>
                     </x:Form>
-                    <x:Grid ID="Grid1" runat="server" Title="Grid" EnableRowNumber="true" AutoHeight="true" >
+                    <x:Grid ID="Grid1" runat="server" Title="Grid" EnableRowNumber="true" AutoHeight="true" Width="800px">
                         <Columns>
                             <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="150px" DataField="Score" DataFormatString="{0}" HeaderText="考核得分" />

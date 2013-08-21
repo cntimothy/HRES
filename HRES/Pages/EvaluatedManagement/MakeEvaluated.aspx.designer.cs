@@ -139,31 +139,22 @@ namespace HRES.Pages.EvaluatedManagement {
         protected global::FineUI.Button Button_DownloadTemplate;
         
         /// <summary>
-        /// Panel2 控件。
+        /// SimpleForm2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Panel Panel2;
+        protected global::FineUI.SimpleForm SimpleForm2;
         
         /// <summary>
-        /// DepartDropDownList 控件。
+        /// DropDownList_Depart 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList DepartDropDownList;
-        
-        /// <summary>
-        /// Label3 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::FineUI.Label Label3;
+        protected global::FineUI.DropDownList DropDownList_Depart;
         
         /// <summary>
         /// Panel3 控件。

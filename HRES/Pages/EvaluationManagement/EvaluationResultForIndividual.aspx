@@ -10,12 +10,12 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel" Layout="Fit">
+        Title="Panel" Layout="Fit" AutoScroll="true">
         <Items>
             <x:Panel ID="Panel2" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
                 Title="Panel" AutoScroll="true" Layout="VBox" BoxConfigChildMargin="0 0 5 0">
                 <Items>
-                    <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:100%">
+                    <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                         <Items>
                             <x:Label ID="Label1" runat="server" Label="Label" Text="请选择查看范围">
                             </x:Label>
@@ -29,7 +29,7 @@
                         </Items>
                     </x:Toolbar>
                     <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox" BoxConfigChildMargin="0 5 5 5"
-                        ShowHeader="false" CssStyle="width:100%">
+                        ShowHeader="false" Width="1050px">
                         <Items>
                             <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" Height="500px"
                                 AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="730px"

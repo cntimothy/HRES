@@ -9,16 +9,16 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel1">
+        Title="Panel1" AutoScroll="true" >
         <Items>
-            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:100%">
+            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                 <Items>
                     <x:Button ID="Refresh" runat="server" Text="刷新" OnClick="Refresh_Click">
                     </x:Button>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                Title="" CssStyle="width:100%" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
+                Title="" Width="1050px" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
                 <Items>
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"

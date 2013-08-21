@@ -67,7 +67,7 @@ namespace HRES.Pages.SecondManagement
             Grid1.PageIndex = e.NewPageIndex;
         }
 
-        protected void DepartChange(object sender, EventArgs e)
+        protected void DropDownList_Depart_SelectedChanged(object sender, EventArgs e)
         {
             bindSecondToGrid();
         }
@@ -120,8 +120,8 @@ namespace HRES.Pages.SecondManagement
             if (CommonCtrl.GetDeparts(ref departs, ref exception))
             {
                 departs.Insert(0, "所有部门");
-                DepartDropDownList.DataSource = departs;
-                DepartDropDownList.DataBind();
+                DropDownList_Depart.DataSource = departs;
+                DropDownList_Depart.DataBind();
             }
         }
 
@@ -129,7 +129,7 @@ namespace HRES.Pages.SecondManagement
         {
             string exception = "";
             DataTable table = new DataTable();
-            if (DepartDropDownList.SelectedValue == "所有部门")
+            if (DropDownList_Depart.SelectedValue == "所有部门")
             {
                 if (SecondManagementCtrl.GetAll(ref table, ref exception))
                 {
@@ -139,7 +139,7 @@ namespace HRES.Pages.SecondManagement
             }
             else
             {
-                string depart = DepartDropDownList.SelectedValue;
+                string depart = DropDownList_Depart.SelectedValue;
                 if (SecondManagementCtrl.GetAllByDepart(ref table, depart, ref exception))
                 {
                     Grid1.DataSource = table;
