@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using FineUI;
 using System.Data;
 using Controls;
+using DataStructure;
 
 namespace HRES.Pages.EvaluationManagement
 {
@@ -22,6 +23,22 @@ namespace HRES.Pages.EvaluationManagement
         }
 
         #region Event
+        protected void Grid1_PreRowDataBound(object sender, FineUI.GridPreRowEventArgs e)
+        {
+            LinkButtonField linkButtonField_Operation = Grid1.FindColumn("LinkButtonField_Operation") as LinkButtonField;
+            DataRowView row = e.DataItem as DataRowView;
+            string strStatus = row["Status"].ToString();
+            EvaluationStatus status = (EvaluationStatus)Enum.Parse(typeof(EvaluationStatus), strStatus);
+            if (status == EvaluationStatus.unstart || status == EvaluationStatus.stopped)
+            {
+                linkButtonField_Operation.Enabled = false;
+            }
+            else
+            {
+                linkButtonField_Operation.Enabled = true;
+            }
+        }
+
         protected void Grid1_PageIndexChange(object sender, FineUI.GridPageEventArgs e)
         {
             Grid1.PageIndex = e.NewPageIndex;

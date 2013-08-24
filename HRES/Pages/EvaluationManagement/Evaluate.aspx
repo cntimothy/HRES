@@ -14,14 +14,14 @@
             <x:Panel ID="Panel2" runat="server" BodyPadding="00px" ShowBorder="false" ShowHeader="false"
                 Title="Panel" AutoScroll="true">
                 <Items>
-                    <x:Toolbar ID="Toolbar1" runat="server">
+                    <x:Toolbar ID="Toolbar1" runat="server" CssStyle="99.7%">
                         <Items>
                             <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                             </x:Button>
                         </Items>
                     </x:Toolbar>
                     <x:Panel ID="Panel3" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                        Title="Panel">
+                        Title="Panel" Width="800px">
                         <Items>
                             <x:Grid ID="Grid1" runat="server" Title="被考评人名单" AllowPaging="true" PageSize="20"
                                 DataKeyNames="ID,Relation,Status" EnableRowNumber="true" Width="760px">

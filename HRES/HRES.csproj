@@ -66,7 +66,6 @@
     <Content Include="common\menuForSuper.xml" />
     <Content Include="css\default.css" />
     <Content Include="css\main.css" />
-    <Content Include="Default.aspx" />
     <Content Include="icon\accept.png" />
     <Content Include="icon\add.png" />
     <Content Include="icon\anchor.png" />
@@ -1944,13 +1943,6 @@
   <ItemGroup>
     <Compile Include="Code\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AccountManagement\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>

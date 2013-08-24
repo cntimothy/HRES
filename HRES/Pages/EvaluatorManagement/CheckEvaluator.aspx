@@ -1,7 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckEvaluator.aspx.cs" Inherits="HRES.Pages.EvaluatorManagement.CheckEvaluator" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckEvaluator.aspx.cs"
+    Inherits="HRES.Pages.EvaluatorManagement.CheckEvaluator" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -10,9 +10,9 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel1">
+        Title="Panel1" AutoScroll="true">
         <Items>
-            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:100%">
+            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                 <Items>
                     <x:Label ID="Label1" runat="server" Label="Label" Text="请选择部门：">
                     </x:Label>
@@ -27,18 +27,19 @@
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                Title="" CssStyle="width:100%" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
+                Title="" Width="1050px" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
                 <Items>
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment" OnPreRowDataBound="Grid1_PreRowDataBound">
+                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
+                        OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13" SortDirection="ASC" OnSort="Grid1_Sort">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"
                                 Hidden="true" />
-                            <x:BoundField Width="50px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                            <x:BoundField Width="100px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
                             <x:BoundField Width="40px" DataField="Sex" DataFormatString="{0}" HeaderText="性别" />
                             <x:BoundField Width="80px" DataField="Depart" DataFormatString="{0}" HeaderText="工作单位" />
                             <x:BoundField Width="100px" DataField="Job" DataFormatString="{0}" HeaderText="岗位（职务）" />
@@ -56,15 +57,15 @@
                                 Hidden="true" />
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
-                            <x:TemplateField Width="50px" HeaderText="状态">
+                            <x:TemplateField SortField="Status" Width="50px" HeaderText="状态">
                                 <ItemTemplate>
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatusForCheck(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
-                            <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
-                            <x:WindowField ColumnID="WindowField_Check" TextAlign="Center" Width="80px" WindowID="Window_CheckEvaluator" Text="审核"
-                                ToolTip="审核考评人名单" Title="审核" IFrameUrl="iframe_CheckEvaluator.aspx" DataIFrameUrlFields="ID,Name,Status"
-                                DataIFrameUrlFormatString="iframe_CheckEvaluator.aspx?id={0}&name={1}&status={2}" />
+                            <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+                            <x:WindowField ColumnID="WindowField_Check" TextAlign="Center" Width="80px" WindowID="Window_CheckEvaluator"
+                                Text="审核" ToolTip="审核考评人名单" Title="审核" IFrameUrl="iframe_CheckEvaluator.aspx"
+                                DataIFrameUrlFields="ID,Name,Status" DataIFrameUrlFormatString="iframe_CheckEvaluator.aspx?id={0}&name={1}&status={2}" />
                         </Columns>
                     </x:Grid>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="5px" Title="详细信息" Width="300px">
@@ -108,7 +109,7 @@
     <x:Window ID="Window_CheckEvaluator" Title="弹出窗体" Popup="false" EnableIFrame="true"
         IFrameUrl="about:blank" EnableMaximize="true" Target="Top" EnableResize="true"
         runat="server" OnClose="Window_CheckEvaluator_Close" IsModal="true" CssStyle="width:80%"
-        EnableConfirmOnClose="true" Height="560px" EnableClose="true" AutoHeight="true"  >
+        EnableConfirmOnClose="true" Height="560px" EnableClose="true" AutoHeight="true">
     </x:Window>
     </form>
 </body>

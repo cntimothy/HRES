@@ -31,6 +31,15 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.PageManager PageManager1;
         
         /// <summary>
+        /// Panel1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.Panel Panel1;
+        
+        /// <summary>
         /// Toolbar1 控件。
         /// </summary>
         /// <remarks>
@@ -112,22 +121,31 @@ namespace HRES.Pages.SecondManagement {
         protected global::FineUI.Button Button_DownloadTemplate;
         
         /// <summary>
-        /// DepartDropDownList 控件。
+        /// Panel2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.DropDownList DepartDropDownList;
+        protected global::FineUI.Panel Panel2;
         
         /// <summary>
-        /// Label1 控件。
+        /// SimpleForm1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Label Label1;
+        protected global::FineUI.SimpleForm SimpleForm1;
+        
+        /// <summary>
+        /// DropDownList_Depart 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FineUI.DropDownList DropDownList_Depart;
         
         /// <summary>
         /// Grid1 控件。

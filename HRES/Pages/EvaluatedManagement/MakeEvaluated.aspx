@@ -9,11 +9,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1"/>
+    <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="false"
-        Layout="VBox" Title="Panel">
+        Title="Panel" AutoScroll="true">
         <Items>
-            <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server" >
+            <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server" CssStyle="99.7%">
                 <Items>
                     <x:FileUpload ID="ExcelFile" Label="Label" runat="server" ButtonText="选择Excel文件"
                         ButtonOnly="true" AutoPostBack="true" OnFileSelected="FileSelected">
@@ -30,31 +30,32 @@
                     </x:Button>
                     <x:ToolbarSeparator ID="ToolbarSeparator3" runat="server">
                     </x:ToolbarSeparator>
-                    <x:Button ID="DeleteAll" runat="server" OnClick="DeleteAll_Click" Text="删除所有" Enabled="true" ConfirmTitle="提示" ConfirmText = "确认删除所有被考评人？">
+                    <x:Button ID="DeleteAll" runat="server" OnClick="DeleteAll_Click" Text="删除所有" Enabled="true"
+                        ConfirmTitle="提示" ConfirmText="确认删除所有被考评人？">
                     </x:Button>
                     <x:ToolbarFill ID="ToolbarFill1" runat="server">
                     </x:ToolbarFill>
-                    <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click" EnableAjax="false">
+                    <x:Button ID="Button_DownloadTemplate" runat="server" Text="下载模板" OnClick="Button_DownloadTemplate_Click"
+                        EnableAjax="false">
                     </x:Button>
                 </Items>
             </x:Toolbar>
-            <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false" Layout="HBox"
-                Title="Panel" CssStyle="width:100%">
+            <x:SimpleForm ID="SimpleForm2" runat="server" BodyPadding="5px" Title="SimpleForm"
+                ShowHeader="false" ShowBorder="false" Width="520px">
                 <Items>
-                    <x:DropDownList runat="server" ID="DepartDropDownList" AutoPostBack="true" OnSelectedIndexChanged="DepartChange">
+                    <x:DropDownList runat="server" ID="DropDownList_Depart" AutoPostBack="true" OnSelectedIndexChanged="DropDownList_Depart_SelectedChanged"
+                        Label="请选择部门">
                     </x:DropDownList>
-                    <x:Label ID="Label3" runat="server" Label="Label" Text="被考评人名单:">
-                    </x:Label>
                 </Items>
-            </x:Panel>
-            <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox"  BoxConfigChildMargin="0 5 5 5"
-                ShowHeader="false" CssStyle="width:100%">
+            </x:SimpleForm>
+            <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox" BoxConfigChildMargin="0 5 5 5"
+                ShowHeader="false" Width="1050px">
                 <Items>
                     <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" Height="500px"
                         AllowPaging="true" runat="server" EnableCheckBoxSelect="false" Width="730px"
                         DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime"
                         OnPageIndexChange="Grid1_PageIndexChange" EnableRowSelect="true" OnRowSelect="GridRowSelect"
-                        EnableRowNumber="True" OnRowCommand="Grid1_RowCommand" >
+                        EnableRowNumber="True" OnRowCommand="Grid1_RowCommand">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名" />
                             <x:BoundField Width="100px" DataField="Date" DataFormatString="{0}" HeaderText="入职时间"

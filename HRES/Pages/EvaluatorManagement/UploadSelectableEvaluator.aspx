@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="true" ShowHeader="false"
-        Layout="VBox" Title="Panel">
+        Title="Panel" AutoScroll="true">
         <Items>
-            <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server">
+            <x:Toolbar ID="Toolbar1" Position="Top" CssClass="mytoolbar" runat="server" CssStyle="width:99.7%">
                 <Items>
                     <x:FileUpload ID="ExcelFile" Label="Label" runat="server" ButtonText="选择Excel文件"
                         ButtonOnly="true" AutoPostBack="true" OnFileSelected="FileSelected">
@@ -40,7 +40,7 @@
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel3" runat="server" ShowBorder="false" Layout="HBox" BoxConfigChildMargin="5"
-                ShowHeader="false" CssStyle="width:100%">
+                ShowHeader="false" Width="700px">
                 <Items>
                     <x:Grid ID="Grid1" Title="名单" PageSize="20" ShowBorder="true" ShowHeader="true" Height="500px"
                         AllowPaging="true" runat="server" Width="680px" DataKeyNames="ID, Date, Name, Sex, Company, Telephone"

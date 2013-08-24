@@ -10,21 +10,22 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-        Title="Panel1">
+        Title="Panel1" AutoScroll="true">
         <Items>
-            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:100%">
+            <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                 <Items>
                     <x:Button ID="Button_Refresh" runat="server" Text="刷新" OnClick="Button_Refresh_Click">
                     </x:Button>
                 </Items>
             </x:Toolbar>
             <x:Panel ID="Panel2" runat="server" BodyPadding="5px" ShowBorder="false" ShowHeader="false"
-                Title="" CssStyle="width:100%" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
+                Title="" Width="1050px" Layout="HBox" BoxConfigChildMargin="0, 5, 0, 0">
                 <Items>
                     <x:Grid ID="Grid1" runat="server" Title="被考评人名单" Width="730px" PageSize="20" ShowBorder="true"
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
-                        EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick" OnRowCommand="Grid1_RowCommand" 
-                        EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment">
+                        EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
+                        OnRowCommand="Grid1_RowCommand" EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
+                        OnPreRowDataBound="Grid1_PreRowDataBound">
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -49,7 +50,12 @@
                             <x:BoundField Width="100px" DataField="StopTime" DataFormatString="{0}" HeaderText="考评结束时间"
                                 Hidden="true" />
                             <x:BoundField Width="200px" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
-                            <x:LinkButtonField HeaderText="操作" Width="100px" ConfirmText="确定结束所选人员的考评？" ConfirmTarget="Top"
+                            <x:TemplateField Width="100px" HeaderText="状态">
+                                <ItemTemplate>
+                                    <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatus(Eval("Status")) %>'></asp:Label>
+                                </ItemTemplate>
+                            </x:TemplateField>
+                            <x:LinkButtonField ColumnID="LinkButtonField_Operation" HeaderText="操作" Width="100px" ConfirmText="确定结束所选人员的考评？" ConfirmTarget="Top"
                                 CommandName="Stop" Text="结束考评" />
                         </Columns>
                     </x:Grid>

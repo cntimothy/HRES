@@ -27,7 +27,7 @@
                         </Items>
                     </x:Toolbar>
                     <x:SimpleForm ID="SimpleForm1" runat="server" BodyPadding="0px" Title="SimpleForm"
-                        ShowBorder="false" ShowHeader="false">
+                        ShowBorder="false" ShowHeader="false" Width="600px">
                         <Items>
                             <x:DropDownList ID="DropDownList1" runat="server" Label="请选择部门" AutoPostBack="true"
                                 OnSelectedIndexChanged="DropDownList1_SelectedChanged">
@@ -36,7 +36,7 @@
                         </Items>
                     </x:SimpleForm>
                     <x:Panel ID="Panel3" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
-                        Title="Panel3" Layout="HBox" BoxConfigPadding="5 5 5 0">
+                        Title="Panel3" Layout="HBox" BoxConfigPadding="5 5 5 0" Width="1100">
                         <Items>
                             <x:Grid ID="Grid1" runat="server" Title="Grid" ShowHeader="false" AllowPaging="true"
                                 PageSize="20" Height="500px" OnPageIndexChange="Grid1_PageIndexChange" EnableRowNumber="true"
