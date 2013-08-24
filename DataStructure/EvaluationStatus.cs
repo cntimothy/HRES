@@ -10,9 +10,8 @@ namespace DataStructure
     /// </summary>
     public enum EvaluationStatus
     {
-        unstart,        //未开始
-        started,        //已开始
-        finished,       //已完成
-        stopped,       //已结束
+        uninitial,       //未初始化
+        unstarted,      //未开始
+        started         //一开始
     }
 }

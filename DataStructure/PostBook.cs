@@ -274,7 +274,9 @@ namespace DataStructure
 
         #region Constructor
         public PostBook()
-        { }
+        {
+            comment = "";
+        }
         #endregion
     }
 }

@@ -208,10 +208,10 @@ namespace Controls
         /// <returns></returns>
         public static bool GetQuota(ref List<string> quota, string level1, string level2, ref string exception)
         {
-            quota[0] = "容易取得他人信任，建立起长期的牢固的合作关系，并占据主导地位";
-            quota[1] = "容易与他人建立可信赖的积极发展的长期关系";
-            quota[2] = "能够与他人建立可信赖的长期关系";
-            quota[3] = "能够与他人建立一定的合作关系，较为自我";
+            quota.Add("容易取得他人信任，建立起长期的牢固的合作关系，并占据主导地位");
+            quota.Add("容易与他人建立可信赖的积极发展的长期关系");
+            quota.Add("能够与他人建立可信赖的长期关系");
+            quota.Add("能够与他人建立一定的合作关系，较为自我");
             return true;
         }
 

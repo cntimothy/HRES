@@ -286,11 +286,12 @@ namespace DataStructure
             qualify = new List<Quota>();
             attitude = new List<Quota>();
             reject = new List<Quota>();
-            keyWeight = "0.5";
-            responseWeight = "0.2";
-            qualifyWeitht = "0.15";
-            attitudeWeight = "0.15";
-            rejectWeight = "1";
+            keyWeight = "05";
+            responseWeight = "20";
+            qualifyWeitht = "15";
+            attitudeWeight = "15";
+            rejectWeight = "100";
+            comment = "";
         }
         #endregion
 

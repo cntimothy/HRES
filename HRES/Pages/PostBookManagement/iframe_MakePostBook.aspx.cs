@@ -73,6 +73,17 @@ namespace HRES.Pages.PostBookManagement
                 }
             }
 
+            List<string> tempTitleList = new List<string>();        //检查工作内容与要求中的标题是否有重复项
+            foreach (string[] item in pb.WorkContentRequest)
+            {
+                if (tempTitleList.Contains(item[0]))
+                {
+                    Alert.ShowInTop("工作内容与要求中有重复项，请重新填写", MessageBoxIcon.Error);
+                    return;
+                }
+                tempTitleList.Add(item[0]);
+            }
+
             DocStatus curStatus = (DocStatus)Convert.ToInt32(Request.QueryString["status"]);
             DocStatus nextStatus = GetNextDocStatus(curStatus, DocOperation.submit);
             pb.Status = nextStatus;         //填写下一个状态域
@@ -80,7 +91,7 @@ namespace HRES.Pages.PostBookManagement
             if (PostBookManagementCtrl.UpdatePostBook(pb, ref exception))
             {
                 Alert.ShowInTop("提交成功！\n窗口即将关闭", MessageBoxIcon.Information);
-                PageContext.RegisterStartupScript(ActiveWindow.GetConfirmHideRefreshReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {
@@ -138,7 +149,8 @@ namespace HRES.Pages.PostBookManagement
             string evaluatedID = Request.QueryString["id"];
             if (PostBookManagementCtrl.SetPass(evaluatedID, ref exception))
             {
-                Alert.ShowInTop("设置成功！", MessageBoxIcon.Information);
+                Alert.ShowInTop("设置成功！\n窗口即将关闭", MessageBoxIcon.Information);
+                PageContext.RegisterStartupScript(ActiveWindow.GetHideRefreshReference());
             }
             else
             {
