@@ -9,7 +9,11 @@
     <form id="form1" runat="server">
     <x:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel1" />
     <x:Panel ID="Panel1" runat="server" BodyPadding="0px" ShowBorder="false" ShowHeader="false"
+<<<<<<< HEAD
         Title="Panel1" AutoScroll="true">
+=======
+        Title="Panel1" AutoScroll="true" >
+>>>>>>> 9cfa5baca2a28253253824cb03357b90d057aba0
         <Items>
             <x:Toolbar ID="Toolbar1" runat="server" CssStyle="width:99.7%">
                 <Items>

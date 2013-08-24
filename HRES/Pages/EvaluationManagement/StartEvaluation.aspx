@@ -65,7 +65,11 @@
                             <x:BoundField Width="200px" DataField="Summary" DataFormatString="{0}" HeaderText="考评完成情况" />
                             <x:TemplateField Width="100px" HeaderText="状态">
                                 <ItemTemplate>
+<<<<<<< HEAD
                                     <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatusForEvaluated(Eval("Status")) %>'></asp:Label>
+=======
+                                    <asp:Label ID="Status" runat="server" Text='<%# GetEvaluationStatus(Eval("Status")) %>'></asp:Label>
+>>>>>>> 9cfa5baca2a28253253824cb03357b90d057aba0
                                 </ItemTemplate>
                             </x:TemplateField>
                         </Columns>

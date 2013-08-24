@@ -33,7 +33,11 @@
                         ShowHeader="true" Height="500px" AllowPaging="true" OnPageIndexChange="Grid1_PageIndexChange"
                         EnableRowClickEvent="true" EnableRowClick="true" OnRowClick="Grid1_RowClick"
                         EnableRowNumber="True" AutoPostBack="true" DataKeyNames="ID, Date, Name, Sex, Depart, Job, IDNo, Birthday, Fund, Character, Company, StartTime, StopTime, Status, Comment"
+<<<<<<< HEAD
                         OnPreRowDataBound="Grid1_PreRowDataBound" AllowSorting="true" SortColumnIndex="13" SortDirection="DESC" OnSort="Grid1_Sort">
+=======
+                        OnPreRowDataBound="Grid1_PreRowDataBound">
+>>>>>>> 9cfa5baca2a28253253824cb03357b90d057aba0
                         <Columns>
                             <x:BoundField Width="100px" DataField="ID" DataFormatString="{0}" HeaderText="用户名"
                                 Hidden="true" />
@@ -62,7 +66,11 @@
                                     <asp:Label ID="Status" runat="server" Text='<%# GetDocStatusForCheck(Eval("Status")) %>'></asp:Label>
                                 </ItemTemplate>
                             </x:TemplateField>
+<<<<<<< HEAD
                             <x:BoundField ExpandUnusedSpace="true" Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+=======
+                            <x:BoundField Width="200px" DataField="Comment" DataFormatString="{0}" HeaderText="审核意见" />
+>>>>>>> 9cfa5baca2a28253253824cb03357b90d057aba0
                             <x:WindowField ColumnID="WindowField_Check" TextAlign="Center" Width="80px" WindowID="Window_CheckEvaluator"
                                 Text="审核" ToolTip="审核考评人名单" Title="审核" IFrameUrl="iframe_CheckEvaluator.aspx"
                                 DataIFrameUrlFields="ID,Name,Status" DataIFrameUrlFormatString="iframe_CheckEvaluator.aspx?id={0}&name={1}&status={2}" />
