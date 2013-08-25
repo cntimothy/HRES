@@ -45,6 +45,8 @@
     <Compile Include="DocOperation.cs" />
     <Compile Include="EvaluationResult.cs" />
     <Compile Include="EvaluationStatus.cs" />
+    <Compile Include="EvaluationStatusForEvaluated.cs" />
+    <Compile Include="EvaluationStatusForEvaluator.cs" />
     <Compile Include="LoginType.cs" />
     <Compile Include="DocStatus.cs" />
     <Compile Include="EvaluateTable.cs" />
