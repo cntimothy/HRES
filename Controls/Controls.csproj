@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="AccountManagementCtrl.cs" />
     <Compile Include="CommonCtrl.cs" />
+    <Compile Include="DataBaseManagementCtrl.cs" />
     <Compile Include="EvaluatedManagementCtrl.cs" />
     <Compile Include="EvaluateTableManagementCtrl.cs" />
     <Compile Include="EvaluationManagementCtrl.cs" />

@@ -19,20 +19,36 @@ namespace Controls
         /// <returns></returns>
         public static bool LoginIn(ref UserInfo userInfo, string ID, string passWord, LoginType loginType, ref string exception)
         {
-            if (ID == "admin1")
+            if (ID == "super")
             {
                 userInfo.Id = ID;
-                userInfo.Name = "Kaven1";
+                userInfo.Name = "超级管理员";
+                userInfo.Depart = "";
+                userInfo.AccessLevel = AccessLevel.superManager;
+                exception = "不存在该用户";
+            }
+            else if (ID == "admin1")
+            {
+                userInfo.Id = ID;
+                userInfo.Name = "人事处管理员";
                 userInfo.Depart = "";
                 userInfo.AccessLevel = AccessLevel.firstManager;
                 exception = "不存在该用户";
             }
-            else
+            else if(ID == "admin2")
             {
                 userInfo.Id = ID;
-                userInfo.Name = "Kaven2";
-                userInfo.Depart = "人事处";
+                userInfo.Name = "系级管理员";
+                userInfo.Depart = "电信学院";
                 userInfo.AccessLevel = AccessLevel.secondManager;
+                exception = "不存在该用户";
+            }
+            else if (ID == "evaluator")
+            {
+                userInfo.Id = ID;
+                userInfo.Name = "考评人";
+                userInfo.Depart = "电信学院";
+                userInfo.AccessLevel = AccessLevel.evaluator;
                 exception = "不存在该用户";
             }
             return true;

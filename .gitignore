@@ -4,5 +4,5 @@
 *.suo
 *.jpg
 *.dll
-*.txt
 HRES/*
+*.txt
