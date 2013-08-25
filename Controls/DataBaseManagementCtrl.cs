@@ -39,5 +39,46 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 删除指定的部门，成功返回true，否则返回false
+        /// </summary>
+        /// <param name="depart"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool DeleteDepart(string depart, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 清空除指标库之外的所有数据，成功返回true，否则返回false
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ClearDataBase(ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 清空指标库，成功返回true，否则返回false
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ClearQuotaLib(ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 删除所有临时文件，成功返回true，否则返回false。（这个我来实现）
+        /// </summary>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool ClearTempFiles(ref string exception)
+        {
+            return true;
+        }
     }
 }
