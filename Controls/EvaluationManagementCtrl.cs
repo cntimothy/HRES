@@ -275,7 +275,7 @@ namespace Controls
             row3["Sex"] = "男";
             row3["Depart"] = "医学院";
             row3["Relation"] = "2";
-            row3["Status"] = "1";
+            row3["Status"] = "0";
             table.Rows.Add(row3);
 
             DataRow row4 = table.NewRow();
@@ -284,7 +284,7 @@ namespace Controls
             row4["Sex"] = "男";
             row4["Depart"] = "医学院";
             row4["Relation"] = "0";
-            row4["Status"] = "2";
+            row4["Status"] = 0;
             table.Rows.Add(row4);
             return true;
         }

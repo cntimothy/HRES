@@ -286,7 +286,7 @@ namespace DataStructure
             qualify = new List<Quota>();
             attitude = new List<Quota>();
             reject = new List<Quota>();
-            keyWeight = "05";
+            keyWeight = "50";
             responseWeight = "20";
             qualifyWeitht = "15";
             attitudeWeight = "15";
