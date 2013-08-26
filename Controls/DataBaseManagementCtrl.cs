@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.IO;
 
 namespace Controls
 {
@@ -73,6 +74,20 @@ namespace Controls
         /// <returns></returns>
         public static bool ClearTempFiles(ref string exception)
         {
+            DirectoryInfo folder = new DirectoryInfo(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\");
+            FileInfo[] files = folder.GetFiles();
+            try
+            {
+                foreach (FileInfo file in files)
+                {
+                    file.Delete();
+                }
+            }
+            catch (Exception e)
+            {
+                exception = e.Message;
+                return false;
+            }
             return true;
         }
     }

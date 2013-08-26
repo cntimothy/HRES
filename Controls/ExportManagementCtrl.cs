@@ -1242,7 +1242,7 @@ namespace Controls
         private static bool writeToFile(HSSFWorkbook hssfworkbook, string evaluatedName, ref string fileName)
         {
             fileName = DateTime.Now.ToString("yyyy-mm-dd-HH-mm-ss") + evaluatedName + @"的考核表.xls";
-            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\\" + fileName;
+            string path = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + fileName;
             FileStream file = new FileStream(path, FileMode.Create);
             try
             {
