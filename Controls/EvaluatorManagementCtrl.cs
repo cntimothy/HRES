@@ -363,6 +363,20 @@ namespace Controls
         }
 
         /// <summary>
+        /// 获取被考评人已设置的考评人名字列表
+        /// </summary>
+        /// <param name="evaluatorNameList"></param>
+        /// <param name="evaluated"></param>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        public static bool GetSettedEvaluatorName(ref List<string> evaluatorNameList, string evaluated, ref string exception)
+        {
+            evaluatorNameList.Add("张三");
+            evaluatorNameList.Add("李四");
+            return true;
+        }
+
+        /// <summary>
         /// 获取指定被考评人的考评人名单审核意见，有审核意见返回true，否则返回false
         /// </summary>
         /// <param name="comment">审核意见</param>
