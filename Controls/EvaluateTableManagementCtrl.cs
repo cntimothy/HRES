@@ -359,5 +359,19 @@ namespace Controls
         {
             return false;
         }
+
+        /// <summary>
+        /// 获取已提交考核表的被考评人的姓名id字典，不为空返回true，否则返回false
+        /// </summary>
+        /// <param name="dic"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetSubmittedNameIdDic(ref Dictionary<string, string> dic, ref string exception)
+        {
+            dic.Add("高1", "1");
+            dic.Add("高2", "12345");
+            dic.Add("高3", "3");
+            return true;
+        }
     }
 }
