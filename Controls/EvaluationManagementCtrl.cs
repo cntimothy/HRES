@@ -689,5 +689,16 @@ namespace Controls
             table.Rows.Add(values18);
             return true;
         }
+
+        /// <summary>
+        /// 查询考核年份的列表
+        /// </summary>
+        /// <param name="idYearDic">年份列表</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetEvaluationYears(ref Dictionary<string, string> idYearDic, ref string exception)
+        {
+            return true;
+        }
     }
 }

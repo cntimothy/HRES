@@ -366,7 +366,7 @@ namespace Controls
         /// <param name="dic"></param>
         /// <param name="exception"></param>
         /// <returns></returns>
-        public static bool GetSubmittedNameIdDic(ref Dictionary<string, string> dic, ref string exception)
+        public static bool GetSubmittedNameIdDic(ref Dictionary<string, string> dic, string depart, ref string exception)
         {
             dic.Add("高1", "1");
             dic.Add("高2", "12345");
