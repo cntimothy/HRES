@@ -987,16 +987,16 @@ namespace Controls
             switch (evaluationResult.EvaluationLevel)
             {
                 case DepartEvaluationLevel.good:
-                    evaluationLevel = "√优秀（9~10 ）      □良好（7~8）       □合格 （4~6）       □不合格（0~3）";
-                    break;
-                case DepartEvaluationLevel.qualified:
-                    evaluationLevel = "□优秀（9~10 ）      √良好（7~8）       □合格 （4~6）       □不合格（0~3）";
+                    evaluationLevel = "优秀(91~100)";
                     break;
                 case DepartEvaluationLevel.notbad:
-                    evaluationLevel = "□优秀（9~10 ）      □良好（7~8）       √合格 （4~6）       □不合格（0~3）";
+                    evaluationLevel = "良好(71~90)";
+                    break;
+                case DepartEvaluationLevel.qualified:
+                    evaluationLevel = "合格(41~70)";
                     break;
                 case DepartEvaluationLevel.unqualified:
-                    evaluationLevel = "□优秀（9~10 ）      □良好（7~8）       □合格 （4~6）       √不合格（0~3）";
+                    evaluationLevel = "不合格(0~40)";
                     break;
                 default:
                     break;
