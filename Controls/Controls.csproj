@@ -63,6 +63,7 @@
     <Compile Include="ExportManagementCtrl.cs" />
     <Compile Include="FirstManagementCtrl.cs" />
     <Compile Include="LoginManagementCtrl.cs" />
+    <Compile Include="MessagePlatformManagementCtrl.cs" />
     <Compile Include="PostBookManagementCtrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuotaManagementCtrl.cs" />
