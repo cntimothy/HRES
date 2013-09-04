@@ -9,20 +9,19 @@ namespace Controls
     public static class SecondManagementCtrl
     {
         /// <summary>
-        /// 返回系级管理员信息（ID, Depart）
+        /// 返回系级管理员信息（ID, Depart, Telephone）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="exception">异常信息</param>
         /// <return>若dt为空，返回false；否则返回true</return></returns>
         public static bool GetAll(ref DataTable dt, ref string exception)
         {
-            dt = new DataTable();
             dt.Columns.Add("ID");
-            dt.Columns.Add("Name");
             dt.Columns.Add("Depart");
-            object[] values1 = new object[]{"13050", "医学院"};
-            object[] values2 = new object[] { "09004", "外国语学院" };
-            object[] values3 = new object[] { "11666559", "人事处" };
+            dt.Columns.Add("Telephone");
+            object[] values1 = new object[]{"13050", "医学院", "13889998765"};
+            object[] values2 = new object[] { "09004", "外国语学院", "13889998765" };
+            object[] values3 = new object[] { "11666559", "人事处", "13889998765" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
@@ -30,7 +29,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门返回系级管理员信息（ID, Name, Depart）
+        /// 根据部门返回系级管理员信息（ID, Depart, Telephone）
         /// </summary>
         /// <param name="dt">包含系级管理员信息的datatable</param>
         /// <param name="depart">部门</param>
@@ -39,11 +38,11 @@ namespace Controls
         public static bool GetAllByDepart(ref DataTable dt, string depart, ref string exception)
         {
             dt.Columns.Add("ID");
-            dt.Columns.Add("Name");
             dt.Columns.Add("Depart");
-            object[] values1 = new object[] { "13050", "人事处" };
-            object[] values2 = new object[] { "09004", "人事处" };
-            object[] values3 = new object[] { "11666559", "人事处" };
+            dt.Columns.Add("Telephone");
+            object[] values1 = new object[] { "13050", "医学院", "13889998765" };
+            object[] values2 = new object[] { "09004", "外国语学院", "13889998765" };
+            object[] values3 = new object[] { "11666559", "人事处", "13889998765" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
