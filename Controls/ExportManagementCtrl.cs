@@ -10,6 +10,7 @@ using NPOI.SS.Util;
 using NPOI.SS.UserModel;
 using System.IO;
 using MSWord = Microsoft.Office.Interop.Word;
+using MSExcel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using Microsoft.Office.Interop.Word;
 using System.Data;
@@ -895,6 +896,13 @@ namespace Controls
                 wordDoc.SaveAs(ref path, ref format, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing, ref nothing);
                 wordDoc.Close(ref nothing, ref nothing, ref nothing);
                 wordApp.Quit(ref nothing, ref nothing, ref nothing);
+                wordDoc = null;
+                wordApp = null;
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
                 return true;
             }
             catch (Exception)
@@ -1230,6 +1238,138 @@ namespace Controls
                 file.Close();
             }
             return true;
+        }
+
+        /// <summary>
+        /// 将指定的Excel转换成pdf
+        /// </summary>
+        /// <param name="targetName">生成的pdf文件名</param>
+        /// <param name="sourceName">源excel文件名</param>
+        /// <param name="exception"></param>
+        /// <returns>转换成功返回true，否则返回false</returns>
+        public static bool ConvertExcelToPDF(ref string targetName, string sourceName, ref string exception)
+        {
+            bool result = false;
+            MSExcel.XlFixedFormatType targetType = MSExcel.XlFixedFormatType.xlTypePDF;
+            object missing = Type.Missing;
+            MSExcel.Application application = null;
+            MSExcel.Workbook workBook = null;
+            try
+            {
+                application = new MSExcel.Application();
+                targetName = sourceName.Replace(".xls", ".pdf");
+                string targetPath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + targetName;
+                string sourcePath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + sourceName;
+                object target = targetPath;
+                object type = targetType;
+                workBook = application.Workbooks.Open(sourcePath, missing, missing, missing, missing, missing,
+                        missing, missing, missing, missing, missing, missing, missing, missing, missing);
+
+                workBook.ExportAsFixedFormat(targetType, target, MSExcel.XlFixedFormatQuality.xlQualityStandard, true, false, missing, missing, missing, missing);
+                result = true;
+            }
+            catch (Exception e)
+            {
+                exception = e.Message;
+                result = false;
+            }
+            finally
+            {
+                if (workBook != null)
+                {
+                    workBook.Close(true, missing, missing);
+                    workBook = null;
+                }
+                if (application != null)
+                {
+                    application.Quit();
+                    application = null;
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return result;
+        }
+
+        //Word转换成pdf
+        /// <summary>
+        /// 把Word文件转换成为PDF格式文件
+        /// </summary>
+        /// <param name="sourcePath">源文件路径</param>
+        /// <param name="targetPath">目标文件路径</param>
+        /// <returns>true=转换成功</returns>
+        public static bool ConvertWordToPDF(ref string targetName, string sourceName, ref string exception)
+        {
+            bool result = false;
+            MSWord.WdExportFormat exportFormat = MSWord.WdExportFormat.wdExportFormatPDF;
+            object paramMissing = Type.Missing;
+            MSWord.Application wordApplication = new MSWord.Application();
+            MSWord.Document wordDocument = null;
+            try
+            {
+                targetName = sourceName.Replace(".doc", ".pdf");
+                string targetPath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + targetName;
+                string sourcePath = System.AppDomain.CurrentDomain.BaseDirectory.ToString() + @"downloadfiles\" + sourceName;
+                object paramSourceDocPath = sourcePath;
+                string paramExportFilePath = targetPath;
+
+                MSWord.WdExportFormat paramExportFormat = exportFormat;
+                bool paramOpenAfterExport = false;
+                MSWord.WdExportOptimizeFor paramExportOptimizeFor = MSWord.WdExportOptimizeFor.wdExportOptimizeForPrint;
+                MSWord.WdExportRange paramExportRange = MSWord.WdExportRange.wdExportAllDocument;
+                int paramStartPage = 0;
+                int paramEndPage = 0;
+                MSWord.WdExportItem paramExportItem = MSWord.WdExportItem.wdExportDocumentContent;
+                bool paramIncludeDocProps = true;
+                bool paramKeepIRM = true;
+                MSWord.WdExportCreateBookmarks paramCreateBookmarks = MSWord.WdExportCreateBookmarks.wdExportCreateWordBookmarks;
+                bool paramDocStructureTags = true;
+                bool paramBitmapMissingFonts = true;
+                bool paramUseISO19005_1 = false;
+
+                wordDocument = wordApplication.Documents.Open(
+                ref paramSourceDocPath, ref paramMissing, ref paramMissing,
+                ref paramMissing, ref paramMissing, ref paramMissing,
+                ref paramMissing, ref paramMissing, ref paramMissing,
+                ref paramMissing, ref paramMissing, ref paramMissing,
+                ref paramMissing, ref paramMissing, ref paramMissing,
+                ref paramMissing);
+
+                if (wordDocument != null)
+                    wordDocument.ExportAsFixedFormat(paramExportFilePath,
+                    paramExportFormat, paramOpenAfterExport,
+                    paramExportOptimizeFor, paramExportRange, paramStartPage,
+                    paramEndPage, paramExportItem, paramIncludeDocProps,
+                    paramKeepIRM, paramCreateBookmarks, paramDocStructureTags,
+                    paramBitmapMissingFonts, paramUseISO19005_1,
+                    ref paramMissing);
+                result = true;
+            }
+            catch(Exception e)
+            {
+                exception = e.Message;
+                result = false;
+            }
+            finally
+            {
+                if (wordDocument != null)
+                {
+                    wordDocument.Close(ref paramMissing, ref paramMissing, ref paramMissing);
+                    wordDocument = null;
+                }
+                if (wordApplication != null)
+                {
+                    wordApplication.Quit(ref paramMissing, ref paramMissing, ref paramMissing);
+                    wordApplication = null;
+                }
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+            return result;
         }
         #region Private Method
         /// <summary>
