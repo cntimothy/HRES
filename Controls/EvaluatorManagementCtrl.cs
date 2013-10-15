@@ -385,5 +385,28 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 随机生成考评人名单（如果已存在，则更新），成功返回true，否则返回false
+        /// </summary>
+        /// <param name="evaluated">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool RandomGeneEvaluator(string evaluated, ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 获取被考评人已设置的考评人名字列表
+        /// </summary>
+        /// <param name="evaluatorNameList"></param>
+        /// <param name="evaluated"></param>
+        /// <param name="?"></param>
+        /// <returns></returns>
+        public static bool GetSettedEvaluator(string evaluated, ref DataTable dt, ref string exception)
+        {
+            return true;
+        }
     }
 }
