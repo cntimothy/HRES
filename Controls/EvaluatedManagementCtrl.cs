@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using DataStructure;
 
 namespace Controls
 {
@@ -183,6 +184,42 @@ namespace Controls
         /// <param name="exception"></param>
         /// <returns>删除成功返回true，否则返回false</returns>
         public static bool DeleteAll(ref string exception)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 根据ID获取被考评人信息，获取成功返回true，否则返回false
+        /// </summary>
+        /// <param name="evaluated">被考评人信息</param>
+        /// <param name="id">被考评人ID</param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool GetEvaluatedById(ref Evaluated evaluated, string id, ref string exception)
+        {
+            evaluated.Id = "02365";
+            evaluated.Name = "xingmign";
+            evaluated.Sex = "男";
+            evaluated.Company = "上海市东凌国际人才有限公司";
+            evaluated.Depart = "医学院";
+            evaluated.LaborDepart = "用工部门";
+            evaluated.PostName = "岗位名称";
+            evaluated.PostType = "教师";
+            evaluated.Fund = "资金来源";
+            evaluated.Character = "派遣性质";
+            evaluated.StartTime = "开始时间";
+            evaluated.StopTime = "结束时间";
+            return true;
+        }
+
+        /// <summary>
+        /// 更新指定ID的被考评人信息
+        /// </summary>
+        /// <param name="evaluated"></param>
+        /// <param name="id"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool UpdateEvaluatedById(Evaluated evaluated, string id, ref string exception)
         {
             return true;
         }

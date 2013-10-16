@@ -43,6 +43,7 @@
     <Compile Include="AccessLevel.cs" />
     <Compile Include="DepartEvaluationResult.cs" />
     <Compile Include="DocOperation.cs" />
+    <Compile Include="Evaluated.cs" />
     <Compile Include="EvaluationResult.cs" />
     <Compile Include="EvaluationStatus.cs" />
     <Compile Include="EvaluationStatusForEvaluated.cs" />
