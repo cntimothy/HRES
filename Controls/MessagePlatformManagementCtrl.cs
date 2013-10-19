@@ -9,7 +9,7 @@ namespace Controls
     public class MessagePlatformManagementCtrl
     {
         /// <summary>
-        /// 查询所有考评人信息（ID, Name, Sex, Depart(部门), Company(单位), Telephone），非空返回true，否则返回false。
+        /// 查询所有考评人信息（ID, Name, Sex, Depart(部门), Company(单位), Telephone, Status(1表示已完成所有的考评，0表示未完成所有的考评), Finished(已完成考评的被考评人名单), Unfinished(未完成考评的被考评人名单)），非空返回true，否则返回false。
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>
@@ -22,24 +22,27 @@ namespace Controls
             table.Columns.Add("Depart");
             table.Columns.Add("Company");
             table.Columns.Add("Telephone");
-            string[] values1 = new string[] { "1", "高1", "男", "Intel", "医学院", "12345" };
-            string[] values2 = new string[] { "2", "高2", "女", "AMD", "医学院", "2345" };
-            string[] values3 = new string[] { "3", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "医学院", "543234" };
-            string[] values5 = new string[] { "5", "高5", "男", "Apple", "医学院", "515321432" };
-            string[] values6 = new string[] { "6", "高6", "男", "IBM", "医学院", "25132513" };
-            string[] values7 = new string[] { "7", "高1", "男", "Intel", "医学院", "12345" };
-            string[] values8 = new string[] { "8", "高2", "女", "AMD", "医学院", "2345" };
-            string[] values9 = new string[] { "9", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values10 = new string[] { "0", "高4", "男", "Lenovo", "外国语学院", "543234" };
-            string[] values11 = new string[] { "11", "高5", "男", "Apple", "外国语学院", "515321432" };
-            string[] values12 = new string[] { "22", "高6", "男", "IBM", "外国语学院", "25132513" };
-            string[] values13 = new string[] { "33", "高1", "男", "Intel", "外国语学院", "12345" };
-            string[] values14 = new string[] { "44", "高2", "女", "AMD", "外国语学院", "2345" };
-            string[] values15 = new string[] { "55", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values16 = new string[] { "66", "高4", "男", "Lenovo", "医学院", "543234" };
-            string[] values17 = new string[] { "77", "高5", "男", "Apple", "医学院", "515321432" };
-            string[] values18 = new string[] { "88", "高6", "男", "IBM", "医学院", "25132513" };
+            table.Columns.Add("Status");
+            table.Columns.Add("Finished");
+            table.Columns.Add("Unfinished");
+            string[] values1 = new string[] { "1", "高1", "男", "Intel", "医学院", "12345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values2 = new string[] { "2", "高2", "女", "AMD", "医学院", "2345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values3 = new string[] { "3", "高3", "男", "EMC", "医学院", "1413235", "0", "许1，许2，许3", "许5，许6" };
+            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "医学院", "543234", "0", "许1，许2，许3", "许5，许6" };
+            string[] values5 = new string[] { "5", "高5", "男", "Apple", "医学院", "515321432", "0", "许1，许2，许3", "许5，许6" };
+            string[] values6 = new string[] { "6", "高6", "男", "IBM", "医学院", "25132513", "1", "许1，许2，许3", "许5，许6" };
+            string[] values7 = new string[] { "7", "高1", "男", "Intel", "医学院", "12345", "1", "许1，许2，许3", "许5，许6" };
+            string[] values8 = new string[] { "8", "高2", "女", "AMD", "医学院", "2345", "1", "许1，许2，许3", "许5，许6" };
+            string[] values9 = new string[] { "9", "高3", "男", "EMC", "医学院", "1413235", "1", "许1，许2，许3", "许5，许6" };
+            string[] values10 = new string[] { "0", "高4", "男", "Lenovo", "外国语学院", "543234", "1", "许1，许2，许3", "许5，许6" };
+            string[] values11 = new string[] { "11", "高5", "男", "Apple", "外国语学院", "515321432", "0", "许1，许2，许3", "许5，许6" };
+            string[] values12 = new string[] { "22", "高6", "男", "IBM", "外国语学院", "25132513", "0", "许1，许2，许3", "许5，许6" };
+            string[] values13 = new string[] { "33", "高1", "男", "Intel", "外国语学院", "12345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values14 = new string[] { "44", "高2", "女", "AMD", "外国语学院", "2345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values15 = new string[] { "55", "高3", "男", "EMC", "医学院", "1413235", "0", "许1，许2，许3", "许5，许6" };
+            string[] values16 = new string[] { "66", "高4", "男", "Lenovo", "医学院", "543234", "0", "许1，许2，许3", "许5，许6" };
+            string[] values17 = new string[] { "77", "高5", "男", "Apple", "医学院", "515321432", "0", "许1，许2，许3", "许5，许6" };
+            string[] values18 = new string[] { "88", "高6", "男", "IBM", "医学院", "25132513", "0", "许1，许2，许3", "许5，许6" };
             table.Rows.Add(values1);
             table.Rows.Add(values2);
             table.Rows.Add(values3);
@@ -62,7 +65,7 @@ namespace Controls
         }
 
         /// <summary>
-        /// 根据部门查询所有考评人信息（ID, Name, Sex, Depart(部门), Company(单位), Telephone），非空返回true，否则返回false。
+        /// 根据部门查询所有考评人信息（ID, Name, Sex, Depart(部门), Company(单位), Telephone, Status(1表示已完成所有的考评，0表示未完成所有的考评), Finished(已完成考评的被考评人名单), Unfinished(未完成考评的被考评人名单)），非空返回true，否则返回false。
         /// </summary>
         /// <param name="table"></param>
         /// <param name="exception"></param>
@@ -75,24 +78,27 @@ namespace Controls
             table.Columns.Add("Depart");
             table.Columns.Add("Company");
             table.Columns.Add("Telephone");
-            string[] values1 = new string[] { "1", "高1", "男", "Intel", "医学院", "12345" };
-            string[] values2 = new string[] { "2", "高2", "女", "AMD", "医学院", "2345" };
-            string[] values3 = new string[] { "3", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "医学院", "543234" };
-            string[] values5 = new string[] { "5", "高5", "男", "Apple", "医学院", "515321432" };
-            string[] values6 = new string[] { "6", "高6", "男", "IBM", "医学院", "25132513" };
-            string[] values7 = new string[] { "7", "高1", "男", "Intel", "医学院", "12345" };
-            string[] values8 = new string[] { "8", "高2", "女", "AMD", "医学院", "2345" };
-            string[] values9 = new string[] { "9", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values10 = new string[] { "0", "高4", "男", "Lenovo", "医学院", "543234" };
-            string[] values11 = new string[] { "11", "高5", "男", "Apple", "医学院", "515321432" };
-            string[] values12 = new string[] { "22", "高6", "男", "IBM", "医学院", "25132513" };
-            string[] values13 = new string[] { "33", "高1", "男", "Intel", "医学院", "12345" };
-            string[] values14 = new string[] { "44", "高2", "女", "AMD", "医学院", "2345" };
-            string[] values15 = new string[] { "55", "高3", "男", "EMC", "医学院", "1413235" };
-            string[] values16 = new string[] { "66", "高4", "男", "Lenovo", "医学院", "543234" };
-            string[] values17 = new string[] { "77", "高5", "男", "Apple", "医学院", "515321432" };
-            string[] values18 = new string[] { "88", "高6", "男", "IBM", "医学院", "25132513" };
+            table.Columns.Add("Status");
+            table.Columns.Add("Finished");
+            table.Columns.Add("Unfinished");
+            string[] values1 = new string[] { "1", "高1", "男", "Intel", "医学院", "12345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values2 = new string[] { "2", "高2", "女", "AMD", "医学院", "2345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values3 = new string[] { "3", "高3", "男", "EMC", "医学院", "1413235", "0", "许1，许2，许3", "许5，许6" };
+            string[] values4 = new string[] { "4", "高4", "男", "Lenovo", "医学院", "543234", "0", "许1，许2，许3", "许5，许6" };
+            string[] values5 = new string[] { "5", "高5", "男", "Apple", "医学院", "515321432", "0", "许1，许2，许3", "许5，许6" };
+            string[] values6 = new string[] { "6", "高6", "男", "IBM", "医学院", "25132513", "0", "许1，许2，许3", "许5，许6" };
+            string[] values7 = new string[] { "7", "高1", "男", "Intel", "医学院", "12345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values8 = new string[] { "8", "高2", "女", "AMD", "医学院", "2345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values9 = new string[] { "9", "高3", "男", "EMC", "医学院", "1413235", "0", "许1，许2，许3", "许5，许6" };
+            string[] values10 = new string[] { "0", "高4", "男", "Lenovo", "医学院", "543234", "1", "许1，许2，许3", "许5，许6" };
+            string[] values11 = new string[] { "11", "高5", "男", "Apple", "医学院", "515321432", "1", "许1，许2，许3", "许5，许6" };
+            string[] values12 = new string[] { "22", "高6", "男", "IBM", "医学院", "25132513", "1", "许1，许2，许3", "许5，许6" };
+            string[] values13 = new string[] { "33", "高1", "男", "Intel", "医学院", "12345", "1", "许1，许2，许3", "许5，许6" };
+            string[] values14 = new string[] { "44", "高2", "女", "AMD", "医学院", "2345", "0", "许1，许2，许3", "许5，许6" };
+            string[] values15 = new string[] { "55", "高3", "男", "EMC", "医学院", "1413235", "0", "许1，许2，许3", "许5，许6" };
+            string[] values16 = new string[] { "66", "高4", "男", "Lenovo", "医学院", "543234", "0", "许1，许2，许3", "许5，许6" };
+            string[] values17 = new string[] { "77", "高5", "男", "Apple", "医学院", "515321432", "0", "许1，许2，许3", "许5，许6" };
+            string[] values18 = new string[] { "88", "高6", "男", "IBM", "医学院", "25132513", "0", "许1，许2，许3", "许5，许6" };
             table.Rows.Add(values1);
             table.Rows.Add(values2);
             table.Rows.Add(values3);

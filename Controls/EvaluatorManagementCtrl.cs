@@ -408,5 +408,16 @@ namespace Controls
         {
             return true;
         }
+
+        /// <summary>
+        /// 查询指定被考评人的考核表是否已通过审核，已通过则返回true，否则返回false
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="exception"></param>
+        /// <returns></returns>
+        public static bool IsEvaluateTablePasswd(string id, ref string exception)
+        {
+            return true;
+        }
     }
 }
