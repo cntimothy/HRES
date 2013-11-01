@@ -17,11 +17,12 @@ namespace Controls
         public static bool GetAll(ref DataTable dt, ref string exception)
         {
             dt.Columns.Add("ID");
+            dt.Columns.Add("Name");
             dt.Columns.Add("Depart");
             dt.Columns.Add("Telephone");
-            object[] values1 = new object[]{"13050", "医学院", "13889998765"};
-            object[] values2 = new object[] { "09004", "外国语学院", "13889998765" };
-            object[] values3 = new object[] { "11666559", "人事处", "13889998765" };
+            object[] values1 = new object[]{"13050", "高1", "医学院", "13889998765"};
+            object[] values2 = new object[] { "09004", "高2", "外国语学院", "13889998765" };
+            object[] values3 = new object[] { "11666559", "高3", "人事处", "13889998765" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
@@ -39,10 +40,11 @@ namespace Controls
         {
             dt.Columns.Add("ID");
             dt.Columns.Add("Depart");
+            dt.Columns.Add("Name");
             dt.Columns.Add("Telephone");
-            object[] values1 = new object[] { "13050", "医学院", "13889998765" };
-            object[] values2 = new object[] { "09004", "外国语学院", "13889998765" };
-            object[] values3 = new object[] { "11666559", "人事处", "13889998765" };
+            object[] values1 = new object[] { "13050", "高1", "医学院", "13889998765" };
+            object[] values2 = new object[] { "09004", "高2", "外国语学院", "13889998765" };
+            object[] values3 = new object[] { "11666559", "高3", "人事处", "13889998765" };
             dt.Rows.Add(values1);
             dt.Rows.Add(values2);
             dt.Rows.Add(values3);
